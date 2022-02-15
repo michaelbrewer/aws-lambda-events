@@ -6,3 +6,4 @@ Collection of resources on the different input and outputs that AWS Lambda expec
 
 - API Gateway Rest API
 - API Gateway Http API
+- AppSync Direct Resolver
