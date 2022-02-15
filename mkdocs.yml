@@ -1,0 +1,14 @@
+site_name: AWS Lambda Events
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep orange
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+    - scheme: slate 
+      primary: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
