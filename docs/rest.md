@@ -1,5 +1,7 @@
 # API Gateway Rest API
 
+Events are sent synchronously to the Lambda function.
+
 ## Input
 
 ```json
@@ -82,6 +84,12 @@
   "body": "Hello from Lambda!",
   "isBase64Encoded": false
 }
+```
+
+### Generating sample events via SAM CLI:
+
+```shell
+sam local generate-event apigateway aws-proxy --body {"test":"body"} --path foo --method POST
 ```
 
 ## Output
