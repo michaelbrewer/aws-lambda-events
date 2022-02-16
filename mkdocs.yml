@@ -12,3 +12,12 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
