@@ -15,19 +15,19 @@ Directory of lambda events and resources
 - [ ] [AWS Config](./config.md)
 - [ ] [Amazon Connect](./connect.md)
 - [ ] [Amazon DynamoDB](./dynamodb.md)
-- [ ] Amazon EC2
-- [ ] Application Load Balancer
-- [ ] AWS IoT
-- [ ] AWS IoT Events
-- [ ] Apache Kafka
-- [ ] Amazon Kinesis Data Firehose
-- [ ] Amazon Kinesis
-- [ ] Amazon Lex
-- [ ] Amazon Lex V2
-- [ ] Amazon MQ
-- [ ] Amazon MSK
-- [ ] Amazon S3
-- [ ] Amazon S3 batch operations
+- [ ] [Amazon EC2](./ec2.md)
+- [ ] [Application Load Balancer](./alb.md)
+- [ ] [AWS IoT](./iot.md)
+- [ ] [AWS IoT Events](./iot-events.md)
+- [ ] [Apache Kafka](./apache-kafka.md)
+- [ ] [Amazon Kinesis Data Firehose](./kinesis-firehose.md)
+- [ ] [Amazon Kinesis](./kinesis-streams.md)
+- [ ] [Amazon Lex](./lex.md)
+- [ ] [Amazon Lex V2](./lex-v2.md)
+- [ ] [Amazon MQ](./mq.md)
+- [ ] [Amazon MSK](./amazon-msk.md)
+- [ ] [Amazon S3](./s3.md)
+- [ ] [Amazon S3 batch operations](./s3-batch.md)
 - [ ] [S3 Object Lambda](./s3-object-lambda.md)
 - [ ] [Secrets Manager](./secrets-manager.md)
 - [ ] [Amazon SES](./ses.md)
