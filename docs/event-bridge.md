@@ -1,6 +1,6 @@
-# Amazon EventBridge (CloudWatch Events)
+# Amazon EventBridge
 
-EventBridge (CloudWatch Events) invokes your function asynchronously with an event document that wraps the event from its source.
+Amazon EventBridge (CloudWatch Events) invokes your function asynchronously with an event document that wraps the event from its source.
 
 ## Input
 

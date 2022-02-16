@@ -12,9 +12,9 @@ Directory of lambda events and resources
 - [ ] [CodeCommit](./code-commit.md)
 - [ ] [CodePipeline](./code-pipeline.md)
 - [ ] [Amazon Cognito](./cognito.md)
-- [ ] AWS Config
-- [ ] Amazon Connect
-- [ ] Amazon DynamoDB
+- [ ] [AWS Config](./config.md)
+- [ ] [Amazon Connect](./connect.md)
+- [ ] [Amazon DynamoDB](./dynamodb.md)
 - [ ] Amazon EC2
 - [ ] Application Load Balancer
 - [ ] AWS IoT
