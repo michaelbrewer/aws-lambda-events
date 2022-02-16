@@ -75,3 +75,12 @@ Http api format 2.0
   }
 }
 ```
+### Getting the correlation id
+
+### Generating sample events via SAM CLI
+
+## Output
+
+## Libraries
+
+## Reference Docs
