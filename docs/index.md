@@ -3,7 +3,7 @@
 Directory of lambda events and resources
 
 - [x] [API Gateway Rest API](./rest.md)
-- [ ] API Gateway Http API
+- [ ] [API Gateway Http API](./http-api.md)
 - [ ] [Alexa Smart Home](./alex-smart-home.md)
 - [ ] CloudTrail
 - [ ] Amazon EventBridge
