@@ -41,6 +41,10 @@ JSON path to correlation id: `xAmzRequestId`
 
 ## Output
 
+```json
+{"status_code": 200}
+```
+
 ## Libraries
 
 - [Python - data class and utilities](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#s3-object-lambda) - Pip `aws-lambda-powertools`
