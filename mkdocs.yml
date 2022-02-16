@@ -1,4 +1,5 @@
 site_name: AWS Lambda Events
+repo_name: michaelbrewer/aws-lambda-events
 theme:
   name: material
   palette:
