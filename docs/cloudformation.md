@@ -1,6 +1,6 @@
-# CloudFormation Custom Resources
+# CloudFormation
 
-CloudFormation invokes lambda asynchously
+CloudFormation invokes Custom Resources lambda asynchrously
 
 ## Input
 
