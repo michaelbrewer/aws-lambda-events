@@ -1,5 +1,8 @@
 site_name: AWS Lambda Events
+site_description: AWS Lambda Events
+site_author: Michael Brewer
 repo_name: michaelbrewer/aws-lambda-events
+repo_url: https://github.com/michaelbrewer/aws-lambda-events
 theme:
   name: material
   palette:
@@ -14,11 +17,19 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
 markdown_extensions:
+  - admonition
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
+  - toc:
+      permalink: true
+      toc_depth: 4
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+plugins:
+  - git-revision-date
+  - search
