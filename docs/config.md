@@ -1,4 +1,4 @@
-# Amazon Cognito
+# Amazon Config
 
 ## Input
 
