@@ -28,7 +28,7 @@ Directory of lambda events and resources
 - [ ] [Amazon MSK](./amazon-msk.md)
 - [ ] [Amazon S3](./s3.md)
 - [ ] [Amazon S3 batch operations](./s3-batch.md)
-- [ ] [S3 Object Lambda](./s3-object-lambda.md)
+- [X] [S3 Object Lambda](./s3-object-lambda.md)
 - [ ] [Secrets Manager](./secrets-manager.md)
 - [ ] [Amazon SES](./ses.md)
 - [ ] [Amazon SNS](./sns.md)
