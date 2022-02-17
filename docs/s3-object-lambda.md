@@ -53,7 +53,7 @@ JSON path to correlation id: `xAmzRequestId`
 
 Example using AWS Lambda Powertools to upper case the file
 
-```python
+```python title="app.py"
 import boto3
 import requests
 

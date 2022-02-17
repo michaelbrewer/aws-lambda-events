@@ -2,9 +2,7 @@
 
 ## Input
 
-Application Load Balance GET request
-
-```json
+```json title="Application Load Balance GET request"
 {
   "requestContext": {
     "elb": {
@@ -47,9 +45,7 @@ sam local generate-event TODO
 
 ## Output
 
-Example response
-
-```json
+```json title="Example 200 html response"
 {
     "statusCode": 200,
     "statusDescription": "200 OK",

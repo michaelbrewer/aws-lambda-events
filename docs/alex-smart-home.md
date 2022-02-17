@@ -4,7 +4,7 @@ Event-driven, synchronous invocation
 
 ## Input
 
-```json
+```json title="Example Alexa smart home event"
 {
   "header": {
     "payloadVersion": "1",
