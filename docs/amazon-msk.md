@@ -1,5 +1,8 @@
 # Amazon MSK
 
+Lambda internally polls for new messages from the event source and then synchronously invokes the target Lambda function.
+Lambda reads the messages in batches and provides these to your function as an event payload. The maximum batch size is configurable. (The default is 100 messages.)
+
 ## Input
 
 ```json

@@ -1,5 +1,7 @@
 # Application Load Balancer
 
+Elastic Load Balancing invokes your Lambda function synchronously with an event that contains the request body and metadata.
+
 ## Input
 
 ```json title="Application Load Balance GET request"

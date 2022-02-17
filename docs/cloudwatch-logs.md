@@ -2,7 +2,7 @@
 
 CloudWatch Logs invokes your function asynchronously with an event that contains log data.
 
-# Input
+## Input
 
 CloudWatch Logs message event example
 

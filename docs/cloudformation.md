@@ -1,6 +1,6 @@
 # CloudFormation
 
-CloudFormation invokes Custom Resources lambda asynchrously
+AWS CloudFormation invokes your Lambda function asynchronously with an event that includes a callback URL.
 
 ## Input
 
@@ -46,4 +46,4 @@ CloudFormation invokes Custom Resources lambda asynchrously
 
 ## Reference Docs
 
-- https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html
+- [Using AWS Lambda with AWS CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)

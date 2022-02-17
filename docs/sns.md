@@ -1,4 +1,4 @@
-# Amazon SNS
+# SNS
 
 ## Input
 

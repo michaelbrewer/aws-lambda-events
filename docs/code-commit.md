@@ -1,6 +1,6 @@
 # Code Commit
 
-TODO: How is this invoked async or sync?
+CodeCommit repository events in the repository invoke a Lambda function
 
 ## Input
 

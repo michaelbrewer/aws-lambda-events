@@ -1,4 +1,6 @@
-# Amazon SES
+# SES
+
+The service can then invoke your Lambda function by passing in the incoming email event, which in reality is an Amazon SES message in an Amazon SNS event, as a parameter.
 
 ## Input
 

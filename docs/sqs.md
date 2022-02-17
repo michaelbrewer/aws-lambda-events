@@ -1,4 +1,6 @@
-# Amazon SQS
+# SQS
+
+Lambda polls the queue and invokes your Lambda function synchronously with an event that contains queue messages.
 
 ## Input
 
