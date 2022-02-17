@@ -1,5 +1,7 @@
 # Alex Smart Home
 
+Event-driven, synchronous invocation
+
 ## Input
 
 ```json
