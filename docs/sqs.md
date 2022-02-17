@@ -4,6 +4,14 @@ Lambda polls the queue and invokes your Lambda function synchronously with an ev
 
 ## Input
 
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event sqs receive-message
+```
+
+### Example event
+
 ```json title="Example Amazon SQS message event (standard queue)"
 {
     "Records": [

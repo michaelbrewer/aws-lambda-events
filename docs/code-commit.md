@@ -4,9 +4,19 @@ CodeCommit repository events in the repository invoke a Lambda function
 
 ## Input
 
-AWS CodeCommit message event example
+### Getting the correlation id
 
-```json
+JSON patch `Records[*].eventId`
+
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event codecommit repository
+```
+
+### AWS CodeCommit message event example
+
+```json title="AWS CodeCommit message event example"
 {
     "Records": [
         {
@@ -33,16 +43,6 @@ AWS CodeCommit message event example
         }
     ]
 }
-```
-
-### Getting the correlation id
-
-JSON patch `Records[*].eventId`
-
-### Generating sample events via SAM CLI
-
-```shell
-sam local generate-event codecommit repository
 ```
 
 ## Output

@@ -1,5 +1,7 @@
 # Amazon Config
 
+Event-driven asynchronous invocation
+
 ## Input
 
 ```json

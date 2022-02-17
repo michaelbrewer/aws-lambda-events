@@ -2,6 +2,14 @@
 
 ## Input
 
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event dynamodb update
+```
+
+### Input Event structure
+
 ```json
 {
   "Records": [

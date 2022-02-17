@@ -1,10 +1,22 @@
 # API Gateway Http API
 
+Amazon API Gateway invokes your function synchronously with an event that contains a JSON representation of the HTTP request. 
+
 ## Input
 
-Http api format 2.0
+### Getting the correlation id
 
-```json
+JSON path to correlation id: `requestContext.requestId`
+
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event TODO
+```
+
+### Example events
+
+```json title="Http api format 2.0"
 {
   "version": "2.0",
   "routeKey": "$default",
@@ -76,21 +88,11 @@ Http api format 2.0
 }
 ```
 
-### Getting the correlation id
-
-JSON path to correlation id: `requestContext.requestId`
-
-### Generating sample events via SAM CLI
-
-```shell
-sam local generate-event TODO
-```
-
 ## Output
 
 ### Lambda function response for format 1.0
 
-```json
+```json title="Lambda function response for format 1.0"
 {
     "isBase64Encoded": true|false,
     "statusCode": httpStatusCode,
@@ -102,7 +104,7 @@ sam local generate-event TODO
 
 ### Lambda function response for format 2.0
 
-```json
+```json title="Lambda function response for format 2.0"
 {
     "cookies" : ["cookie1", "cookie2"],
     "isBase64Encoded": true|false,
@@ -133,3 +135,4 @@ Event Handlers by Language
 ## Reference Docs
 
 - [Working with AWS Lambda proxy integrations for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)
+- [Using AWS Lambda with Amazon API Gateway](https://docs.aws.amazon.com/lambda/latest/dg/services-apigateway.html)

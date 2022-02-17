@@ -1,12 +1,14 @@
 # Amazon Connect
 
+Event-driven, synchronous invocation
+
 ## Input
 
 ### Example Amazon Connect request event
 
 Amazon Connect invokes your Lambda function synchronously with an event that contains the request body and metadata.
 
-```json
+```json title="Example Amazon Connect request event"
 {
   "Details": {
       "ContactData": {

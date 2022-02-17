@@ -4,6 +4,14 @@ The service can then invoke your Lambda function by passing in the incoming emai
 
 ## Input
 
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event ses email-receiving
+```
+
+## Example event
+
 ```json title="Example Amazon SES message event"
 {
   "Records": [
@@ -102,12 +110,6 @@ The service can then invoke your Lambda function by passing in the incoming emai
     }
   ]
 }
-```
-
-### Generating sample events via SAM CLI
-
-```shell
-sam local generate-event ses email-receiving
 ```
 
 ## Output
