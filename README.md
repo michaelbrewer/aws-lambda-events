@@ -4,35 +4,35 @@ Collection of resources on the different input and outputs that AWS Lambda expec
 
 ## Event Sources
 
-- API Gateway Rest API
-- API Gateway Http API
-- Alexa Smart Home
-- Amazon EventBridge
-- CloudWatch Logs
-- CloudFormation
-- CloudFront Lambda@Edge
-- CodeCommit
-- CodePipeline
-- Amazon Cognito
-- AWS Config
-- Amazon Connect
-- Amazon DynamoDB
-- Amazon EC2
-- Application Load Balancer
-- AWS IoT
-- AWS IoT Events
-- Apache Kafka
-- Amazon Kinesis Data Firehose
-- Amazon Kinesis
-- Amazon Lex
-- Amazon Lex V2
-- Amazon MQ
-- Amazon MSK
-- Amazon S3
-- Amazon S3 batch operations
-- S3 Object Lambda
-- Secrets Manager
-- Amazon SES
-- Amazon SNS
-- Amazon SQS
-- Amazon WorkMail
+- [API Gateway Rest API](docs/api-rest.md)
+- [API Gateway Http API](docs/api-http-api.md)
+- [Alexa Smart Home](docs/alex-smart-home.md)
+- [Amazon EventBridge](docs/event-bridge.md)
+- [CloudWatch Logs](docs/cloudwatch-logs.md)
+- [CloudFormation](docs/cloudformation.md)
+- [CloudFront Lambda@Edge](docs/cloudfront-lambda-edge.md)
+- [CodeCommit](docs/code-commit.md)
+- [CodePipeline](docs/code-pipeline.md)
+- [Amazon Cognito](docs/cognito.md)
+- [AWS Config](docs/config.md)
+- [Amazon Connect](docs/connect.md)
+- [Amazon DynamoDB](docs/dynamodb.md)
+- [Amazon EC2](docs/ec2.md)
+- [Application Load Balancer](docs/alb.md)
+- [AWS IoT](docs/iot.md)
+- [AWS IoT Events](docs/iot-events.md)
+- [Apache Kafka](docs/apache-kafka.md)
+- [Amazon Kinesis Data Firehose](docs/kinesis-firehose.md)
+- [Amazon Kinesis](docs/kinesis-streams.md)
+- [Amazon Lex](docs/lex.md)
+- [Amazon Lex V2](docs/lex-v2.md)
+- [Amazon MQ](docs/mq.md)
+- [Amazon MSK](docs/amazon-msk.md)
+- [Amazon S3](docs/s3.md)
+- [Amazon S3 batch operations](docs/s3-batch.md)
+- [S3 Object Lambda](docs/s3-object-lambda.md)
+- [Secrets Manager](docs/secrets-manager.md)
+- [Amazon SES](docs/ses.md)
+- [Amazon SNS](docs/sns.md)
+- [Amazon SQS](docs/sqs.md)
+- [Amazon WorkMail](docs/work-mail.md)
