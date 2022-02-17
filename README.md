@@ -2,6 +2,16 @@
 
 Collection of resources on the different input and outputs that AWS Lambda expect
 
+## Build and testing locally
+
+To run a local server for the docs.
+
+```shell
+make dev serve
+```
+
+This will install pipenv, mkdocs and run the server, you will need to have Python 3.9+ installed.
+
 ## Event Sources
 
 - [API Gateway Rest API](docs/api-rest.md)
