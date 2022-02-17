@@ -69,20 +69,47 @@
 
 ## Output
 
-```json
-{ 
-  "batchItemFailures": [ 
+```json title="Example of partial failures"
+{
+    "batchItemFailures": [
         {
-            "itemIdentifier": "id2"
-        },
-        {
-            "itemIdentifier": "id4"
+            "itemIdentifier": "244fc6b4-87a3-44ab-83d2-361172410c3a"
         }
     ]
 }
 ```
 
 ## Libraries
+
+- [SQS Batch Handler - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/) - PIP `aws-lambda-powertools`
+
+## Code Examples
+
+```python title="Example S3 batch handler"
+import json
+
+from aws_lambda_powertools import Logger, Tracer
+from aws_lambda_powertools.utilities.batch import BatchProcessor, EventType, batch_processor
+from aws_lambda_powertools.utilities.data_classes.sqs_event import SQSRecord
+from aws_lambda_powertools.utilities.typing import LambdaContext
+
+processor = BatchProcessor(event_type=EventType.SQS)
+tracer = Tracer()
+logger = Logger()
+
+@tracer.capture_method
+def record_handler(record: SQSRecord):
+    payload: str = record.body
+    if payload:
+        item: dict = json.loads(payload)
+    ...
+
+@logger.inject_lambda_context
+@tracer.capture_lambda_handler
+@batch_processor(record_handler=record_handler, processor=processor)
+def lambda_handler(event, context: LambdaContext):
+    return processor.response()
+```
 
 ## Reference Docs
 

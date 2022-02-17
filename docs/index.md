@@ -26,8 +26,8 @@ Directory of lambda events and resources
 - [ ] [Amazon Lex V2](./lex-v2.md)
 - [ ] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ
 - [ ] [Amazon MSK](./amazon-msk.md)
-- [ ] [Amazon S3](./s3.md)
-- [ ] [Amazon S3 batch operations](./s3-batch.md)
+- [ ] [S3](./s3.md)
+- [ ] [S3 batch operations](./s3-batch.md)
 - [X] [S3 Object Lambda](./s3-object-lambda.md)
 - [ ] [Secrets Manager](./secrets-manager.md)
 - [ ] [Amazon SES](./ses.md)
