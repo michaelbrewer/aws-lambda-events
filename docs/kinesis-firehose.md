@@ -1,4 +1,4 @@
-# Kinesis firehose
+# Kinesis Firehose
 
 ## Input
 

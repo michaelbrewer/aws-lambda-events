@@ -1,6 +1,42 @@
 # Kinesis Streams
 
+Lambda reads records from the data stream and invokes your function synchronously with an event that contains stream records.
+
 ## Input
+
+### Input fields
+
+`Records` - An array of records.
+
+`awsRegion` (String)
+: AWS region where the event originated eg: us-east-1
+
+`eventID` (String)
+: A globally unique identifier for the event that was recorded in this stream record.
+
+`eventName` (String)
+: Event type eg: aws:kinesis:record
+
+`eventSource` (String)
+: The AWS service from which the Kinesis event originated. For Kinesis, this is aws:kinesis
+
+`eventSourceARN` (String)
+: The Amazon Resource Name (ARN) of the event source
+
+`eventVersion` (String)
+: The eventVersion key value contains a major and minor version in the form <major>.<minor>.
+
+`invokeIdentityArn` (String)
+: The ARN for the identity used to invoke the Lambda Function
+
+`kinesis` (Object)
+: Kinesis payload
+
+- `approximateArrivalTimestamp` (Number) - The approximate time that the record was inserted into the stream
+- `data` (String) - The data contained in the record
+- `kinesisSchemaVersion` (String) - The version of the Kinesis data record format
+- `partitionKey` (String) - The partition key of the record
+- `sequenceNumber` (String) - The sequence number of the record
 
 ### Example Kinesis record event
 
@@ -45,7 +81,30 @@
 
 ## Response
 
+```json title="Reporting batch item failures"
+{ 
+  "batchItemFailures": [ 
+        {
+            "itemIdentifier": "<id>"
+        }
+    ]
+}
+```
+
 ## Libraries
+
+Typing by language
+
+- [PHP - KinesisEvent](https://bref.sh/docs/function/handlers.html#kinesis-events) - Composer `bref/bref`
+- [Python - KinesisEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#kinesis-streams) - Pip `aws-lambda-powertools`
+- [Rust - KinesisEvent](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/generated/kinesis.rs) - Cargo `aws-lambda-events`
+- [Java - KinesisEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/KinesisEvent.java) - Maven `aws-lambda-java-events`
+- [Typescript - KinesisEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/kinesis-stream.d.ts) - NPM `@types/aws-lambda`
+- [Go - KinesisEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_Kinesis.md) - `github.com/aws/aws-lambda-go/events`
+
+Handlers by language
+
+- [Python - BatchProcessor](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/#processing-messages-from-kinesis) - Pip `aws-lambda-powertools`
 
 ## Reference Docs
 

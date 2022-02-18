@@ -52,6 +52,7 @@ Input types for Amazon SNS events
 - [DotNet - SNSEvent](https://github.com/aws/aws-lambda-dotnet/blob/master/Libraries/src/Amazon.Lambda.SNSEvents/SNSEvent.cs)
 - [Go - SNS](https://github.com/aws/aws-lambda-go/blob/main/events/sns.go)
 - [Python - SNSEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#sqs)
+- [Php - SnsEvent](https://bref.sh/docs/function/handlers.html#sns-events) - Composer `bref/bref`
 
 ## Reference Docs
 
