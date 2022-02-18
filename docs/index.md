@@ -5,7 +5,7 @@ Directory of lambda events and resources
 - [x] [API Gateway Rest API](./api-rest.md)
 - [ ] [API Gateway Http API](./api-http-api.md)
 - [ ] [Alexa Smart Home](./alex-smart-home.md)
-- [ ] [Amazon EventBridge](./event-bridge.md)
+- [X] [Amazon EventBridge](./event-bridge.md)
 - [ ] [CloudWatch Logs](./cloudwatch-logs.md)
 - [ ] [CloudFormation](./cloudformation.md)
 - [ ] [CloudFront Lambda@Edge](./cloudfront-lambda-edge.md)

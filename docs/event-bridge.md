@@ -4,9 +4,9 @@ Amazon EventBridge (CloudWatch Events) invokes your function asynchronously with
 
 ## Input
 
-EventBridge (CloudWatch Events) event example
+### Example Events
 
-```json
+```json title="EventBridge (CloudWatch Events) event example"
 {
     "version": "0",
     "id": "fe8d3c65-xmpl-c5c3-2c87-81584709a377",
@@ -31,9 +31,8 @@ EventBridge (CloudWatch Events) event example
 }
 ```
 
-EventBridge (CloudWatch Events) message event
 
-```json
+```json title="EventBridge (CloudWatch Events) message event"
 {
   "version": "0",
   "account": "123456789012",
@@ -51,15 +50,23 @@ EventBridge (CloudWatch Events) message event
 
 ### Getting the correlation id
 
+JSON path to correlation id: `id`
+
 ### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event cloudwatch scheduled-event
+```
 
 ## Response
 
+N/A
+
 ## Libraries
 
-- [Typescript - eventbridge.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/eventbridge.d.ts)
+- [Typescript - eventbridge.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/eventbridge.d.ts) - NPM `@types/aws-lambda`
+- [Python - EventBridgeEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#eventbridge) - Pip `aws-lambda-powertools`
 
 ## Reference Docs
 
-- [Python - data class and parser](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#eventbridge) - Pip `aws-lambda-powertools`
 - [Amazon EventBridge (CloudWatch Events)](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html) - NPM `@types/aws-lambda`
