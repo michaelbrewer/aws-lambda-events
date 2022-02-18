@@ -33,4 +33,4 @@ Directory of lambda events and resources
 - [ ] [Amazon SES](./ses.md)
 - [X] [Amazon SNS](./sns.md)
 - [X] [Amazon SQS](./sqs.md)
-- [ ] [Amazon WorkMail](./work-mail.md)
+- [X] [Amazon WorkMail](./work-mail.md)
