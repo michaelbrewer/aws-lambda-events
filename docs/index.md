@@ -16,7 +16,7 @@ Directory of lambda events and resources
 - [ ] [Amazon Connect](./connect.md)
 - [ ] [Amazon DynamoDB](./dynamodb.md)
 - [ ] [Amazon EC2](./ec2.md)
-- [ ] [Application Load Balancer](./alb.md)
+- [X] [Application Load Balancer](./alb.md)
 - [ ] [AWS IoT](./iot.md)
 - [ ] [AWS IoT Events](./iot-events.md)
 - [ ] [Apache Kafka](./apache-kafka.md)
