@@ -31,7 +31,7 @@ Can be invoked synchrously or asynchrously.
 }
 ```
 
-## Output
+## Response
 
 ### Synchronous Run Lambda response schema
 

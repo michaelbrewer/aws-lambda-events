@@ -112,7 +112,7 @@ sam local generate-event ses email-receiving
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

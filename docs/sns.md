@@ -42,7 +42,7 @@
 sam local generate-event sns notification
 ```
 
-## Output
+## Response
 
 ## Libraries
 

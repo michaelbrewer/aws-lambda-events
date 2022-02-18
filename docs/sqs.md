@@ -77,7 +77,7 @@ sam local generate-event sqs receive-message
 }
 ```
 
-## Output
+## Response
 
 ```json title="Example of partial failures"
 {
