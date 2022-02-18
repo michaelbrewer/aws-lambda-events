@@ -1,6 +1,6 @@
 # SQS
 
-Lambda polls the queue and invokes your Lambda function synchronously with an event that contains queue messages.
+Lambda polls the queue and invokes your Lambda function synchronously with an event that contains queue messages. By default, Lambda polls up to 10 messages in your queue at once and sends that batch to your function. 
 
 ## Input
 
@@ -122,6 +122,23 @@ sam local generate-event sqs receive-message
 
 ## Response
 
+Success and failure conditions
+
+Lambda treats a batch as a complete success if your function returns any of the following:
+
+- An empty `batchItemFailures` list
+- A null `batchItemFailures` list
+- An empty EventResponse
+- A `null` EventResponse
+
+Lambda treats a batch as a complete failure if your function returns any of the following:
+
+- An invalid JSON response
+- An empty string `itemIdentifier`
+- A null `itemIdentifier`
+- An `itemIdentifier` with a bad key name
+- An `itemIdentifier` value with a message ID that doesn't exist
+
 ```json title="Example of partial failures"
 {
     "batchItemFailures": [
@@ -173,3 +190,4 @@ def lambda_handler(event, context: LambdaContext):
 ## Reference Docs
 
 - [Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
+- [Tutorial: Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs-example.html)
