@@ -21,7 +21,7 @@ Directory of lambda events and resources
 - [ ] [AWS IoT Events](./iot-events.md)
 - [ ] [Apache Kafka](./apache-kafka.md)
 - [ ] [Amazon Kinesis Data Firehose](./kinesis-firehose.md)
-- [ ] [Amazon Kinesis](./kinesis-streams.md)
+- [X] [Amazon Kinesis Streams](./kinesis-streams.md)
 - [ ] [Amazon Lex](./lex.md)
 - [ ] [Amazon Lex V2](./lex-v2.md)
 - [ ] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ
