@@ -53,7 +53,7 @@ CodePipeline invokes your function asynchronously with an event that contains de
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

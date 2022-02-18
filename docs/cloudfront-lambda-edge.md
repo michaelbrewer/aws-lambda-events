@@ -122,7 +122,7 @@ CloudFront invokes lambda synchrously. Can be Node.js or Python. Up to 5 seconds
 }
 ```
 
-## Output
+## Response
 
 ### Example viewer response
 

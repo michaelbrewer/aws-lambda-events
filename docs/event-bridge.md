@@ -53,7 +53,7 @@ EventBridge (CloudWatch Events) message event
 
 ### Generating sample events via SAM CLI
 
-## Output
+## Response
 
 ## Libraries
 

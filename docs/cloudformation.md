@@ -20,7 +20,7 @@ AWS CloudFormation invokes your Lambda function asynchronously with an event tha
 }
 ```
 
-## Output
+## Response
 
 ```json
 {

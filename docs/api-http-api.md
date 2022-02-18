@@ -88,7 +88,7 @@ sam local generate-event TODO
 }
 ```
 
-## Output
+## Response
 
 ### Lambda function response for format 1.0
 

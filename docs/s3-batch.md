@@ -22,7 +22,7 @@ When the batch job starts, Amazon S3 invokes the Lambda function synchronously f
 }
 ```
 
-## Output
+## Response
 
 ```json title="Example Amazon S3 batch response"
 {

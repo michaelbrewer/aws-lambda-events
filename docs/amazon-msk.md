@@ -41,7 +41,7 @@ Lambda reads the messages in batches and provides these to your function as an e
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

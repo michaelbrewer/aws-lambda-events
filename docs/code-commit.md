@@ -45,7 +45,7 @@ sam local generate-event codecommit repository
 }
 ```
 
-## Output
+## Response
 
 Output data structure
 

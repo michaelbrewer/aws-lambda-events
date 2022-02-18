@@ -40,7 +40,7 @@ Amazon Connect invokes your Lambda function synchronously with an event that con
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

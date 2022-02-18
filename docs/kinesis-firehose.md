@@ -38,7 +38,7 @@
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

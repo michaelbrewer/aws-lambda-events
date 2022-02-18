@@ -247,7 +247,7 @@ Lex V2 schema
 }
 ```
 
-## Output
+## Response
 
 ```json
 {

@@ -156,7 +156,7 @@ JSON path to correlation id: `xAmzRequestId`
 }
 ```
 
-## Output
+## Response
 
 ```json
 {"status_code": 200}

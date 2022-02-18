@@ -152,7 +152,7 @@ sam local generate-event lex order-flowers
 }
 ```
 
-## Output
+## Response
 
 ### Response Event structure
 

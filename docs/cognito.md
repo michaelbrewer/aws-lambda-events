@@ -2,7 +2,7 @@
 
 ## Input
 
-## Output
+## Response
 
 ## Libraries
 

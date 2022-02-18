@@ -29,7 +29,7 @@
 }
 ```
 
-## Output
+## Response
 
 ```json
 {

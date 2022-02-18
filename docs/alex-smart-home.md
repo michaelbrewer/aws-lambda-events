@@ -4,6 +4,15 @@ Event-driven, synchronous invocation
 
 ## Input
 
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event alexa-smart-home smart-home-control-turn-off-request
+sam local generate-event alexa-smart-home smart-home-control-turn-on-request
+```
+
+## Event Example
+
 ```json title="Example Alexa smart home event"
 {
   "header": {
@@ -25,14 +34,7 @@ Event-driven, synchronous invocation
 }
 ```
 
-### Generating sample events via SAM CLI
-
-```shell
-sam local generate-event alexa-smart-home smart-home-control-turn-off-request
-sam local generate-event alexa-smart-home smart-home-control-turn-on-request
-```
-
-## Output
+## Response
 
 ```json
 {

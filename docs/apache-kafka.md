@@ -40,7 +40,7 @@ Lambda internally polls for new messages from the event source and then synchron
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

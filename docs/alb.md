@@ -4,6 +4,34 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 
 ## Input
 
+## Fields
+
+`targetGroupArn` (String)
+: Target group arn for your Lambda function
+
+`httpMethod` (String)
+: The HTTP method used. Valid values include: DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT.
+
+`path` (String)
+: Http request path
+
+`multiValueQueryStringParameters` (Optional, map of string to list of strings)
+: If you enable multi-value headers, the load balancer uses both key values sent by the client and sends you an event that includes query string parameters using multiValueQueryStringParameters
+
+`queryStringParameters` (Optional, map of string to string)
+: Query string parameters sent by the client.
+
+`headers` (Optional, map of string to string)
+: Http header sent by the client.
+
+`isBase64Encoded` (Boolean)
+: A Boolean flag to indicate if the request body is Base64-encoded.
+
+`body` (Optional, string)
+: The request body sent by the client.
+
+## Example Event
+
 ```json title="Application Load Balance GET request"
 {
   "requestContext": {
@@ -16,6 +44,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
   "queryStringParameters": {
     "query": "1234ABCD"
   },
+  "multiValueQueryStringParameters": { "myKey": ["val1", "val2"] },
   "headers": {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
     "accept-encoding": "gzip",
@@ -45,7 +74,26 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 sam local generate-event TODO
 ```
 
-## Output
+## Response
+
+## Response Fields
+
+`isBase64Encoded` (Boolean)
+: A Boolean flag to indicate if the response body is Base64-encoded.
+
+`statusCode` (Integer)
+: The HTTP status code.
+
+`statusDescription` (String)
+: The HTTP status description.
+
+`headers` (Optional, map of string to string)
+: Http header to be sent in the response.
+
+`body` (Optional, string)
+: The response body sent by the server.
+
+## Response Structure
 
 ```json title="Example 200 html response"
 {
@@ -56,6 +104,15 @@ sam local generate-event TODO
         "Content-Type": "text/html"
     },
     "body": "<h1>Hello from Lambda!</h1>"
+}
+```
+
+```json title="If you enable multi-value headers, you must specify multiple cookies as follows"
+{
+  "multiValueHeaders": {
+      "Set-cookie": ["cookie-name=cookie-value;Domain=myweb.com;Secure;HttpOnly","cookie-name=cookie-value;Expires=May 8, 2019"],
+      "Content-Type": ["application/json"]
+  },
 }
 ```
 
@@ -73,7 +130,20 @@ Event Handlers by Language
 - [AWS Lambda Powertools Python - ALBResolver](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/)
 - [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container)
 
+## Code Examples
+
+- [application-load-balancer-serverless-app](https://github.com/aws/elastic-load-balancing-tools/tree/master/application-load-balancer-serverless-app)
+
+## Limits
+
+- The Lambda function and target group must be in the same account and in the same Region.
+- The maximum size of the request body that you can send to a Lambda function is 1 MB. For related size limits, see HTTP header limits.
+- The maximum size of the response JSON that the Lambda function can send is 1 MB.
+- WebSockets are not supported. Upgrade requests are rejected with an HTTP 400 code.
+- Local Zones are not supported.
+
 ## Reference Docs
 
 - [Using AWS Lambda with an Application Load Balancer](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html)
 - [ALB - Lambda functions as targets](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html)
+- [Lambda functions as targets for Application Load Balancers](https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/)

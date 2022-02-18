@@ -35,7 +35,7 @@ CloudWatch Logs message data (decoded) example
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

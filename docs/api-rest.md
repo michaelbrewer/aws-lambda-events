@@ -227,7 +227,7 @@ sam local generate-event apigateway aws-proxy --body {"test":"body"} --path foo 
 sam local generate-event apigateway aws-proxy --path foo --method GET
 ```
 
-## Output
+## Response
 
 Output data structure
 

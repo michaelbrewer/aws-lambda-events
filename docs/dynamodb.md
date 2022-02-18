@@ -76,7 +76,7 @@ sam local generate-event dynamodb update
   ]}
 ```
 
-## Output
+## Response
 
 ## Libraries
 

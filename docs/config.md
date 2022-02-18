@@ -19,7 +19,7 @@ Event-driven asynchronous invocation
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

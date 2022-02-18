@@ -97,7 +97,7 @@ RabbitMQ
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 

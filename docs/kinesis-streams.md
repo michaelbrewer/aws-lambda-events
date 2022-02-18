@@ -43,7 +43,7 @@
 }
 ```
 
-## Output
+## Response
 
 ## Libraries
 
