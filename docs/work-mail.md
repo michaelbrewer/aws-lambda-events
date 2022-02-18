@@ -4,6 +4,37 @@ Can be invoked synchrously or asynchrously.
 
 ## Input
 
+### Input fields
+
+`summaryVersion` (String)
+: AWS WorkMail Message Summary Version
+
+`mailFrom` (Object)
+: Mail from email address
+
+`recipients` (List)
+: List of all of the email recipients
+
+`sender` (Object)
+: Sender email address
+
+`subject` (String)
+: Email subject (Truncated to first 256 chars)"
+
+`messageId` (String)
+: Message id for retrieval using workmail flow API
+
+`invocationId` (String)
+: Id of this lambda invocation. Useful for detecting retries and avoiding duplication
+
+`flowDirection` (String)
+: Indicating direction of email flow. Value is either "INBOUND" or "OUTBOUND"
+
+`truncated` (Boolean)
+: Boolean indicating if any field in message was truncated due to size limitations
+
+### Input event structure
+
 ```json
 {
   "summaryVersion": "2018-10-10",
@@ -32,6 +63,23 @@ Can be invoked synchrously or asynchrously.
 ```
 
 ## Response
+
+## Response fields
+
+`actions` (Array)
+: Required, should contain at least 1 list element
+
+`type` (String)
+: Required. Can be "BOUNCE", "DROP" or "DEFAULT"
+
+`parameters` (String)
+: Optional. For bounce, <various> can be `{"bounceMessage": "message that goes in bounce mail"}`
+
+`recipients` (Optional, list of strings)
+: Optional. Indicates list of recipients for which this action applies
+
+`allRecipients` (Optional, boolean)
+: Optional. Indicates whether this action applies to all recipients
 
 ### Synchronous Run Lambda response schema
 
@@ -88,6 +136,8 @@ Can be invoked synchrously or asynchrously.
 ```
 
 ## Libraries
+
+- [Amazon WorkMail Lambda Templates](https://github.com/aws-samples/amazon-workmail-lambda-templates)
 
 ## Reference Docs
 
