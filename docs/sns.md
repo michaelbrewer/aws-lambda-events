@@ -1,5 +1,7 @@
 # SNS
 
+Amazon SNS invokes your function asynchronously with an event that contains a message and metadata.
+
 ## Input
 
 ```json title="Example Amazon SNS message event"
@@ -43,6 +45,8 @@ sam local generate-event sns notification
 ```
 
 ## Response
+
+N/A
 
 ## Libraries
 
