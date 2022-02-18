@@ -76,7 +76,7 @@ sam local generate-event TODO
 
 ## Response
 
-## Response Fields
+### Response Fields
 
 `isBase64Encoded` (Boolean)
 : A Boolean flag to indicate if the response body is Base64-encoded.
@@ -93,7 +93,7 @@ sam local generate-event TODO
 `body` (Optional, string)
 : The response body sent by the server.
 
-## Response Structure
+### Response Structure
 
 ```json title="Example 200 html response"
 {
