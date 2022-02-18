@@ -31,6 +31,6 @@ Directory of lambda events and resources
 - [X] [S3 Object Lambda](./s3-object-lambda.md)
 - [ ] [Secrets Manager](./secrets-manager.md)
 - [ ] [Amazon SES](./ses.md)
-- [ ] [Amazon SNS](./sns.md)
+- [X] [Amazon SNS](./sns.md)
 - [X] [Amazon SQS](./sqs.md)
 - [ ] [Amazon WorkMail](./work-mail.md)
