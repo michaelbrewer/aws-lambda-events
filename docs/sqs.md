@@ -4,6 +4,49 @@ Lambda polls the queue and invokes your Lambda function synchronously with an ev
 
 ## Input
 
+### Input fields
+
+`Records` - An array of records.
+
+`messageId` (String)
+: A unique identifier for the message. A messageId is considered unique across all AWS accounts 
+for an extended period of time.
+
+`receiptHandle` (String)
+: An identifier associated with the act of receiving the message.
+  A new receipt handle is returned every time you receive a message. When deleting a message,
+  you provide the last received receipt handle to delete the message.
+
+`body` (String)
+: The message's contents (not URL-encoded).
+
+`attributes` (Object)
+: A map of the attributes requested in ReceiveMessage to their respective values.
+
+- `AWSTraceHeader` (Optional, String) - Returns the AWS X-Ray trace header string.
+- `ApproximateReceiveCount` (String) - Returns the number of times a message has been received across all queues but not deleted.
+- `SentTimestamp` (String) - Returns the time the message was sent to the queue (epoch time in milliseconds).
+- `SenderId` (String) - For an IAM user, returns the IAM user ID, For an IAM role, returns the IAM role ID
+- `ApproximateFirstReceiveTimestamp` (String) - Returns the time the message was first received from the queue (epoch time in milliseconds).
+- `SequenceNumber` (Optional, String) - The large, non-consecutive number that Amazon SQS assigns to each message.
+- `MessageGroupId` (Optional, String) - The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are always processed one by one, in a strict order relative to the message group (however, messages that belong to different message groups might be processed out of order).
+- `MessageDeduplicationId` (Optional, String) - The token used for deduplication of sent messages. If a message with a particular message deduplication ID is sent successfully, any messages sent with the same message deduplication ID are accepted successfully but aren't delivered during the 5-minute deduplication interval.
+
+`messageAttributes` (Object)
+: Each message attribute consists of a Name, Type, and Value.
+
+`md5OfBody` (String)
+: An MD5 digest of the non-URL-encoded message body string.
+
+`eventSource` (String)
+: The AWS service from which the SQS record originated. For SQS, this is `aws:sqs`
+
+`eventSourceARN` (String)
+: The Amazon Resource Name (ARN) of the event sourc
+
+`awsRegion` (String)
+: aws region eg: us-east-1
+
 ### Generating sample events via SAM CLI
 
 ```shell
@@ -91,7 +134,13 @@ sam local generate-event sqs receive-message
 
 ## Libraries
 
+- [SQSEvent - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#sqs) - PIP `aws-lambda-powertools`
 - [SQS Batch Handler - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/) - PIP `aws-lambda-powertools`
+- [SQSEvent - Go](https://github.com/aws/aws-lambda-go/blob/main/events/README_SQS.md) - Go `github.com/aws/aws-lambda-go/events`
+- [SqsEvent - Php](https://bref.sh/docs/function/handlers.html#sqs-events)
+= [SQSEvent - Java](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/SQSEvent.java)
+- [SQSEvent - DotNew](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.SQSEvents)
+- [SQSEvent - Typescript](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/sqs.d.ts)
 
 ## Code Examples
 

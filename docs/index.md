@@ -32,5 +32,5 @@ Directory of lambda events and resources
 - [ ] [Secrets Manager](./secrets-manager.md)
 - [ ] [Amazon SES](./ses.md)
 - [ ] [Amazon SNS](./sns.md)
-- [ ] [Amazon SQS](./sqs.md)
+- [X] [Amazon SQS](./sqs.md)
 - [ ] [Amazon WorkMail](./work-mail.md)

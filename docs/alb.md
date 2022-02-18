@@ -4,7 +4,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 
 ## Input
 
-## Fields
+## Input Fields
 
 `targetGroupArn` (String)
 : Target group arn for your Lambda function
