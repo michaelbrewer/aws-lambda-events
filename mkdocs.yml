@@ -17,6 +17,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+
 markdown_extensions:
   - admonition
   - def_list
@@ -30,6 +31,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 plugins:
   - git-revision-date

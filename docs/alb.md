@@ -4,7 +4,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 
 ## Input
 
-## Input Fields
+### Input Fields
 
 `targetGroupArn` (String)
 : Target group arn for your Lambda function
@@ -30,7 +30,17 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 `body` (Optional, string)
 : The request body sent by the client.
 
-## Example Event
+### Getting the correlation id
+
+JSON path to correlation id: `headers."x-amzn-trace-id"`
+
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event TODO
+```
+
+### Example Event
 
 ```json title="Application Load Balance GET request"
 {
@@ -64,16 +74,6 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 }
 ```
 
-### Getting the correlation id
-
-JSON path to correlation id: `headers."x-amzn-trace-id"`
-
-### Generating sample events via SAM CLI
-
-```shell
-sam local generate-event TODO
-```
-
 ## Response
 
 ### Response Fields
@@ -93,7 +93,7 @@ sam local generate-event TODO
 `body` (Optional, string)
 : The response body sent by the server.
 
-### Response Structure
+### Response Examples
 
 ```json title="Example 200 html response"
 {
@@ -107,23 +107,33 @@ sam local generate-event TODO
 }
 ```
 
-```json title="If you enable multi-value headers, you must specify multiple cookies as follows"
+!!! Note
+    If you enable multi-value headers, you must specify multiple cookies as follows
+
+```json
 {
-  "multiValueHeaders": {
-      "Set-cookie": ["cookie-name=cookie-value;Domain=myweb.com;Secure;HttpOnly","cookie-name=cookie-value;Expires=May 8, 2019"],
-      "Content-Type": ["application/json"]
-  },
-}
+  "multiValueHeaders":{
+      "Set-cookie":[
+        "cookie-name=cookie-value;Domain=myweb.com;Secure;HttpOnly",
+        "cookie-name=cookie-value;Expires=May 8, 2019"
+      ],
+      "Content-Type":[
+        "application/json"
+      ]
+  }
+}  
 ```
 
 ## Libraries
 
-- [Python - data class and parser](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#application-load-balancer) - Pip `aws-lambda-powertools`
+Typed Lambda handlers by Language
+
+- [Python - ALBEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#application-load-balancer) - Pip `aws-lambda-powertools`
 - [Typescript - alb.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/alb.d.ts) - NPM `@types/aws-lambda`
-- [Rust - alb/mod.rs traits](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/alb/mod.rs) - Cargo `aws_lambda_events`
-- [Go - ALBTargetGroupEvents typing](https://github.com/aws/aws-lambda-go/blob/main/events/README_ALBTargetGroupEvents.md) - Crate `github.com/aws/aws-lambda-go/events`
-- [Java - ApplicationLoadBalancerRequestEvent data classes](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/ApplicationLoadBalancerRequestEvent.javaa) - Maven `aws-lambda-java-events`
-- [DoNet - ApplicationLoadBalancerEvents data classes](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.ApplicationLoadBalancerEvents) - NuGet `Amazon.Lambda.ApplicationLoadBalancerEvents`
+- [Rust - alb/mod.rs](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/alb/mod.rs) - Cargo `aws_lambda_events`
+- [Go - ALBTargetGroupEvents](https://github.com/aws/aws-lambda-go/blob/main/events/README_ALBTargetGroupEvents.md) - Crate `github.com/aws/aws-lambda-go/events`
+- [Java - ApplicationLoadBalancerRequestEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/ApplicationLoadBalancerRequestEvent.javaa) - Maven `aws-lambda-java-events`
+- [DoNet - ApplicationLoadBalancerEvents](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.ApplicationLoadBalancerEvents) - NuGet `Amazon.Lambda.ApplicationLoadBalancerEvents`
 
 Event Handlers by Language
 
