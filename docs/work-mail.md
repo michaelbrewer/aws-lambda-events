@@ -137,7 +137,7 @@ Can be invoked synchrously or asynchrously.
 
 ## Libraries
 
-- [Amazon WorkMail Lambda Templates](https://github.com/aws-samples/amazon-workmail-lambda-templates)
+- [Amazon WorkMail Lambda Templates - Python](https://github.com/aws-samples/amazon-workmail-lambda-templates)
 
 ## Reference Docs
 
