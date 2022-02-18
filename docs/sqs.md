@@ -151,13 +151,18 @@ Lambda treats a batch as a complete failure if your function returns any of the 
 
 ## Libraries
 
+Typings in different languages
+
 - [SQSEvent - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#sqs) - PIP `aws-lambda-powertools`
-- [SQS Batch Handler - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/) - PIP `aws-lambda-powertools`
 - [SQSEvent - Go](https://github.com/aws/aws-lambda-go/blob/main/events/README_SQS.md) - Go `github.com/aws/aws-lambda-go/events`
 - [SqsEvent - Php](https://bref.sh/docs/function/handlers.html#sqs-events) - Composer `bref/bref`
-= [SQSEvent - Java](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/SQSEvent.java)
-- [SQSEvent - DotNew](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.SQSEvents)
+- [SQSEvent - Java](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/SQSEvent.java)
+- [SQSEvent - DotNet](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.SQSEvents)
 - [SQSEvent - Typescript](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/sqs.d.ts)
+
+Full event handler
+
+- [SQS Batch Handler - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/) - PIP `aws-lambda-powertools`
 
 ## Code Examples
 
