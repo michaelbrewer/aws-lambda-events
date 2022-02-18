@@ -34,3 +34,8 @@ markdown_extensions:
 plugins:
   - git-revision-date
   - search
+
+extra:
+  analytics:
+    provider: google
+    property: UA-191564964-1
