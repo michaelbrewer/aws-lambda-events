@@ -6,6 +6,10 @@ AWS CloudFormation invokes your Lambda function asynchronously with an event tha
 
 ## Input fields
 
+- [Create input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-create.html)
+- [Delete input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-delete.html)
+- [Update input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-update.html)
+
 `RequestType` (String)
 : The request type is set by the AWS CloudFormation stack operation (create-stack, update-stack, or delete-stack) that was initiated by
 the template developer for the stack that contains the custom resource.
