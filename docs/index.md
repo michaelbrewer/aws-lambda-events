@@ -23,7 +23,7 @@ Directory of lambda events and resources
 - [X] [Amazon Kinesis Data Firehose](./kinesis-firehose.md)
 - [X] [Amazon Kinesis Streams](./kinesis-streams.md)
 - [X] [Amazon Lex](./lex.md)
-- [ ] [Amazon Lex V2](./lex-v2.md)
+- [X] [Amazon Lex V2](./lex-v2.md)
 - [ ] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ
 - [ ] [Amazon MSK](./amazon-msk.md)
 - [ ] [S3](./s3.md)
