@@ -34,3 +34,7 @@ Directory of lambda events and resources
 - [X] [Amazon SNS](./sns.md)
 - [X] [Amazon SQS](./sqs.md)
 - [X] [Amazon WorkMail](./work-mail.md)
+- [X] [AppSync Resolver](./appsync-resolver.md)
+- [X] [AppSync Custom Authorizer](./appsync-authorizer.md)
+- [ ] [API Gateway Custom Authorizer - Rest API](./api-customer-authorizer-rest.md)
+- [ ] [API Gateway Custom Authorizer - HTTP API](./api-customer-authorizer-http.md)
