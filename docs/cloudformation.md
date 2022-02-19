@@ -4,7 +4,7 @@ AWS CloudFormation invokes your Lambda function asynchronously with an event tha
 
 ## Input
 
-## Input fields
+### Input fields
 
 - [Create input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-create.html)
 - [Delete input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-delete.html)
@@ -43,7 +43,7 @@ facilitate communication between the custom resource provider and the template d
 `OldResourceProperties` (Object)
 : Used only for `Update` requests. Contains the resource properties that were declared previous to the update request.
 
-## Input examples
+### Input examples
 
 ```json title="Create event"
 {
@@ -103,6 +103,12 @@ facilitate communication between the custom resource provider and the template d
       "key3" : { "key4" : "map" }
    }
 }
+```
+
+### Generating sample events via SAM CLI
+
+```shell
+sam local generate-event cloudformation create-request
 ```
 
 ## Response
