@@ -1,6 +1,6 @@
 # Code Commit
 
-CodeCommit repository events in the repository invoke a Lambda function
+Event-driven, asynchronous invocation. CodeCommit repository events in the repository invoke a Lambda function
 
 ## Input
 
@@ -47,10 +47,7 @@ sam local generate-event codecommit repository
 
 ## Response
 
-Output data structure
-
-```json
-```
+N/A
 
 ## Libraries
 
