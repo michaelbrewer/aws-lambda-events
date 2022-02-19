@@ -46,3 +46,4 @@ When the batch job starts, Amazon S3 invokes the Lambda function synchronously f
 ## Reference Docs
 
 - [Using AWS Lambda with Amazon S3 batch operations](https://docs.aws.amazon.com/lambda/latest/dg/services-s3-batch.html)
+- [S3 Batch - Invoke AWS Lambda function](https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-invoke-lambda.html)
