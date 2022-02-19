@@ -204,3 +204,4 @@ sam local generate-event lex order-flowers
 
 - [Using AWS Lambda with Amazon Lex](https://docs.aws.amazon.com/lambda/latest/dg/services-lex.html)
 - [Lambda Function Input Event and Response Format](https://docs.aws.amazon.com/lex/latest/dg/lambda-input-response-format.html)
+- [Create a Question and Answer Bot with Amazon Lex and Amazon Alexa](https://aws.amazon.com/blogs/machine-learning/creating-a-question-and-answer-bot-with-amazon-lex-and-amazon-alexa/#new-features-log) - Now updated to use [Lex V2](./lex-v2.md)
