@@ -3,11 +3,11 @@
 Directory of lambda events and resources
 
 - [x] [API Gateway Rest API](./api-rest.md)
-- [ ] [API Gateway Http API](./api-http-api.md)
-- [ ] [Alexa Smart Home](./alex-smart-home.md)
+- [X] [API Gateway Http API](./api-http-api.md)
+- [X] [Alexa Smart Home](./alex-smart-home.md)
 - [X] [Amazon EventBridge](./event-bridge.md)
-- [ ] [CloudWatch Logs](./cloudwatch-logs.md)
-- [ ] [CloudFormation](./cloudformation.md)
+- [X] [CloudWatch Logs](./cloudwatch-logs.md)
+- [X] [CloudFormation - Custom Resource](./cloudformation.md)
 - [ ] [CloudFront Lambda@Edge](./cloudfront-lambda-edge.md)
 - [ ] [CodeCommit](./code-commit.md)
 - [ ] [CodePipeline](./code-pipeline.md)

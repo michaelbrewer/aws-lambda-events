@@ -2,6 +2,9 @@
 
 Events are sent synchronously to the Lambda function with a timeout of 25 seconds.
 
+!!! NOTE
+    The input and out format matches [Http api format 1.0](./api-http-api.md#response-for-format-10)
+
 ## Input
 
 Http GET request example

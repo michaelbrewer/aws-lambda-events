@@ -1,6 +1,6 @@
 # API Gateway Http API
 
-Amazon API Gateway invokes your function synchronously with an event that contains a JSON representation of the HTTP request. 
+Amazon API Gateway invokes your function synchronously with an event that contains a JSON representation of the HTTP request.
 
 ## Input
 
@@ -11,10 +11,18 @@ JSON path to correlation id: `requestContext.requestId`
 ### Generating sample events via SAM CLI
 
 ```shell
-sam local generate-event TODO
+# PR open with sam cli (https://github.com/aws/aws-sam-cli/pull/3655)
 ```
 
-### Example events
+### Input Stucture format 2.0
+
+!!! NOTE
+    Format 2.0 doesn't have multiValueHeaders or multiValueQueryStringParameters fields. Duplicate headers
+    are combined with commas and included in the headers field. Duplicate query strings are combined with
+    commas and included in the queryStringParameters field.
+
+    Format 2.0 includes a new cookies field. All cookie headers in the request are combined with commas and
+    added to the cookies field. In the response to the client, each cookie becomes a set-cookie header.
 
 ```json title="Http api format 2.0"
 {
@@ -88,21 +96,108 @@ sam local generate-event TODO
 }
 ```
 
-## Response
+### Input Stucture format 1.0
 
-### Lambda function response for format 1.0
-
-```json title="Lambda function response for format 1.0"
+```json title="Http api format 1.0"
 {
-    "isBase64Encoded": true|false,
-    "statusCode": httpStatusCode,
-    "headers": { "headername": "headervalue", ... },
-    "multiValueHeaders": { "headername": ["headervalue", "headervalue2", ...], ... },
-    "body": "..."
+  "version": "1.0",
+  "resource": "/my/path",
+  "path": "/my/path",
+  "httpMethod": "GET",
+  "headers": {
+    "header1": "value1",
+    "header2": "value2"
+  },
+  "multiValueHeaders": {
+    "header1": [
+      "value1"
+    ],
+    "header2": [
+      "value1",
+      "value2"
+    ]
+  },
+  "queryStringParameters": {
+    "parameter1": "value1",
+    "parameter2": "value"
+  },
+  "multiValueQueryStringParameters": {
+    "parameter1": [
+      "value1",
+      "value2"
+    ],
+    "parameter2": [
+      "value"
+    ]
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "id",
+    "authorizer": {
+      "claims": null,
+      "scopes": null
+    },
+    "domainName": "id.execute-api.us-east-1.amazonaws.com",
+    "domainPrefix": "id",
+    "extendedRequestId": "request-id",
+    "httpMethod": "GET",
+    "identity": {
+      "accessKey": null,
+      "accountId": null,
+      "caller": null,
+      "cognitoAuthenticationProvider": null,
+      "cognitoAuthenticationType": null,
+      "cognitoIdentityId": null,
+      "cognitoIdentityPoolId": null,
+      "principalOrgId": null,
+      "sourceIp": "IP",
+      "user": null,
+      "userAgent": "user-agent",
+      "userArn": null,
+      "clientCert": {
+        "clientCertPem": "CERT_CONTENT",
+        "subjectDN": "www.example.com",
+        "issuerDN": "Example issuer",
+        "serialNumber": "a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1:a1",
+        "validity": {
+          "notBefore": "May 28 12:30:02 2019 GMT",
+          "notAfter": "Aug  5 09:36:04 2021 GMT"
+        }
+      }
+    },
+    "path": "/my/path",
+    "protocol": "HTTP/1.1",
+    "requestId": "id=",
+    "requestTime": "04/Mar/2020:19:15:17 +0000",
+    "requestTimeEpoch": 1583349317135,
+    "resourceId": null,
+    "resourcePath": "/my/path",
+    "stage": "$default"
+  },
+  "pathParameters": null,
+  "stageVariables": null,
+  "body": "Hello from Lambda!",
+  "isBase64Encoded": false
 }
 ```
 
-### Lambda function response for format 2.0
+## Response
+
+Base64 encoded response example
+
+```json
+{
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application/json",
+        "Content-Encoding": "gzip"
+    },
+    "body": "H4sIAAAAAAACE6tWKkktLlGyUlAqS8wpTVWqBQCJ88g/EQAAAA==",
+    "isBase64Encoded": true
+}
+```
+
+### Response for format 2.0
 
 ```json title="Lambda function response for format 2.0"
 {
@@ -111,6 +206,18 @@ sam local generate-event TODO
     "statusCode": httpStatusCode,
     "headers": { "headername": "headervalue", ... },
     "body": "Hello from Lambda!"
+}
+```
+
+### Response for format 1.0
+
+```json title="Lambda function response for format 1.0"
+{
+    "isBase64Encoded": true|false,
+    "statusCode": httpStatusCode,
+    "headers": { "headername": "headervalue", ... },
+    "multiValueHeaders": { "headername": ["headervalue", "headervalue2", ...], ... },
+    "body": "..."
 }
 ```
 
