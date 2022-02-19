@@ -42,7 +42,7 @@ Event-driven, synchronous invocation. Kinesis Data Firehose can invoke your Lamb
 
 ## Response
 
-## Response Fields
+### Response Fields
 
 `recordId` (String)
 : The record ID is passed from Kinesis Data Analytics to Lambda during the invocation. The transformed record must contain the same record ID. Any mismatch between the ID of the original record and the ID of the transformed record is treated as a data preprocessing failure.
@@ -73,6 +73,49 @@ The possible values are:
 ```
 
 ## Libraries
+
+- [DotNet - KinesisFirehoseEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.KinesisFirehoseEvents) - NuGet `Amazon.Lambda.KinesisFirehoseEvents`
+- [Java - KinesisFirehoseEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/KinesisFirehoseEvent.java)
+
+### Code Examples
+
+```csharp
+public class Function
+{
+
+    public KinesisFirehoseResponse FunctionHandler(KinesisFirehoseEvent evnt, ILambdaContext context)
+    {
+        context.Logger.LogLine($"InvocationId: {evnt.InvocationId}");
+        context.Logger.LogLine($"DeliveryStreamArn: {evnt.DeliveryStreamArn}");
+        context.Logger.LogLine($"Region: {evnt.Region}");
+
+        var response = new KinesisFirehoseResponse
+        {
+            Records = new List<KinesisFirehoseResponse.FirehoseRecord>()
+        };
+
+        foreach (var record in evnt.Records)
+        {
+            context.Logger.LogLine($"\tRecordId: {record.RecordId}");
+            context.Logger.LogLine($"\t\tApproximateArrivalEpoch: {record.ApproximateArrivalEpoch}");
+            context.Logger.LogLine($"\t\tApproximateArrivalTimestamp: {record.ApproximateArrivalTimestamp}");
+            context.Logger.LogLine($"\t\tData: {record.DecodeData()}");
+
+            // Transform data: For example ToUpper the data
+            var transformedRecord = new KinesisFirehoseResponse.FirehoseRecord
+            {
+                RecordId = record.RecordId,
+                Result = KinesisFirehoseResponse.TRANSFORMED_STATE_OK                    
+            };
+            transformedRecord.EncodeData(record.DecodeData().ToUpperInvariant());
+
+            response.Records.Add(transformedRecord);
+        }
+
+        return response;
+    }
+}
+```
 
 ## Reference Docs
 
