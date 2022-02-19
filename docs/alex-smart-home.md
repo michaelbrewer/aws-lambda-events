@@ -11,7 +11,7 @@ sam local generate-event alexa-smart-home smart-home-control-turn-off-request
 sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 ```
 
-## Event Example
+### Event Example
 
 ```json title="Example Alexa smart home event"
 {

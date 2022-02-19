@@ -37,7 +37,7 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 ### Generating sample events via SAM CLI
 
 ```shell
-sam local generate-event TODO
+# Gibhub PR (https://github.com/aws/aws-sam-cli/pull/3670)
 ```
 
 ### Example Event
@@ -140,7 +140,7 @@ Event Handlers by Language
 - [AWS Lambda Powertools Python - ALBResolver](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/)
 - [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container)
 
-## Code Examples
+### Code Examples
 
 - [application-load-balancer-serverless-app](https://github.com/aws/elastic-load-balancing-tools/tree/master/application-load-balancer-serverless-app)
 

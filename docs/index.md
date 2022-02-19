@@ -1,4 +1,18 @@
-# Directory of AWS Lambda Events
+# AWS Lambda Event Resources
+
+Objective is to collect resources on lambda inputs (requests) and outputs (responses) as well as the following:
+
+- Input schema
+- Output schema
+- Example event inputs
+- Libraries for typing, data structures, and other utilities
+- Event handlers libraries by language
+- Response handlers
+- Limitations of each type of lambda
+- Documentation
+- Code examples
+
+## Directory of AWS Lambda Events
 
 Directory of lambda events and resources
 
@@ -10,7 +24,7 @@ Directory of lambda events and resources
 - [X] [CloudFormation - Custom Resource](./cloudformation.md)
 - [X] [CloudFront Lambda@Edge](./cloudfront-lambda-edge.md)
 - [X] [CodeCommit](./code-commit.md)
-- [ ] [CodePipeline](./code-pipeline.md)
+- [X] [CodePipeline Job](./code-pipeline-job.md)
 - [ ] [Amazon Cognito](./cognito.md)
 - [ ] [AWS Config](./config.md)
 - [ ] [Amazon Connect](./connect.md)
@@ -38,3 +52,12 @@ Directory of lambda events and resources
 - [X] [AppSync Custom Authorizer](./appsync-authorizer.md)
 - [ ] [API Gateway Custom Authorizer - Rest API](./api-customer-authorizer-rest.md)
 - [ ] [API Gateway Custom Authorizer - HTTP API](./api-customer-authorizer-http.md)
+
+## General Resources
+
+List of resources that are used in AWS Lambda
+
+- [AWS Lambda Powertools - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/)
+- [AWS Lambda Powertools - Typescript](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/)
+- [AWS Lambda Powertools - Java](https://awslabs.github.io/aws-lambda-powertools-java/)
+- [Bref - Php](https://bref.sh/)
