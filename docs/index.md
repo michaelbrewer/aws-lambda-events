@@ -31,7 +31,7 @@ Directory of lambda events and resources
 - [X] [CodeCommit](./code-commit.md)
 - [X] [CodePipeline - Job](./code-pipeline-job.md)
 - [X] [Amazon Cognito - User Pool](./cognito-user-pool.md)
-    - [ ] [AWS Cognito - Sync](./cognito-sync.md)
+    - [ ] [AWS Cognito - Sync](./cognito-events.md)
 - [X] [AWS Config](./config.md)
 - [X] [Amazon Connect](./connect.md)
 - [ ] [Amazon DynamoDB](./dynamodb.md)
