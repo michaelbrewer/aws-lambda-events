@@ -413,3 +413,4 @@ def handler(event: DefineAuthChallengeTriggerEvent, context) -> dict:
 ## Reference Docs
 
 - [Customizing user pool workflows with Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html){target="_blank"}
+- [Anonymous User Identities with Cognito Lambda Triggers](https://bitesizedserverless.com/bite/anonymous-user-identities-with-cognito-lambda-triggers/)
