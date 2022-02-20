@@ -2,6 +2,7 @@
 
 Lambda internally polls for new messages from the event source and then synchronously invokes the target Lambda function.
 Lambda reads the messages in batches and provides these to your function as an event payload. The maximum batch size is configurable. (The default is 100 messages.)
+Lambda can run your function for up to 14 minutes.
 
 ## Input
 
@@ -47,7 +48,11 @@ Lambda reads the messages in batches and provides these to your function as an e
 
 Typed Lambda handlers by Language
 
-- [Typescript - msk.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/msk.d.ts) - NPM `@types/aws-lambda`
+- [Typescript - MSKEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/msk.d.ts) - NPM `@types/aws-lambda`
+
+### Code examples
+
+- [Amazon MSK AWS Lambda Integration Lab - Code](https://github.com/aws-samples/integration-sample-lambda-msk)
 
 ## Reference Docs
 

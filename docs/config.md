@@ -21,7 +21,11 @@ Event-driven asynchronous invocation
 
 ## Response
 
+N/A
+
 ## Libraries
+
+N/A
 
 ## Reference Docs
 

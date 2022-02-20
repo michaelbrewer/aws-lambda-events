@@ -4,7 +4,11 @@ Amazon EventBridge (formerly called CloudWatch Events) invokes your function asy
 
 ## Input
 
-### Example Events
+### Example CloudWatch Event
+
+- [CloudWatch Events Event Examples From Supported Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html){target="_blank"}
+
+#### EventBridge event example
 
 ```json title="EventBridge (CloudWatch Events) event example"
 {
@@ -31,6 +35,8 @@ Amazon EventBridge (formerly called CloudWatch Events) invokes your function asy
 }
 ```
 
+#### EventBridge message event
+
 ```json title="EventBridge (CloudWatch Events) message event"
 {
    "version":"0",
@@ -46,6 +52,8 @@ Amazon EventBridge (formerly called CloudWatch Events) invokes your function asy
    ]
 }
 ```
+
+#### EventBridge S3 event
 
 ```json title="EventBridge S3 event"
 {
@@ -79,7 +87,30 @@ Amazon EventBridge (formerly called CloudWatch Events) invokes your function asy
 }
 ```
 
-- [CloudWatch Events Event Examples From Supported Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html)
+#### EC2 Instance State-change Event
+
+EventBridge (CloudWatch Events) invokes your Lambda function asynchronously with the event document from Amazon EC2.
+
+- [Using AWS Lambda with Amazon EC2](https://docs.aws.amazon.com/lambda/latest/dg/services-ec2.html){target="_blank"}
+
+```json title="Amazon EC2 State Change Events"
+{
+    "version": "0",
+    "id": "b6ba298a-7732-2226-xmpl-976312c1a050",
+    "detail-type": "EC2 Instance State-change Notification",
+    "source": "aws.ec2",
+    "account": "123456798012",
+    "time": "2019-10-02T17:59:30Z",
+    "region": "us-east-2",
+    "resources": [
+        "arn:aws:ec2:us-east-2:123456798012:instance/i-0c314xmplcd5b8173"
+    ],
+    "detail": {
+        "instance-id": "i-0c314xmplcd5b8173",
+        "state": "running"
+    }
+}
+```
 
 ### Getting the correlation id
 
@@ -119,6 +150,6 @@ public class Function
 
 ## Reference Docs
 
-- [Amazon EventBridge (CloudWatch Events)](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html)
-- [Use Amazon S3 Event Notifications with Amazon EventBridge](https://aws.amazon.com/blogs/aws/new-use-amazon-s3-event-notifications-with-amazon-eventbridge/)
-- [CloudWatch Events Event Examples From Supported Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html)
+- [Amazon EventBridge (CloudWatch Events)](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html){target="_blank"}
+- [Use Amazon S3 Event Notifications with Amazon EventBridge](https://aws.amazon.com/blogs/aws/new-use-amazon-s3-event-notifications-with-amazon-eventbridge/){target="_blank"}
+- [CloudWatch Events Event Examples From Supported Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/EventTypes.html){target="_blank"}

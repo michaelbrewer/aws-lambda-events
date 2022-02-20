@@ -28,7 +28,7 @@ markdown_extensions:
       anchor_linenums: true
   - toc:
       permalink: true
-      toc_depth: 6
+      toc_depth: 4
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
