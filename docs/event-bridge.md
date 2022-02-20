@@ -133,6 +133,7 @@ N/A
 - [Go - CloudWatchEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_CloudWatch_Events.md)
 - [DotNet - CloudWatchEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.CloudWatchEvents) - NuGet `Amazon.Lambda.CloudWatchEvents`
 - [Php - EventBridgeEvent](https://bref.sh/docs/function/handlers.html#eventbridge-events) - Composer `bref/bref`
+- [Rust - cloud_events](https://docs.rs/aws_lambda_events/0.6.0/aws_lambda_events/cloudwatch_events/index.html) - `aws_lambda_events`
 
 ### Code Examples
 
