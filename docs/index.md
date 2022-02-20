@@ -18,9 +18,11 @@ Directory of lambda events and resources
 
 - [x] [API Gateway - Rest API](./api-rest.md)
 - [X] [API Gateway - Http API](./api-http-api.md)
-- [ ] [API Gateway - Rest API - Custom Authorizer](./api-customer-authorizer-rest.md)
-- [ ] [API Gateway - HTTP API - Custom Authorizer](./api-customer-authorizer-http.md)
+    - [ ] [API Gateway - Rest API - Custom Authorizer](./api-customer-authorizer-rest.md)
+    - [ ] [API Gateway - HTTP API - Custom Authorizer](./api-customer-authorizer-http.md)
 - [X] [Alexa Smart Home](./alex-smart-home.md)
+- [X] [AppSync - Resolver](./appsync-resolver.md)
+    - [X] [AppSync - Custom Authorizer](./appsync-authorizer.md)
 - [X] [Amazon EventBridge - CloudWatch Event](./event-bridge.md)
 - [X] [CloudWatch Logs](./cloudwatch-logs.md)
 - [X] [CloudFormation - Custom Resource](./cloudformation.md)
@@ -43,21 +45,20 @@ Directory of lambda events and resources
 - [ ] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ
 - [ ] [Amazon MSK](./amazon-msk.md)
 - [ ] [S3](./s3.md)
-- [X] [S3 - Batch Operations](./s3-batch.md)
-- [X] [S3 - Object Lambda](./s3-object-lambda.md)
+    * [X] [S3 - Batch Operations](./s3-batch.md)
+    * [X] [S3 - Object Lambda](./s3-object-lambda.md)
 - [ ] [Secrets Manager](./secrets-manager.md)
 - [X] [Amazon SES](./ses.md)
 - [X] [Amazon SNS](./sns.md)
 - [X] [Amazon SQS](./sqs.md)
 - [X] [Amazon WorkMail](./work-mail.md)
-- [X] [AppSync - Resolver](./appsync-resolver.md)
-- [X] [AppSync - Custom Authorizer](./appsync-authorizer.md)
 
 ## General Resources
 
 List of resources that are used in AWS Lambda
 
-- [AWS Lambda Powertools - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/)
-- [AWS Lambda Powertools - Typescript](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/)
-- [AWS Lambda Powertools - Java](https://awslabs.github.io/aws-lambda-powertools-java/)
-- [Bref - Php](https://bref.sh/)
+- [AWS Lambda Context](./lambda-context.md) - List of resources on the Lambda Context
+- [AWS Lambda Powertools - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/){target="_blank"}
+- [AWS Lambda Powertools - Typescript](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/){target="_blank"}
+- [AWS Lambda Powertools - Java](https://awslabs.github.io/aws-lambda-powertools-java/){target="_blank"}
+- [Bref - Php](https://bref.sh/){target="_blank"}

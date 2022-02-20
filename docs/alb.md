@@ -128,21 +128,21 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 
 Typed Lambda handlers by Language
 
-- [Python - ALBEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#application-load-balancer) - Pip `aws-lambda-powertools`
-- [Typescript - alb.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/alb.d.ts) - NPM `@types/aws-lambda`
-- [Rust - alb/mod.rs](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/alb/mod.rs) - Cargo `aws_lambda_events`
-- [Go - ALBTargetGroupEvents](https://github.com/aws/aws-lambda-go/blob/main/events/README_ALBTargetGroupEvents.md) - Crate `github.com/aws/aws-lambda-go/events`
-- [Java - ApplicationLoadBalancerRequestEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/ApplicationLoadBalancerRequestEvent.javaa) - Maven `aws-lambda-java-events`
-- [DoNet - ApplicationLoadBalancerEvents](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.ApplicationLoadBalancerEvents) - NuGet `Amazon.Lambda.ApplicationLoadBalancerEvents`
+- [Python - ALBEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#application-load-balancer){target="_blank"} - Pip `aws-lambda-powertools`
+- [Typescript - ALBEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/alb.d.ts){target="_blank"} - NPM `@types/aws-lambda`
+- [Rust - alb/mod.rs](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/alb/mod.rs){target="_blank"} - Cargo `aws_lambda_events`
+- [Go - ApplicationLoadBalancerRequest](https://github.com/aws/aws-lambda-go/blob/main/events/README_ALBTargetGroupEvents.md){target="_blank"} - Crate `github.com/aws/aws-lambda-go/events`
+- [Java - ApplicationLoadBalancerRequestEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/ApplicationLoadBalancerRequestEvent.java){target="_blank"} - Maven `aws-lambda-java-events`
+- [DoNet - ApplicationLoadBalancerEvents](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.ApplicationLoadBalancerEvents){target="_blank"} - NuGet `Amazon.Lambda.ApplicationLoadBalancerEvents`
 
 Event Handlers by Language
 
-- [AWS Lambda Powertools Python - ALBResolver](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/)
-- [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container)
+- [AWS Lambda Powertools Python - ALBResolver](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/){target="_blank"}
+- [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container){target="_blank"}
 
 ### Code Examples
 
-- [application-load-balancer-serverless-app](https://github.com/aws/elastic-load-balancing-tools/tree/master/application-load-balancer-serverless-app)
+- [application-load-balancer-serverless-app](https://github.com/aws/elastic-load-balancing-tools/tree/master/application-load-balancer-serverless-app){target="_blank"}
 
 ## Limits
 
@@ -154,6 +154,6 @@ Event Handlers by Language
 
 ## Reference Docs
 
-- [Using AWS Lambda with an Application Load Balancer](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html)
-- [ALB - Lambda functions as targets](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html)
-- [Lambda functions as targets for Application Load Balancers](https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/)
+- [Using AWS Lambda with an Application Load Balancer](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html){target="_blank"}
+- [ALB - Lambda functions as targets](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html){target="_blank"}
+- [Lambda functions as targets for Application Load Balancers](https://aws.amazon.com/blogs/networking-and-content-delivery/lambda-functions-as-targets-for-application-load-balancers/){target="_blank"}

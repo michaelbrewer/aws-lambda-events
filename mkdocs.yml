@@ -19,6 +19,7 @@ theme:
         name: Switch to light mode
 
 markdown_extensions:
+  - attr_list
   - admonition
   - def_list
   - pymdownx.tasklist:
@@ -27,7 +28,7 @@ markdown_extensions:
       anchor_linenums: true
   - toc:
       permalink: true
-      toc_depth: 4
+      toc_depth: 6
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
