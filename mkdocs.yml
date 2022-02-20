@@ -22,6 +22,7 @@ markdown_extensions:
   - attr_list
   - admonition
   - def_list
+  - meta
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.highlight:
