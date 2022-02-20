@@ -1,3 +1,7 @@
+---
+title: Context
+---
+
 # Lambda Context
 
 When Lambda runs your function, it passes a context object to the handler. This object provides methods and properties that provide information 
