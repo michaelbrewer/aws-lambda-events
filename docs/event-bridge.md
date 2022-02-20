@@ -1,3 +1,8 @@
+---
+title: EventBridge
+description: Amazon EventBridge (formerly called CloudWatch Events) invokes your function asynchronously with an event document that wraps the event from its source.
+---
+
 # Amazon EventBridge
 
 Amazon EventBridge (formerly called CloudWatch Events) invokes your function asynchronously with an event document that wraps the event from its source.
