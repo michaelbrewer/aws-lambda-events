@@ -20,7 +20,7 @@ Directory of lambda events and resources
 - [X] [API Gateway - Http API](./api-http-api.md)
     - [X] [API Gateway - Rest API - Custom Authorizer](./api-customer-authorizer-rest.md)
     - [X] [API Gateway - HTTP API - Custom Authorizer](./api-customer-authorizer-http.md)
-- [X] [Alexa Smart Home](./alex-smart-home.md)
+- [X] [Alexa Smart Home](./alexa-smart-home.md)
 - [X] [AppSync - Resolver](./appsync-resolver.md)
     - [X] [AppSync - Custom Authorizer](./appsync-authorizer.md)
 - [X] [Amazon EventBridge - CloudWatch Event](./event-bridge.md)
