@@ -58,15 +58,14 @@ extra:
 nav:
   - Home: index.md
   - AWS Lambda Events:
-    - api-rest.md
     - api-http-api.md
     - api-custom-authorizer-http.md
+    - api-rest.md
     - api-custom-authorizer-rest.md
     - alexa-smart-home.md
     - alb.md
     - appsync-resolver.md
     - appsync-authorizer.md
-    - apache-kafka.md
     - cloudformation.md
     - cloudfront-lambda-edge.md
     - cloudwatch-logs.md
@@ -80,6 +79,7 @@ nav:
     - event-bridge.md
     - iot-events.md
     - iot.md
+    - apache-kafka.md
     - kinesis-firehose.md
     - kinesis-streams.md
     - lex.md
