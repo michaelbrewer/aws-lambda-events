@@ -1,3 +1,7 @@
+---
+title: Cognito Events
+---
+
 # Amazon Cognito Events
 
 Event-driven; synchronous invocation
