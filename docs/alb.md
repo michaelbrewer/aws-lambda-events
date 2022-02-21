@@ -1,6 +1,19 @@
+---
+title: ALB
+description: Elastic Load Balancing invokes your Lambda function synchronously with an event that contains the request body and metadata.
+---
+
 # Application Load Balancer
 
 Elastic Load Balancing invokes your Lambda function synchronously with an event that contains the request body and metadata.
+
+## Limits
+
+- The Lambda function and target group must be in the same account and in the same Region.
+- The maximum size of the request body that you can send to a Lambda function is 1 MB. For related size limits, see HTTP header limits.
+- The maximum size of the response JSON that the Lambda function can send is 1 MB.
+- WebSockets are not supported. Upgrade requests are rejected with an HTTP 400 code.
+- Local Zones are not supported.
 
 ## Input
 
@@ -143,14 +156,6 @@ Event Handlers by Language
 ### Code Examples
 
 - [application-load-balancer-serverless-app](https://github.com/aws/elastic-load-balancing-tools/tree/master/application-load-balancer-serverless-app){target="_blank"}
-
-## Limits
-
-- The Lambda function and target group must be in the same account and in the same Region.
-- The maximum size of the request body that you can send to a Lambda function is 1 MB. For related size limits, see HTTP header limits.
-- The maximum size of the response JSON that the Lambda function can send is 1 MB.
-- WebSockets are not supported. Upgrade requests are rejected with an HTTP 400 code.
-- Local Zones are not supported.
 
 ## Reference Docs
 
