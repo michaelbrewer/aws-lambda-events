@@ -2,6 +2,11 @@
 
 Amazon API Gateway invokes your function synchronously with an event that contains a JSON representation of the HTTP request.
 
+## Limits
+
+Payload limit of 6mb for the lambda
+Maximum timeout of 30 seconds
+
 ## Input
 
 ### Getting the correlation id
