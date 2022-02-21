@@ -1,6 +1,15 @@
+---
+title: WorkMail
+description: Amazon WorkMail
+---
+
 # Amazon WorkMail
 
 Can be invoked synchrously or asynchrously.
+
+## Limits
+
+Payload size limit 128 KB, before being trancated
 
 ## Input
 
