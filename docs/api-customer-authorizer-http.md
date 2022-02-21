@@ -1,6 +1,15 @@
+---
+title: API Gateway Http Authorizer
+---
+
 # API Gateway Http Authorizer
 
 Event driven, synchronous.
+
+## Limits
+
+Authorizers per API limit of 10, but can be increased.
+Audiences per authorizer of 50, and can not be increased.
 
 ## Input
 
