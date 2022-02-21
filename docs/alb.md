@@ -115,7 +115,7 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 }
 ```
 
-!!! Note
+!!! NOTE
     If you enable multi-value headers, you must specify multiple cookies as follows
 
 ```json

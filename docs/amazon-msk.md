@@ -1,12 +1,22 @@
 # Amazon MSK
 
-Lambda internally polls for new messages from the event source and then synchronously invokes the target Lambda function.
-Lambda reads the messages in batches and provides these to your function as an event payload. The maximum batch size is configurable. (The default is 100 messages.)
-Lambda can run your function for up to 14 minutes.
+Amazon Managed Streaming for Apache Kafka (Amazon MSK) is a fully managed service that you can use to build and run applications that use Apache Kafka to
+process streaming data.
+
+Lambda internally polls for new messages from the event source and then synchronously invokes the target Lambda function. Lambda reads the messages in 
+batches and provides these to your function as an event payload.
+
+## Limits
+
+- The maximum batch size is configurable. (The default is 100 messages.)
+- Lambda can run your function for up to 14 minutes.
 
 ## Input
 
-```json
+!!! Note
+      Shares the same structure as [Self managed Apache Kafka](./apache-kafka.md), except for the eventSource field is set to "aws:msk".
+
+```json title="Managed Kafka"
 {
    "eventSource":"aws:kafka",
    "eventSourceArn":"arn:aws:kafka:sa-east-1:123456789012:cluster/vpc-2priv-2pub/751d2973-a626-431c-9d4e-d7975eb44dd7-2",
@@ -39,6 +49,32 @@ Lambda can run your function for up to 14 minutes.
          }
       ]
    }
+}
+```
+
+```json title="Another managed Kafka example"
+{
+  "eventSource": "aws:kafka",
+  "eventSourceArn": "arn:aws:kafka:us-west-2:012345678901:cluster/ExampleMSKCluster/e9f754c6-d29a-4430-a7db-958a19fd2c54-4",
+  "bootstrapServers": "b-2.demo-cluster-1.a1bcde.c1.kafka.us-east-1.amazonaws.com:9092,b-1.demo-cluster-1.a1bcde.c1.kafka.us-east-1.amazonaws.com:9092",
+  "records": {
+    "AWSKafkaTopic-0": [
+      {
+        "topic": "AWSKafkaTopic",
+        "partition": 0,
+        "offset": 0,
+        "timestamp": 1595035749700,
+        "timestampType": "CREATE_TIME",
+        "key": "OGQ1NTk2YjQtMTgxMy00MjM4LWIyNGItNmRhZDhlM2QxYzBj",
+        "value": "OGQ1NTk2YjQtMTgxMy00MjM4LWIyNGItNmRhZDhlM2QxYzBj",
+        "headers": [
+          {
+            "headerKey": "aGVhZGVyVmFsdWU="
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 

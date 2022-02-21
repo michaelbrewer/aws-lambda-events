@@ -40,6 +40,9 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 
 ## Response
 
+!!! TODO
+    Still need to verify response structure
+
 ```json
 {
   "version": "1.0",

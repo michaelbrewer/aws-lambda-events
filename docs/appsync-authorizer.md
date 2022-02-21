@@ -2,7 +2,7 @@
 
 Event driven, invoked synchronously.
 
-Limits:
+## Limits
 
 - Lambda authorizers have a timeout of 10 seconds.
 - An authorization token must not exceed 2048 characters

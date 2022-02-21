@@ -1,5 +1,7 @@
 # Secrets Manager
 
+Event-driven; synchronous invocation
+
 ## Input
 
 ```json
@@ -11,6 +13,8 @@
 ```
 
 ## Response
+
+N/A
 
 ## Libraries
 
