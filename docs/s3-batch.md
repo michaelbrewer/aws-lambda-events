@@ -1,4 +1,4 @@
-# S3 batch
+# S3 Batch
 
 When the batch job starts, Amazon S3 invokes the Lambda function synchronously for each object in the manifest. The event parameter includes the names of the bucket and the object.
 
