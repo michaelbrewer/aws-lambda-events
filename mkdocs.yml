@@ -95,5 +95,5 @@ nav:
     - sqs.md
     - work-mail.md
   - General Resources:
-    - general-resources.md
+    - lambda-runtimes.md
     - lambda-context.md

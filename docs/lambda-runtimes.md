@@ -1,4 +1,4 @@
-# General Resources
+# Lambda Runtime Resources
 
 List of resources that are used in AWS Lambda
 
