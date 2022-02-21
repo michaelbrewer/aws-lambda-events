@@ -3,6 +3,11 @@
 !!! Note
     AppSync Resolver Events can come in various shapes this data class supports both Amplify GraphQL directive `@function` and Direct Lambda Resolver
 
+## Limits
+
+Request execution timeout of 30 seconds
+Payload size limit of 1MB
+
 ## Input
 
 ### Event fields
