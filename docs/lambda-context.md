@@ -1,5 +1,5 @@
 ---
-title: Context
+title: Lambda Context
 description: When Lambda runs your function, it passes a context object to the handler.
 ---
 

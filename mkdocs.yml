@@ -4,8 +4,18 @@ site_author: Michael Brewer
 repo_name: michaelbrewer/aws-lambda-events
 repo_url: https://github.com/michaelbrewer/aws-lambda-events
 edit_uri: edit/main/docs/
+
 theme:
   name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.instant
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tracking
+    - content.code.annotate
   palette:
     - scheme: default
       primary: deep orange
@@ -44,3 +54,46 @@ extra:
   analytics:
     provider: google
     property: UA-191564964-1
+
+nav:
+  - Home: index.md
+  - AWS Lambda Events:
+    - api-rest.md
+    - api-http-api.md
+    - api-custom-authorizer-http.md
+    - api-custom-authorizer-rest.md
+    - alexa-smart-home.md
+    - alb.md
+    - appsync-resolver.md
+    - appsync-authorizer.md
+    - apache-kafka.md
+    - cloudformation.md
+    - cloudfront-lambda-edge.md
+    - cloudwatch-logs.md
+    - code-commit.md
+    - code-pipeline-job.md
+    - cognito-events.md
+    - cognito-user-pool.md
+    - config.md
+    - connect.md
+    - dynamodb.md
+    - event-bridge.md
+    - iot-events.md
+    - iot.md
+    - kinesis-firehose.md
+    - kinesis-streams.md
+    - lex.md
+    - lex-v2.md
+    - mq.md
+    - amazon-msk.md
+    - s3.md
+    - s3-batch.md
+    - s3-object-lambda.md
+    - secrets-manager.md
+    - ses.md
+    - sns.md
+    - sqs.md
+    - work-mail.md
+  - General Resources:
+    - general-resources.md
+    - lambda-context.md

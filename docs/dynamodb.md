@@ -1,4 +1,6 @@
-# Amazon DynamoDB
+# DynamoDB
+
+Amazon DynamoDB
 
 ## Input
 

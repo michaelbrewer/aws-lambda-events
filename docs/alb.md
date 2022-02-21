@@ -1,8 +1,3 @@
----
-title: ALB
-description: Elastic Load Balancing invokes your Lambda function synchronously with an event that contains the request body and metadata.
----
-
 # Application Load Balancer
 
 Elastic Load Balancing invokes your Lambda function synchronously with an event that contains the request body and metadata.
