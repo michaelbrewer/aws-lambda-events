@@ -73,7 +73,7 @@ Payload size limit 128 KB, before being trancated
 
 ## Response
 
-## Response fields
+### Response fields
 
 `actions` (Array)
 : Required, should contain at least 1 list element
