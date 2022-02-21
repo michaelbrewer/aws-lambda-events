@@ -1,5 +1,6 @@
 ---
 title: Context
+description: When Lambda runs your function, it passes a context object to the handler.
 ---
 
 # Lambda Context
@@ -9,7 +10,7 @@ about the invocation, function, and execution environment.
 
 ## Docs
 
-- [DoctNet - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/csharp-context.html)
+- [DotNet - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/csharp-context.html)
 - [Python - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/python-context.html)
 - [Go - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/golang-context.html)
 - [Java - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/java-context.html)
