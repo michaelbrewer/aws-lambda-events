@@ -2,14 +2,14 @@
 
 Objective is to collect resources on lambda inputs (requests) and outputs (responses) as well as the following:
 
-- Input schema
-- Output schema
-- Example event inputs
+- Limitations of each type of lambda
+- Input/Request schema
+- Output/Response schema
+- Example event
 - Libraries for typing, data structures, and other utilities
 - Event handlers libraries by language
-- Response handlers
-- Limitations of each type of lambda
-- Documentation
+- Response handlers by language
+- Documentation and blog posts
 - Code examples
 
 ## Directory of AWS Lambda Events
@@ -64,4 +64,4 @@ List of resources that are used in AWS Lambda
 - [AWS Lambda Powertools - Java](https://awslabs.github.io/aws-lambda-powertools-java/){target="_blank"}
 - [Bref - Php](https://bref.sh/){target="_blank"} - php runtime and libraries
 - [Rust - aws-lambda-rust-runtime](https://github.com/awslabs/aws-lambda-rust-runtime) - runtime and framework and will soon include `aws_lambda_events` 
-- [Rust - aws_lambda_events](https://github.com/LegNeato/aws-lambda-events) - structs for most lambda events
+    - [Rust - aws_lambda_events](https://github.com/LegNeato/aws-lambda-events) - structs for most lambda events
