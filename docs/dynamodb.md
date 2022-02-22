@@ -1,6 +1,6 @@
 # DynamoDB
 
-Amazon DynamoDB
+Amazon DynamoDB, called via lambda polling
 
 ## Input
 

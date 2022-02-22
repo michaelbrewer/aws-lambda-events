@@ -26,7 +26,7 @@ Common attributes shared by all User Pool Lambda Trigger Events
 
 The pre sign-up Lambda function is triggered just before Amazon Cognito signs up a new user. It allows you to perform custom validation to accept or deny the registration request as part of the sign-up process.
 
-- [Pre sign-up Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html)
+- [Pre sign-up Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html) documentation
 
 ### Pre Sign-up Input
 
@@ -106,6 +106,10 @@ Response fields include:
 
 ## Pre Authentication
 
+Amazon Cognito invokes this trigger when a user attempts to sign in, allowing custom validation to accept or deny the authentication request.
+
+- [Pre authentication Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-authentication.html) documentation
+
 ### Pre Authentication Input
 
 ```json title="Pre Authentication Request"
@@ -130,6 +134,10 @@ Response fields include:
   "response": {}
 }
 ```
+
+### Pre Authentication Response
+
+No additional return information is expected in the response.
 
 ## Auth Challenge
 
@@ -237,9 +245,30 @@ Response fields include:
 
 ## Pre Token Generation
 
+Amazon Cognito invokes this trigger before token generation which allows you to customize identity token claims.
+
+- [Pre token generation Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html) documentation
+
 ### Pre Token Generation Input
 
-```json
+Pre token generation request parameters
+
+`groupConfiguration` (Object)
+: The input object containing the current group configuration. It includes `groupsToOverride`, `iamRolesToOverride`, and `preferredRole`.
+
+`groupsToOverride` (Array, optional)
+: A list of the group names that are associated with the user that the identity token is issued for.
+
+`iamRolesToOverride` (Array, optional)
+: A list of the current IAM roles associated with these groups.
+
+`preferredRole` (String, optional)
+: A string indicating the preferred IAM role.
+
+`clientMetadata` (Object, optional)
+: One or more key-value pairs that you can provide as custom input to the Lambda function that you specify for the pre token generation trigger. 
+
+```json title="Example pre token generation request"
 {
   "triggerSource": "TokenGeneration_Authentication",
   "version": "1",
@@ -267,7 +296,64 @@ Response fields include:
 }
 ```
 
+### Pre Token Generation Response
+
+Pre token generation response parameters
+
+`claimsToAddOrOverride` (Object, optional)
+: A map of one or more key-value pairs of claims to add or override. For group related claims, use groupOverrideDetails instead.
+
+`claimsToSuppress` (Array, optional)
+: A list that contains claims to be suppressed from the identity token.
+
+`groupOverrideDetails` (Object, optional)
+: The output object containing the current group configuration. It includes `groupsToOverride`, `iamRolesToOverride`, and `preferredRole`.
+
+```json title="Pre-token generation response structure"
+{
+    "request": {
+        "userAttributes": {"string": "string"},
+        "groupConfiguration": [
+            {
+                "groupsToOverride": [
+                    "string",
+                    "string"
+                ],
+                "iamRolesToOverride": [
+                    "string",
+                    "string"
+                ],
+                "preferredRole": "string"
+            }
+        ],
+        "clientMetadata": {"string": "string"}
+    },
+    "response": {
+        "claimsOverrideDetails": {
+            "claimsToAddOrOverride": {"string": "string"},
+            "claimsToSuppress": [
+                "string",
+                "string"
+            ],
+            "groupOverrideDetails": {
+                "groupsToOverride": [
+                    "string",
+                    "string"
+                ],
+                "iamRolesToOverride": [
+                    "string",
+                    "string"
+                ],
+                "preferredRole": "string"
+            }
+        }
+    }
+}
+```
+
 ## Post Authentication
+
+- [Post authentication Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-authentication.html) documentation
 
 ### Post Authentication Input
 
@@ -292,7 +378,15 @@ Response fields include:
 }
 ```
 
+### Post Authentication Response
+
+No additional return information is expected in the response.
+
 ## Post Confirmation
+
+Amazon Cognito invokes this trigger after a new user is confirmed, allowing you to send custom messages or to add custom logic. For example, you could use this trigger to gather new user data.
+
+- [Post confirmation Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-confirmation.html) documentation
 
 ### Post Confirmation Input
 
@@ -317,7 +411,15 @@ Response fields include:
 }
 ```
 
+### Post Confirmation Response
+
+No additional return information is expected in the response.
+
 ## Custom Message
+
+Amazon Cognito invokes this trigger before sending an email or phone verification message or a multi-factor authentication (MFA) code, allowing you to customize the message dynamically.
+
+- [Custom message Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-custom-message.html) documentation
 
 ### Custom Message Input
 
@@ -344,7 +446,47 @@ Response fields include:
 }
 ```
 
+### Custom Message Response
+
+Custom message response parameters
+
+`smsMessage` (String, optional)
+: The custom SMS message to be sent to your users. Must include the `codeParameter` value received in the request.
+
+`emailMessage` (String, optional)
+: The custom email message to be sent to your users. Must include the `codeParameter` value received in the request.
+
+`emailSubject` (String, optional)
+: The subject line for the custom message.
+
+```json title="Custom Message Response Structure"
+{
+    "request": {
+        "userAttributes": {
+            "string": "string",
+            . . .
+        }
+        "codeParameter": "####",
+        "usernameParameter": "string",
+        "clientMetadata": {
+            "string": "string",
+            . . .
+        }
+    },
+    "response": {
+        "smsMessage": "string",
+        "emailMessage": "string",
+        "emailSubject": "string"
+    }
+}
+```
+
 ## User Migration
+
+Amazon Cognito invokes this trigger when a user does not exist in the user pool at the time of sign-in with a password, or in the forgot-password flow. 
+After the Lambda function returns successfully, Amazon Cognito creates the user in the user pool. 
+
+- [Migrate user Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-migrate-user.html) documentation
 
 ### User Migration Input
 
@@ -363,6 +505,35 @@ Response fields include:
     "password": "password"
   },
   "response": {}
+}
+```
+
+### User Migration Response
+
+```json title="User migration response structure"
+{
+    "userName": "string",
+    "request": {
+        "password": "string",
+        "validationData": {
+            "string": "string",
+            . . .
+        },
+        "clientMetadata": {
+      	"string": "string",
+      	. . .
+        }
+    },
+    "response": {
+        "userAttributes": {
+            "string": "string",
+            . . .
+        },
+        "finalUserStatus": "string",
+        "messageAction": "string",
+        "desiredDeliveryMediums": [ "string", . . .],
+        "forceAliasCreation": boolean
+    }
 }
 ```
 

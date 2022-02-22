@@ -32,7 +32,7 @@ Directory of lambda events and resources
 - [X] [CloudFront - Lambda@Edge](./cloudfront-lambda-edge.md)
 - [X] [CodeCommit](./code-commit.md)
 - [X] [CodePipeline - Job](./code-pipeline-job.md)
-- [ ] [Amazon Cognito - User Pool](./cognito-user-pool.md)
+- [X] [Amazon Cognito - User Pool](./cognito-user-pool.md)
     - [X] [AWS Cognito - Sync](./cognito-events.md)
 - [X] [AWS Config](./config.md)
 - [X] [Amazon Connect](./connect.md)
