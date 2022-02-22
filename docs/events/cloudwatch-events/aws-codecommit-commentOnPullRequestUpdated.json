@@ -1,0 +1,24 @@
+{
+    "version": "0",
+    "id": "98377d67-EXAMPLE",
+    "detail-type": "CodeCommit Comment on Pull Request",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-02-09T07:15:16Z",
+    "region": "us-east-2",
+    "resources": [
+      "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+      "afterCommitId": "96814774EXAMPLE",
+      "beforeCommitId": "6031971EXAMPLE",
+      "callerUserArn": "arn:aws:sts::123456789012:federated-user/Saanvi_Sarkar",
+      "commentId": "40cb52f0-EXAMPLE",
+      "event": "commentOnPullRequestUpdated",
+      "inReplyTo": "1285e713-EXAMPLE",
+      "notificationBody": "A comment event occurred in the following AWS CodeCommit repository: MyDemoRepo. The display name for the user is Saanvi Sarkar. The email address for the user is saanvi_sarkar@example.com. The user arn:aws:sts::123456789012:federated-user/Saanvi_Sarkar updated a comment or replied to a comment. The comment was made on the following Pull Request: 1. For more information, go to the AWS CodeCommit console https://us-east-2.console.aws.amazon.com/codesuite/codecommit/repositories/MyDemoRepo/pull-requests/1/activity#40cb52f0-aac7-4c43-b771-601eff02EXAMPLE",
+      "pullRequestId": "1",
+      "repositoryId": "12345678-1234-1234-1234-123456789012",
+      "repositoryName": "MyDemoRepo"
+    }
+  }

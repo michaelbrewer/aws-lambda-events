@@ -1,0 +1,28 @@
+{
+  "version": "0",
+  "id": "1234abcd-ab12-123a-123a-1234567890ab",
+  "detail-type": "Trusted Advisor Check Item Refresh Notification",
+  "source": "aws.trustedadvisor",
+  "account": "123456789012",
+  "time": "2018-01-12T20:07:03Z",
+  "region": "us-east-2",
+  "resources": [],
+  "detail": {
+    "check-name": "Load Balancer Optimization ",
+    "check-item-detail": {
+      "Instances in Zone a": "1",
+      "Status": "Yellow",
+      "Instances in Zone b": "0",
+      "# of Zones": "2",
+      "Region": "eu-central-1",
+      "Load Balancer Name": "my-load-balance",
+      "Instances in Zone e": null,
+      "Instances in Zone c": null,
+      "Reason": "Single AZ",
+      "Instances in Zone d": null
+    },
+    "status": "WARN",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-central-1:123456789012:loadbalancer/my-load-balancer",
+    "uuid": "aa12345f-55c7-498e-b7ac-123456789012"
+  }
+}

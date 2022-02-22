@@ -1,0 +1,20 @@
+{
+    "version": "0",
+    "id": "12345678-1234-1234-1234-111122223333",
+    "detail-type": "Chime VoiceConnector Streaming Status",
+    "source": "aws.chime",
+    "account": "111122223333",
+    "time": "yyyy-mm-ddThh:mm:ssZ",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+         "streamingStatus":"FAILED",
+         "voiceConnectorId":"abcdefghi",
+         "transactionId":"12345678-1234-1234",
+         "callId":"1112-2222-4333",
+         "direction":"Inbound",
+         "failTime":"yyyy-mm-ddThh:mm:ssZ",
+         "failureReason": "Internal failure",
+         "version":"0"
+    }
+  }

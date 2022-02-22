@@ -1,0 +1,36 @@
+{
+    "version": "0",
+    "id": "ad860f12-EXAMPLE",
+    "detail-type": "CodeCommit Pull Request State Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-11-06T19:12:19Z",
+    "region": "us-east-2",
+    "resources": [
+        "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+        "approvalRuleContentSha256": "f742eebbEXAMPLE",
+        "approvalRuleId": "0a9b5dfc-EXAMPLE",
+        "approvalRuleName": "1-approver-needed",
+        "author": "arn:aws:iam::123456789012:user/Mary_Major",
+        "callerUserArn": "arn:aws:iam::123456789012:user/Mary_Major",
+        "creationDate": "Wed Nov 06 19:10:58 UTC 2019",
+        "description": "An An example description.",
+        "destinationCommit": "194fdf00EXAMPLE",
+        "destinationReference": "refs/heads/main",
+        "event": "pullRequestApprovalRuleCreated",
+        "isMerged": "False",
+        "lastModifiedDate": "Wed Nov 06 19:10:58 UTC 2019",
+        "notificationBody": "A pull request event occurred in the following AWS CodeCommit repository: MyDemoRepo. User: arn:aws:iam::123456789012:user/Mary_Major. Event: Updated. Pull request: 227. Additional information: An approval rule has been created with the following name: 1-approver-needed. For more information, go to the AWS CodeCommit console https://us-east-2.console.aws.amazon.com/codesuite/codecommit/repositories/MyDemoRepo/pull-requests/227?region=us-east-2",
+        "pullRequestId": "227",
+        "pullRequestStatus": "Open",
+        "repositoryNames": [
+            "MyDemoRepo"
+        ],
+        "revisionId": "3b8cecab3EXAMPLE",
+        "sourceCommit": "29964a17EXAMPLE",
+        "sourceReference": "refs/heads/test-branch",
+        "title": "My example pull request"
+    }
+}

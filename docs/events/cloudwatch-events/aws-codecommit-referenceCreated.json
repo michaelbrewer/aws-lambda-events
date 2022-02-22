@@ -1,0 +1,21 @@
+{
+    "version": "0",
+    "id": "01234567-EXAMPLE",
+    "detail-type": "CodeCommit Repository State Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-06-12T10:23:43Z",
+    "region": "us-east-2",
+    "resources": [
+      "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+      "event": "referenceCreated",
+      "repositoryName": "MyDemoRepo",
+      "repositoryId": "12345678-1234-5678-abcd-12345678abcd",
+      "referenceType": "branch",
+      "referenceName": "myBranch",
+      "referenceFullName": "refs/heads/myBranch",
+      "commitId": "3e5983DESTINATION"
+    }
+  }

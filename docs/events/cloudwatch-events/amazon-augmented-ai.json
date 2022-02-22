@@ -1,0 +1,22 @@
+{
+    "version":"0",
+    "id":"12345678-1111-2222-3333-12345EXAMPLE",
+    "detail-type":"SageMaker A2I HumanLoop Status Change",
+    "source":"aws.sagemaker",
+    "account":"1111111111111",
+    "time":"2019-11-14T17:49:25Z",
+    "region":"us-east-1",
+    "resources":["arn:aws:sagemaker:us-east-1:111111111111:human-loop/humanloop-nov-14-1"],
+    "detail":{
+        "creationTime":"2019-11-14T17:37:36.740Z",
+        "failureCode":null,
+        "failureReason":null,
+        "flowDefinitionArn":"arn:aws:sagemaker:us-east-1:111111111111:flow-definition/flowdef-nov-12",
+        "humanLoopArn":"arn:aws:sagemaker:us-east-1:111111111111:human-loop/humanloop-nov-14-1",
+        "humanLoopName":"humanloop-nov-14-1",
+        "humanLoopOutput":{ 
+            "outputS3Uri":"s3://customer-output-bucket-specified-in-flow-definition/flowdef-nov-12/2019/11/14/17/37/36/humanloop-nov-14-1/output.json"
+        },
+        "humanLoopStatus":"Completed"
+    }
+}

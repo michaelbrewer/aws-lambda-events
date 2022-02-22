@@ -1,0 +1,25 @@
+{
+    "version": "0",
+    "id": "e08fc996-EXAMPLE",
+    "detail-type": "CodeCommit Approval Rule Template Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-11-12T23:39:09Z",
+    "region": "us-east-2",
+    "resources": [
+        "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+        "approvalRuleTemplateContentSha256": "f742eebbEXAMPLE",
+        "approvalRuleTemplateId": "c71c1fe0-ff91-4db4-9a45-a86a7b6c474f",
+        "approvalRuleTemplateName": "2-approvers-required-for-main",
+        "callerUserArn": "arn:aws:iam::123456789012:user/Mary_Major",
+        "creationDate": "Tue Nov 12 23:38:57 UTC 2019",
+        "event": "batchDisassociateApprovalRuleTemplateFromRepositories",
+        "lastModifiedDate": "Tue Nov 12 23:38:57 UTC 2019",
+        "notificationBody": "A approval rule template event occurred in the following AWS CodeCommit account: 123456789012. User: arn:aws:iam::123456789012:user/Mary_Major. Additional information: An approval rule template has been batch disassociated from the following repository names: [MyDemoRepo, MyTestRepo]. For more information, go to the AWS CodeCommit console.",
+        "repositories": {
+            "MyDemoRepo": "MyTestRepo"
+        }
+    }
+}
