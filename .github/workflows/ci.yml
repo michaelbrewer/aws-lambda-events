@@ -4,6 +4,9 @@ on:
     branches:
       - master 
       - main
+    paths:
+      - docs/*
+      - .github/workflows/ci.yml
 jobs:
   deploy:
     runs-on: ubuntu-latest
