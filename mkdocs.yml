@@ -66,10 +66,10 @@ nav:
     - lambda-runtimes.md
     - lambda-context.md
   - AWS Lambda Events:
-    - api-http-api.md
-    - api-custom-authorizer-http.md
-    - api-rest.md
-    - api-custom-authorizer-rest.md
+    - http-api.md
+    - http-api-custom-authorizer.md
+    - rest-api.md
+    - rest-api-custom-authorizer.md
     - alexa-smart-home.md
     - alb.md
     - appsync-resolver.md

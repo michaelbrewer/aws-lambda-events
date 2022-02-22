@@ -19,10 +19,10 @@ Objective is to collect resources on lambda inputs (requests) and outputs (respo
 
 Directory of lambda events and resources
 
-- [X] [API Gateway - Http API](./api-http-api.md)
-    - [X] [API Gateway - HTTP API - Custom Authorizer](./api-custom-authorizer-rest.md)
-- [x] [API Gateway - Rest API](./api-rest.md)
-    - [X] [API Gateway - Rest API - Custom Authorizer](./api-custom-authorizer-rest.md)
+- [X] [API Gateway - Http API](./http-api.md)
+    - [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md)
+- [x] [API Gateway - Rest API](./rest-api.md)
+    - [X] [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md)
 - [X] [Alexa Smart Home](./alexa-smart-home.md)
 - [X] [AppSync - Resolver](./appsync-resolver.md)
     - [X] [AppSync - Custom Authorizer](./appsync-authorizer.md)
