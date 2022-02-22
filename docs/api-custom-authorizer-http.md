@@ -15,7 +15,7 @@ Audiences per authorizer of 50, and can not be increased.
 
 ### API Gateway Authorizer Request Event Format 1.0
 
-Same as [API Gateway Rest Authorizer - Request](./api-customer-authorizer-rest.md)
+Same as [API Gateway Rest Authorizer - Request](./api-custom-authorizer-rest.md)
 
 ```json
 {
