@@ -15,9 +15,13 @@ This will install pipenv, mkdocs and run the server, you will need to have Pytho
 ## Event Sources
 
 - [API Gateway Rest API](https://michaelbrewer.github.io/aws-lambda-events/rest-api)
+- [API Gateway Rest API Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/rest-api-custom-authorizer/)
 - [API Gateway Http API](https://michaelbrewer.github.io/aws-lambda-events/http-api)
+- [API Gateway Http API Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/http-api-custom-authorizer/)
+- [AppSync Resolvers](https://michaelbrewer.github.io/aws-lambda-events/appsync-resolver/)
+- [AppSync Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/appsync-authorizer/)
 - [Alexa Smart Home](https://michaelbrewer.github.io/aws-lambda-events/alexa-smart-home)
-- [Amazon EventBridge](https://michaelbrewer.github.io/aws-lambda-events/event-bridge)
+- [Amazon EventBridge (CloudWatch Events)](https://michaelbrewer.github.io/aws-lambda-events/event-bridge)
 - [CloudWatch Logs](https://michaelbrewer.github.io/aws-lambda-events/cloudwatch-logs)
 - [CloudFormation](https://michaelbrewer.github.io/aws-lambda-events/cloudformation)
 - [CloudFront Lambda@Edge](https://michaelbrewer.github.io/aws-lambda-events/cloudfront-lambda-edge)
@@ -27,7 +31,7 @@ This will install pipenv, mkdocs and run the server, you will need to have Pytho
 - [AWS Config](https://michaelbrewer.github.io/aws-lambda-events/config)
 - [Amazon Connect](https://michaelbrewer.github.io/aws-lambda-events/connect)
 - [Amazon DynamoDB](https://michaelbrewer.github.io/aws-lambda-events/dynamodb)
-- [X] [CloudWatch Event - Amazon EC2](https://michaelbrewer.github.io/aws-lambda-events/event-bridge#ec2-instance-state-change-event)
+- [CloudWatch Event - Amazon EC2](https://michaelbrewer.github.io/aws-lambda-events/event-bridge#ec2-instance-state-change-event)
 - [Application Load Balancer](https://michaelbrewer.github.io/aws-lambda-events/alb)
 - [AWS IoT](https://michaelbrewer.github.io/aws-lambda-events/iot)
 - [AWS IoT Events](https://michaelbrewer.github.io/aws-lambda-events/iot-events)
