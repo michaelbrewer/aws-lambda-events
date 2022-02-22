@@ -1,5 +1,7 @@
 # AppSync Resolver
 
+Event driven, invoked synchronously.
+
 !!! NOTE
     AppSync Resolver Events can come in various shapes this data class supports both Amplify GraphQL directive `@function` and Direct Lambda Resolver
 

@@ -61,7 +61,10 @@ extra:
     property: UA-191564964-1
 
 nav:
-  - Home: index.md
+  - Overview:
+    - index.md
+    - lambda-runtimes.md
+    - lambda-context.md
   - AWS Lambda Events:
     - api-http-api.md
     - api-custom-authorizer-http.md
@@ -99,6 +102,3 @@ nav:
     - sns.md
     - sqs.md
     - work-mail.md
-  - General Resources:
-    - lambda-runtimes.md
-    - lambda-context.md

@@ -5,7 +5,7 @@ description: Amazon WorkMail
 
 # Amazon WorkMail
 
-Can be invoked synchrously or asynchrously.
+Can be configured to invoke your function synchrously or asynchrously.
 
 ## Limits
 
