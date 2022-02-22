@@ -37,7 +37,7 @@ Directory of lambda events and resources
     - [X] [AWS Cognito - Sync](./cognito-events.md)
 - [X] [AWS Config](./config.md)
 - [X] [Amazon Connect](./connect.md)
-- [ ] [Amazon DynamoDB](./dynamodb.md)
+- [X] [Amazon DynamoDB](./dynamodb.md)
 - [X] [Application Load Balancer](./alb.md)
 - [ ] [AWS IoT](./iot.md)
 - [ ] [AWS IoT - Events](./iot-events.md)
