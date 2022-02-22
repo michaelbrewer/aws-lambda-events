@@ -1,7 +1,3 @@
----
-title: API Gateway Http Authorizer
----
-
 # API Gateway Http Authorizer
 
 Event driven, synchronous.
@@ -15,7 +11,7 @@ Audiences per authorizer of 50, and can not be increased.
 
 ### API Gateway Authorizer Request Event Format 1.0
 
-Same as [API Gateway Rest Authorizer - Request](./api-custom-authorizer-rest.md)
+Same as [API Gateway Rest Authorizer - Request](./rest-api-custom-authorizer.md)
 
 ```json
 {

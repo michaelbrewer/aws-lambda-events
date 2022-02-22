@@ -1,7 +1,3 @@
----
-title: Alexa Smart Home
----
-
 # Alexa Smart Home
 
 Event-driven, synchronous invocation
@@ -17,7 +13,25 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 
 ### Event Example
 
-```json title="Example Alexa smart home event"
+```json title="Smart Home Skill V3 request"
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover",
+      "payloadVersion": "3",
+      "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
+    },
+    "payload": {
+      "scope": {
+        "type": "BearerToken"
+      }
+    }
+  }
+}
+```
+
+```json title="Example Alexa smart home event version 1"
 {
   "header": {
     "payloadVersion": "1",
@@ -40,10 +54,54 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 
 ## Response
 
-!!! TODO
-    Still need to verify response structure
+```json title="Smart Home Skill V3 response"
+{
+  "event": {
+    "header": {
+      "namespace": "Alexa.Discovery",
+      "name": "Discover.Response",
+      "messageId": "b5a1d155-3a97-479e-80fa-913b4afee758",
+      "payloadVersion": "3"
+    },
+    "payload": {
+      "endpoints": [
+        {
+          "capabilities": [
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa",
+              "version": "3"
+            },
+            {
+              "type": "AlexaInterface",
+              "interface": "Alexa.PowerController",
+              "version": "3",
+              "properties": {
+                "supported": [
+                  {
+                    "name": "powerState"
+                  }
+                ],
+                "proactivelyReported": false,
+                "retrievable": false
+              }
+            }
+          ],
+          "description": "Sample Endpoint Description",
+          "displayCategories": [
+            "OTHER"
+          ],
+          "endpointId": "sample-switch-01",
+          "friendlyName": "Sample Switch",
+          "manufacturerName": "Sample Manufacturer"
+        }
+      ]
+    }
+  }
+}
+```
 
-```json
+```json title="legacy v1.0"
 {
   "version": "1.0",
   "response": {
