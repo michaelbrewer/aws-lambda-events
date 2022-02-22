@@ -36,7 +36,7 @@ JSON path to correlation id: `requestContext.requestId`
 ### Input Stucture format 1.0
 
 ```json title="Http api format 1.0"
---8<-- "docs/events/api-gateway/http-api-format-1-.json"
+--8<-- "docs/events/api-gateway/http-api-format-1.json"
 ```
 
 ## Response
