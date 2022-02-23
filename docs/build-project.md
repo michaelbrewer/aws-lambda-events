@@ -1,7 +1,11 @@
 # Build Project
 
-!!! info
-    A simple tool to generate a starter project based on a template.
+## Introduction
+
+A simple tool to generate a starter project based on a template.
+
+!!!WARNING
+    This is still in progress.. :)
 
 <script>
 function buildProject(form, path) {
