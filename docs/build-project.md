@@ -3,6 +3,8 @@
 !!! info
     A simple tool to generate a starter project based on a template.
 
+## AWS Lambda Project Initializer
+
 <script>
 function buildProject() {
     const form = document.getElementById("buildProjectForm");
@@ -57,9 +59,9 @@ function buildProject() {
   <br/>
   <label for="projectTrigger">Trigger :</label>
   <select id="projectTrigger" name="trigger">
-    <option value="rest-api" selected>API Gateway Rest API</option>
-    <option value="http-api">API Gateway Rest API</option>
-    <option value="s3">S3 Bucket Event Notification</option>
+    <option value="rest-api" selected>API GW Rest API</option>
+    <option value="http-api">API GW Rest API</option>
+    <option value="s3">S3 Event Notification</option>
   </select>
   <br/>
   <label for="projectMemory">Memory in MB :</label> <input id="projectMemory" name="memory" value="512"><br/>
