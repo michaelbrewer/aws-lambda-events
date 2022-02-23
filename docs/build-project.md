@@ -120,7 +120,7 @@ AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
   <br/>
   <label for="projectMemory">Memory in MB :</label> <input id="projectMemory" name="memory" value="512"><br/>
   <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
-  <br/><a href="#" onclick="javascript:buildProject(document.getElementById('buildSamProjectForm'), 'sam-project.zip')" class="md-button md-button--primary">Generate Project</a>
+  <br/><a href="#aws-sam-template" onclick="javascript:buildProject(document.getElementById('buildSamProjectForm'), 'sam-project.zip')" class="md-button md-button--primary">Generate Project</a>
 </form>
 
 <script>
