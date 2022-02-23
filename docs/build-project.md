@@ -62,3 +62,7 @@ function buildProject() {
   <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
   <br/><a href="#" onclick="javascript:buildProject()" class="md-button md-button--primary">Generate Project</a>
 </form>
+
+## AWS Lambda Quickstart
+
+- [aws-lambda-quickstart](https://github.com/michaelbrewer/aws-lambda-quickstart) - A simple webservice to generate projects from various templates.
