@@ -36,6 +36,10 @@ function buildProject() {
     float: left;
     width: 190px;
 }
+#buildProjectForm input{
+    background-color: var(--md-code-bg-color);
+    color: var(--md-code-fg-color);
+}
 </style>
 <form id="buildProjectForm">
   <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
