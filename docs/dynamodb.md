@@ -17,8 +17,11 @@ sam local generate-event dynamodb update
 {
   "Records": [
     {
-      "eventID": "1",
-      "eventVersion": "1.0",
+      "eventID": "c4ca4238a0b923820dcc509a6f75849b",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "eu-central-1",
       "dynamodb": {
         "Keys": {
           "Id": {
@@ -33,34 +36,29 @@ sam local generate-event dynamodb update
             "N": "101"
           }
         },
-        "StreamViewType": "NEW_AND_OLD_IMAGES",
-        "SequenceNumber": "111",
-        "SizeBytes": 26
+        "ApproximateCreationDateTime": 1428537600,
+        "SequenceNumber": "4421584500000000017450439091",
+        "SizeBytes": 26,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
       },
-      "awsRegion": "us-west-2",
-      "eventName": "INSERT",
-      "eventSourceARN": "arn:aws:dynamodb:us-east-1:111122223333:table/EventSourceTable",
-      "eventSource": "aws:dynamodb"
+      "eventSourceARN": "arn:aws:dynamodb:eu-central-1:123456789012:table/ExampleTableWithStream/stream/2015-06-27T00:48:05.899",
+      "userIdentity": {
+        "principalId": "dynamodb.amazonaws.com",
+        "type": "Service"
+      }
     },
     {
-      "eventID": "2",
-      "eventVersion": "1.0",
+      "eventID": "c81e728d9d4c2f636f067f89cc14862c",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "eu-central-1",
       "dynamodb": {
-        "OldImage": {
-          "Message": {
-            "S": "New item!"
-          },
-          "Id": {
-            "N": "101"
-          }
-        },
-        "SequenceNumber": "222",
         "Keys": {
           "Id": {
             "N": "101"
           }
         },
-        "SizeBytes": 59,
         "NewImage": {
           "Message": {
             "S": "This item has changed"
@@ -69,14 +67,50 @@ sam local generate-event dynamodb update
             "N": "101"
           }
         },
+        "OldImage": {
+          "Message": {
+            "S": "New item!"
+          },
+          "Id": {
+            "N": "101"
+          }
+        },
+        "ApproximateCreationDateTime": 1428537600,
+        "SequenceNumber": "4421584500000000017450439092",
+        "SizeBytes": 59,
         "StreamViewType": "NEW_AND_OLD_IMAGES"
       },
-      "awsRegion": "us-west-2",
-      "eventName": "MODIFY",
-      "eventSourceARN": "arn:aws:dynamodb:us-east-1:111122223333:table/EventSourceTable",
-      "eventSource": "aws:dynamodb"
+      "eventSourceARN": "arn:aws:dynamodb:eu-central-1:123456789012:table/ExampleTableWithStream/stream/2015-06-27T00:48:05.899"
+    },
+    {
+      "eventID": "eccbc87e4b5ce2fe28308fd9f2a7baf3",
+      "eventName": "REMOVE",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "eu-central-1",
+      "dynamodb": {
+        "Keys": {
+          "Id": {
+            "N": "101"
+          }
+        },
+        "OldImage": {
+          "Message": {
+            "S": "This item has changed"
+          },
+          "Id": {
+            "N": "101"
+          }
+        },
+        "ApproximateCreationDateTime": 1428537600,
+        "SequenceNumber": "4421584500000000017450439093",
+        "SizeBytes": 38,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:eu-central-1:123456789012:table/ExampleTableWithStream/stream/2015-06-27T00:48:05.899"
     }
-  ]}
+  ]
+}
 ```
 
 ## Response
