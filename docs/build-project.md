@@ -5,7 +5,7 @@
 A simple tool to generate a starter project based on a template.
 
 !!!WARNING
-    This is still in progress.. :)
+    This is still in progress and is not yet ready for production use :).
 
 <script>
 function buildProject(form, path) {
@@ -39,102 +39,6 @@ function buildProject(form, path) {
         })
         .catch(() => alert('Failed to generate project!'));
 }
-</script>
-<style>
-#buildProjectForm label{
-    float: left;
-    width: 190px;
-}
-#buildProjectForm input{
-    background-color: var(--md-code-bg-color);
-    color: var(--md-code-fg-color);
-}
-#buildSamProjectForm label{
-    float: left;
-    width: 190px;
-}
-#buildSamProjectForm input{
-    background-color: var(--md-code-bg-color);
-    color: var(--md-code-fg-color);
-}
-</style>
-
-## AWS Lambda Powertools Project Initializer
-
-[AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) templates
-
-<form id="buildProjectForm">
-  <input id="template" type="hidden" value=""/>
-  <input id="architecture" type="hidden" value=""/>
-
-  <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
-  <label for="projectType">Type :</label>
-  <select id="projectType" name="type">
-    <option value="sam" selected>SAM Template</option>
-    <option value="cdk">AWS CDK project</option>
-  </select>
-  <br/>
-  <label for="projectType">Runtime :</label>
-  <select id="projectRuntime" name="runtime">
-    <option value="python3.9" selected>Python 3.9</option>
-    <option value="typescript">Typescript (Node 14)</option>
-  </select>
-  <br/>
-  <label for="projectTrigger">Trigger :</label>
-  <select id="projectTrigger" name="trigger">
-    <option value="rest-api" selected>API GW Rest API</option>
-    <option value="http-api">API GW Rest API</option>
-    <option value="s3">S3 Event Notification</option>
-  </select>
-  <br/>
-  <label for="projectArchitecture">Architecture :</label>
-  <select id="projectArchitecture" name="architecture" required=false>
-    <option value="x86_64" selected>x86_64</option>
-    <option value="arm64">arm64</option>
-  </select>
-  <br/>
-  <label for="projectMemory">Memory in MB :</label> <input id="projectMemory" name="memory" value="512"><br/>
-  <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
-  <br/><a href="#" onclick="javascript:buildProject(document.getElementById('buildProjectForm'), 'project.zip')" class="md-button md-button--primary">Generate Project</a>
-</form>
-
-## AWS Sam Project Initializer
-
-AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates) github repo.
-
-<form id="buildSamProjectForm">
-  <input name="type" type="hidden" value="sam"/>
-  <input id="trigger" type="hidden" value=""/>
-  <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
-  <label for="projectRuntime">Runtime :</label>
-  <select id="projectRuntime" name="runtime" onchange="runtimeChange()">
-    <option value="dotnetcore3.1">Dotnet Core 3.1</option>
-    <option value="go1.x">Go</option>
-    <option value="java8.al2">Java 8 AL2</option>
-    <option value="java11">Java 11</option>
-    <option value="nodejs12.x">Node 12</option>
-    <option value="nodejs14.x">Node 14</option>
-    <option value="python3.7">Python 3.7</option>
-    <option value="python3.8">Python 3.8</option>
-    <option value="python3.9" selected>Python 3.9</option>
-    <option value="ruby2.7">Ruby 2.7</option>
-  </select>
-  <br/>
-  <label for="projectTemplate">Template :</label>
-  <select id="projectTemplate" name="template">
-  </select>
-  <br/>
-  <label for="projectArchitecture">Architecture :</label>
-  <select id="projectArchitecture" name="architecture" required=false>
-    <option value="x86_64" selected>x86_64</option>
-    <option value="arm64">arm64</option>
-  </select>
-  <br/>
-  <label for="projectMemory">Memory in MB :</label> <input id="projectMemory" name="memory" value="512"><br/>
-  <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
-  <br/><a href="#aws-sam-template" onclick="javascript:buildProject(document.getElementById('buildSamProjectForm'), 'sam-project.zip')" class="md-button md-button--primary">Generate Project</a>
-</form>
-<script>
 const templates = [
   "nodejs12.x/cookiecutter-typescript-app-template",
   "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
@@ -213,6 +117,101 @@ function runtimeChange() {
     }
   });
 }
+</script>
+<style>
+#buildProjectForm label{
+    float: left;
+    width: 190px;
+}
+#buildProjectForm input{
+    background-color: var(--md-code-bg-color);
+    color: var(--md-code-fg-color);
+}
+#buildSamProjectForm label{
+    float: left;
+    width: 190px;
+}
+#buildSamProjectForm input{
+    background-color: var(--md-code-bg-color);
+    color: var(--md-code-fg-color);
+}
+</style>
+
+## AWS Lambda Powertools Project Initializer
+
+[AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) templates
+
+<form id="buildProjectForm">
+  <input id="template" type="hidden" value=""/>
+
+  <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
+  <label for="projectType">Type :</label>
+  <select id="projectType" name="type">
+    <option value="sam" selected>SAM Template</option>
+    <option value="cdk">AWS CDK project</option>
+  </select>
+  <br/>
+  <label for="projectType">Runtime :</label>
+  <select id="projectRuntime" name="runtime">
+    <option value="python3.9" selected>Python 3.9</option>
+    <option value="typescript">Typescript (Node 14)</option>
+  </select>
+  <br/>
+  <label for="projectTrigger">Trigger :</label>
+  <select id="projectTrigger" name="trigger">
+    <option value="rest-api" selected>API GW Rest API</option>
+    <option value="http-api">API GW Rest API</option>
+    <option value="s3">S3 Event Notification</option>
+  </select>
+  <br/>
+  <label for="projectArchitecture">Architecture :</label>
+  <select id="projectArchitecture" name="architecture" required=false>
+    <option value="x86_64" selected>x86_64</option>
+    <option value="arm64">arm64</option>
+  </select>
+  <br/>
+  <label for="projectMemory">Memory in MB :</label> <input id="projectMemory" name="memory" value="512"><br/>
+  <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
+  <br/><a href="#" onclick="javascript:buildProject(document.getElementById('buildProjectForm'), 'project.zip')" class="md-button md-button--primary">Generate Project</a>
+</form>
+
+## AWS Sam Project Initializer
+
+AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates) github repo.
+
+<form id="buildSamProjectForm">
+  <input name="type" type="hidden" value="sam"/>
+  <input id="trigger" type="hidden" value=""/>
+  <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
+  <label for="projectRuntime">Runtime :</label>
+  <select id="projectRuntime" name="runtime" onchange="runtimeChange()">
+    <option value="dotnetcore3.1">Dotnet Core 3.1</option>
+    <option value="go1.x">Go</option>
+    <option value="java8.al2">Java 8 AL2</option>
+    <option value="java11">Java 11</option>
+    <option value="nodejs12.x">Node 12</option>
+    <option value="nodejs14.x">Node 14</option>
+    <option value="python3.7">Python 3.7</option>
+    <option value="python3.8">Python 3.8</option>
+    <option value="python3.9" selected>Python 3.9</option>
+    <option value="ruby2.7">Ruby 2.7</option>
+  </select>
+  <br/>
+  <label for="projectTemplate">Template :</label>
+  <select id="projectTemplate" name="template">
+  </select>
+  <br/>
+  <label for="projectArchitecture">Architecture :</label>
+  <select id="projectArchitecture" name="architecture" required=false>
+    <option value="x86_64" selected>x86_64</option>
+    <option value="arm64">arm64</option>
+  </select>
+  <br/>
+  <label for="projectMemory">Memory in MB :</label> <input id="projectMemory" name="memory" value="512"><br/>
+  <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
+  <br/><a href="#aws-sam-template" onclick="javascript:buildProject(document.getElementById('buildSamProjectForm'), 'sam-project.zip')" class="md-button md-button--primary">Generate Project</a>
+</form>
+<script>
 runtimeChange();
 </script>
 
