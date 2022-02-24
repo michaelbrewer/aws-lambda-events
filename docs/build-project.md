@@ -105,9 +105,21 @@ AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
 <form id="buildSamProjectForm">
   <input name="type" type="hidden" value="sam"/>
   <input id="trigger" type="hidden" value=""/>
-  <input id="runtime" type="hidden" value=""/>
-
   <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
+  <label for="projectRuntime">Runtime :</label>
+  <select id="projectRuntime" name="runtime" onchange="runtimeChange()">
+    <option value="dotnetcore3.1">Dotnet Core 3.1</option>
+    <option value="go1.x">Go</option>
+    <option value="java8.al2">Java 8 AL2</option>
+    <option value="java11">Java 11</option>
+    <option value="nodejs12.x">Node 12</option>
+    <option value="nodejs14.x">Node 14</option>
+    <option value="python3.7">Python 3.7</option>
+    <option value="python3.8">Python 3.8</option>
+    <option value="python3.9" selected>Python 3.9</option>
+    <option value="ruby2.7">Ruby 2.7</option>
+  </select>
+  <br/>
   <label for="projectTemplate">Template :</label>
   <select id="projectTemplate" name="template">
   </select>
@@ -122,7 +134,6 @@ AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
   <label for="projectTimeout">Timeout in seconds :</label> <input id="projectTimeout" name="timeout" value="25"><br/>
   <br/><a href="#aws-sam-template" onclick="javascript:buildProject(document.getElementById('buildSamProjectForm'), 'sam-project.zip')" class="md-button md-button--primary">Generate Project</a>
 </form>
-
 <script>
 const templates = [
   "nodejs12.x/cookiecutter-typescript-app-template",
@@ -188,13 +199,21 @@ const templates = [
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet"
 ];
-const templateSelect = document.getElementById("projectTemplate");
-templates.forEach(template => {
-  const option = document.createElement("option");
-  option.value = template;
-  option.text = template;
-  templateSelect.add(option);
-});
+function runtimeChange() {
+  const form = document.getElementById('buildSamProjectForm');
+  const selectedRuntime = form.elements["runtime"].value;
+  const templateSelect = document.getElementById("projectTemplate");
+  templateSelect.innerHTML = "";
+  templates.forEach(template => {
+    if (template.startsWith(selectedRuntime)) {
+      const option = document.createElement("option");
+      option.value = template;
+      option.text = template.replace(selectedRuntime + "/", "");
+      templateSelect.appendChild(option);
+    }
+  });
+}
+runtimeChange();
 </script>
 
 ## AWS Lambda Quickstart
