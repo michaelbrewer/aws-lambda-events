@@ -92,6 +92,9 @@ const templates = [
   "python3.9/cookiecutter-aws-sam-efs-python",
   "go1.x/cookiecutter-aws-sam-hello-golang",
   "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
+  "dotnet6/cookiecutter-aws-sam-hello-dotnet",
+  "dotnet6/cookiecutter-aws-sam-hello-powershell",
+  "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-s3-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
@@ -183,9 +186,10 @@ AWS SAM templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
   <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
   <label for="projectRuntime">Runtime :</label>
   <select id="projectRuntime" name="runtime" onchange="runtimeChange()">
-    <option value="dotnetcore3.1">Dotnet Core 3.1</option>
-    <option value="go1.x">Go</option>
-    <option value="java8.al2">Java 8 AL2</option>
+    <option value="dotnetcore3.1">.NET Core 3.1</option>
+    <option value="dotnet6">.NET 6</option>
+    <option value="go1.x">Go 1.x</option>
+    <option value="java8.al2">Java 8 (AL2)</option>
     <option value="java11">Java 11</option>
     <option value="nodejs12.x">Node 12</option>
     <option value="nodejs14.x">Node 14</option>
