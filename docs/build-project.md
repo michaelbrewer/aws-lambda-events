@@ -9,21 +9,19 @@ A simple tool to generate a starter project based on a template.
 
 <script>
 function buildProject(form, path) {
-    const prjName = form.elements["name"].value || "foo-service";
-    const prjType = form.elements["type"].value;
-    const prjRuntime = form.elements["runtime"].value;
-    const prjTrigger = form.elements["trigger"].value;
-    const prjMemory = form.elements["memory"].value || "512";
-    const prjTimeout = form.elements["timeout"].value || "25";
-    const prjArchitecture = form.elements["architecture"].value || "x86_64";
-
-    let prjTemplate = form.elements["template"].value;
-    if (prjTemplate !== "") {
-      prjTemplate = "aws-sam-cli-app-templates/" + prjTemplate;
+    const name = form.elements["name"].value || "foo-service";
+    const type = form.elements["type"].value || "sam";
+    const memory = form.elements["memory"].value || "512";
+    const timeout = form.elements["timeout"].value || "25";
+    const architecture = form.elements["architecture"].value || "x86_64";
+    const runtime = form.elements["runtime"].value;
+    const trigger = form.elements["trigger"].value;
+    let template = form.elements["template"].value;
+    if (template !== "") {
+      template = "aws-sam-cli-app-templates/" + template;
     }
-
     const baseUrl = 'https://4v2ies7g1m.execute-api.us-east-2.amazonaws.com/Prod';
-    const uri = '/' + path + '?name=' + prjName + '&type=' + prjType + '&runtime=' + prjRuntime + '&trigger=' + prjTrigger + '&memory=' + prjMemory + '&timeout=' + prjTimeout + '&template=' + prjTemplate + '&architecture=' + prjArchitecture;
+    const uri = '/' + path + '?name=' + name + '&type=' + type + '&runtime=' + runtime + '&trigger=' + trigger + '&memory=' + memory + '&timeout=' + timeout + '&template=' + template + '&architecture=' + architecture;
 
     fetch(baseUrl + uri)
         .then(resp => resp.blob())
@@ -39,6 +37,7 @@ function buildProject(form, path) {
         })
         .catch(() => alert('Failed to generate project!'));
 }
+
 const templates = [
   "nodejs12.x/cookiecutter-typescript-app-template",
   "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
@@ -143,7 +142,6 @@ function runtimeChange() {
 
 <form id="buildProjectForm">
   <input id="template" type="hidden" value=""/>
-
   <label for="projectName">Project Name :</label><input id="projectName" name="name" value="example-service"><br/>
   <label for="projectType">Type :</label>
   <select id="projectType" name="type">
