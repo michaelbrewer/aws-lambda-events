@@ -164,9 +164,9 @@ Full event handler
 
 - [SQS Batch Handler - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/) - PIP `aws-lambda-powertools`
 
-## Code Examples
+### Code Examples
 
-```python title="Example S3 batch handler"
+```python title="Example S3 batch handler using powertools"
 import json
 
 from aws_lambda_powertools import Logger, Tracer
