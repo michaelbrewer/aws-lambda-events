@@ -1,6 +1,11 @@
 # CloudFront Lambda@Edge
 
-CloudFront invokes lambda synchrously. Can be Node.js or Python. Up to 5 seconds (viewer request and viewer response). Up to 30 seconds (origin request and origin response).
+CloudFront invokes lambda synchrously. Can be Node.js or Python. 
+
+## Limits
+
+- Up to 5 seconds (viewer request and viewer response).
+- Up to 30 seconds (origin request and origin response).
 
 ## Input
 
