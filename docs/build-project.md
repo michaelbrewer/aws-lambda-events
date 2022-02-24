@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A simple tool to generate a starter project based on a template.
+A simple tool to generate a starter project based on cookiecutter templates.
 
 !!!WARNING
     This is still in progress and is not yet ready for production use :).
@@ -136,7 +136,7 @@ function runtimeChange() {
 }
 </style>
 
-## AWS Lambda Powertools Project Initializer
+## Powertools Initializer
 
 [AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) templates
 
@@ -173,9 +173,9 @@ function runtimeChange() {
   <br/><a href="#" onclick="javascript:buildProject(document.getElementById('buildProjectForm'), 'project.zip')" class="md-button md-button--primary">Generate Project</a>
 </form>
 
-## AWS Sam Project Initializer
+## AWS SAM Initializer
 
-AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates) github repo.
+AWS SAM templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates) github repo.
 
 <form id="buildSamProjectForm">
   <input name="type" type="hidden" value="sam"/>
@@ -213,6 +213,17 @@ AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
 runtimeChange();
 </script>
 
-## AWS Lambda Quickstart
+## AWS Lambda Quickstart TODO
 
-- [aws-lambda-quickstart](https://github.com/michaelbrewer/aws-lambda-quickstart) - A simple webservice to generate projects from various templates.
+[aws-lambda-quickstart](https://github.com/michaelbrewer/aws-lambda-quickstart) is a simple webservice to generate projects from various templates.
+
+- [X] Initial prototype webservice
+- [X] Create basic UI and deploy via GitHub pages
+- [ ] Mock a better UI mock using figma
+- [ ] Powertools template for rest api (`quickstart-rest-api-sam-python`)
+- [ ] Powertools template for http api (`quickstart-http-api-sam-python`)
+- [ ] Powertools template for s3 api (`quickstart-s3-sam-python`)
+- [ ] BONUS: Powertools template for rest api (`quickstart-rest-api-sam-typescript`)
+- [ ] BONUS: Powertools template for http api (`quickstart-http-api-sam-typescript`)
+- [ ] BONUS: Powertools template for s3 api (`quickstart-s3-sam-typescript`)
+- [ ] BONUS: Powertools CDK templates
