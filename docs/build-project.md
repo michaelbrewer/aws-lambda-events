@@ -59,7 +59,7 @@ function buildProject(form, path) {
 }
 </style>
 
-## AWS Lambda Project Initializer
+## AWS Lambda Powertools Project Initializer
 
 [AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) templates
 
@@ -98,7 +98,7 @@ function buildProject(form, path) {
   <br/><a href="#" onclick="javascript:buildProject(document.getElementById('buildProjectForm'), 'project.zip')" class="md-button md-button--primary">Generate Project</a>
 </form>
 
-## AWS Sam template
+## AWS Sam Project Initializer
 
 AWS Sam templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates) github repo.
 
