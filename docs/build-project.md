@@ -149,20 +149,21 @@ function runtimeChange() {
   <label for="projectType">Type :</label>
   <select id="projectType" name="type">
     <option value="sam" selected>SAM Template</option>
-    <option value="cdk">AWS CDK project</option>
+    <option value="cdk">AWS CDK (TODO)</option>
   </select>
   <br/>
   <label for="projectType">Runtime :</label>
   <select id="projectRuntime" name="runtime">
     <option value="python3.9" selected>Python 3.9</option>
-    <option value="typescript">Typescript (Node 14)</option>
+    <option value="typescript">Typescript (TODO)</option>
+    <option value="typescript">Java (TODO)</option>
   </select>
   <br/>
   <label for="projectTrigger">Trigger :</label>
   <select id="projectTrigger" name="trigger">
-    <option value="rest-api" selected>API GW Rest API</option>
-    <option value="http-api">API GW Rest API</option>
-    <option value="s3">S3 Event Notification</option>
+    <option value="s3" selected>S3</option>
+    <option value="s3-object-lambda">S3 Object Lambda</option>
+    <option value="rest-api">API GW Rest API</option>
   </select>
   <br/>
   <label for="projectArchitecture">Architecture :</label>
