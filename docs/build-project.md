@@ -224,10 +224,11 @@ runtimeChange();
 
 - [X] Initial prototype webservice
 - [X] Create basic UI and deploy via GitHub pages
-- [ ] Mock a better UI mock using figma
+- [X] Powertools template for s3 api (`quickstart-s3-sam-python`)
+- [X] Powertools template for s3 object lambda api (`quickstart-s3-object-lambda-sam-python`)
 - [ ] Powertools template for rest api (`quickstart-rest-api-sam-python`)
 - [ ] Powertools template for http api (`quickstart-http-api-sam-python`)
-- [ ] Powertools template for s3 api (`quickstart-s3-sam-python`)
+- [ ] Mock a better UI mock using figma
 - [ ] BONUS: Powertools template for rest api (`quickstart-rest-api-sam-typescript`)
 - [ ] BONUS: Powertools template for http api (`quickstart-http-api-sam-typescript`)
 - [ ] BONUS: Powertools template for s3 api (`quickstart-s3-sam-typescript`)
