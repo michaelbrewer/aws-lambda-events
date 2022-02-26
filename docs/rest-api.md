@@ -288,7 +288,7 @@ Event Handlers by Language
 - [Chalice Python](https://aws.github.io/chalice/tutorials/basicrestapi.html)
 - [AWS Lambda Powertools Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/)
 - [PHP Bref for webapps](https://bref.sh/docs/runtimes/http.html)
-- [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container)
+- [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container) - has support for SpringBoot, Apache Struts, Jersey, Spark and Micronaut
 - [Ruby - Routing](https://rubyonjets.com/docs/routing/overview/) - Gem `jets`
 
 ## Reference Docs
