@@ -134,14 +134,16 @@ Typing and data classes
 - [Typescript - DynamoDBStreamEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/dynamodb-stream.d.ts){target="_blank"} - NPM `@types/aws-lambda`
 - [Java - DynamodbEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/DynamodbEvent.java){target="_blank"} - Java `aws-lambda-java-events`
 - [Rust - aws_lambda_events::dynamodb::Event](https://docs.rs/aws_lambda_events/latest/aws_lambda_events/dynamodb/index.html){target="_blank"} - Rust `aws_lambda_events`
+- [Ruby - DynamodbEvent](https://rubyonjets.com/docs/events/dynamodb/) - Gem `jets`
 
 Batch handler
 
-- [Python - BatchProcessor](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/#processing-messages-from-dynamodb){target="_blank"}
+- [Python - BatchProcessor](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/#processing-messages-from-dynamodb){target="_blank"} - pip `aws-lambda-powertools`
+- [Python - on_dynamodb_record](https://aws.github.io/chalice/topics/events.html#dynamodb-events) - pip `chalice`
 
 ### Code Examples
 
-```python
+```python title="Example using AWS Lambda Powertool (Python)"
 import json
 
 from aws_lambda_powertools import Logger, Tracer
