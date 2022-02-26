@@ -133,6 +133,8 @@ N/A
 
 ## Libraries
 
+Typing and data classes
+
 - [Typescript - EventBridgeEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/eventbridge.d.ts) - NPM `@types/aws-lambda`
 - [Python - EventBridgeEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#eventbridge) - Pip `aws-lambda-powertools`
 - [Go - CloudWatchEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_CloudWatch_Events.md)
@@ -140,11 +142,16 @@ N/A
 - [Php - EventBridgeEvent](https://bref.sh/docs/function/handlers.html#eventbridge-events) - Composer `bref/bref`
 - [Rust - cloud_events](https://docs.rs/aws_lambda_events/latest/aws_lambda_events/cloudwatch_events/index.html) - `aws_lambda_events`
 
+Handlers with infrastructure provisioning
+
+- [Ruby - CloudWatch Rules Event](https://rubyonjets.com/docs/events/cloudwatch-rule/) - gem `jets`
+- [Python - Chalice on_cw_event](https://aws.github.io/chalice/topics/events.html#cloudwatch-events) - pip `chalice`
+
 ### Code Examples
 
 DotNet has a large number of handlers for CloudWatch Events.
 
-```C#
+```C# title="DotNet ECSTaskStateChangeEvent example"
 public class Function
 {
     public string Handler(ECSTaskStateChangeEvent ecsTaskStateChangeEvent)
@@ -152,6 +159,41 @@ public class Function
         Console.WriteLine($"ECS Task ARN - {ecsTaskStateChangeEvent.Detail.TaskArn}");
     }
 }
+```
+
+[Jet - CloudWatch Rules Events](https://rubyonjets.com/docs/events/cloudwatch-rule/) allows you to define the infracture code next to the implementation
+
+```ruby title="Ruby example might be getting notified when an unwanted security group port gets opened."
+class SecurityJob < ApplicationJob
+  rule_event(
+    description: "Checks for security group changes",
+    detail_type: ["AWS API Call via CloudTrail"],
+    detail: {
+      event_source: ["ec2.amazonaws.com"],
+      event_name: [
+        "AuthorizeSecurityGroupIngress",
+        "AuthorizeSecurityGroupEgress",
+        "RevokeSecurityGroupIngress",
+        "RevokeSecurityGroupEgress",
+        "CreateSecurityGroup",
+        "DeleteSecurityGroup"
+      ]
+    }
+  )
+  def detect_security_group_changes
+    puts "event: #{JSON.dump(event)}" # event is available
+    # your logic
+  end
+end
+```
+[Chalice](https://aws.github.io/chalice/topics/events.html#cloudwatch-events) can also to the infrastructure provisioning along set the lambda handler
+
+```python title="Example using Chalice to subscribe to code commit events"
+app = chalice.Chalice(app_name='foo')
+
+@app.on_cw_event({"source": ["aws.codecommit"]})
+def on_code_commit_changes(event):
+    print(event.to_dict())
 ```
 
 ## Reference Docs
