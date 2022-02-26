@@ -95,7 +95,7 @@ Event Handlers by Language
 
 - [AWS Lambda Powertools Python - APIGatewayHttpResolver](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/event_handler/api_gateway/)
 - [PHP Bref for webapps](https://bref.sh/docs/runtimes/http.html)
-- [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container)
+- [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container) - has support for SpringBoot, Apache Struts, Jersey, Spark and Micronaut
 
 ## Reference Docs
 
