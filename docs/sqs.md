@@ -163,10 +163,12 @@ Typings in different languages
 Full event handler
 
 - [SQS Batch Handler - Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/) - PIP `aws-lambda-powertools`
+- [SQS Events - Ruby](https://rubyonjets.com/docs/events/sqs/) - GEM `jets`
+- [on_sqs_message - Python](https://aws.github.io/chalice/topics/events.html#sqs-events) - PIP `chalice`
 
 ### Code Examples
 
-```python title="Example S3 batch handler using powertools"
+```python title="Example S3 batch handler using AWS Lambda Powertools (Python)"
 import json
 
 from aws_lambda_powertools import Logger, Tracer
