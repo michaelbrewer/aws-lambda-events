@@ -105,6 +105,8 @@ Typing by language
 Handlers by language
 
 - [Python - BatchProcessor](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/#processing-messages-from-kinesis) - Pip `aws-lambda-powertools`
+- [Ruby - kinesis_event](https://rubyonjets.com/docs/events/kinesis/) - GEM `jets`
+- [Python - on_kinesis_record](https://aws.github.io/chalice/topics/events.html#kinesis-events) - Pip `chalice`
 
 ## Reference Docs
 
