@@ -58,6 +58,11 @@ Input types for Amazon SNS events
 - [Python - SNSEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#sqs)
 - [Php - SnsEvent](https://bref.sh/docs/function/handlers.html#sns-events) - Composer `bref/bref`
 
+Full handler and infrastructure code solutions
+
+- [Ruby - sns_event](https://rubyonjets.com/docs/events/sns/) - Gem `jets`
+- [Python - on_sns_message](https://aws.github.io/chalice/topics/events.html#sns-events) - pip `chalice`
+
 ## Reference Docs
 
 - [Using AWS Lambda with Amazon SNS](https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html)
