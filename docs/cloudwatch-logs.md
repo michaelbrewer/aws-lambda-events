@@ -55,6 +55,7 @@ N/A
 - [DotNet - CloudWatchLogsEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.CloudWatchLogsEvents) - Nuget `Amazon.Lambda.CloudWatchLogsEvents`
 - [Java - CloudWatchLogsEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/CloudWatchLogsEvent.java) - Maven `aws-lambda-java-events`
 - [Rust - CloudwatchLogsEvent](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/generated/cloudwatch_logs.rs) - Cargo `aws-lambda-events`
+- [Ruby - LogJob](https://rubyonjets.com/docs/events/cloudwatch-log/) - gem `jets`
 
 ### Code Example
 
