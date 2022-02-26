@@ -40,7 +40,7 @@ Amazon EventBridge (formerly called CloudWatch Events) invokes your function asy
 }
 ```
 
-#### EventBridge message event
+#### EventBridge scheduled event
 
 ```json title="EventBridge (CloudWatch Events) message event"
 {
@@ -193,6 +193,14 @@ app = chalice.Chalice(app_name='foo')
 
 @app.on_cw_event({"source": ["aws.codecommit"]})
 def on_code_commit_changes(event):
+    print(event.to_dict())
+```
+
+```python title="Chalice scheduling ab hourly Cloudwatch event"
+app = chalice.Chalice(app_name='foo')
+
+@app.schedule('rate(1 hour)')
+def every_hour(event):
     print(event.to_dict())
 ```
 
