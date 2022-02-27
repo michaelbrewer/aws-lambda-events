@@ -270,6 +270,10 @@ Full solutions
 
 - [NodeJS - AWS Lambda SES Email Forwarder](https://github.com/arithmetric/aws-lambda-ses-forwarder) - A Node.js script for AWS Lambda that uses the inbound/outbound capabilities of AWS Simple Email Service (SES) to run a "serverless" email forwarding service.
 
+### Code examples
+
+- [Serverless Framework - node - email receiving](https://github.com/serverless/examples/tree/master/aws-node-ses-receive-email-header)
+
 ## Reference Docs
 
 - [Using AWS Lambda with Amazon SES](https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html)
