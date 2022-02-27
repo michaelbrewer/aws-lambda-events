@@ -129,9 +129,8 @@ Possible values for this field are: `none`, `quarantine`, `reject`
 `receipt.action.type` (String)
 : The type of action that was executed. Possible values are `S3`, `SNS`, `Bounce`, `Lambda`, `Stop`, and `WorkMail`
 
-`receipt.action.topicArn` (String)
-: String that contains the Amazon Resource Name (ARN) of the Amazon SNS topic to which the
-notification was published
+`receipt.action.topicArn` (Optional, String)
+: The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the Lambda action is executed. You can find the ARN of a topic by using the ListTopics operation in Amazon SNS.
 
 `receipt.action.functionArn` (String)
 : String that contains the ARN of the Lambda function that was triggered.
