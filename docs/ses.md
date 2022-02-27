@@ -278,6 +278,7 @@ Full solutions
 
 - [Using AWS Lambda with Amazon SES](https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html)
 - [SES - Invoke Lambda function action](https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-lambda.html)
+- [Blog - Replace traditional email mailbox polling with real-time reads using Amazon SES and Lambda](https://aws.amazon.com/blogs/messaging-and-targeting/replace-traditional-email-mailbox-polling-with-real-time-reads-using-amazon-ses-and-lambda/)
 - [Blog - Forwarding emails automatically based on content with Amazon Simple Email Service](https://aws.amazon.com/blogs/messaging-and-targeting/forwarding-emails-automatically-based-on-content-with-amazon-simple-email-service/)
 - [Blog - Receive and Process Incoming Email with Amazon SES](https://aws.amazon.com/blogs/aws/new-receive-and-process-incoming-email-with-amazon-ses/)
 
