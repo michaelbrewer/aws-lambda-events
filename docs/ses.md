@@ -1,22 +1,37 @@
 # SES
 
-Event-driven, asynchronous invocation. The service can then invoke your Lambda function by passing in the incoming
-email event, which in reality is an Amazon SES message in an Amazon SNS event, as a parameter.
+The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS.
 
-## Limit
+**Invocation type**, the invocation type of the Lambda function. An invocation type of RequestResponse means that the execution of the function results in an immediate response. An invocation type of Event means that the function is invoked asynchronously. We recommend that you use Event invocation type unless synchronous execution is required for your use case..
+
+Requirements
+
+- The Lambda function that you choose must be in the same AWS Region as the Amazon SES endpoint that you use to receive email.
+- The Amazon SNS topic that you choose must be in the same AWS Region as the Amazon SES endpoint that you use to receive email.
+
+
+## Limits
 
 - There is a 30-second timeout on `RequestResponse` invocations.
+
+## Soft Limits
 
 | Resource                  | Default quota | Description                                                                                   |
 |---------------------------|---------------|-----------------------------------------------------------------------------------------------|
 | Maximum message size (MB) | 30            | The maximum message size that can be sent to your identity and stored in an Amazon S3 bucket. |
 
-## Input
+## Request
 
-### Generating sample events via SAM CLI
+### Generating sample event
+
+Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) to can generate sample
+events
 
 ```shell
-sam local generate-event ses email-receiving
+# Get help via
+sam local generate-event ses email-receiving -h
+# Generate event do custom region
+sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix us-west-1.amazonaws.com
 ```
 
 ### Request fields
@@ -249,7 +264,7 @@ Present only for the Lambda action type.
 
 ## Response
 
-Response when doing a synchronous `RequestResponse` invocations    
+Response when doing a synchronous `RequestResponse` invocations must be in the follow format 
 
 `disposition` (String)
 
@@ -265,7 +280,7 @@ Response when doing a synchronous `RequestResponse` invocations
 
 ## Libraries
 
-Data classes and typing
+Typing and utility class
 
 - [Typescript - SESEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/ses.d.ts) - NPM package: `@types/aws-lambda`
 - [Go - SimpleEmailEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_SES.md) - `github.com/aws/aws-lambda-go/events`
@@ -277,11 +292,11 @@ Full solutions
 
 - [NodeJS - AWS Lambda SES Email Forwarder](https://github.com/arithmetric/aws-lambda-ses-forwarder) - A Node.js script for AWS Lambda that uses the inbound/outbound capabilities of AWS Simple Email Service (SES) to run a "serverless" email forwarding service.
 
-### Code examples
+Code examples
 
 - [Serverless Framework - node - email receiving](https://github.com/serverless/examples/tree/master/aws-node-ses-receive-email-header)
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Amazon SES](https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html)
 - [SES - Invoke Lambda function action](https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-lambda.html)
