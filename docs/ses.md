@@ -71,10 +71,10 @@ if the headers are larger than 10 KB. Possible values are true and false.
 `commonHeaders.subject` (String)
 : The value of the Subject header for the email.
 
-`commonHeaders.cc` (List of strings)
+`commonHeaders.cc` (Optional, List of strings)
 : The values in the CC header of the email.
 
-`commonHeaders.bcc` (List of strings)
+`commonHeaders.bcc` (Optional, List of strings)
 : The values in the BCC header of the email.
 
 `commonHeaders.sender` (Optional, list of strings)
@@ -148,33 +148,33 @@ Present only for the Lambda action type.
         "mail": {
           "commonHeaders": {
             "from": [
-              "Jane Doe <janedoe@example.com>"
+              "Amazon Web Services <aws@amazon.com>"
             ],
             "to": [
-              "johndoe@example.com"
+              "lambda@amazon.com"
             ],
-            "returnPath": "janedoe@example.com",
-            "messageId": "<0123456789example.com>",
-            "date": "Wed, 7 Oct 2015 12:34:56 -0700",
+            "returnPath": "aws@amazon.com",
+            "messageId": "<CAEddw6POFV_On91m+ZoL_SN8B_M2goDe_Ni355owhc7QSjPQSQ@amazon.com>",
+            "date": "Mon, 5 Dec 2016 18:40:08 -0800",
             "subject": "Test Subject"
           },
-          "source": "janedoe@example.com",
-          "timestamp": "1970-01-01T00:00:00.000Z",
+          "source": "aws@amazon.com",
+          "timestamp": "1970-01-01T00:00:00.123Z",
           "destination": [
-            "johndoe@example.com"
+            "lambda@amazon.com"
           ],
           "headers": [
             {
               "name": "Return-Path",
-              "value": "<janedoe@example.com>"
+              "value": "<aws@amazon.com>"
             },
             {
               "name": "Received",
-              "value": "from mailer.example.com (mailer.example.com [203.0.113.1]) by inbound-smtp.us-west-2.amazonaws.com with SMTP id o3vrnil0e2ic for johndoe@example.com; Wed, 07 Oct 2015 12:34:56 +0000 (UTC)"
+              "value": "from mx.amazon.com (mx.amazon.com [127.0.0.1]) by inbound-smtp.us-east-1.amazonaws.com with SMTP id 6n4thuhcbhpfiuf25gshf70rss364fuejrvmqko1 for lambda@amazon.com; Tue, 06 Dec 2016 02:40:10 +0000 (UTC)"
             },
             {
               "name": "DKIM-Signature",
-              "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; s=example; h=mime-version:from:date:message-id:subject:to:content-type; bh=jX3F0bCAI7sIbkHyy3mLYO28ieDQz2R0P8HwQkklFj4=; b=sQwJ+LMe9RjkesGu+vqU56asvMhrLRRYrWCbV"
+              "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=iatn.net; s=amazon; h=mime-version:from:date:message-id:subject:to; bh=chlJxa/vZ11+0O9lf4tKDM/CcPjup2nhhdITm+hSf3c=; b=SsoNPK0wX7umtWnw8pln3YSib+E09XO99d704QdSc1TR1HxM0OTti/UaFxVD4e5b0+okBqo3rgVeWgNZ0sWZEUhBaZwSL3kTd/nHkcPexeV0XZqEgms1vmbg75F6vlz9igWflO3GbXyTRBNMM0gUXKU/686hpVW6aryEIfM/rLY="
             },
             {
               "name": "MIME-Version",
@@ -182,15 +182,15 @@ Present only for the Lambda action type.
             },
             {
               "name": "From",
-              "value": "Jane Doe <janedoe@example.com>"
+              "value": "Amazon Web Services <aws@amazon.com>"
             },
             {
               "name": "Date",
-              "value": "Wed, 7 Oct 2015 12:34:56 -0700"
+              "value": "Mon, 5 Dec 2016 18:40:08 -0800"
             },
             {
               "name": "Message-ID",
-              "value": "<0123456789example.com>"
+              "value": "<CAEddw6POFV_On91m+ZoL_SN8B_M2goDe_Ni355owhc7QSjPQSQ@amazon.com>"
             },
             {
               "name": "Subject",
@@ -198,32 +198,36 @@ Present only for the Lambda action type.
             },
             {
               "name": "To",
-              "value": "johndoe@example.com"
+              "value": "lambda@amazon.com"
             },
             {
               "name": "Content-Type",
-              "value": "text/plain; charset=UTF-8"
+              "value": "multipart/alternative; boundary=94eb2c0742269658b10542f452a9"
             }
           ],
           "headersTruncated": false,
-          "messageId": "o3vrnil0e2ic28tr"
+          "messageId": "6n4thuhcbhpfiuf25gshf70rss364fuejrvmqko1"
         },
         "receipt": {
           "recipients": [
-            "johndoe@example.com"
+            "lambda@amazon.com"
           ],
-          "timestamp": "1970-01-01T00:00:00.000Z",
+          "timestamp": "1970-01-01T00:00:00.123Z",
           "spamVerdict": {
             "status": "PASS"
           },
           "dkimVerdict": {
             "status": "PASS"
           },
+          "dmarcVerdict": {
+            "status": "PASS"
+          },
+          "dmarcPolicy": "reject",
           "processingTimeMillis": 574,
           "action": {
             "type": "Lambda",
             "invocationType": "Event",
-            "functionArn": "arn:aws:lambda:us-west-2:012345678912:function:Example"
+            "functionArn": "arn:aws:lambda:us-east-1:000000000000:function:my-ses-lambda-function"
           },
           "spfVerdict": {
             "status": "PASS"
