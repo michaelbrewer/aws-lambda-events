@@ -33,6 +33,7 @@ markdown_extensions:
   - attr_list
   - admonition
   - def_list
+  - tables
   - meta
   - pymdownx.tasklist:
       custom_checkbox: true
