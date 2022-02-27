@@ -258,13 +258,16 @@ Present only for the Lambda action type.
 
 ## Libraries
 
+Data classes and typing
+
 - [Typescript - SESEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/ses.d.ts) - NPM package: `@types/aws-lambda`
 - [Go - SimpleEmailEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_SES.md) - `github.com/aws/aws-lambda-go/events`
 - [Python - SESEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#s3-object-lambda) - PIP package: `aws-lambda-powertools`
 - [DotNet - SimpleEmailEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.SimpleEmailEvents) - NuGet package: `Amazon.Lambda.SimpleEmailEvents`
 - [Rust - SimpleEmailEvent](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/generated/ses.rs)
 
-Full solutions:
+Full solutions
+
 - [NodeJS - AWS Lambda SES Email Forwarder](https://github.com/arithmetric/aws-lambda-ses-forwarder) - A Node.js script for AWS Lambda that uses the inbound/outbound capabilities of AWS Simple Email Service (SES) to run a "serverless" email forwarding service.
 
 ## Reference Docs
