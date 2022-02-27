@@ -3,8 +3,13 @@
 Event-driven, asynchronous invocation. The service can then invoke your Lambda function by passing in the incoming
 email event, which in reality is an Amazon SES message in an Amazon SNS event, as a parameter.
 
-!!! NOTE
-    There is a 30-second timeout on RequestResponse invocations.
+## Limit
+
+- There is a 30-second timeout on `RequestResponse` invocations.
+
+| Resource                  | Default quota | Description                                                                                   |
+|---------------------------|---------------|-----------------------------------------------------------------------------------------------|
+| Maximum message size (MB) | 30            | The maximum message size that can be sent to your identity and stored in an Amazon S3 bucket. |
 
 ## Input
 
@@ -243,6 +248,8 @@ Present only for the Lambda action type.
 ```
 
 ## Response
+
+Response when doing a synchronous `RequestResponse` invocations    
 
 `disposition` (String)
 
