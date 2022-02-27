@@ -1,4 +1,9 @@
-# SES
+---
+title: SES
+description: The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS.
+---
+
+# AWS SES - Receiving emails
 
 The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS.
 
