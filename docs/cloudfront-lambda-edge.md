@@ -6,8 +6,26 @@ CloudFront invokes lambda synchrously. Can be Node.js or Python.
 
 - Up to 5 seconds (viewer request and viewer response).
 - Up to 30 seconds (origin request and origin response).
+- 1 MB code size (viewer request and viewer response).
+- 50 MB code size (origin request and origin response)
+- Node.js and Python runtimes only
+- Up to 10,000 requests per second per Region
+- 128 – 3,008 MB memory
 
-## Input
+## Request
+
+### Generating sample event
+
+Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) to can generate sample
+events
+
+```shell
+# Get list of event templates for cloudfront
+sam local generate-event
+# Generate event do custom region
+sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix us-west-1.amazonaws.com
+```
+
 
 ### Example viewer request
 

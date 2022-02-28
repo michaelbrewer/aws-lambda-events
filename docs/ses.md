@@ -39,7 +39,7 @@ Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/lates
 events
 
 ```shell
-# Get help via
+# Get help via following command
 sam local generate-event ses email-receiving -h
 # Generate event do custom region
 sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix us-west-1.amazonaws.com

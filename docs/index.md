@@ -1,21 +1,23 @@
 # AWS Lambda Event Resources
 
-## Objectives
+This site tries to collect as many resources on AWS Lambda events from schema, examples to code libraries.
 
-Objective is to collect resources on lambda inputs (requests) and outputs (responses) as well as the following:
+??? tip - "Objectives of this site"
 
-- Invocation type (synchronous, asynchronous or polling)
-- Limitations of each type of lambda
-- Input schema
-- Response schema
-- Example events
-- Libraries for typing, data structures, and other utilities
-- Event handlers libraries by language
-- Response handlers by language
-- Documentation and blog posts
-- Code examples
+    Objective is to collect resources on lambda inputs (requests) and outputs (responses) as well as the following:
 
-## AWS Lambda Event Sources
+    - Invocation type (synchronous, asynchronous or polling)
+    - Limitations of each type of lambda
+    - Input schema
+    - Response schema
+    - Example events
+    - Libraries for typing, data structures, and other utilities
+    - Event handlers libraries by language
+    - Response handlers by language
+    - Documentation and blog posts
+    - Code examples
+
+## Lambda Event Sources
 
 Directory of lambda events and resources
 
@@ -31,7 +33,7 @@ Directory of lambda events and resources
 - [X] [CloudWatch Logs](./cloudwatch-logs.md) - asynchronously invokes
 - [X] [CloudFormation - Custom Resource](./cloudformation.md) - asynchronously invokes
 - [X] [CloudFront - Lambda@Edge](./cloudfront-lambda-edge.md) - synchronously invokes
-- [ ] CloudFront - CloudFront Functions - synchronously invokes
+- [X] [CloudFront - CloudFront Functions](./cloudfront-function.md) - synchronously invokes
 - [X] [CodeCommit](./code-commit.md) - asynchronously invokes
 - [X] [CodePipeline - Job](./code-pipeline-job.md) - asynchronously invokes
 - [X] [Amazon Cognito - User Pool](./cognito-user-pool.md) - synchronously invokes
@@ -58,7 +60,7 @@ Directory of lambda events and resources
 - [X] [Amazon SQS](./sqs.md) - asynchronously invokes
 - [X] [Amazon WorkMail](./work-mail.md) - asynchronously or synchronously invokes
 
-## General Documentation
+## Invokation Types
 
 ### Synchronous Invokes
 
@@ -68,7 +70,7 @@ Synchronous invocations are the most straight forward way to invoke your Lambda 
 
 Asynchronous invokes place your invoke request in Lambda service queue and we process the requests as they arrive. For testing, when invoking directly use invoke type of `Event`.
 
-!!!NOTE
+???+ NOTE
     During asynchronous invokes, the lambda context field `clientContext` will not be populated.
 
 ### Poll-Based Invokes
