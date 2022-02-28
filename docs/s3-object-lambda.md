@@ -1,8 +1,9 @@
 # S3 Object Lambda
 
+With S3 Object Lambda you can add your own code to S3 GET requests to modify and process data as it is returned to an application.
 Calls are made synchronously.
 
-## Input
+## Request
 
 ### Fields
 
@@ -158,6 +159,8 @@ JSON path to correlation id: `xAmzRequestId`
 
 ## Response
 
+No specific response is required
+
 ```json
 {"status_code": 200}
 ```
@@ -202,8 +205,9 @@ def lambda_handler(event, context):
     return {"status_code": 200}
 ```
 
-## Reference Docs
+## Documentation
 
 - [Writing and debugging AWS Lambda functions for Amazon S3 Object Lambda Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-writing-lambda.html)
 - [Transforming objects with S3 Object Lambda](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html)
 - [Introducing Amazon S3 Object Lambda – Use Your Code to Process Data as It Is Being Retrieved from S3](https://aws.amazon.com/blogs/aws/introducing-amazon-s3-object-lambda-use-your-code-to-process-data-as-it-is-being-retrieved-from-s3/)
+- [S3 Object Lambda Workshop](https://github.com/aws-samples/s3-object-lambda-workshop)
