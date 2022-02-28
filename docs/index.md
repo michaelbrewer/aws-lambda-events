@@ -60,7 +60,7 @@ Directory of lambda events and resources
 - [X] [Amazon SQS](./sqs.md) - asynchronously invokes
 - [X] [Amazon WorkMail](./work-mail.md) - asynchronously or synchronously invokes
 
-## Invokation Types
+## Invocation Types
 
 ### Synchronous Invokes
 
