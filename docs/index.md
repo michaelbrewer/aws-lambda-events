@@ -69,7 +69,7 @@ Synchronous invocations are the most straight forward way to invoke your Lambda 
 Asynchronous invokes place your invoke request in Lambda service queue and we process the requests as they arrive. For testing, when invoking directly use invoke type of `Event`.
 
 !!!NOTE
-    The lambda context field `clientContext` will not be populated.
+    During asynchronous invokes, the lambda context field `clientContext` will not be populated.
 
 ### Poll-Based Invokes
 
