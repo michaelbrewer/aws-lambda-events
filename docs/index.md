@@ -62,11 +62,14 @@ Directory of lambda events and resources
 
 ### Synchronous Invokes
 
-Synchronous invocations are the most straight forward way to invoke your Lambda functions. In this model, your functions execute immediately when you perform the Lambda Invoke API call.
+Synchronous invocations are the most straight forward way to invoke your Lambda functions. In this model, your functions execute immediately when you perform the Lambda Invoke API call. For testing, when invoking directly use invoke type of `RequestResponse`.
 
 ### Asynchronous Invokes
 
-Asynchronous invokes place your invoke request in Lambda service queue and we process the requests as they arrive. 
+Asynchronous invokes place your invoke request in Lambda service queue and we process the requests as they arrive. For testing, when invoking directly use invoke type of `Event`.
+
+!!!NOTE
+    The lambda context field `clientContext` will not be populated.
 
 ### Poll-Based Invokes
 
