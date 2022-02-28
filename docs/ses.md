@@ -45,6 +45,10 @@ sam local generate-event ses email-receiving -h
 sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix us-west-1.amazonaws.com
 ```
 
+### Getting the correlation id
+
+JSON path to correlation id: `Records[*].mail.messageId`
+
 ### Request fields
 
 `Records` - array of Amazon SES events
