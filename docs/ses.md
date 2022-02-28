@@ -314,6 +314,8 @@ Example use case of filtering incoming emails by subject and forwarding to a dif
 ![AWS SES Diagram](./media/aws-ses-example-light.png#only-light)
 ![AWS SES Diagram](./media/aws-ses-example-dark.png#only-dark)
 
+CDK infrastucture code setting up the receipt rules
+
 ```kotlin title="CDK code for receipt rules"
 ReceiptRuleSet(
   this,
