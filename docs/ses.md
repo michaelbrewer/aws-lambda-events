@@ -14,13 +14,12 @@ Requirements
 - The Lambda function that you choose must be in the same AWS Region as the Amazon SES endpoint that you use to receive email.
 - The Amazon SNS topic that you choose must be in the same AWS Region as the Amazon SES endpoint that you use to receive email.
 
-
 ## Limits
 
 - There is a 30-second timeout on `RequestResponse` invocations.
 - Not available in all regions support [receiving emails](https://docs.aws.amazon.com/ses/latest/dg/regions.html#region-receive-email)
 
-| Region Name	           | Email Receiving Endpoint              |
+| Region Name            | Email Receiving Endpoint              |
 |------------------------|---------------------------------------|
 | US East (N. Virginia)  | inbound-smtp.us-east-1.amazonaws.com  |
 | US West (Oregon)       | inbound-smtp.us-west-2.amazonaws.com  |
@@ -307,6 +306,101 @@ Full solutions
 Code examples
 
 - [Serverless Framework - node - email receiving](https://github.com/serverless/examples/tree/master/aws-node-ses-receive-email-header)
+
+### Example
+
+Example use case of filtering incoming emails by subject and forwarding to a different email address.
+
+![AWS SES Diagram](./media/aws-ses-example-light.png#only-light)
+![AWS SES Diagram](./media/aws-ses-example-dark.png#only-dark)
+
+```kotlin title="CDK code for receipt rules"
+ReceiptRuleSet(
+  this,
+  "RecipientRuleSet",
+  ReceiptRuleSetProps
+    .builder()
+    .receiptRuleSetName("RevieveReceipt-$namespace")
+    .dropSpam(true)
+    .rules(
+      listOf(
+        ReceiptRuleOptions
+          .builder()
+          // List of recipients to forward
+          .recipients(listOf(recipientEmail))
+          .scanEnabled(true)
+          .actions(
+            listOf(
+                // Filter out emails by subject line
+                Lambda(
+                    LambdaProps
+                        .builder()
+                        .function(subjectFilterLambda)
+                        .invocationType(LambdaInvocationType.REQUEST_RESPONSE)
+                        .build()
+                ),
+                // Save email to S3
+                S3(
+                    S3Props
+                        .builder()
+                        .bucket(emailBucket)
+                        .objectKeyPrefix("ar")
+                        .build()
+                ),
+                // Forward email to recipients
+                Lambda(
+                    LambdaProps
+                        .builder()
+                        .function(receiveLambda)
+                        .invocationType(LambdaInvocationType.EVENT)
+                        .build()
+                )
+            )
+          )
+          .build()
+      )
+    )
+    .build()
+)
+```
+
+Example subject filtering lambda
+
+```python title="subjectFilterLambda.py"
+import os
+from aws_lambda_powertools import Tracer, Logger
+
+tracer = Tracer(service="example-ses-filter")
+logger = Logger(service="example-ses-filter")
+allow_mail_source = os.environ["MAIL_SOURCE"]
+allow_subjects = os.environ["MAIL_SUBJECTS"].split(";")
+
+
+@tracer.capture_lambda_handler
+@logger.inject_lambda_context
+def lambda_handler(event: dict, _) -> dict:
+    """Simple lambda that filters out emails that does not match `MAIL_SOURCE` and `MAIL_SUBJECTS`"""
+
+    records = event.get("Records")
+    if records is None or len(records) == 0:
+        return {"disposition": "STOP_RULE_SET"}
+
+    record = records[0]
+    mail = record["ses"]["mail"]
+
+    mail_source: str = mail["source"]
+    if mail_source != allow_mail_source:
+        logger.info("SKIP(source not handled) mail_source: %s", mail_source)
+        return {"disposition": "STOP_RULE_SET"}
+
+    mail_subject: str = mail["commonHeaders"]["subject"]
+    tracer.put_metadata(key="mail_subject", value=mail_subject)
+    if any(allow_subject.strip() in mail_subject for allow_subject in allow_subjects):
+        return {"disposition": "CONTINUE"}
+
+    logger.info("SKIP(subject not handled) mail_subject: %s", mail_subject)
+    return {"disposition": "STOP_RULE_SET"}
+```
 
 ## Documentation
 
