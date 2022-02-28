@@ -53,7 +53,7 @@ Directory of lambda events and resources
     - [X] [S3 - Batch Operations](./s3-batch.md) - synchronously invokes
     - [X] [S3 - Object Lambda](./s3-object-lambda.md) - synchronously invokes
 - [X] [Secrets Manager](./secrets-manager.md) - synchronously invokes
-- [X] [Amazon SES](./ses.md) - asynchronously invokes
+- [X] [Amazon SES](./ses.md) - configurable as asynchronously invokes or synchronously invokes
 - [X] [Amazon SNS](./sns.md) - asynchronously invokes
 - [X] [Amazon SQS](./sqs.md) - asynchronously invokes
 - [X] [Amazon WorkMail](./work-mail.md) - asynchronously or synchronously invokes
