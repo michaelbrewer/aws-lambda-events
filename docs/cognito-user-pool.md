@@ -1,4 +1,9 @@
-# Cognito User Pool
+---
+title: Cognito
+description: Cognito User Pool Triggers
+---
+
+# Cognito User Pool Triggers
 
 ## Common Input
 
@@ -581,7 +586,9 @@ def handler(event: DefineAuthChallengeTriggerEvent, context) -> dict:
     return event.raw_event
 ```
 
-## Reference Docs
+## Documentation
+
+Reference documentation and blog posts. 
 
 - [Customizing user pool workflows with Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html){target="_blank"}
 - [Anonymous User Identities with Cognito Lambda Triggers](https://bitesizedserverless.com/bite/anonymous-user-identities-with-cognito-lambda-triggers/)
