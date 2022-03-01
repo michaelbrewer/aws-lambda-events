@@ -14,6 +14,8 @@ This will install pipenv, mkdocs and run the server, you will need to have Pytho
 
 ## Event Sources
 
+Some of the documented event sources
+
 - [API Gateway Rest API](https://michaelbrewer.github.io/aws-lambda-events/rest-api)
 - [API Gateway Rest API Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/rest-api-custom-authorizer/)
 - [API Gateway Http API](https://michaelbrewer.github.io/aws-lambda-events/http-api)
@@ -50,3 +52,13 @@ This will install pipenv, mkdocs and run the server, you will need to have Pytho
 - [Amazon SNS](https://michaelbrewer.github.io/aws-lambda-events/sns)
 - [Amazon SQS](https://michaelbrewer.github.io/aws-lambda-events/sqs)
 - [Amazon WorkMail](https://michaelbrewer.github.io/aws-lambda-events/work-mail)
+
+## Objectives
+
+- General docs, invoke types, limits
+- Request docs, samples, libraries
+- Response docs, samples and libraries
+- Handlers and full solutions
+- Articles, documentations and example repos
+
+
