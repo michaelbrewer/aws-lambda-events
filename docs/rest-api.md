@@ -5,7 +5,7 @@ Events are sent synchronously to the Lambda function with a timeout of 25 second
 !!! NOTE
     The input and out format matches [Http api format 1.0](./http-api.md#response-for-format-10)
 
-## Input
+## Request
 
 Http GET request example
 
@@ -291,6 +291,6 @@ Event Handlers by Language
 - [Serverless Java container](https://github.com/awslabs/aws-serverless-java-container) - has support for SpringBoot, Apache Struts, Jersey, Spark and Micronaut
 - [Ruby - Routing](https://rubyonjets.com/docs/routing/overview/) - Gem `jets`
 
-## Reference Docs
+## Documentation
 
 - [Input format of a Lambda function for proxy integration](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format)

@@ -2,7 +2,7 @@
 
 Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ, invokes the function synchronously
 
-## Input
+## Request
 
 ### ActiveMQ
 

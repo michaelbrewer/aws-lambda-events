@@ -1,11 +1,11 @@
 # Amazon Lex V2
 
-Event-driven, synchronous invocation. Amazon Lex V2 uses one Lambda function per bot alias per language instead of one Lambda function for each intent.
+Event-driven and synchronous invocation. Amazon Lex V2 uses one Lambda function per bot alias per language instead of one Lambda function for each intent.
 To use an individual function for each intent, the Lambda function router section provides a function that you can use.
 
-## Input
+## Request
 
-### Lex V2 input schema
+### Lex V2 requst schema
 
 Event fields notes:
 
@@ -528,7 +528,7 @@ Typed Lambda handlers by Language
 
 - [Typescript - LexV2Event](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/lex-v2.d.ts) - NPM package `@types/aws-lambda`
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Amazon Lex V2](https://docs.aws.amazon.com/lexv2/latest/dg/lambda.html)
 - [Creating a BankingBot on Amazon Lex V2 Console with support for English and Spanish](https://aws.amazon.com/blogs/machine-learning/creating-a-bankingbot-on-amazon-lex-v2-console-with-support-for-english-and-spanish/)

@@ -2,9 +2,9 @@
 
 Lambda polls the queue and invokes your Lambda function synchronously with an event that contains queue messages. By default, Lambda polls up to 10 messages in your queue at once and sends that batch to your function. 
 
-## Input
+## Request
 
-### Input fields
+### Request fields
 
 `Records` - An array of records.
 
@@ -47,7 +47,7 @@ for an extended period of time.
 `awsRegion` (String)
 : aws region eg: us-east-1
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event sqs receive-message
@@ -194,7 +194,7 @@ def lambda_handler(event, context: LambdaContext):
     return processor.response()
 ```
 
-## Reference Docs
+## Documentation
 
 - [Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
 - [Tutorial: Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs-example.html)

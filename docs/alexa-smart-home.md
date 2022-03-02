@@ -2,9 +2,9 @@
 
 Event-driven, synchronous invocation
 
-## Input
+## Request
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event alexa-smart-home smart-home-control-turn-off-request
@@ -132,7 +132,7 @@ Lambda handlers by Language
 - [Java SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-java)
 - [Serverless - Alexa Smart Home](https://www.serverless.com/framework/docs/providers/aws/events/alexa-smart-home)
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Alexa](https://docs.aws.amazon.com/lambda/latest/dg/services-alexa.html){target="_blank"}
 - [Host a Custom Skill as an AWS Lambda Function](https://developer.amazon.com/en-US/docs/alexa/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html){target="_blank"}

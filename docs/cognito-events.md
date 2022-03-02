@@ -6,7 +6,7 @@ title: Cognito Events
 
 Event-driven; synchronous invocation
 
-## Input
+## Request
 
 ```json
 {
@@ -68,6 +68,6 @@ context.done(null, event);
 };
 ```
 
-## Reference Docs
+## Documentation
 
 - [Amazon Cognito Events](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-events.html)

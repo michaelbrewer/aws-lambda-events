@@ -5,44 +5,25 @@ description: Amazon WorkMail
 
 # Amazon WorkMail
 
-Can be configured to invoke your function synchrously or asynchrously.
+Can be configured to invoke your function synchrously (Use this configuration to modify email content, and to control inbound or outbound email flow for use cases such as blocking delivery of sensitive email messages, removing attachment, adding disclaimers, and so on.) or asynchrously (This configuration does not affect email delivery and is used for tasks such as collecting metrics for inbound or outbound email messages.).
 
 ## Limits
 
-Payload size limit 128 KB, before being trancated
+Payload limit
 
-## Input
+- Payload size limit 128 KB, before being trancated
 
-### Input fields
+Synchronous Run Lambda action limits
 
-`summaryVersion` (String)
-: AWS WorkMail Message Summary Version
+- Lambda functions must respond within **15 seconds**, or be treated as failed invocations.
+- Lambda function **responses up to 256 KB** are allowed.
+- Up to **10 unique actions** are allowed in the response. Actions greater than 10 are subject to the configured Fallback action.
+- Up to **500 recipients** are allowed for outbound Lambda functions.
+- The **maximum value for Rule timeout is 240 minutes**. If the minimum value of 0 is configured, there are no retries before Amazon WorkMail applies the fallback action.
 
-`mailFrom` (Object)
-: Mail from email address
+## Request
 
-`recipients` (List)
-: List of all of the email recipients
-
-`sender` (Object)
-: Sender email address
-
-`subject` (String)
-: Email subject (Truncated to first 256 chars)"
-
-`messageId` (String)
-: Message id for retrieval using workmail flow API
-
-`invocationId` (String)
-: Id of this lambda invocation. Useful for detecting retries and avoiding duplication
-
-`flowDirection` (String)
-: Indicating direction of email flow. Value is either "INBOUND" or "OUTBOUND"
-
-`truncated` (Boolean)
-: Boolean indicating if any field in message was truncated due to size limitations
-
-### Input event structure
+### Request structure
 
 ```json
 {
@@ -71,26 +52,40 @@ Payload size limit 128 KB, before being trancated
 }
 ```
 
+### Request fields
+
+`summaryVersion` (String)
+: AWS WorkMail Message Summary Version
+
+`mailFrom` (Object)
+: Mail from email address
+
+`recipients` (List)
+: List of all of the email recipients
+
+`sender` (Object)
+: Sender email address
+
+`subject` (String)
+: Email subject (Truncated to first 256 chars)"
+
+`messageId` (String)
+: Message id for retrieval using workmail flow API
+
+`invocationId` (String)
+: Id of this lambda invocation. Useful for detecting retries and avoiding duplication
+
+`flowDirection` (String)
+: Indicating direction of email flow. Value is either "INBOUND" or "OUTBOUND"
+
+`truncated` (Boolean)
+: Boolean indicating if any field in message was truncated due to size limitations
+
 ## Response
 
-### Response fields
+Response format only applies to synchronous invocations.
 
-`actions` (Array)
-: Required, should contain at least 1 list element
-
-`type` (String)
-: Required. Can be "BOUNCE", "DROP" or "DEFAULT"
-
-`parameters` (String)
-: Optional. For bounce, <various> can be `{"bounceMessage": "message that goes in bounce mail"}`
-
-`recipients` (Optional, list of strings)
-: Optional. Indicates list of recipients for which this action applies
-
-`allRecipients` (Optional, boolean)
-: Optional. Indicates whether this action applies to all recipients
-
-### Synchronous Run Lambda response schema
+### Response schema
 
 ```json title="Synchronous Run Lambda response schema"
 {
@@ -106,6 +101,23 @@ Payload size limit 128 KB, before being trancated
     ]
 }
 ```
+
+`actions` (Array)
+: Required, should contain at least 1 list element
+
+`type` (String)
+: Required. Can be "BOUNCE", "DROP" or "DEFAULT"
+
+`parameters` (String)
+: Optional. For bounce, `various` can be `{"bounceMessage": "message that goes in bounce mail"}`
+
+`recipients` (Optional, list of strings)
+: Optional. Indicates list of recipients for which this action applies
+
+`allRecipients` (Optional, boolean)
+: Optional. Indicates whether this action applies to all recipients
+
+### Response examples
 
 ```json title="Example bounce response"
 {
@@ -146,8 +158,8 @@ Payload size limit 128 KB, before being trancated
 
 ## Libraries
 
-- [Amazon WorkMail Lambda Templates - Python](https://github.com/aws-samples/amazon-workmail-lambda-templates)
+- [GitHub - Amazon WorkMail Lambda Templates - Python](https://github.com/aws-samples/amazon-workmail-lambda-templates) - Serverless applications for Amazon WorkMail.
 
-## Reference Docs
+## Documentation
 
 - [Configuring AWS Lambda for Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html)

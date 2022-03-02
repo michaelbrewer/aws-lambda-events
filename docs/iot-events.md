@@ -1,6 +1,6 @@
 # IOT Events
 
-## Input
+## Request
 
 ```json
 {
@@ -39,6 +39,6 @@
 
 ## Libraries
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with AWS IoT Events](https://docs.aws.amazon.com/lambda/latest/dg/services-iotevents.html)

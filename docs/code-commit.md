@@ -2,13 +2,13 @@
 
 Event-driven, asynchronous invocation. CodeCommit repository events in the repository invoke a Lambda function
 
-## Input
+## Request
 
 ### Getting the correlation id
 
 JSON patch `Records[*].eventId`
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event codecommit repository
@@ -55,6 +55,6 @@ Typed Lambda handlers by Language
 
 - [Java - CodeCommitEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/CodeCommitEvent.java) - Maven `aws-lambda-java-events`
 
-## Reference Docs
+## Documentation
 
 - [Create an AWS CodeCommit trigger for an AWS Lambda function](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambda.html)

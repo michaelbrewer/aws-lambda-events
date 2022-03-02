@@ -1,6 +1,6 @@
 # IOT
 
-## Input
+## Request
 
 ```json
 {
@@ -20,6 +20,6 @@
 
 ## Libraries
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with AWS IoT](https://docs.aws.amazon.com/lambda/latest/dg/services-iot.html)

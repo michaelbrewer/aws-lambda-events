@@ -2,7 +2,7 @@
 
 CodePipeline invokes your function asynchronously with an event that contains details about the job.
 
-## Input
+## Request
 
 !!!WARNING
         TODO: Fields still need to be fully documented
@@ -83,7 +83,7 @@ N/A
 - [Sample Python function that uses an AWS CloudFormation template](https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-invoke-lambda-function.html#actions-invoke-lambda-function-samples-python-cloudformation)
 - [AWS Lambda Functions Code Samples for AWS CodePipeline - NodeJS and Python](https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-lambda_functions-codepipeline.html)
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with AWS CodePipeline](https://docs.aws.amazon.com/lambda/latest/dg/services-codepipeline.html)
 - [Invoke an AWS Lambda function in a pipeline in CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-invoke-lambda-function.html)

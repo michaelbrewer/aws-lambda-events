@@ -1,8 +1,8 @@
 # API Gateway Rest Authorizer
 
-Event driven, synchronous.
+A Lambda authorizer (formerly known as a *custom authorizer*) is an API Gateway feature that uses a Lambda function to control access to your API. Event driven and synchronous.
 
-## Input
+## Request
 
 ### Token authorizer
 
@@ -210,7 +210,7 @@ def handler(event: APIGatewayAuthorizerRequestEvent, context):
     return policy.asdict()
 ```
 
-## Reference Docs
+## Documentation
 
 - [Use API Gateway Lambda authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html){target="_blank"}
 - [The Complete Guide to Custom Authorizers with AWS Lambda and API Gateway](https://www.alexdebrie.com/posts/lambda-custom-authorizers/){target="_blank"}

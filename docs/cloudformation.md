@@ -7,9 +7,9 @@ description: AWS CloudFormation invokes your Lambda function asynchronously with
 
 AWS CloudFormation invokes your Lambda function asynchronously with an event that includes a callback URL.
 
-## Input
+## Request
 
-### Input fields
+### Request fields
 
 - [Create input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-create.html)
 - [Delete input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-delete.html)
@@ -48,7 +48,7 @@ facilitate communication between the custom resource provider and the template d
 `OldResourceProperties` (Object)
 : Used only for `Update` requests. Contains the resource properties that were declared previous to the update request.
 
-### Input examples
+### Request examples
 
 ```json title="Create event"
 {
@@ -242,7 +242,7 @@ def handler(event, context):
     helper(event, context)
 ```
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with AWS CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)
 - [AWS CloudFormation custom resource creation with Python, AWS Lambda, and crhelper](https://aws.amazon.com/blogs/infrastructure-and-automation/aws-cloudformation-custom-resource-creation-with-python-aws-lambda-and-crhelper/)

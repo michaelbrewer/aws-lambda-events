@@ -7,7 +7,7 @@ description: Amazon EventBridge (formerly called CloudWatch Events) invokes your
 
 Amazon EventBridge (formerly called CloudWatch Events) invokes your function asynchronously with an event document that wraps the event from its source.
 
-## Input
+## Request
 
 ### Example CloudWatch Event
 

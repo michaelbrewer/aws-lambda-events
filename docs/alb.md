@@ -10,9 +10,9 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 - WebSockets are not supported. Upgrade requests are rejected with an HTTP 400 code.
 - Local Zones are not supported.
 
-## Input
+## Request
 
-### Input Fields
+### Request Fields
 
 `targetGroupArn` (String)
 : Target group arn for your Lambda function
@@ -42,7 +42,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 
 JSON path to correlation id: `headers."x-amzn-trace-id"`
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 # Gibhub PR (https://github.com/aws/aws-sam-cli/pull/3670)
@@ -152,7 +152,7 @@ Event Handlers by Language
 
 - [application-load-balancer-serverless-app](https://github.com/aws/elastic-load-balancing-tools/tree/master/application-load-balancer-serverless-app){target="_blank"}
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with an Application Load Balancer](https://docs.aws.amazon.com/lambda/latest/dg/services-alb.html){target="_blank"}
 - [ALB - Lambda functions as targets](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/lambda-functions.html){target="_blank"}

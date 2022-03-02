@@ -2,7 +2,7 @@
 
 CloudWatch Logs invokes your function asynchronously with an event that contains log data.
 
-## Input
+## Request
 
 ### Cloudwatch log structure
 
@@ -75,7 +75,7 @@ def lambda_handler(event: CloudWatchLogsEvent, context):
 
 - [NodeJS code example](https://github.com/awsdocs/aws-lambda-developer-guide/blob/main/sample-apps/error-processor/processor/index.js)
 
-## Reference Docs
+## Documentation
 
 - [Using Lambda with CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchlogs.html)
 - [Error processor sample application for AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/samples-errorprocessor.html)

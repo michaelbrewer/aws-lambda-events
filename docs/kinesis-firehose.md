@@ -2,7 +2,7 @@
 
 Event-driven, synchronous invocation. Kinesis Data Firehose can invoke your Lambda function to transform incoming source data and deliver the transformed data to destinations.
 
-## Input
+## Request
 
 ### Example Amazon Kinesis Data Firehose message event
 

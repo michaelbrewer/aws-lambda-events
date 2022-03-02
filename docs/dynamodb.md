@@ -3,9 +3,9 @@
 Amazon DynamoDB stream, Lambda reads records from the stream and invokes your function synchronously with an event that contains stream records. 
 Lambda reads records in batches and invokes your function to process records from the batch.
 
-## Input
+## Request
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event dynamodb update
@@ -173,6 +173,6 @@ def lambda_handler(event, context: LambdaContext):
     return processor.response()
 ```
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Amazon DynamoDB](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html)

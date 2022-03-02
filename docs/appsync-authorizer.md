@@ -8,7 +8,7 @@ Event driven, invoked synchronously.
 - An authorization token must not exceed 2048 characters
 - A Lambda function must not return more than 5MB of contextual data for resolvers.
 
-## Input
+## Request
 
 ```json
 {
@@ -101,7 +101,7 @@ def lambda_handler(event: AppSyncAuthorizerEvent, context) -> Dict:
     ).asdict()
 ```
 
-## Reference Docs
+## Documentation
 
 - [AppSync Authorizer - AWS_LAMBDA Authorization](https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#aws-lambda-authorization)
 - [Amplify - AWS Lambda Authorization](https://docs.amplify.aws/lib/graphqlapi/authz/q/platform/js/#aws-lambda)

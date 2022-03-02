@@ -10,9 +10,9 @@ Event driven, invoked synchronously.
 Request execution timeout of 30 seconds
 Payload size limit of 1MB
 
-## Input
+## Request
 
-### Event fields
+### Request fields
 
 `typeName` (String)
 : The name of the parent object type of the field being resolver.
@@ -36,7 +36,7 @@ For example when resolving `Post.comments`, the source will be the `Post` object
 `next` (String)
 : When using pipeline resolvers, this contains the object returned by the previous function. You can return the previous value for auditing use cases.
 
-### Event examples
+### Request examples
 
 ```json title="AppSync direct resolver"
 {
@@ -255,7 +255,7 @@ def lambda_handler(event, context):
     return app.resolve(event, context)
 ```
 
-## Reference Docs
+## Documentation
 
 - [AppSync - Resolver mapping template context reference](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html)
 - [Amplify - Configure Lambda resolvers](https://docs.amplify.aws/cli-legacy/graphql-transformer/function/#structure-of-the-function-event)

@@ -35,7 +35,7 @@ Directory of lambda events and resources
 - [X] [CloudFront - Lambda@Edge](./cloudfront-lambda-edge.md) - synchronously invokes
 - [X] [CloudFront - CloudFront Functions](./cloudfront-function.md) - synchronously invokes
 - [X] [CodeCommit](./code-commit.md) - asynchronously invokes
-- [X] [CodePipeline - Job](./code-pipeline-job.md) - asynchronously invokes
+- [ ] [CodePipeline - Job](./code-pipeline-job.md) - asynchronously invokes
 - [X] [Amazon Cognito - User Pool](./cognito-user-pool.md) - synchronously invokes
     - [X] [AWS Cognito - Sync](./cognito-events.md) - synchronously invokes
 - [X] [AWS Config](./config.md) - asynchronously invokes

@@ -2,9 +2,9 @@
 
 Lambda reads records from the data stream and invokes your function synchronously with an event that contains stream records.
 
-## Input
+## Request
 
-### Input fields
+### Request fields
 
 `Records` - An array of records.
 
@@ -108,6 +108,6 @@ Handlers by language
 - [Ruby - kinesis_event](https://rubyonjets.com/docs/events/kinesis/) - GEM `jets`
 - [Python - on_kinesis_record](https://aws.github.io/chalice/topics/events.html#kinesis-events) - Pip `chalice`
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Amazon Kinesis](https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html)

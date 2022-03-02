@@ -7,7 +7,7 @@ Event driven, synchronous.
 - Authorizers per API limit of 10, but can be increased.
 - Audiences per authorizer of 50, and can not be increased.
 
-## Input
+## Request
 
 ### API Gateway Authorizer Request Event Format 1.0
 
@@ -189,7 +189,7 @@ def handler(event: APIGatewayAuthorizerEventV2, context):
     return APIGatewayAuthorizerResponseV2(authorize=True, context=user).asdict()
 ```
 
-## Reference Docs
+## Documentation
 
 - [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html){target="_blank"}
 - [Introducing IAM and Lambda authorizers for Amazon API Gateway HTTP APIs](https://aws.amazon.com/blogs/compute/introducing-iam-and-lambda-authorizers-for-amazon-api-gateway-http-apis/){target="_blank"}

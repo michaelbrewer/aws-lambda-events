@@ -2,9 +2,9 @@
 
 The Amazon Lex bot invokes your Lambda function synchronously.
 
-## Input
+## Request
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event lex book-car
@@ -13,7 +13,7 @@ sam local generate-event lex make-appointment
 sam local generate-event lex order-flowers
 ```
 
-### Input Event structure
+### Request structure
 
 ```json
 {
@@ -200,7 +200,7 @@ sam local generate-event lex order-flowers
 
 - [Typescript - lex.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/lex.d.ts) - NPM `@types/aws-lambda`
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Amazon Lex](https://docs.aws.amazon.com/lambda/latest/dg/services-lex.html)
 - [Lambda Function Input Event and Response Format](https://docs.aws.amazon.com/lex/latest/dg/lambda-input-response-format.html)

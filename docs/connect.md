@@ -2,9 +2,9 @@
 
 Event-driven, synchronous invocation
 
-## Input
+## Request
 
-### Example Amazon Connect request event
+### Example event
 
 Amazon Connect invokes your Lambda function synchronously with an event that contains the request body and metadata.
 
@@ -59,7 +59,7 @@ No required response format
 - [Python - ConnectContactFlowEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#verify-auth-challenge-response-example) - pip `aws-lambda-powertools`
 - [DotNet - ContactFlowEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.ConnectEvents) - Nuget `Amazon.Lambda.ConnectEvents`
 
-## Reference Docs
+## Documentation
 
 - [Using Lambda with Amazon Connect](https://docs.aws.amazon.com/lambda/latest/dg/services-connect.html)
 - [Config - Invoke AWS Lambda functions](https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html)
