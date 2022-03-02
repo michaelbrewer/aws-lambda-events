@@ -5,7 +5,7 @@ description: Cognito User Pool Triggers
 
 # Cognito User Pool Triggers
 
-## Common Input Fields
+## Common Reqest Fields
 
 Common attributes shared by all User Pool Lambda Trigger Events
 

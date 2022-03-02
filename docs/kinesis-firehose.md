@@ -117,7 +117,7 @@ public class Function
 }
 ```
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/lambda/latest/dg/services-kinesisfirehose.html)
 - [Preprocessing Data Using a Lambda Function](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/lambda-preprocessing.html)

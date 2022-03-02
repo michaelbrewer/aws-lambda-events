@@ -27,6 +27,6 @@ N/A
 
 N/A
 
-## Reference Docs
+## Documentation
 
 - [Using AWS Lambda with AWS Config](https://docs.aws.amazon.com/lambda/latest/dg/services-config.html)

@@ -104,7 +104,7 @@ Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ, 
 - [Python - Active MQ](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#active-mq)
 - [Python - Rabbit MQ](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#rabbit-mq)
 
-## Reference Docs
+## Documentation
 
 - [Using Lambda with Amazon MQ](https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html)
 - [Using Amazon MQ as an event source for AWS Lambda](https://aws.amazon.com/blogs/compute/using-amazon-mq-as-an-event-source-for-aws-lambda/)

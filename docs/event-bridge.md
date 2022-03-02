@@ -204,7 +204,7 @@ def every_hour(event):
     print(event.to_dict())
 ```
 
-## Reference Docs
+## Documentation
 
 - [Amazon EventBridge (CloudWatch Events)](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents.html){target="_blank"}
 - [Use Amazon S3 Event Notifications with Amazon EventBridge](https://aws.amazon.com/blogs/aws/new-use-amazon-s3-event-notifications-with-amazon-eventbridge/){target="_blank"}

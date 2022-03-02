@@ -11,7 +11,7 @@ batches and provides these to your function as an event payload.
 - The maximum batch size is configurable. (The default is 100 messages.)
 - Lambda can run your function for up to 14 minutes.
 
-## Input
+## Request
 
 !!! Note
       Shares the same structure as [Self managed Apache Kafka](./apache-kafka.md), except for the eventSource field is set to "aws:msk".
@@ -90,7 +90,7 @@ Typed Lambda handlers by Language
 
 - [Amazon MSK AWS Lambda Integration Lab - Code](https://github.com/aws-samples/integration-sample-lambda-msk)
 
-## Reference Docs
+## Documentation
 
 - [Using Lambda with Amazon MSK](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html)
 - [Using Amazon MSK as an event source for AWS Lambda](https://aws.amazon.com/blogs/compute/using-amazon-msk-as-an-event-source-for-aws-lambda/)
