@@ -117,9 +117,10 @@ Input types for Amazon SNS events
 
 Full handler and infrastructure code solutions
 
-- [Ruby - sns_event](https://rubyonjets.com/docs/events/sns/) - Gem `jets`
-- [Python - on_sns_message](https://aws.github.io/chalice/topics/events.html#sns-events) - pip `chalice`
+- [Ruby - sns_event](https://rubyonjets.com/docs/events/sns/){target="_blank"} - Gem `jets`
+- [Python - on_sns_message](https://aws.github.io/chalice/topics/events.html#sns-events){target="_blank"} - pip `chalice`
 
 ## Reference Docs
 
-- [Using AWS Lambda with Amazon SNS](https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html)
+- [Using AWS Lambda with Amazon SNS](https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html){target="_blank"}
+- [Youtube - AWS SNS to Lambda Tutorial in Python | Step by Step](https://www.youtube.com/watch?v=PsJsP-7cydk){target="_blank"}
