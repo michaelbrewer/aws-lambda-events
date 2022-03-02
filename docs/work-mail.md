@@ -81,6 +81,10 @@ Synchronous Run Lambda action limits
 `truncated` (Boolean)
 : Boolean indicating if any field in message was truncated due to size limitations
 
+### Getting the correlation id
+
+JSON path to correlation id: `invocationId`
+
 ## Response
 
 Response format only applies to synchronous invocations.
