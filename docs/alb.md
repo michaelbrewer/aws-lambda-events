@@ -10,6 +10,19 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 - WebSockets are not supported. Upgrade requests are rejected with an HTTP 400 code.
 - Local Zones are not supported.
 
+???+ Tip "Tip: Reasons to use Application Load Balancers over API Gateway"
+    - Nearly unlimited tps vs 600 tps for regional and 120 tps for edge API Gateways
+    - No specific function timeout vs 30 seconds for API Gateway
+    - DDOS protection via [AWS Shield](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html){target="_blank"} support **vs** no support for API Gateway
+    - Application Load Balancer pricing favor high transactions per second
+
+???+ Tip "Tip: Reasons to use API Gateway over Application Load Balancer"
+    - API Gateway has a 10 MB request body limit
+    - API Gateway has support for WebSockets
+    - API Gateway has built in support for rate limiting support
+    - API Gateway has built in support authentication support
+    - API Gateway pricing allow for scale to zero
+
 ## Request
 
 ### Request Fields
