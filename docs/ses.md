@@ -35,7 +35,7 @@ Requirements
 
 ### Generating sample event
 
-Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) to can generate sample
+Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) you can generate sample
 events
 
 ```shell
