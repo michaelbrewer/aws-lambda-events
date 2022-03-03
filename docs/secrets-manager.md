@@ -39,7 +39,7 @@ good version of the secret.
 
 N/A
 
-## Libraries
+## Resources
 
 - [Typescript - SecretsManagerRotationEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/secretsmanager.d.ts) - NPM `@types/aws-lambda`
 - [Java - SecretsManagerRotationEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/SecretsManagerRotationEvent.java)

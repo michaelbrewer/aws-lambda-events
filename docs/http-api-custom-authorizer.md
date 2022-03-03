@@ -156,7 +156,7 @@ Same as [API Gateway Rest Authorizer - Request](./rest-api-custom-authorizer.md)
 }
 ```
 
-## Libraries
+## Resources
 
 - [Python - APIGatewayAuthorizerEventV2](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#api-gateway-authorizer-v2)
 

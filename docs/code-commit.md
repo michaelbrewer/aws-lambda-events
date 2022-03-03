@@ -49,7 +49,7 @@ sam local generate-event codecommit repository
 
 N/A
 
-## Libraries
+## Resources
 
 Typed Lambda handlers by Language
 

@@ -80,7 +80,7 @@ batches and provides these to your function as an event payload.
 
 ## Response
 
-## Libraries
+## Resources
 
 Typed Lambda handlers by Language
 

@@ -196,7 +196,7 @@ sam local generate-event lex order-flowers
 }
 ```
 
-## Libraries
+## Resources
 
 - [Typescript - lex.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/lex.d.ts) - NPM `@types/aws-lambda`
 

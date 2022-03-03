@@ -36,7 +36,7 @@ Event-driven; synchronous invocation
 
 N/A
 
-## Libraries
+## Resources
 
 - [DotNet - CognitoEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.CognitoEvents) - NuGet `Amazon.Lambda.CognitoEvents`
 - [Java - CognitoEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/CognitoEvent.java) - Maven `aws-lambda-java-events`

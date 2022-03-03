@@ -99,7 +99,7 @@ Base64 encoded response example
 }
 ```
 
-## Libraries
+## Resources
 
 Typed Lambda handlers by Language
 

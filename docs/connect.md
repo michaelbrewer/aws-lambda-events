@@ -52,7 +52,7 @@ No required response format
 }
 ```
 
-## Libraries
+## Resources
 
 - [Typescript - ConnectContactFlowEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/connect-contact-flow.d.ts) - NPM `@types/aws-lambda`
 - [Java - ConnectEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/ConnectEvent.java) - Maven `aws-lambda-java-events`

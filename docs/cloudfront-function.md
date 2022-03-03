@@ -67,6 +67,10 @@ The request object contains a representation of a viewer-to-CloudFront HTTP requ
 
 JSON path to correlation id: `context.requestId`
 
+### Generating sample events
+
+TODO
+
 ## Response
 
 The response object contains a representation of a CloudFront-to-viewer HTTP response. In the `event` object that’s passed to your function, the `response` object represents CloudFront’s actual response to a viewer request.
@@ -87,7 +91,7 @@ The `response` object contains the following fields:
 `cookies` (Object)
 : An object that represents the cookies in the response (`Set-Cookie` headers).
 
-## Example
+## Request Response Example
 
 !!! Note
     The `event` object is the input to your function. Your function returns only the `request` or `response` object, not the complete event object.
@@ -239,11 +243,11 @@ The `response` object contains the following fields:
 }
 ```
 
-## Code Examples
+## Resources
 
-Add security headers to the response
+Code Example: Add security headers to the response
 
-```javascript
+```javascript title="Add security headers to the response"
 function handler(event) {
     var response = event.response;
     var headers = response.headers;
@@ -261,8 +265,10 @@ function handler(event) {
 }
 ```
 
+More code examples
+
 - [Example code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-example-code.html)
-- [Amazon CloudFront Functions](https://github.com/aws-samples/amazon-cloudfront-functions)
+- [Github - Amazon CloudFront Functions](https://github.com/aws-samples/amazon-cloudfront-functions)
 
 ## Documentation
 

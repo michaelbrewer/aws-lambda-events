@@ -15,7 +15,7 @@ about the invocation, function, and execution environment.
 - [Java - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/java-context.html)
 - [NodeJS - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-context.html)
 
-## Libraries
+## Resources
 
 - [DotNet - ILambdaContext](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.Core) - NuGet `Amazon.Lambda.Core`
 - [Java - Context](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/Context.java) - Maven `aws-lambda-java-core`

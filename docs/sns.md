@@ -105,7 +105,7 @@ JSON path to correlation id: `Sns.MessageId`
 
 N/A
 
-## Libraries
+## Resources
 
 Input types for Amazon SNS events
 

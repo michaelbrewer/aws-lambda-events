@@ -45,7 +45,7 @@ Lambda internally polls for new messages from the event source and then synchron
 
 ## Response
 
-## Libraries
+## Resources
 
 - [Go - KafkaEvent](https://github.com/aws/aws-lambda-go/blob/main/events/kafka.go)
 - [Java - KafkaEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/KafkaEvent.java)

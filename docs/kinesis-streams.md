@@ -91,7 +91,7 @@ Lambda reads records from the data stream and invokes your function synchronousl
 }
 ```
 
-## Libraries
+## Resources
 
 Typing by language
 

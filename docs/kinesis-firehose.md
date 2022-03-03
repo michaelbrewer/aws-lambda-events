@@ -72,7 +72,7 @@ The possible values are:
 }
 ```
 
-## Libraries
+## Resources
 
 - [DotNet - KinesisFirehoseEvent](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.KinesisFirehoseEvents) - NuGet `Amazon.Lambda.KinesisFirehoseEvents`
 - [Java - KinesisFirehoseEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/KinesisFirehoseEvent.java)

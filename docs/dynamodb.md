@@ -125,7 +125,7 @@ sam local generate-event dynamodb update
 }
 ```
 
-## Libraries
+## Resources
 
 Typing and data classes
 

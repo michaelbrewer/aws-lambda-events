@@ -223,7 +223,7 @@ Http post request
 
 JSON path to correlation id: `requestContext.requestId`
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event apigateway aws-proxy --body {"test":"body"} --path foo --method POST
@@ -271,7 +271,7 @@ Base64 encoded response example
 }
 ```
 
-## Libraries
+## Resources
 
 Typed Lambda handlers by Language
 

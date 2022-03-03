@@ -160,7 +160,7 @@ Response format only applies to synchronous invocations.
 }
 ```
 
-## Libraries
+## Resources
 
 - [GitHub - Amazon WorkMail Lambda Templates - Python](https://github.com/aws-samples/amazon-workmail-lambda-templates) - Serverless applications for Amazon WorkMail.
 

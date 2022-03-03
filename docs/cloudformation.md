@@ -110,7 +110,7 @@ facilitate communication between the custom resource provider and the template d
 }
 ```
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event cloudformation create-request
@@ -167,7 +167,7 @@ You can access the values provided here by name in the template with `Fn::GetAtt
 }
 ```
 
-## Libraries
+## Resources
 
 Custom Resource handlers
 

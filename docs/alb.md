@@ -145,7 +145,7 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 }  
 ```
 
-## Libraries
+## Resources
 
 Typed Lambda handlers by Language
 

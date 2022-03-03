@@ -121,7 +121,7 @@ EventBridge (CloudWatch Events) invokes your Lambda function asynchronously with
 
 JSON path to correlation id: `id`
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event cloudwatch scheduled-event
@@ -131,7 +131,7 @@ sam local generate-event cloudwatch scheduled-event
 
 N/A
 
-## Libraries
+## Resources
 
 Typing and data classes
 

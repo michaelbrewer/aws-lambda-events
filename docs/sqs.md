@@ -149,7 +149,7 @@ Lambda treats a batch as a complete failure if your function returns any of the 
 }
 ```
 
-## Libraries
+## Resources
 
 Typings in different languages
 

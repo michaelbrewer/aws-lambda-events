@@ -122,7 +122,7 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 }
 ```
 
-## Libraries
+## Resources
 
 Lambda handlers by Language
 

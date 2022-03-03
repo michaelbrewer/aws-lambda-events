@@ -395,7 +395,7 @@ Event fields notes:
 }
 ```
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 # Github PR (https://github.com/aws/aws-sam-cli/pull/3649)
@@ -518,7 +518,7 @@ Event fields notes:
 }
 ```
 
-## Libraries
+## Resources
 
 AWS Solution using Lex V2
 

@@ -403,7 +403,7 @@ sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix u
 }
 ```
 
-## Libraries
+## Resources
 
 - [Typescript - cloudfront-request.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/cloudfront-request.d.ts) - NPM `@types/aws-lambda`
 

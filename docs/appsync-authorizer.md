@@ -57,7 +57,7 @@ between common types and fields between the two APIs.
 }
 ```
 
-## Libraries
+## Resources
 
 AppSync typed handler and response builder by language
 

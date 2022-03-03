@@ -293,7 +293,7 @@ Response when doing a synchronous `RequestResponse` invocations must be in the f
 }
 ```
 
-## Libraries
+## Resources
 
 Typing and utility class
 

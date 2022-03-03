@@ -23,7 +23,7 @@ Event-driven asynchronous invocation
 
 N/A
 
-## Libraries
+## Resources
 
 N/A
 

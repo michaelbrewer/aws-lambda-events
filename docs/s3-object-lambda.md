@@ -165,7 +165,7 @@ No specific response is required
 {"status_code": 200}
 ```
 
-## Libraries
+## Resources
 
 - [Python - data class and utilities](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#s3-object-lambda) - Pip `aws-lambda-powertools`
 - [Java - S3ObjectLambdaEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/S3ObjectLambdaEvent.java) - Maven `aws-lambda-java-events`

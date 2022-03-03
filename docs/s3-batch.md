@@ -46,7 +46,7 @@ When the batch job starts, Amazon S3 invokes the Lambda function synchronously f
 }
 ```
 
-## Libraries
+## Resources
 
 - [S3 Batch - Typescript](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/s3-batch.d.ts) - NPM `@types/aws-lambda`
 - [S3 Batch - Go](https://github.com/aws/aws-lambda-go/blob/main/events/s3_batch_job.go) - `github.com/aws/aws-lambda-go/events`

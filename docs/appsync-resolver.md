@@ -193,7 +193,7 @@ For example when resolving `Post.comments`, the source will be the `Post` object
 
 Response is based on the expected GraphQL response.
 
-## Libraries
+## Resources
 
 Typed handlers by language
 

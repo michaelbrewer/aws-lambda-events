@@ -542,7 +542,7 @@ After the Lambda function returns successfully, Amazon Cognito creates the user 
 }
 ```
 
-## Libraries
+## Resources
 
 - [Python - Request and response utils](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#cognito-user-pool) - Pip `aws-lambda-powertools`
 - [Typescript - Typing for request and response](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/aws-lambda/trigger/cognito-user-pool-trigger) - NPM `@types/aws-lambda`

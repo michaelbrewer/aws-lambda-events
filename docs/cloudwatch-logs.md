@@ -38,7 +38,7 @@ CloudWatch Logs message data (decoded) example
 }
 ```
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event cloudwatch logs
@@ -48,7 +48,7 @@ sam local generate-event cloudwatch logs
 
 N/A
 
-## Libraries
+## Resources
 
 - [Python - CloudWatchLogsEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#cloudwatch-logs) - Pip `aws-lambda-powertools`
 - [Typescript - CloudWatchLogsEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/cloudwatch-logs.d.ts) - NPM `@types/aws-lambda`

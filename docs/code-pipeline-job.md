@@ -62,7 +62,7 @@ CodePipeline invokes your function asynchronously with an event that contains de
 
 JSON path to correlation id: `"CodePipeline.job".id`
 
-### Generating sample events via SAM CLI
+### Generating sample events
 
 ```shell
 sam local generate-event codepipeline job
@@ -72,7 +72,7 @@ sam local generate-event codepipeline job
 
 N/A
 
-## Libraries
+## Resources
 
 - [Go - codepipeline_job.go](https://github.com/aws/aws-lambda-go/blob/main/events/codepipeline_job.go)
 - [Typescript - CodePipelineEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/codepipeline.d.ts) - NPM `@types/aws-lambda`

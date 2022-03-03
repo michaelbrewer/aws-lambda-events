@@ -37,7 +37,7 @@
 }
 ```
 
-## Libraries
+## Resources
 
 ## Documentation
 

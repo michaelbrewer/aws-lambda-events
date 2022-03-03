@@ -120,7 +120,7 @@ A Lambda authorizer (formerly known as a *custom authorizer*) is an API Gateway 
 }
 ```
 
-## Libraries
+## Resources
 
 - [Amazon API Gateway - Custom Authorizer Blueprints for AWS Lambda](https://github.com/awslabs/aws-apigateway-lambda-authorizer-blueprints)
 - [Python - APIGatewayAuthorizerTokenEvent](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#api-gateway-authorizer) - pip `aws-lambda-powertools`
