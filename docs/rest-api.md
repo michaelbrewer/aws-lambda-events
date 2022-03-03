@@ -1,15 +1,22 @@
 # API Gateway Rest API
 
-Events are sent synchronously to the Lambda function with a timeout of 25 seconds.
+Events are sent synchronously to the Lambda function with a timeout of 30 seconds.
 
-!!! NOTE
-    The input and out format matches [Http api format 1.0](./http-api.md#response-for-format-10)
+## Limits
+
+Lambda specific hard limitations, see [API Gateway quotas for configuring and running a REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html) for other limits.
+
+- Payload limit of 6mb for the lambda
+- Maximum timeout of 30 seconds
 
 ## Request
 
+???+ TIP
+    The input and out format matches [API Gateway V2 - Http api format 1.0](./http-api.md#response-for-format-10)
+
 Http GET request example
 
-```json
+```json title="Http GET request example"
 {
   "resource": "/my/path",
   "path": "/my/path",
@@ -93,7 +100,7 @@ Http GET request example
 
 Http post request
 
-```json
+```json title="Http post request"
 {
   "body": "eyJ0ZXN0IjoiYm9keSJ9",
   "resource": "/{proxy+}",
@@ -234,7 +241,7 @@ sam local generate-event apigateway aws-proxy --path foo --method GET
 
 Output data structure
 
-```json
+```json title="Output data structure"
 {
     "isBase64Encoded": true|false,
     "statusCode": httpStatusCode,
@@ -246,7 +253,7 @@ Output data structure
 
 Rest api response example
 
-```json
+```json title="Rest api response example"
 {
     "statusCode": 200,
     "headers": {
@@ -259,7 +266,7 @@ Rest api response example
 
 Base64 encoded response example
 
-```json
+```json title="Base64 encoded response example"
 {
     "statusCode": 200,
     "headers": {
@@ -294,4 +301,5 @@ Event Handlers by Language
 
 ## Documentation
 
+- [Using AWS Lambda with Amazon API Gateway](https://docs.aws.amazon.com/lambda/latest/dg/services-apigateway.html)
 - [Input format of a Lambda function for proxy integration](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format)
