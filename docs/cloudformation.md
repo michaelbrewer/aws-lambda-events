@@ -9,11 +9,13 @@ AWS CloudFormation invokes your Lambda function asynchronously with an event tha
 
 ## Request
 
-### Request fields
+Documentation on the lifecycle on a custom resource
 
-- [Create input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-create.html)
-- [Delete input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-delete.html)
-- [Update input docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-update.html)
+- [Create request docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-create.html) - Custom resource provider requests with `RequestType` set to `Create` are sent when the template developer creates a stack that contains a custom resource.
+- [Delete request docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-delete.html) - Custom resource provider requests with `RequestType` set to `Delete` are sent when the template developer deletes a stack that contains a custom resource.
+- [Update request docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/crpg-ref-requesttypes-update.html) - Custom resource provider requests with `RequestType` set to `Update` are sent when there's any change to the properties of the custom resource within the template. Therefore, custom resource code doesn't have to detect changes because it knows that its properties have changed when Update is being called.
+
+### Request fields
 
 `RequestType` (String)
 : The request type is set by the AWS CloudFormation stack operation (create-stack, update-stack, or delete-stack) that was initiated by
@@ -24,11 +26,11 @@ Must be one of: `Create`, `Update`, or `Delete`.
 : The response URL identifies a presigned S3 bucket that receives responses from the custom resource provider to AWS CloudFormation.
 
 `StackId` (String)
-: The Amazon Resource Name (ARN) that identifies the stack that contains the custom resource. Combining the `StackId` with the `RequestId`
-forms a value that you can use to uniquely identify a request on a particular custom resource.
+: The Amazon Resource Name (ARN) that identifies the stack that contains the custom resource. 
+Combining the `StackId` with the `RequestId` forms a value that you can use to uniquely identify a request on a particular custom resource.
 
 `RequestId` (String)
-A unique ID for the request. Combining the `StackId` with the `RequestId` forms a value that you can use to uniquely identify a request
+: A unique ID for the request. Combining the `StackId` with the `RequestId` forms a value that you can use to uniquely identify a request
 on a particular custom resource.
 
 `ResourceType` (String)
