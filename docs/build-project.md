@@ -1,10 +1,8 @@
 # Build Project
 
-## Introduction
-
 A simple tool to generate a starter project based on cookiecutter templates.
 
-!!!WARNING
+???+ WARNING "Warning: Still a work in progress"
     This is still in progress and is not yet ready for production use :).
 
 <script>
@@ -141,7 +139,7 @@ function runtimeChange() {
 
 ## Powertools Initializer
 
-[AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) templates
+[AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) project generator
 
 <form id="buildProjectForm">
   <input id="template" type="hidden" value=""/>
@@ -155,8 +153,8 @@ function runtimeChange() {
   <label for="projectType">Runtime :</label>
   <select id="projectRuntime" name="runtime">
     <option value="python3.9" selected>Python 3.9</option>
-    <option value="typescript">Typescript (TODO)</option>
     <option value="typescript">Java (TODO)</option>
+    <option value="typescript">Typescript (TODO)</option>
   </select>
   <br/>
   <label for="projectTrigger">Trigger :</label>
@@ -164,6 +162,9 @@ function runtimeChange() {
     <option value="s3" selected>S3</option>
     <option value="s3-object-lambda">S3 Object Lambda</option>
     <option value="rest-api">API GW Rest API</option>
+    <option value="rest-api">AppSync Resolver (TODO)</option>
+    <option value="rest-api">API GW Http API (TODO)</option>
+    <option value="rest-api">AppSync Authorizer (TODO)</option>
   </select>
   <br/>
   <label for="projectArchitecture">Architecture :</label>
@@ -179,7 +180,7 @@ function runtimeChange() {
 
 ## AWS SAM Initializer
 
-AWS SAM templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates) github repo.
+AWS SAM templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws-sam-cli-app-templates){target="_blank"} github repo.
 
 <form id="buildSamProjectForm">
   <input name="type" type="hidden" value="sam"/>

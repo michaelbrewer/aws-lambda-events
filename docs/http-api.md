@@ -9,17 +9,17 @@ Amazon API Gateway invokes your function synchronously with an event that contai
 
 ## Limits
 
-??? note "General limits and differents from Rest API"
+Lambda specific hard limitations
+
+- Payload limit of 6mb for the lambda
+- Maximum timeout of 30 seconds
+
+???+ note "NOTE: General limits and differents from Rest API"
 
     Large things missing IMO is `AWS X-Ray`, `Usage Plans` and `API Keys`
 
     - [Choosing between HTTP APIs and REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html){target="_blank"}
     - [HTTP API quotas](https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html#http-api-quotas){target="_blank"}
-
-Lambda specific hard limitations
-
-- Payload limit of 6mb for the lambda
-- Maximum timeout of 30 seconds
 
 ## Request
 

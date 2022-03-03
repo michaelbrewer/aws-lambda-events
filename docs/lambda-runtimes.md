@@ -2,7 +2,7 @@
 description: List of general resources that could be used with all AWS Lambda by programming language
 ---
 
-# Resources
+# General Resources
 
 List of general resources that could be used with all AWS Lambda by language.
 
