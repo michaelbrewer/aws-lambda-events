@@ -272,6 +272,6 @@ More code examples
 
 ## Documentation
 
-- [Introducing CloudFront Functions – Run Your Code at the Edge with Low Latency at Any Scale](https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/)
-- [CloudFront Functions event structure](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html)
-- [Migrating from Lambda@Edge to CloudFront Functions](https://dev.to/aws-builders/migrating-from-lambda-edge-to-cloudfront-functions-3k7k)
+- [Blog - Introducing CloudFront Functions – Run Your Code at the Edge with Low Latency at Any Scale](https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/)
+- [Docs - CloudFront Functions event structure](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html)
+- [Blog - Migrating from Lambda@Edge to CloudFront Functions](https://dev.to/aws-builders/migrating-from-lambda-edge-to-cloudfront-functions-3k7k)

@@ -4,10 +4,13 @@ CloudFront invokes lambda synchrously. Can be Node.js or Python.
 
 You can use Lambda functions to change CloudFront requests and responses at the following points:
 
-- After CloudFront receives a request from a viewer (`Viewer request`)
-- Before CloudFront forwards the request to the origin (`Origin request`)
-- After CloudFront receives the response from the origin (`Origin response`)
-- Before CloudFront forwards the response to the viewer (`Viewer response`)
+- After CloudFront receives a request from a viewer (`Viewer Request`)
+- Before CloudFront forwards the request to the origin (`Origin Request`)
+- After CloudFront receives the response from the origin (`Origin Response`)
+- Before CloudFront forwards the response to the viewer (`Viewer Response`)
+
+![CloudFront Lambda@Edge Diagram](./media/cloudfront-lambda-edge-light.png#only-light)
+![CloudFront Lambda@Edge Diagram](./media/cloudfront-lambda-edge-dark.png#only-dark)
 
 ## Limits
 
@@ -18,6 +21,11 @@ You can use Lambda functions to change CloudFront requests and responses at the 
 - Node.js and Python runtimes only
 - Up to 10,000 requests per second per Region
 - 128 – 3,008 MB memory
+
+???+ TIP "TIP: When possible use Cloudfront functions"
+    For "Viewer Request" and "Viewer Response" CloudFront triggers, using Cloudfront function gives both better performance and lower cost.
+
+    See [Cloudfront Function limits](./cloudfront-function.md#limits) for the full list of limits
 
 ## Request
 
@@ -411,7 +419,7 @@ sam local generate-event cloudfront modify-querystring --uri /foo/bar
 
 ## Resources
 
-- [Typescript - cloudfront-request.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/cloudfront-request.d.ts) - NPM `@types/aws-lambda`
+- [Typescript - CloudFrontRequestEvent](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/cloudfront-request.d.ts) - NPM `@types/aws-lambda`
 
 Examples
 
