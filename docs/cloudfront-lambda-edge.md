@@ -1,13 +1,20 @@
 # CloudFront Lambda@Edge
 
-CloudFront invokes lambda synchrously. Can be Node.js or Python. 
+CloudFront invokes lambda synchrously. Can be Node.js or Python.
+
+You can use Lambda functions to change CloudFront requests and responses at the following points:
+
+- After CloudFront receives a request from a viewer (`Viewer request`)
+- Before CloudFront forwards the request to the origin (`Origin request`)
+- After CloudFront receives the response from the origin (`Origin response`)
+- Before CloudFront forwards the response to the viewer (`Viewer response`)
 
 ## Limits
 
-- Up to 5 seconds (viewer request and viewer response).
-- Up to 30 seconds (origin request and origin response).
-- 1 MB code size (viewer request and viewer response).
-- 50 MB code size (origin request and origin response)
+- Up to 5 seconds timeout ("Viewer request" and "Viewer response").
+- 1 MB code size ("Viewer request" and "Viewer response").
+- Up to 30 seconds timeout ("Origin request" and "Origin response").
+- 50 MB code size ("Origin request" and "Origin response")
 - Node.js and Python runtimes only
 - Up to 10,000 requests per second per Region
 - 128 – 3,008 MB memory
@@ -21,15 +28,14 @@ events
 
 ```shell
 # Get list of event templates for cloudfront
-sam local generate-event
-# Generate event do custom region
-sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix us-west-1.amazonaws.com
+sam local generate-event cloudfront
+# Amazon CloudFront Modify QueryString Event
+sam local generate-event cloudfront modify-querystring --uri /foo/bar
 ```
 
+### Viewer request Example
 
-### Example viewer request
-
-```json
+```json title="The following example shows a viewer request event object"
 {
   "Records": [
     {
@@ -74,7 +80,7 @@ sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix u
 
 ### Example origin request
 
-```json
+```json title="The following example shows an origin request event object"
 {
   "Records": [
     {
@@ -149,7 +155,7 @@ sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix u
 
 ### Example viewer response
 
-```json
+```json title="The following example shows a viewer response event object"
 {
   "Records": [
     {
@@ -266,7 +272,7 @@ sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix u
 
 ### Example origin response
 
-```json
+```json title="The following example shows an origin response event object"
 {
   "Records": [
     {
@@ -407,6 +413,11 @@ sam local generate-event ses email-receiving  --region us-west-1  --dns-suffix u
 
 - [Typescript - cloudfront-request.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/cloudfront-request.d.ts) - NPM `@types/aws-lambda`
 
+Examples
+
+- [Lambda@Edge example functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html)
+
 ## Documentation
 
+- [Using AWS Lambda with CloudFront Lambda@Edge](https://docs.aws.amazon.com/lambda/latest/dg/lambda-edge.html)
 - [Lambda@Edge event structure](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html)
