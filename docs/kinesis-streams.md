@@ -1,6 +1,9 @@
-# Kinesis Streams
+# Kinesis Data Streams
 
 Lambda reads records from the data stream and invokes your function synchronously with an event that contains stream records.
+
+??? TIP "TIP: Kinesis streams vs firehose"
+    Read [AWS Kinesis Data Streams vs Kinesis Data Firehose](https://jayendrapatil.com/aws-kinesis-data-streams-vs-kinesis-firehose/) for when to use Kinesis streams vs Kinesis Data Firehose.
 
 ## Request
 
@@ -38,7 +41,7 @@ Lambda reads records from the data stream and invokes your function synchronousl
 - `partitionKey` (String) - The partition key of the record
 - `sequenceNumber` (String) - The sequence number of the record
 
-### Example Kinesis record event
+### Request Example
 
 ```json
 {
