@@ -2,6 +2,8 @@
 
 Lambda reads records from the data stream and invokes your function synchronously with an event that contains stream records.
 
+Amazon Kinesis Data Streams is a fully managed streaming data service. You can continuously add various types of data such as clickstreams, application logs, and social media to a Kinesis stream from hundreds of thousands of sources.
+
 ??? TIP "TIP: Kinesis streams vs firehose"
     Read [AWS Kinesis Data Streams vs Kinesis Data Firehose](https://jayendrapatil.com/aws-kinesis-data-streams-vs-kinesis-firehose/) for when to use Kinesis streams vs Kinesis Data Firehose.
 
@@ -45,52 +47,52 @@ Lambda reads records from the data stream and invokes your function synchronousl
 
 ```json
 {
-    "Records": [
-        {
-            "kinesis": {
-                "kinesisSchemaVersion": "1.0",
-                "partitionKey": "1",
-                "sequenceNumber": "49590338271490256608559692538361571095921575989136588898",
-                "data": "SGVsbG8sIHRoaXMgaXMgYSB0ZXN0Lg==",
-                "approximateArrivalTimestamp": 1545084650.987
-            },
-            "eventSource": "aws:kinesis",
-            "eventVersion": "1.0",
-            "eventID": "shardId-000000000006:49590338271490256608559692538361571095921575989136588898",
-            "eventName": "aws:kinesis:record",
-            "invokeIdentityArn": "arn:aws:iam::123456789012:role/lambda-role",
-            "awsRegion": "us-east-2",
-            "eventSourceARN": "arn:aws:kinesis:us-east-2:123456789012:stream/lambda-stream"
-        },
-        {
-            "kinesis": {
-                "kinesisSchemaVersion": "1.0",
-                "partitionKey": "1",
-                "sequenceNumber": "49590338271490256608559692540925702759324208523137515618",
-                "data": "VGhpcyBpcyBvbmx5IGEgdGVzdC4=",
-                "approximateArrivalTimestamp": 1545084711.166
-            },
-            "eventSource": "aws:kinesis",
-            "eventVersion": "1.0",
-            "eventID": "shardId-000000000006:49590338271490256608559692540925702759324208523137515618",
-            "eventName": "aws:kinesis:record",
-            "invokeIdentityArn": "arn:aws:iam::123456789012:role/lambda-role",
-            "awsRegion": "us-east-2",
-            "eventSourceARN": "arn:aws:kinesis:us-east-2:123456789012:stream/lambda-stream"
-        }
-    ]
+   "Records":[
+      {
+         "kinesis":{
+            "kinesisSchemaVersion":"1.0",
+            "partitionKey":"1",
+            "sequenceNumber":"49590338271490256608559692538361571095921575989136588898",
+            "data":"SGVsbG8sIHRoaXMgaXMgYSB0ZXN0Lg==",
+            "approximateArrivalTimestamp":1545084650.987
+         },
+         "eventSource":"aws:kinesis",
+         "eventVersion":"1.0",
+         "eventID":"shardId-000000000006:49590338271490256608559692538361571095921575989136588898",
+         "eventName":"aws:kinesis:record",
+         "invokeIdentityArn":"arn:aws:iam::123456789012:role/lambda-role",
+         "awsRegion":"us-east-2",
+         "eventSourceARN":"arn:aws:kinesis:us-east-2:123456789012:stream/lambda-stream"
+      },
+      {
+         "kinesis":{
+            "kinesisSchemaVersion":"1.0",
+            "partitionKey":"1",
+            "sequenceNumber":"49590338271490256608559692540925702759324208523137515618",
+            "data":"VGhpcyBpcyBvbmx5IGEgdGVzdC4=",
+            "approximateArrivalTimestamp":1545084711.166
+         },
+         "eventSource":"aws:kinesis",
+         "eventVersion":"1.0",
+         "eventID":"shardId-000000000006:49590338271490256608559692540925702759324208523137515618",
+         "eventName":"aws:kinesis:record",
+         "invokeIdentityArn":"arn:aws:iam::123456789012:role/lambda-role",
+         "awsRegion":"us-east-2",
+         "eventSourceARN":"arn:aws:kinesis:us-east-2:123456789012:stream/lambda-stream"
+      }
+   ]
 }
 ```
 
 ## Response
 
 ```json title="Reporting batch item failures"
-{ 
-  "batchItemFailures": [ 
-        {
-            "itemIdentifier": "<id>"
-        }
-    ]
+{
+   "batchItemFailures":[
+      {
+         "itemIdentifier":"<id>"
+      }
+   ]
 }
 ```
 
@@ -110,6 +112,35 @@ Handlers by language
 - [Python - BatchProcessor](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/batch/#processing-messages-from-kinesis) - Pip `aws-lambda-powertools`
 - [Ruby - kinesis_event](https://rubyonjets.com/docs/events/kinesis/) - GEM `jets`
 - [Python - on_kinesis_record](https://aws.github.io/chalice/topics/events.html#kinesis-events) - Pip `chalice`
+
+### Code Examples
+
+```python title="Batch Processing via AWS Lambda Powertools"
+import json
+
+from aws_lambda_powertools import Logger, Tracer
+from aws_lambda_powertools.utilities.batch import BatchProcessor, EventType, batch_processor
+from aws_lambda_powertools.utilities.data_classes.kinesis_stream_event import KinesisStreamRecord
+from aws_lambda_powertools.utilities.typing import LambdaContext
+
+
+processor = BatchProcessor(event_type=EventType.KinesisDataStreams)
+tracer = Tracer()
+logger = Logger()
+
+
+@tracer.capture_method
+def record_handler(record: KinesisStreamRecord):
+    logger.info(record.kinesis.data_as_text)
+    payload: dict = record.kinesis.data_as_json()
+    ...
+
+@logger.inject_lambda_context
+@tracer.capture_lambda_handler
+@batch_processor(record_handler=record_handler, processor=processor)
+def lambda_handler(event, context: LambdaContext):
+    return processor.response()
+```
 
 ## Documentation
 
