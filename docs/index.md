@@ -46,7 +46,7 @@ Directory of lambda events and resources
 - [ ] [AWS IoT - Events](./iot-events.md) - asynchronously invokes
 - [X] [Apache Kafka](./apache-kafka.md) - poll-based invokes (synchronously)
 - [X] [Amazon Kinesis - Data Firehose](./kinesis-firehose.md) - poll-based invokes (synchronously)
-- [X] [Amazon Kinesis - Streams](./kinesis-streams.md) - poll-based invokes (synchronously)
+- [X] [Amazon Kinesis - Data Streams](./kinesis-streams.md) - poll-based invokes (synchronously)
 - [X] [Amazon Lex](./lex.md) - synchronously invokes
 - [X] [Amazon Lex V2](./lex-v2.md) - synchronously invokes
 - [X] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ - poll-based invokes (synchronously)
