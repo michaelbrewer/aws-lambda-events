@@ -117,6 +117,42 @@ EventBridge (CloudWatch Events) invokes your Lambda function asynchronously with
 }
 ```
 
+#### CodeCommit Repository State Change
+
+- [Docs - Monitoring CodeCommit events in Amazon EventBridge and Amazon CloudWatch Events](https://docs.aws.amazon.com/codecommit/latest/userguide/monitoring-events.html){target="_blank"}
+- [Blog - Discovering sensitive data in AWS CodeCommit with AWS Lambda](https://aws.amazon.com/blogs/compute/discovering-sensitive-data-in-aws-codecommit-with-aws-lambda-2/){target="_blank"}
+
+```json title="Merging changes"
+{
+   "version": "0",
+   "id": "01234567-EXAMPLE",
+   "detail-type": "CodeCommit Repository State Change",
+   "source": "aws.codecommit",
+   "account": "123456789012",
+   "time": "2019-06-12T10:23:43Z",
+   "region": "us-east-2",
+   "resources": [
+     "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+   ],
+   "detail": {
+     "event": "referenceUpdated",
+     "repositoryName": "MyDemoRepo",
+     "repositoryId": "12345678-1234-5678-abcd-12345678abcd",
+     "referenceType": "branch",
+     "referenceName": "myBranch",
+     "referenceFullName": "refs/heads/myBranch",
+     "commitId": "7f0103fMERGE",
+     "oldCommitId": "3e5983DESTINATION",
+     "baseCommitId": "3e5a9bf1BASE",
+     "sourceCommitId": "26a8f2SOURCE",
+     "destinationCommitId": "3e5983DESTINATION",
+     "mergeOption": "THREE_WAY_MERGE",
+     "conflictDetailsLevel": "LINE_LEVEL",
+     "conflictResolutionStrategy": "AUTOMERGE"
+   }
+}
+```
+
 ### Getting the correlation id
 
 JSON path to correlation id: `id`
