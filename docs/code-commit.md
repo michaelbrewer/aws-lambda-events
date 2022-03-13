@@ -54,7 +54,10 @@ N/A
 Typed Lambda handlers by Language
 
 - [Java - CodeCommitEvent](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/CodeCommitEvent.java) - Maven `aws-lambda-java-events`
+- [Go - CodeCommitEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_CodeCommit.md)
+- [Rust - CodeCommitEvent](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/generated/code_commit.rs)
 
 ## Documentation
 
 - [Create an AWS CodeCommit trigger for an AWS Lambda function](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambda.html)
+- [Using AWS Lambda with AWS CodeCommit](https://docs.aws.amazon.com/lambda/latest/dg/services-codecommit.html)
