@@ -57,6 +57,10 @@ Typed Lambda handlers by Language
 - [Go - CodeCommitEvent](https://github.com/aws/aws-lambda-go/blob/main/events/README_CodeCommit.md)
 - [Rust - CodeCommitEvent](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/generated/code_commit.rs)
 
+Code examples in Python and NodeJS
+
+- [AWS Lambda Functions Code Samples for AWS CodeCommit](https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-lambda_functions-codecommit.html)
+
 ## Documentation
 
 - [Create an AWS CodeCommit trigger for an AWS Lambda function](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambda.html)
