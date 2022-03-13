@@ -86,7 +86,9 @@ Code examples in Python and NodeJS:
 
 - [AWS Lambda Functions Code Samples for AWS CodeCommit](https://docs.aws.amazon.com/code-samples/latest/catalog/code-catalog-lambda_functions-codecommit.html)
 
-See [CodeCommit Repository State Change](./event-bridge.md#codecommit-repository-state-change) for better alternatives to monitoring CodeCommit.
+??? tip+ "Tip: Monitoring commits"
+
+    See [CodeCommit Repository State Change](./event-bridge.md#codecommit-repository-state-change) for better alternatives to monitoring CodeCommit.
 
 ## Documentation
 
