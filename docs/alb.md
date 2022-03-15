@@ -61,7 +61,7 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 # Gibhub PR (https://github.com/aws/aws-sam-cli/pull/3670)
 ```
 
-### Example Event
+### Request Example
 
 ```json title="Application Load Balance GET request"
 {
