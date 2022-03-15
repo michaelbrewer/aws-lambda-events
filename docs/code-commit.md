@@ -14,7 +14,7 @@ JSON patch `Records[*].eventId`
 sam local generate-event codecommit repository
 ```
 
-### AWS CodeCommit message event example
+### Request example
 
 ```json title="AWS CodeCommit message event example"
 {
