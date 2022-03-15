@@ -21,5 +21,6 @@ about the invocation, function, and execution environment.
 - [Java - Context](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/Context.java) - Maven `aws-lambda-java-core`
 - [Python - LambdaContext](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/typing/) - Pip `aws-lambda-powertools`
 - [Typescript - Context](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/handler.d.ts) - NPM `@types/aws-lambda`
+- [Go - LambdaContext](https://github.com/aws/aws-lambda-go/blob/main/lambdacontext/context.go) - Go `github.com/aws/aws-lambda-go/lambdacontext`
 - [Rust - Context](https://github.com/awslabs/aws-lambda-rust-runtime/blob/master/lambda-runtime/src/types.rs) - Cargo `aws-lambda-rust-runtime`
 - [Php - Bref\Context](https://github.com/brefphp/bref/blob/master/src/Context/Context.php) - Composer `bref/bref`
