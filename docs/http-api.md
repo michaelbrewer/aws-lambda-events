@@ -7,6 +7,8 @@ description: Amazon API Gateway invokes your function synchronously with an even
 
 Amazon API Gateway invokes your function synchronously with an event that contains a JSON representation of the HTTP request.
 
+Event driven, synchronously invokes
+
 ## Limits
 
 Lambda specific hard limitations
