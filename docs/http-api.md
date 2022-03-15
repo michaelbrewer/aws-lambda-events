@@ -65,19 +65,17 @@ you can generate sample events
 
 Common response fields
 
-`isBase64Encoded` Boolean, defaults as false
+`isBase64Encoded` (Boolean, defaults as false)
 : Whether the response body is a base64 encoded string
 
-`statusCode` Int, required
+`statusCode` (Int, required)
 : The http response code
 
-`headers` Object
+`headers` (Object)
 : Map of http headers
 
-`body` String
+`body` (String)
 : Response body
-
-Base64 encoded response example
 
 ```json title="Base64 encoded response example"
 {
@@ -95,7 +93,7 @@ Base64 encoded response example
 
 Format 2.0 specific fields, a replacement for `multiValueHeaders` from format 1.0
 
-`cookies` Array of strings
+`cookies` (Array of strings)
 : Dedeicated field for cookies 
 
 ```json title="Lambda function response for format 2.0"
@@ -112,7 +110,7 @@ Format 2.0 specific fields, a replacement for `multiValueHeaders` from format 1.
 
 Format 1.0 specific fields
 
-`multiValueHeaders` Object
+`multiValueHeaders` (Object)
 : Can be optionally included, useful for sending cookies with multiple `Set-Cookie` header
 
 ```json title="Lambda function response for format 1.0"
