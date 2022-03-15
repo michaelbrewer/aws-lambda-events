@@ -7,6 +7,9 @@ description: When Lambda runs your function, it passes a context object to the h
 When Lambda runs your function, it passes a context object to the handler. This object provides methods and properties that provide information 
 about the invocation, function, and execution environment.
 
+???+ NOTE
+    During asynchronous invokes, the lambda context field `clientContext` will not be populated.
+
 ## Docs
 
 - [DotNet - Lambda Context Docs](https://docs.aws.amazon.com/lambda/latest/dg/csharp-context.html)
