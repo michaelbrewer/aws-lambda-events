@@ -1,5 +1,7 @@
 # Amazon Connect
 
+Amazon Connect invokes your Lambda function synchronously with an event that contains the request body and metadata.
+
 Event-driven, synchronous invocation
 
 ## Request
