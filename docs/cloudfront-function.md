@@ -245,7 +245,19 @@ The `response` object contains the following fields:
 
 ## Resources
 
-Code Example: Add security headers to the response
+More code examples
+
+- [Example code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-example-code.html)
+- [Github - Amazon CloudFront Functions](https://github.com/aws-samples/amazon-cloudfront-functions)
+
+???+ tip "TIP: Rather use Amazon CloudFront response headers policies"
+    You no longer need to configure your origins or use custom Lambda@Edge or CloudFront functions to insert these headers. 
+    
+    See [Amazon CloudFront now supports configurable CORS, security, and custom HTTP response headers](https://aws.amazon.com/about-aws/whats-new/2021/11/amazon-cloudfront-supports-cors-security-custom-http-response-headers/){target="_blank"}
+
+### Code Examples
+
+Add security headers to the response
 
 ```javascript title="Add security headers to the response"
 function handler(event) {
@@ -264,11 +276,6 @@ function handler(event) {
     return response;
 }
 ```
-
-More code examples
-
-- [Example code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-example-code.html)
-- [Github - Amazon CloudFront Functions](https://github.com/aws-samples/amazon-cloudfront-functions)
 
 ## Documentation
 
