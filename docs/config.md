@@ -25,8 +25,13 @@ N/A
 
 ## Resources
 
-N/A
+Resources and templates for AWS Config rules
+
+- [AWS Config Rules Repository](https://github.com/awslabs/aws-config-rules) - AWS Community repository of custom Config rules.
+- [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html)
+- [Blog - Introducing the AWS Config Rule Development Kit (RDK)](https://aws.amazon.com/blogs/mt/introducing-the-aws-config-rule-development-kit-rdk/)
 
 ## Documentation
 
 - [Using AWS Lambda with AWS Config](https://docs.aws.amazon.com/lambda/latest/dg/services-config.html)
+- [Developing a Custom Rule for AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules_nodejs.html)
