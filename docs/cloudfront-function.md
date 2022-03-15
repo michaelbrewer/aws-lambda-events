@@ -8,6 +8,9 @@ deploy your code entirely within CloudFront.
 !!!NOTE
     CloudFront Functions are at all like AWS Lambda Functions, as they are JavaScript only and have no lambda context.
 
+![CloudFront Function Diagram](./media/cloudfront-function-light.png#only-light)
+![CloudFront Function Diagram](./media/cloudfront-function-dark.png#only-dark)
+
 ## Limits
 
 - JavaScript (ECMAScript 5.1 compliant)
