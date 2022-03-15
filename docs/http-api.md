@@ -39,7 +39,7 @@ you can generate sample events
 ### Request Stucture format 2.0
 
 !!! NOTE
-    Format 2.0 doesn't have multiValueHeaders or multiValueQueryStringParameters fields. Duplicate headers
+    Format 2.0 doesn't have `multiValueHeaders` or `multiValueQueryStringParameters` fields. Duplicate headers
     are combined with commas and included in the headers field. Duplicate query strings are combined with
     commas and included in the queryStringParameters field.
 
