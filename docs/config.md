@@ -1,5 +1,7 @@
 # Amazon Config
 
+You can use AWS Lambda functions to evaluate whether your AWS resource configurations comply with your custom Config rules. As resources are created, deleted, or changed, AWS Config records these changes and sends the information to your Lambda functions. Your Lambda functions then evaluate the changes and report results to AWS Config. 
+
 Event-driven asynchronous invocation
 
 ## Request
