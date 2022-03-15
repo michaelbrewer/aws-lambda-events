@@ -1,6 +1,8 @@
 # API Gateway Rest Authorizer
 
-A Lambda authorizer (formerly known as a *custom authorizer*) is an API Gateway feature that uses a Lambda function to control access to your API. Event driven and synchronous.
+A Lambda authorizer (formerly known as a *custom authorizer*) is an API Gateway feature that uses a Lambda function to control access to your API. 
+
+Event driven and synchronous.
 
 ## Request
 
