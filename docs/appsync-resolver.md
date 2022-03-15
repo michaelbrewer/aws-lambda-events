@@ -7,8 +7,8 @@ Event driven, invoked synchronously.
 
 ## Limits
 
-Request execution timeout of 30 seconds
-Payload size limit of 1MB
+- Request execution timeout of 30 seconds
+- Payload size limit of 1MB
 
 ## Request
 
