@@ -5,6 +5,23 @@ description: Cognito User Pool Triggers
 
 # Cognito User Pool Triggers
 
+You can create a Lambda function and then activate that function during user pool operations such as user sign-up, confirmation, and sign-in (authentication) with a Lambda trigger. You can add authentication challenges, migrate users, and customize verification messages.
+
+| User Pool Flow                      | Operation                           | Description                                                           |
+|-------------------------------------|-------------------------------------|-----------------------------------------------------------------------|
+| Custom Authentication Flow          | Define Auth Challenge               | Determines the next challenge in a custom auth flow                   |
+|                                     | Create Auth Challenge               | Creates a challenge in a custom auth flow                             |
+|                                     | Verify Auth Challenge Response      | Determines if a response is correct in a custom auth flow             |
+| Authentication Events               | Pre authentication Lambda trigger   | Custom validation to accept or deny the sign-in request               |
+|                                     | Post authentication Lambda trigger  | Logs events for custom analytics                                      |
+|                                     | Pre token generation Lambda trigger | Augments or suppresses token claims                                   |
+| Sign-Up                             | Pre sign-up Lambda trigger          | Performs custom validation that accepts or denies the sign-up request |
+|                                     | Post confirmation Lambda trigger    | Adds custom welcome messages or event logging for custom analytics    |
+|                                     | Migrate user Lambda trigger         | Migrates a user from an existing user directory to user pools         |
+| Messages                            | Custom message Lambda trigger       | Performs advanced customization and localization of messages          |
+| Token Creation                      | Pre token generation Lambda trigger | Adds or removes attributes in Id tokens                               |
+| Email and SMS third-party providers | Custom sender Lambda triggers       | Uses a third-party provider to send SMS and email messages            |
+
 ## Common Reqest Fields
 
 Common attributes shared by all User Pool Lambda Trigger Events
