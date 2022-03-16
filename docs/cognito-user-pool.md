@@ -33,7 +33,7 @@ The pre sign-up Lambda function is triggered just before Amazon Cognito signs up
 
 - [Pre sign-up Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html) documentation
 
-### Pre Sign-up Input
+### Pre Sign-up Request
 
 `triggerSource` can be one of the following:
 
@@ -109,13 +109,46 @@ Response fields include:
 }
 ```
 
+## Post Confirmation
+
+Amazon Cognito invokes this trigger after a new user is confirmed, allowing you to send custom messages or to add custom logic. For example, you could use this trigger to gather new user data.
+
+- [Post confirmation Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-confirmation.html) documentation
+
+### Post Confirmation Request
+
+```json title="Post Confirmation Request"
+{
+  "version": "string",
+  "triggerSource": "PostConfirmation_ConfirmSignUp",
+  "region": "us-east-1",
+  "userPoolId": "string",
+  "userName": "userName",
+  "callerContext": {
+    "awsSdkVersion": "awsSdkVersion",
+    "clientId": "clientId"
+  },
+  "request": {
+    "userAttributes": {
+      "email": "user@example.com",
+      "email_verified": true
+    }
+  },
+  "response": {}
+}
+```
+
+### Post Confirmation Response
+
+No additional return information is expected in the response.
+
 ## Pre Authentication
 
 Amazon Cognito invokes this trigger when a user attempts to sign in, allowing custom validation to accept or deny the authentication request.
 
 - [Pre authentication Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-authentication.html) documentation
 
-### Pre Authentication Input
+### Pre Authentication Request
 
 ```json title="Pre Authentication Request"
 {
@@ -144,41 +177,26 @@ Amazon Cognito invokes this trigger when a user attempts to sign in, allowing cu
 
 No additional return information is expected in the response.
 
-## Auth Challenge
+## Custom Authentication
 
-### Auth Challenge Input
+These Lambda triggers issue and verify their own challenges as part of a user pool custom authentication flow.
 
-```json title="Create Auth Challenge Request"
-{
-  "version": "1",
-  "triggerSource": "CreateAuthChallenge_Authentication",
-  "region": "us-east-1",
-  "userPoolId": "us-east-1_example",
-  "userName": "UserName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "sub": "4A709A36-7D63-4785-829D-4198EF10EBDA",
-      "email_verified": "true",
-      "name": "First Last",
-      "email": "create-auth@mail.com"
-    },
-    "challengeName": "PASSWORD_VERIFIER",
-    "session" : [
-      {
-        "challengeName": "CUSTOM_CHALLENGE",
-        "challengeResult": true,
-        "challengeMetadata": "CAPTCHA_CHALLENGE"
-      }
-    ],
-    "userNotFound": false
-  },
-  "response": {}
-}
-```
+**[Define auth challenge](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-define-auth-challenge.html){target="_blank"}**
+: Amazon Cognito invokes this trigger to initiate the custom authentication flow.
+
+**[Create auth challenge](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-create-auth-challenge.html){target="_blank"}**
+: Amazon Cognito invokes this trigger after Define Auth Challenge to create a custom challenge.
+
+**[Verify auth challenge response](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-verify-auth-challenge-response.html){target="_blank"}**
+: Amazon Cognito invokes this trigger to verify if the response from the end user for a custom challenge is valid or not.
+
+| Trigger               | triggerSource value                        | Triggering event                |
+|-----------------------|--------------------------------------------|---------------------------------|
+| Define auth challenge | DefineAuthChallenge_Authentication         | Define Auth Challenge.          |
+| Create auth challenge | CreateAuthChallenge_Authentication         | Create Auth Challenge.          |
+| Verify auth challenge | VerifyAuthChallengeResponse_Authentication | Verify Auth Challenge Response. |
+
+### Auth Challenge Requests
 
 ```json title="Define Auth Challenge Request"
 {
@@ -215,7 +233,39 @@ No additional return information is expected in the response.
 }
 ```
 
-### Auth Challenge Response
+```json title="Create Auth Challenge Request"
+{
+  "version": "1",
+  "triggerSource": "CreateAuthChallenge_Authentication",
+  "region": "us-east-1",
+  "userPoolId": "us-east-1_example",
+  "userName": "UserName",
+  "callerContext": {
+    "awsSdkVersion": "awsSdkVersion",
+    "clientId": "clientId"
+  },
+  "request": {
+    "userAttributes": {
+      "sub": "4A709A36-7D63-4785-829D-4198EF10EBDA",
+      "email_verified": "true",
+      "name": "First Last",
+      "email": "create-auth@mail.com"
+    },
+    "challengeName": "PASSWORD_VERIFIER",
+    "session" : [
+      {
+        "challengeName": "CUSTOM_CHALLENGE",
+        "challengeResult": true,
+        "challengeMetadata": "CAPTCHA_CHALLENGE"
+      }
+    ],
+    "userNotFound": false
+  },
+  "response": {}
+}
+```
+
+### Auth Challenge Responses
 
 ```json title="Verify auth challenge response"
 {
@@ -254,7 +304,15 @@ Amazon Cognito invokes this trigger before token generation which allows you to 
 
 - [Pre token generation Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html) documentation
 
-### Pre Token Generation Input
+### Pre Token Generation Request
+
+| triggerSource                        | Triggering event                                                                                                     |
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| TokenGeneration_HostedAuth           | Called during authentication from the Amazon Cognito hosted UI sign-in page.                                         |
+| TokenGeneration_Authentication       | Called after user authentication flows have completed.                                                               |
+| TokenGeneration_NewPasswordChallenge | Called after the user is created by an admin. This flow is invoked when the user has to change a temporary password. |
+| TokenGeneration_AuthenticateDevice   | Called at the end of the authentication of a user device.                                                            |
+| TokenGeneration_RefreshTokens        | Called when a user tries to refresh the identity and access tokens.                                                  |
 
 Pre token generation request parameters
 
@@ -271,7 +329,7 @@ Pre token generation request parameters
 : A string indicating the preferred IAM role.
 
 `clientMetadata` (Object, optional)
-: One or more key-value pairs that you can provide as custom input to the Lambda function that you specify for the pre token generation trigger. 
+: One or more key-value pairs that you can provide as custom input to the Lambda function that you specify for the pre token generation trigger.
 
 ```json title="Example pre token generation request"
 {
@@ -360,7 +418,7 @@ Pre token generation response parameters
 
 - [Post authentication Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-authentication.html) documentation
 
-### Post Authentication Input
+### Post Authentication Request
 
 ```json title="Post Authentication Reqest"
 {
@@ -387,46 +445,23 @@ Pre token generation response parameters
 
 No additional return information is expected in the response.
 
-## Post Confirmation
-
-Amazon Cognito invokes this trigger after a new user is confirmed, allowing you to send custom messages or to add custom logic. For example, you could use this trigger to gather new user data.
-
-- [Post confirmation Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-confirmation.html) documentation
-
-### Post Confirmation Input
-
-```json title="Post Confirmation Request"
-{
-  "version": "string",
-  "triggerSource": "PostConfirmation_ConfirmSignUp",
-  "region": "us-east-1",
-  "userPoolId": "string",
-  "userName": "userName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "email": "user@example.com",
-      "email_verified": true
-    }
-  },
-  "response": {}
-}
-```
-
-### Post Confirmation Response
-
-No additional return information is expected in the response.
-
 ## Custom Message
 
 Amazon Cognito invokes this trigger before sending an email or phone verification message or a multi-factor authentication (MFA) code, allowing you to customize the message dynamically.
 
 - [Custom message Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-custom-message.html) documentation
 
-### Custom Message Input
+### Custom Message Request
+
+| triggerSource                     | Triggering event                                                                                                                                       |
+|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CustomMessage_SignUp              | To send the confirmation code post sign-up.                                                                                                            |
+| CustomMessage_AdminCreateUser     | To send the temporary password to a new user.                                                                                                          |
+| CustomMessage_ResendCode          | To resend the confirmation code to an existing user.                                                                                                   |
+| CustomMessage_ForgotPassword      | To send the confirmation code for Forgot Password request.                                                                                             |
+| CustomMessage_UpdateUserAttribute | When a user's email or phone number is changed, this trigger sends a verification code automatically to the user. Cannot be used for other attributes. |
+| CustomMessage_VerifyUserAttribute | This trigger sends a verification code to the user when they manually request it for a new email or phone number.                                      |
+| CustomMessage_Authentication      | To send MFA code during authentication.                                                                                                                |
 
 ```json title="Custom Message Request"
 {
@@ -488,12 +523,17 @@ Custom message response parameters
 
 ## User Migration
 
-Amazon Cognito invokes this trigger when a user does not exist in the user pool at the time of sign-in with a password, or in the forgot-password flow. 
-After the Lambda function returns successfully, Amazon Cognito creates the user in the user pool. 
+Amazon Cognito invokes this trigger when a user does not exist in the user pool at the time of sign-in with a password, or in the forgot-password flow.
+After the Lambda function returns successfully, Amazon Cognito creates the user in the user pool.
 
 - [Migrate user Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-migrate-user.html) documentation
 
-### User Migration Input
+### User Migration Request
+
+| triggerSource                | Triggering event                            |
+|------------------------------|---------------------------------------------|
+| UserMigration_Authentication | User migration at sign-in.                  |
+| UserMigration_ForgotPassword | User migration during forgot-password flow. |
 
 ```json
 {
@@ -525,8 +565,8 @@ After the Lambda function returns successfully, Amazon Cognito creates the user 
             . . .
         },
         "clientMetadata": {
-      	"string": "string",
-      	. . .
+          "string": "string",
+          . . .
         }
     },
     "response": {
@@ -541,6 +581,30 @@ After the Lambda function returns successfully, Amazon Cognito creates the user 
     }
 }
 ```
+
+## Custom Email Sender
+
+| TriggerSource                                 | Triggering event                                                                                                      |
+|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| CustomEmailSender_SignUp                      | A user signs up and Amazon Cognito sends a welcome message.                                                           |
+| CustomEmailSender_ResendCode                  | A user requests a replacement code to reset their password.                                                           |
+| CustomEmailSender_ForgotPassword              | A user requests a code to reset their password.                                                                       |
+| CustomEmailSender_UpdateUserAttribute         | A user updates an email address or phone number attribute and Amazon Cognito sends a code to verify the attribute.    |
+| CustomEmailSender_VerifyUserAttribute         | A user creates a new email address or phone number attribute and Amazon Cognito sends a code to verify the attribute. |
+| CustomEmailSender_AdminCreateUser             | You create a new user in your user pool and Amazon Cognito sends them a temporary password.                           |
+| CustomEmailSender_AccountTakeOverNotification | Amazon Cognito detects an attempt to take over a user account and sends the user a notification.                      |
+
+## Custom SMS Sender
+
+| TriggerSource                       | Triggering event                                                                                                      |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| CustomSMSSender_SignUp              | A user signs up and Amazon Cognito sends a welcome message.                                                           |
+| CustomSMSSender_ResendCode          | A user requests a replacement code to reset their password.                                                           |
+| CustomSMSSender_ForgotPassword      | A user requests a code to reset their password.                                                                       |
+| CustomSMSSender_UpdateUserAttribute | A user updates an email address or phone number attribute and Amazon Cognito sends a code to verify the attribute.    |
+| CustomSMSSender_VerifyUserAttribute | A user creates a new email address or phone number attribute and Amazon Cognito sends a code to verify the attribute. |
+| CustomSMSSender_Authentication      | A user with SMS MFA configured signs in.                                                                              |
+| CustomSMSSender_AdminCreateUser     | You create a new user in your user pool and Amazon Cognito sends them a temporary password.                           |
 
 ## Resources
 
@@ -588,7 +652,7 @@ def handler(event: DefineAuthChallengeTriggerEvent, context) -> dict:
 
 ## Documentation
 
-Reference documentation and blog posts. 
+Reference documentation and blog posts.
 
 - [Customizing user pool workflows with Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html){target="_blank"}
 - [Anonymous User Identities with Cognito Lambda Triggers](https://bitesizedserverless.com/bite/anonymous-user-identities-with-cognito-lambda-triggers/)
