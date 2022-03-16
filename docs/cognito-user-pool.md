@@ -611,6 +611,38 @@ After the Lambda function returns successfully, Amazon Cognito creates the user 
 | CustomEmailSender_AdminCreateUser             | You create a new user in your user pool and Amazon Cognito sends them a temporary password.                           |
 | CustomEmailSender_AccountTakeOverNotification | Amazon Cognito detects an attempt to take over a user account and sends the user a notification.                      |
 
+```json title="Example event"
+{
+    "version": "1",
+    "triggerSource": "CustomEmailSender_ForgotPassword",
+    "region": "us-east-1",
+    "userPoolId": "us-east-1_LnS...",
+    "userName": "54cf7eb7-0b96-4304-...",
+    "callerContext": {
+        "awsSdkVersion": "aws-sdk-nodejs-2.856.0",
+        "clientId": "6u7c9vr3pkstoog..."
+    },
+    "request": {
+        "type": "customEmailSenderRequestV1",
+        "code": "AYADeILxywKhhaq8Ys4mh0aHutYAgQACABVhd3MtY3J5c...",
+        "clientMetadata": null,
+        "userAttributes": {
+            "sub": "54cf7eb7-0b96-4304-8d6b-...",
+            "email_verified": "true",
+            "cognito:user_status": "CONFIRMED",
+            "cognito:email_alias": "hello@maxivanov.io",
+            "phone_number_verified": "false",
+            "phone_number": "...",
+            "given_name": "Max",
+            "family_name": "Ivanov",
+            "email": "hello@maxivanov.io"
+        }
+    }
+}
+```
+
+- [Send AWS Cognito emails with 3rd party Email Service Providers](https://www.maxivanov.io/send-aws-cognito-emails-with-3rd-party-esps/)
+
 ## Custom SMS Sender
 
 | TriggerSource                       | Triggering event                                                                                                      |
