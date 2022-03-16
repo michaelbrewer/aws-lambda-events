@@ -19,7 +19,9 @@ Event driven, invoked synchronously.
 
 ## Request
 
-### Request fields
+### Amplify GraphQL directive
+
+List of fields
 
 `typeName` (String)
 : The name of the parent object type of the field being resolver.
@@ -43,7 +45,105 @@ For example when resolving `Post.comments`, the source will be the `Post` object
 `next` (String)
 : When using pipeline resolvers, this contains the object returned by the previous function. You can return the previous value for auditing use cases.
 
-### Request examples
+```json title="Amplify GraphQL directive"
+{
+  "typeName": "Merchant",
+  "fieldName": "locations",
+  "arguments": {
+    "page": 2,
+    "size": 1,
+    "name": "value"
+  },
+  "identity": {
+    "claims": {
+      "sub": "07920713-4526-4642-9c88-2953512de441",
+      "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_POOL_ID",
+      "aud": "58rc9bf5kkti90ctmvioppukm9",
+      "event_id": "7f4c9383-abf6-48b7-b821-91643968b755",
+      "token_use": "id",
+      "auth_time": 1615366261,
+      "name": "Michael Brewer",
+      "exp": 1615369861,
+      "iat": 1615366261
+    },
+    "defaultAuthStrategy": "ALLOW",
+    "groups": null,
+    "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_POOL_ID",
+    "sourceIp": [
+      "11.215.2.22"
+    ],
+    "sub": "07920713-4526-4642-9c88-2953512de441",
+    "username": "mike"
+  },
+  "source": {
+    "name": "Value",
+    "nested": {
+      "name": "value",
+      "list": []
+    }
+  },
+  "request": {
+    "headers": {
+      "x-forwarded-for": "11.215.2.22, 64.44.173.11",
+      "cloudfront-viewer-country": "US",
+      "cloudfront-is-tablet-viewer": "false",
+      "via": "2.0 SOMETHING.cloudfront.net (CloudFront)",
+      "cloudfront-forwarded-proto": "https",
+      "origin": "https://console.aws.amazon.com",
+      "content-length": "156",
+      "accept-language": "en-US,en;q=0.9",
+      "host": "SOMETHING.appsync-api.us-east-1.amazonaws.com",
+      "x-forwarded-proto": "https",
+      "sec-gpc": "1",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) etc.",
+      "accept": "*/*",
+      "cloudfront-is-mobile-viewer": "false",
+      "cloudfront-is-smarttv-viewer": "false",
+      "accept-encoding": "gzip, deflate, br",
+      "referer": "https://console.aws.amazon.com/",
+      "content-type": "application/json",
+      "sec-fetch-mode": "cors",
+      "x-amz-cf-id": "Fo5VIuvP6V6anIEt62WzFDCK45mzM4yEdpt5BYxOl9OFqafd-WR0cA==",
+      "x-amzn-trace-id": "Root=1-60488877-0b0c4e6727ab2a1c545babd0",
+      "authorization": "AUTH-HEADER",
+      "sec-fetch-dest": "empty",
+      "x-amz-user-agent": "AWS-Console-AppSync/",
+      "cloudfront-is-desktop-viewer": "true",
+      "sec-fetch-site": "cross-site",
+      "x-forwarded-port": "443"
+    }
+  },
+  "prev": {
+    "result": {}
+  }
+}
+```
+
+### Direct Lambda Resolver
+
+List of fields
+
+`info.parentTypeName` (String)
+: The name of the parent object type of the field being resolver.
+
+`info.fieldName` (String)
+: The name of the field being resolved.
+
+`arguments` (Map)
+: A map containing the arguments passed to the field being resolved.
+
+`identity` (Object)
+: A map containing identity information for the request. Contains a nested key 'claims' that will contains the JWT claims if they exist.
+
+`source` (Map)
+: A map that contains the resolution of the parent field. When resolving a nested field in a query, the source contains parent value at runtime. 
+For example when resolving `Post.comments`, the source will be the `Post` object.
+
+`request` (String)
+: The AppSync request object. Contains header information.
+
+`next` (String)
+: When using pipeline resolvers, this contains the object returned by the previous function. You can return the previous value for auditing use cases.
 
 ```json title="AppSync direct resolver"
 {
@@ -119,80 +219,6 @@ For example when resolving `Post.comments`, the source will be the `Post` object
     "variables": {}
   },
   "stash": {}
-}
-```
-
-```json title="Amplify GraphQL directive"
-{
-  "typeName": "Merchant",
-  "fieldName": "locations",
-  "arguments": {
-    "page": 2,
-    "size": 1,
-    "name": "value"
-  },
-  "identity": {
-    "claims": {
-      "sub": "07920713-4526-4642-9c88-2953512de441",
-      "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_POOL_ID",
-      "aud": "58rc9bf5kkti90ctmvioppukm9",
-      "event_id": "7f4c9383-abf6-48b7-b821-91643968b755",
-      "token_use": "id",
-      "auth_time": 1615366261,
-      "name": "Michael Brewer",
-      "exp": 1615369861,
-      "iat": 1615366261
-    },
-    "defaultAuthStrategy": "ALLOW",
-    "groups": null,
-    "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_POOL_ID",
-    "sourceIp": [
-      "11.215.2.22"
-    ],
-    "sub": "07920713-4526-4642-9c88-2953512de441",
-    "username": "mike"
-  },
-  "source": {
-    "name": "Value",
-    "nested": {
-      "name": "value",
-      "list": []
-    }
-  },
-  "request": {
-    "headers": {
-      "x-forwarded-for": "11.215.2.22, 64.44.173.11",
-      "cloudfront-viewer-country": "US",
-      "cloudfront-is-tablet-viewer": "false",
-      "via": "2.0 SOMETHING.cloudfront.net (CloudFront)",
-      "cloudfront-forwarded-proto": "https",
-      "origin": "https://console.aws.amazon.com",
-      "content-length": "156",
-      "accept-language": "en-US,en;q=0.9",
-      "host": "SOMETHING.appsync-api.us-east-1.amazonaws.com",
-      "x-forwarded-proto": "https",
-      "sec-gpc": "1",
-      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) etc.",
-      "accept": "*/*",
-      "cloudfront-is-mobile-viewer": "false",
-      "cloudfront-is-smarttv-viewer": "false",
-      "accept-encoding": "gzip, deflate, br",
-      "referer": "https://console.aws.amazon.com/",
-      "content-type": "application/json",
-      "sec-fetch-mode": "cors",
-      "x-amz-cf-id": "Fo5VIuvP6V6anIEt62WzFDCK45mzM4yEdpt5BYxOl9OFqafd-WR0cA==",
-      "x-amzn-trace-id": "Root=1-60488877-0b0c4e6727ab2a1c545babd0",
-      "authorization": "AUTH-HEADER",
-      "sec-fetch-dest": "empty",
-      "x-amz-user-agent": "AWS-Console-AppSync/",
-      "cloudfront-is-desktop-viewer": "true",
-      "sec-fetch-site": "cross-site",
-      "x-forwarded-port": "443"
-    }
-  },
-  "prev": {
-    "result": {}
-  }
 }
 ```
 
