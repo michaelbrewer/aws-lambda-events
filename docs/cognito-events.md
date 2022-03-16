@@ -4,7 +4,9 @@ title: Cognito Events
 
 # Amazon Cognito Events
 
-Event-driven; synchronous invocation
+Amazon Cognito Events allows you to execute an AWS Lambda function in response to important events in Amazon Cognito.
+
+Event-driven, synchronous invocation
 
 ## Request
 
