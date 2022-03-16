@@ -1,8 +1,15 @@
 # AppSync Resolver
 
+
+**Direct Lambda Resolvers**
+: With Direct Lambda Resolvers, you can circumvent the use of VTL mapping templates when using AWS Lambda data sources.
+
+**Amplify GraphQL direct `@function`**
+: The Amplify `@function` directive allows you to quickly & easily configure a AWS Lambda resolvers with your GraphQL API. 
+
 Event driven, invoked synchronously.
 
-!!! NOTE
+!!! WARNING "Note"
     AppSync Resolver Events can come in various shapes this data class supports both Amplify GraphQL directive `@function` and Direct Lambda Resolver
 
 ## Limits
@@ -205,7 +212,7 @@ Lambda handlers by language
 
 ### Code Examples
 
-```python title="app.py"
+```python title="AppSync resolver using AWS Lambda Powertools"
 from aws_lambda_powertools import Logger, Tracer
 
 from aws_lambda_powertools.logging import correlation_paths
@@ -258,4 +265,7 @@ def lambda_handler(event, context):
 ## Documentation
 
 - [AppSync - Resolver mapping template context reference](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-context-reference.html)
+- [AppSync - Tutorial: Lambda resolvers](https://docs.aws.amazon.com/appsync/latest/devguide/tutorial-lambda-resolvers.html)
 - [Amplify - Configure Lambda resolvers](https://docs.amplify.aws/cli-legacy/graphql-transformer/function/#structure-of-the-function-event)
+- [Blog - Introducing Direct Lambda Resolvers: AWS AppSync GraphQL APIs without VTL](https://aws.amazon.com/blogs/mobile/appsync-direct-lambda/)
+- [Serverlessland - AppSync to Lambda](https://serverlessland.com/patterns/appsync-direct-lambda-resolver)
