@@ -5,7 +5,7 @@ To use an individual function for each intent, the Lambda function router sectio
 
 ## Request
 
-### Lex V2 requst schema
+### Requst schema
 
 Event fields notes:
 
@@ -273,126 +273,10 @@ Event fields notes:
 }
 ```
 
-### Lex V2 example requests
+### Request examples
 
 ```json title="Banking bot: CheckBalance"
-{
-    "sessionId": "254688924456798",
-    "inputTranscript": "01/01/1990",
-    "interpretations": [
-        {
-            "intent": {
-                "slots": {
-                    "dateofBirth": {
-                        "shape": "Scalar",
-                        "value": {
-                            "originalValue": "01/01/1990",
-                            "resolvedValues": [
-                                "1990-01-01"
-                            ],
-                            "interpretedValue": "1990-01-01"
-                        }
-                    },
-                    "accountType": {
-                        "shape": "Scalar",
-                        "value": {
-                            "originalValue": "savings",
-                            "resolvedValues": [
-                                "Savings"
-                            ],
-                            "interpretedValue": "Savings"
-                        }
-                    }
-                },
-                "confirmationState": "None",
-                "name": "CheckBalance",
-                "state": "ReadyForFulfillment"
-            },
-            "nluConfidence": 1
-        },
-        {
-            "intent": {
-                "slots": {},
-                "confirmationState": "None",
-                "name": "FallbackIntent",
-                "state": "ReadyForFulfillment"
-            }
-        },
-        {
-            "intent": {
-                "slots": {},
-                "confirmationState": "None",
-                "name": "Welcome",
-                "state": "ReadyForFulfillment"
-            },
-            "nluConfidence": 0.23
-        }
-    ],
-    "responseContentType": "text/plain; charset=utf-8",
-    "sessionState": {
-        "sessionAttributes": {},
-        "activeContexts": [],
-        "intent": {
-            "slots": {
-                "dateofBirth": {
-                    "shape": "Scalar",
-                    "value": {
-                        "originalValue": "01/01/1990",
-                        "resolvedValues": [
-                            "1990-01-01"
-                        ],
-                        "interpretedValue": "1990-01-01"
-                    }
-                },
-                "accountType": {
-                    "shape": "Scalar",
-                    "value": {
-                        "originalValue": "savings",
-                        "resolvedValues": [
-                            "Savings"
-                        ],
-                        "interpretedValue": "Savings"
-                    }
-                }
-            },
-            "confirmationState": "None",
-            "name": "CheckBalance",
-            "state": "ReadyForFulfillment"
-        },
-        "originatingRequestId": "f57dfc3f-44be-4df9-ae72-9681fc14e67f"
-    },
-    "messageVersion": "1.0",
-    "invocationSource": "FulfillmentCodeHook",
-    "transcriptions": [
-        {
-            "transcription": "01/01/1990",
-            "transcriptionConfidence": 1,
-            "resolvedSlots": {
-                "dateofBirth": {
-                    "shape": "Scalar",
-                    "value": {
-                        "originalValue": "01/01/1990",
-                        "resolvedValues": [
-                            "1990-01-01"
-                        ]
-                    }
-                }
-            },
-            "resolvedContext": {
-                "intent": "CheckBalance"
-            }
-        }
-    ],
-    "inputMode": "Text",
-    "bot": {
-        "aliasName": "TestBotAlias",
-        "aliasId": "TSTALIASID",
-        "name": "BankingBot",
-        "version": "DRAFT",
-        "localeId": "en_US",
-        "id": "J866BA0UQC"
-    }
-}
+--8<-- "docs/events/lex-v2/banking-bot.json"
 ```
 
 ### Generating sample events
@@ -403,7 +287,7 @@ Event fields notes:
 
 ## Response
 
-### Lex V2 response schema
+### Response schema
 
 ```json title="Lex V2 response schema"
 {
