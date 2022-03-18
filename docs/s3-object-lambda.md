@@ -80,81 +80,11 @@ JSON path to correlation id: `xAmzRequestId`
 ### Examples
 
 ```json title="IAM User"
-{
-    "xAmzRequestId": "1a5ed718-5f53-471d-b6fe-5cf62d88d02a",
-    "getObjectContext": {
-        "inputS3Url": "https://myap-123412341234.s3-accesspoint.us-east-1.amazonaws.com/s3.txt?X-Amz-Security-Token=...",
-        "outputRoute": "io-iad-cell001",
-        "outputToken": "..."
-    },
-    "configuration": {
-        "accessPointArn": "arn:aws:s3-object-lambda:us-east-1:123412341234:accesspoint/myolap",
-        "supportingAccessPointArn": "arn:aws:s3:us-east-1:123412341234:accesspoint/myap",
-        "payload": "test"
-    },
-    "userRequest": {
-        "url": "/s3.txt",
-        "headers": {
-            "Host": "myolap-123412341234.s3-object-lambda.us-east-1.amazonaws.com",
-            "Accept-Encoding": "identity",
-            "X-Amz-Content-SHA256": "e3b0c44297fc1c149afbf4c8995fb92427ae41e4649b934ca495991b7852b855"
-        }
-    },
-    "userIdentity": {
-        "type": "IAMUser",
-        "principalId": "...",
-        "arn": "arn:aws:iam::123412341234:user/myuser",
-        "accountId": "123412341234",
-        "accessKeyId": "...",
-        "userName": "Alice"
-    },
-    "protocolVersion": "1.00"
-}
+--8<-- "docs/events/s3-object-lambda/s3-object-lambda-iam-user.json"
 ```
 
 ```json title="Temp Credentials"
-{
-    "xAmzRequestId": "requestId",
-    "getObjectContext": {
-        "inputS3Url": "https://my-s3-ap-111122223333.s3-accesspoint.us-east-1.amazonaws.com/example?X-Amz-Security-Token=<snip>",
-        "outputRoute": "io-use1-001",
-        "outputToken": "OutputToken"
-    },
-    "configuration": {
-        "accessPointArn": "arn:aws:s3-object-lambda:us-east-1:111122223333:accesspoint/example-object-lambda-ap",
-        "supportingAccessPointArn": "arn:aws:s3:us-east-1:111122223333:accesspoint/example-ap",
-        "payload": "{}"
-    },
-    "userRequest": {
-        "url": "https://object-lambda-111122223333.s3-object-lambda.us-east-1.amazonaws.com/example",
-        "headers": {
-            "Host": "object-lambda-111122223333.s3-object-lambda.us-east-1.amazonaws.com",
-            "Accept-Encoding": "identity",
-            "X-Amz-Content-SHA256": "e3b0c44298fc1example"
-        }
-    },
-    "userIdentity": {
-        "type": "AssumedRole",
-        "principalId": "principalId",
-        "arn": "arn:aws:sts::111122223333:assumed-role/Admin/example",
-        "accountId": "111122223333",
-        "accessKeyId": "accessKeyId",
-        "sessionContext": {
-            "attributes": {
-                "mfaAuthenticated": "false",
-                "creationDate": "Wed Mar 10 23:41:52 UTC 2021"
-            },
-            "sessionIssuer": {
-                "type": "Role",
-                "principalId": "principalId",
-                "arn": "arn:aws:iam::111122223333:role/Admin",
-                "accountId": "111122223333",
-                "userName": "Admin"
-            }
-        }
-    },
-    "protocolVersion": "1.00"
-}
+--8<-- "docs/events/s3-object-lambda/s3-object-lambda-temp-credentials.json"
 ```
 
 ## Response

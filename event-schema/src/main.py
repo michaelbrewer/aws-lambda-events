@@ -1,17 +1,18 @@
 import json
+import os
+from fnmatch import fnmatch
 from pathlib import Path
 
 import boto3
+from pick import pick
 
-
-def load_event_schema(path: Path) -> str:
-    return json.loads(path.read_text())
+template_root = str(Path(__file__).parent.parent.parent) + "/docs/events/"
 
 
 def generate_schema(example_file: str) -> str:
-    path = Path(str(Path(__file__).parent.parent.parent) + "/docs/events/" + example_file)
+    path = Path(template_root + example_file)
     example_name = path.name.replace(".json", "")
-    event = load_event_schema(path)
+    event = json.loads(path.read_text())
     schema = {
         "openapi": "3.0.0",
         "info": {
@@ -29,8 +30,19 @@ def generate_schema(example_file: str) -> str:
     return json.dumps(schema)
 
 
+def get_list_of_events() -> list:
+    templates = []
+    for path, _, files in os.walk(template_root):
+        for name in files:
+            if fnmatch(name, "*.json"):
+                templates.append(os.path.join(path, name).removeprefix(template_root))
+    templates.sort()
+    return templates
+
+
 lambda_name = input("Lambda Name: ")
-event_source = input("Event Source: ")
+title = "Select Event:"
+event_source, index = pick(get_list_of_events(), title)
 
 client = boto3.client("schemas")
 client.create_schema(

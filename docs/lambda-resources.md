@@ -27,26 +27,34 @@ aws schemas create-registry --registry-name lambda-testevent-schemas --descripti
 Setup the cli tool to create shared test events.
 
 ```script
-cd event-schema
+git clone https://github.com/michaelbrewer/aws-lambda-events.git
+cd aws-lambda-events/event-schema
 make dev
 ```
 
 Run the cli tool to create shared test events, currently just json files from `docs/events/` is supported eg: cloudformation/cloudformation-delete.json
 
 ```bash
-make run
+./publish-shared-event.sh
 Lambda Name: <Full Lambda Name>
-Event Source: alb/alb.json
+Select Event:
+ * alb/alb.json
+   alexa/alex-smart-home-skill-v1.json
+   alexa/alex-smart-home-skill-v3.json
+   amazon-config/amazon-config.json
 ```
 
 ### Ideaslog
 
 - [x] Prototyped example using `appsync-authorizer`
 - [x] Generate schema from json examples in `docs/events` folder
-- [ ] Add cli args
+- [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
+- [ ] Add cli help (`publish-shared-event --help`)
+- [ ] Drop of extend the ui to use [textual](https://github.com/Textualize/textual)
 - [ ] Discover the different lambdas and show a list or do code completion.
-- [ ] Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
+- [x] Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
 - [ ] Offer some parameters for the event source. To allow for flexibility.
+- [ ] Publish as pip package (if this makes sense)
 
 ### Documentation
 
