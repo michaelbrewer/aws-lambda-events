@@ -11,27 +11,7 @@ Event-driven, synchronous invocation
 ## Request
 
 ```json
-{
-  "version": 2,
-  "eventType": "SyncTrigger",
-  "region": "us-east-1",
-  "identityPoolId": "identityPoolId",
-  "identityId": "identityId",
-  "datasetName": "datasetName",
-  "datasetRecords": {
-    "SampleKey1": {
-      "oldValue": "oldValue1",
-      "newValue": "newValue1",
-      "op": "replace"
-    },
-    "SampleKey2": {
-      "oldValue": "oldValue2",
-      "newValue": "newValue2",
-      "op": "replace"
-    },
-    ...
-  }
-}
+--8<-- "docs/events/cognito-events/cognito-event.json"
 ```
 
 ## Response
