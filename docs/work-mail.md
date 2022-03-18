@@ -26,30 +26,7 @@ Synchronous Run Lambda action limits
 ### Request structure
 
 ```json
-{
-  "summaryVersion": "2018-10-10",
-  "envelope": {
-    "mailFrom": {
-      "address": "from@example.com"
-    },
-    "recipients": [
-      {
-        "address": "recipient1@example.com"
-      },
-      {
-        "address": "recipient2@example.com"
-      }
-    ]
-  },
-  "sender": {
-    "address": "sender@example.com"
-  },
-  "subject": "Hello From Amazon WorkMail!",
-  "messageId": "00000000-0000-0000-0000-000000000000",
-  "invocationId": "00000000000000000000000000000000",
-  "flowDirection": "INBOUND",
-  "truncated": false
-}
+--8<-- "docs/events/work-mail/work-mail.json"
 ```
 
 ### Request fields

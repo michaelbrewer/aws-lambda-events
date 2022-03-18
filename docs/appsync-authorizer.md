@@ -11,19 +11,7 @@ Event driven, invoked synchronously.
 ## Request
 
 ```json
-{
-    "authorizationToken": "BE9DC5E3-D410-4733-AF76-70178092E681",
-    "requestContext": {
-        "apiId": "giy7kumfmvcqvbedntjwjvagii",
-        "accountId": "254688921111",
-        "requestId": "b80ed838-14c6-4500-b4c3-b694c7bef086",
-        "queryString": "mutation MyNewTask($desc: String!) {\n  createTask(description: $desc, owner: \"ccc\", taskStatus: \"cc\", title: \"ccc\") {\n    id\n  }\n}\n",
-        "operationName": "MyNewTask",
-        "variables": {
-            "desc": "Foo"
-        }
-    }
-}
+--8<-- "docs/events/appsync/appsync-authorizer.json"
 ```
 
 ## Response
@@ -35,7 +23,7 @@ If this value is true, execution of the GraphQL API continues. If this value is 
 `deniedFields` (Optional, Array)
 : A list of which are forcibly changed to null, even if a value was returned from a resolver.
 Each item is either a fully qualified field ARN in the form of `arn:aws:appsync:us-east-1:111122223333:apis/GraphQLApiId/types/TypeName/fields/FieldName` or
-a short form of `TypeName.FieldName`. The full ARN form should be used when two APIs share a lambda function authorizer and there might be ambiguity 
+a short form of `TypeName.FieldName`. The full ARN form should be used when two APIs share a lambda function authorizer and there might be ambiguity
 between common types and fields between the two APIs.
 
 `resolverContext` (Optional, Object)

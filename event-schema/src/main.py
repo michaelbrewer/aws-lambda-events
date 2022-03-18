@@ -15,7 +15,7 @@ event_source = input("Event Source: ")
 client = boto3.client("schemas")
 client.create_schema(
     RegistryName="lambda-testevent-schemas",
-    SchemaName="_" + lambda_name + "-schema",
+    SchemaName=f"_{lambda_name}-schema",
     Content=load_event_schema(event_source),
     Description="Sample sharable event",
     Tags={"comment": "Sample sharable event"},

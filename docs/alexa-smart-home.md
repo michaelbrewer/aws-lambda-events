@@ -14,42 +14,11 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 ### Event Example
 
 ```json title="Smart Home Skill V3 request"
-{
-  "directive": {
-    "header": {
-      "namespace": "Alexa.Discovery",
-      "name": "Discover",
-      "payloadVersion": "3",
-      "messageId": "1bd5d003-31b9-476f-ad03-71d471922820"
-    },
-    "payload": {
-      "scope": {
-        "type": "BearerToken"
-      }
-    }
-  }
-}
+--8<-- "docs/events/alexa/alex-smart-home-skill-v3.json"
 ```
 
 ```json title="Example Alexa smart home event version 1"
-{
-  "header": {
-    "payloadVersion": "1",
-    "namespace": "Control",
-    "name": "SwitchOnOffRequest"
-  },
-  "payload": {
-    "switchControlAction": "TURN_ON",
-    "appliance": {
-      "additionalApplianceDetails": {
-        "key2": "value2",
-        "key1": "value1"
-      },
-      "applianceId": "sampleId"
-    },
-    "accessToken": "sampleAccessToken"
-  }
-}
+--8<-- "docs/events/alexa/alex-smart-home-skill-v1.json"
 ```
 
 ## Response
