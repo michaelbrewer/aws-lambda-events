@@ -39,9 +39,15 @@ Lambda Name: <Full Lambda Name>
 Event Source: appsync-authorizer
 ```
 
-Ideas:
+### Ideaslog
 
+- [x] Prototyped example using `appsync-authorizer`
+- [ ] Generate schema from json examples
 - [ ] Add cli args
-- [ ] Discover the different lambdas and show a list or do code completion
-- [ ] Show list of supported event sources
-- [ ] Offer some parameters for the event source
+- [ ] Discover the different lambdas and show a list or do code completion.
+- [ ] Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
+- [ ] Offer some parameters for the event source. To allow for flexibility.
+
+### Documentation
+
+- [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events)
