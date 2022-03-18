@@ -35,6 +35,10 @@ Secrets Manager uses a Lambda function to rotate the secret for a secured servic
 `ClientRequestToken` (String)
 : The ClientRequestToken of the secret version
 
+```json title="Example createSecret event"
+--8<-- "docs/events/secret-manager/secret-manager-create.json"
+```
+
 ## Response
 
 N/A

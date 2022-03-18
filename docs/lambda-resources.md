@@ -4,6 +4,10 @@ description: List of general resources that could be used with all AWS Lambda by
 
 # General Resources
 
+Some general resources around AWS Lambda event requests and responses.
+
+## Libraries by language
+
 List of general resources that could be used with all AWS Lambda by language.
 
 - [Python - AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/){target="_blank"}
@@ -16,7 +20,7 @@ List of general resources that could be used with all AWS Lambda by language.
 - [Rust - aws_lambda_events](https://github.com/LegNeato/aws-lambda-events){target="_blank"} - structs for most lambda events
 - [Ruby - Jets](https://rubyonjets.com){target="_blank"} - Ruby Serverless Framework 
 
-## Lambda Shareable test events
+## Lambda shareable test events
 
 Create initial [Amazon EventBridge (CloudWatch Events) schema registry](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema-registry.html) for your Lambda functions.
 
@@ -42,20 +46,24 @@ Select Event:
    alexa/alex-smart-home-skill-v1.json
    alexa/alex-smart-home-skill-v3.json
    amazon-config/amazon-config.json
+   ...
 ```
 
-### Ideaslog
+**Ideaslog**
 
 - [x] Prototyped example using `appsync-authorizer`
 - [x] Generate schema from json examples in `docs/events` folder
+- [ ] Create Github issue for SAM CLI
+- [ ] Complete extraction of sample events into `docs/events` folder
+- [ ] Support relative paths
 - [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
 - [ ] Add cli help (`publish-shared-event --help`)
-- [ ] Drop of extend the ui to use [textual](https://github.com/Textualize/textual)
+- [ ] Drop _OR_ extend the ui to use [textual](https://github.com/Textualize/textual)
 - [ ] Discover the different lambdas and show a list or do code completion.
 - [x] Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
 - [ ] Offer some parameters for the event source. To allow for flexibility.
 - [ ] Publish as pip package (if this makes sense)
 
-### Documentation
+**Documentation**
 
 - [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events)
