@@ -66,7 +66,7 @@ extra:
 nav:
   - Overview:
     - index.md
-    - lambda-runtimes.md
+    - lambda-resources.md
     - lambda-context.md
   - AWS Lambda Events:
     - http-api.md

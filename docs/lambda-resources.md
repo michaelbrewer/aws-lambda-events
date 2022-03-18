@@ -15,3 +15,33 @@ List of general resources that could be used with all AWS Lambda by language.
 - [Rust - aws-lambda-rust-runtime](https://github.com/awslabs/aws-lambda-rust-runtime){target="_blank"} - runtime and framework and will soon include `aws_lambda_events` 
 - [Rust - aws_lambda_events](https://github.com/LegNeato/aws-lambda-events){target="_blank"} - structs for most lambda events
 - [Ruby - Jets](https://rubyonjets.com){target="_blank"} - Ruby Serverless Framework 
+
+## Lambda Shareable test events
+
+Create initial [Amazon EventBridge (CloudWatch Events) schema registry](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema-registry.html) for your Lambda functions.
+
+```script
+aws schemas create-registry --registry-name lambda-testevent-schemas --description "List of tests events for AWS Lambda" --tags comment=lambda-testevent-schemas
+```
+
+Setup the cli tool to create shared test events.
+
+```script
+cd event-schema
+make dev
+```
+
+Run the cli tool to create shared test events, currently just `appsync-authorizer` is supported
+
+```bash
+make run
+Lambda Name: <Full Lambda Name>
+Event Source: appsync-authorizer
+```
+
+Ideas:
+
+- [ ] Add cli args
+- [ ] Discover the different lambdas and show a list or do code completion
+- [ ] Show list of supported event sources
+- [ ] Offer some parameters for the event source
