@@ -68,24 +68,7 @@ The pre sign-up Lambda function is triggered just before Amazon Cognito signs up
 : One or more key-value pairs that you can provide as custom input to the Lambda function that you specify for the pre sign-up trigger.
 
 ```json title="Pre Sign-up Request"
-{
-  "version": "string",
-  "triggerSource": "PreSignUp_SignUp",
-  "region": "us-east-1",
-  "userPoolId": "string",
-  "userName": "userName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "email": "user@example.com",
-      "phone_number": "+12065550100"
-    }
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/pre-signup.json"
 ```
 
 ### Pre Sign-up Response
