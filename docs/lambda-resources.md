@@ -31,18 +31,18 @@ cd event-schema
 make dev
 ```
 
-Run the cli tool to create shared test events, currently just `appsync-authorizer` is supported
+Run the cli tool to create shared test events, currently just json files from `docs/events/` is supported eg: cloudformation/cloudformation-delete.json
 
 ```bash
 make run
 Lambda Name: <Full Lambda Name>
-Event Source: appsync-authorizer
+Event Source: alb/alb.json
 ```
 
 ### Ideaslog
 
 - [x] Prototyped example using `appsync-authorizer`
-- [ ] Generate schema from json examples
+- [x] Generate schema from json examples in `docs/events` folder
 - [ ] Add cli args
 - [ ] Discover the different lambdas and show a list or do code completion.
 - [ ] Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
