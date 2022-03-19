@@ -53,18 +53,18 @@ Select Event:
 
 - [x] Prototyped example using `appsync-authorizer`
 - [x] Generate schema from json examples in `docs/events` folder
-- [ ] Create Github issue for SAM CLI
+- [x] Create Github issue for SAM CLI [Lambda shareable events](https://github.com/aws/aws-sam-cli/issues/3763)
 - [x] Create Github issue for AWS CDK: [(aws-lambda): Lambda shareable events](https://github.com/aws/aws-cdk/issues/19471)
-- [ ] Create Github issue for Cloudformation
+- [x] Create Github issue for Cloudformation [Lambda shareable events](https://github.com/aws-cloudformation/cloudformation-coverage-roadmap/issues/1113)
 - [x] Complete extraction of sample events into `docs/events` folder
-- [ ] Support relative paths
+- [ ] Support relative paths to allow users to bring their own events
 - [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
 - [ ] Add cli help (`publish-shared-event --help`)
-- [ ] Drop _OR_ extend the ui to use [textual](https://github.com/Textualize/textual)
-- [ ] Discover the different lambdas and show a list or do code completion.
-- [x] Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
+- [ ] Drop _OR_ Extend the console ui and use [textual](https://github.com/Textualize/textual)
+- [ ] UI: Auto discover the different lambdas and show a list or do code completion.
+- [x] UI: Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
 - [ ] Offer some parameters for the event source. To allow for flexibility.
-- [ ] Publish as pip package (if this makes sense)
+- [ ] Publish as pip package (if SAM or CDK support does not progress)
 
 **Documentation**
 
