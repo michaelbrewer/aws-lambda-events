@@ -118,24 +118,7 @@ Amazon Cognito invokes this trigger after a new user is confirmed, allowing you 
 ### Post Confirmation Request
 
 ```json title="Post Confirmation Request"
-{
-  "version": "string",
-  "triggerSource": "PostConfirmation_ConfirmSignUp",
-  "region": "us-east-1",
-  "userPoolId": "string",
-  "userName": "userName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "email": "user@example.com",
-      "email_verified": true
-    }
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/post-confirmation.json"
 ```
 
 ### Post Confirmation Response
@@ -151,26 +134,7 @@ Amazon Cognito invokes this trigger when a user attempts to sign in, allowing cu
 ### Pre Authentication Request
 
 ```json title="Pre Authentication Request"
-{
-  "version": "1",
-  "triggerSource": "PreAuthentication_Authentication",
-  "region": "us-east-1",
-  "userPoolId": "us-east-1_example",
-  "userName": "UserName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "sub": "4A709A36-7D63-4785-829D-4198EF10EBDA",
-      "email_verified": "true",
-      "name": "First Last",
-      "email": "pre-auth@mail.com"
-    }
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/pre-authentication.json"
 ```
 
 ### Pre Authentication Response
@@ -199,38 +163,7 @@ These Lambda triggers issue and verify their own challenges as part of a user po
 ### Auth Challenge Requests
 
 ```json title="Define Auth Challenge Request"
-{
-  "version": "1",
-  "region": "us-east-1",
-  "userPoolId": "us-east-1_example",
-  "userName": "UserName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "triggerSource": "DefineAuthChallenge_Authentication",
-  "request": {
-    "userAttributes": {
-      "sub": "4A709A36-7D63-4785-829D-4198EF10EBDA",
-      "email_verified": "true",
-      "name": "First Last",
-      "email": "define-auth@mail.com"
-    },
-    "session" : [
-      {
-        "challengeName": "PASSWORD_VERIFIER",
-        "challengeResult": true
-      },
-      {
-        "challengeName": "CUSTOM_CHALLENGE",
-        "challengeResult": true,
-        "challengeMetadata": "CAPTCHA_CHALLENGE"
-      }
-    ],
-    "userNotFound": true
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/define-auth-challenge.json"
 ```
 
 ```json title="Create Auth Challenge Request"
