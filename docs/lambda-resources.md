@@ -56,7 +56,7 @@ Select Event:
 - [x] Create Github issue for SAM CLI [Lambda shareable events](https://github.com/aws/aws-sam-cli/issues/3763)
 - [x] Create Github issue for AWS CDK: [(aws-lambda): Lambda shareable events](https://github.com/aws/aws-cdk/issues/19471)
 - [x] Create Github issue for Cloudformation [Lambda shareable events](https://github.com/aws-cloudformation/cloudformation-coverage-roadmap/issues/1113)
-- [x] Complete extraction of sample events into `docs/events` folder
+- [x] Complete extraction of sample events into `docs/events` folder (124 test events so far!!!)
 - [ ] Support relative paths to allow users to bring their own events
 - [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
 - [ ] Add cli help (`publish-shared-event --help`)
