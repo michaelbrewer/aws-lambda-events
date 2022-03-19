@@ -167,68 +167,13 @@ These Lambda triggers issue and verify their own challenges as part of a user po
 ```
 
 ```json title="Create Auth Challenge Request"
-{
-  "version": "1",
-  "triggerSource": "CreateAuthChallenge_Authentication",
-  "region": "us-east-1",
-  "userPoolId": "us-east-1_example",
-  "userName": "UserName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "sub": "4A709A36-7D63-4785-829D-4198EF10EBDA",
-      "email_verified": "true",
-      "name": "First Last",
-      "email": "create-auth@mail.com"
-    },
-    "challengeName": "PASSWORD_VERIFIER",
-    "session" : [
-      {
-        "challengeName": "CUSTOM_CHALLENGE",
-        "challengeResult": true,
-        "challengeMetadata": "CAPTCHA_CHALLENGE"
-      }
-    ],
-    "userNotFound": false
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/create-auth-challenge.json"
 ```
 
 ### Auth Challenge Responses
 
 ```json title="Verify auth challenge response"
-{
-  "version": "1",
-  "region": "us-east-1",
-  "userPoolId": "us-east-1_example",
-  "userName": "UserName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "triggerSource": "VerifyAuthChallengeResponse_Authentication",
-  "request": {
-    "userAttributes": {
-      "sub": "4A709A36-7D63-4785-829D-4198EF10EBDA",
-      "email_verified": "true",
-      "name": "First Last",
-      "email": "verify-auth@mail.com"
-    },
-    "privateChallengeParameters": {
-      "answer": "challengeAnswer"
-    },
-    "clientMetadata" : {
-      "foo": "value"
-    },
-    "challengeAnswer": "challengeAnswer",
-    "userNotFound": true
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/verify-auth-challenge-response.json"
 ```
 
 ## Pre Token Generation
@@ -265,31 +210,7 @@ Pre token generation request parameters
 : One or more key-value pairs that you can provide as custom input to the Lambda function that you specify for the pre token generation trigger.
 
 ```json title="Example pre token generation request"
-{
-  "triggerSource": "TokenGeneration_Authentication",
-  "version": "1",
-  "region": "us-west-2",
-  "userPoolId": "us-west-2_example",
-  "userName": "testqq",
-  "callerContext": {
-    "awsSdkVersion": "aws-sdk-unknown-unknown",
-    "clientId": "71ghuul37mresr7h373b704tua"
-  },
-  "request": {
-    "userAttributes": {
-      "sub": "0b0a57c5-f013-426a-81a1-f8ffbfba21f0",
-      "email_verified": "true",
-      "cognito:user_status": "CONFIRMED",
-      "email": "test@mail.com"
-    },
-    "groupConfiguration": {
-      "groupsToOverride": [],
-      "iamRolesToOverride": [],
-      "preferredRole": null
-    }
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/pre-token-generation.json"
 ```
 
 ### Pre Token Generation Response
@@ -354,24 +275,7 @@ Pre token generation response parameters
 ### Post Authentication Request
 
 ```json title="Post Authentication Reqest"
-{
-  "version": "1",
-  "triggerSource": "PostAuthentication_Authentication",
-  "region": "us-east-1",
-  "userPoolId": "us-east-1_example",
-  "userName": "UserName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "newDeviceUsed": true,
-    "userAttributes": {
-      "email": "post-auth@mail.com"
-    }
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/post-authentication.json"
 ```
 
 ### Post Authentication Response
@@ -397,26 +301,7 @@ Amazon Cognito invokes this trigger before sending an email or phone verificatio
 | CustomMessage_Authentication      | To send MFA code during authentication.                                                                                                                |
 
 ```json title="Custom Message Request"
-{
-  "version": "1",
-  "triggerSource": "CustomMessage_AdminCreateUser",
-  "region": "region",
-  "userPoolId": "userPoolId",
-  "userName": "userName",
-  "callerContext": {
-    "awsSdk": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "userAttributes": {
-      "phone_number_verified": false,
-      "email_verified": true
-    },
-    "codeParameter": "####",
-    "usernameParameter": "username"
-  },
-  "response": {}
-}
+--8<-- "docs/events/cognito-user-pool/custom-message.json"
 ```
 
 ### Custom Message Response
@@ -468,22 +353,8 @@ After the Lambda function returns successfully, Amazon Cognito creates the user 
 | UserMigration_Authentication | User migration at sign-in.                  |
 | UserMigration_ForgotPassword | User migration during forgot-password flow. |
 
-```json
-{
-  "version": "string",
-  "triggerSource": "UserMigration_Authentication",
-  "region": "us-east-1",
-  "userPoolId": "string",
-  "userName": "userName",
-  "callerContext": {
-    "awsSdkVersion": "awsSdkVersion",
-    "clientId": "clientId"
-  },
-  "request": {
-    "password": "password"
-  },
-  "response": {}
-}
+```json title="User Migration Request"
+--8<-- "docs/events/cognito-user-pool/user-migration.json"
 ```
 
 ### User Migration Response
@@ -527,34 +398,8 @@ After the Lambda function returns successfully, Amazon Cognito creates the user 
 | CustomEmailSender_AdminCreateUser             | You create a new user in your user pool and Amazon Cognito sends them a temporary password.                           |
 | CustomEmailSender_AccountTakeOverNotification | Amazon Cognito detects an attempt to take over a user account and sends the user a notification.                      |
 
-```json title="Example event"
-{
-    "version": "1",
-    "triggerSource": "CustomEmailSender_ForgotPassword",
-    "region": "us-east-1",
-    "userPoolId": "us-east-1_LnS...",
-    "userName": "54cf7eb7-0b96-4304-...",
-    "callerContext": {
-        "awsSdkVersion": "aws-sdk-nodejs-2.856.0",
-        "clientId": "6u7c9vr3pkstoog..."
-    },
-    "request": {
-        "type": "customEmailSenderRequestV1",
-        "code": "AYADeILxywKhhaq8Ys4mh0aHutYAgQACABVhd3MtY3J5c...",
-        "clientMetadata": null,
-        "userAttributes": {
-            "sub": "54cf7eb7-0b96-4304-8d6b-...",
-            "email_verified": "true",
-            "cognito:user_status": "CONFIRMED",
-            "cognito:email_alias": "hello@maxivanov.io",
-            "phone_number_verified": "false",
-            "phone_number": "...",
-            "given_name": "Max",
-            "family_name": "Ivanov",
-            "email": "hello@maxivanov.io"
-        }
-    }
-}
+```json title="Custom Email Sender Request"
+--8<-- "docs/events/cognito-user-pool/custom-email-sender.json"
 ```
 
 - [Send AWS Cognito emails with 3rd party Email Service Providers](https://www.maxivanov.io/send-aws-cognito-emails-with-3rd-party-esps/)

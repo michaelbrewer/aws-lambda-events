@@ -13,7 +13,7 @@ List of general resources that could be used with all AWS Lambda by language.
 - [Python - AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/){target="_blank"}
 - [Java - AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-java/){target="_blank"}
 - [Bref - Php](https://bref.sh/){target="_blank"} - php runtime and libraries
-- [Go - AWS Lambda for Go](https://github.com/aws/aws-lambda-go){target="_blank"} - Event typing, Libraries, samples, and tools to help Go developers develop AWS Lambda functions. 
+- [Go - AWS Lambda for Go](https://github.com/aws/aws-lambda-go){target="_blank"} - Event typing, Libraries, samples, and tools to help Go developers develop AWS Lambda functions.
 - [Typescript - AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/){target="_blank"}
 - [Typescript - @types/aws-lambda](https://www.npmjs.com/package/@types/aws-lambda){target="_blank"} - NPM `@types/aws-lambda`
 - [Rust - aws-lambda-rust-runtime](https://github.com/awslabs/aws-lambda-rust-runtime){target="_blank"} - runtime and framework and will soon include `aws_lambda_events` 
@@ -54,7 +54,9 @@ Select Event:
 - [x] Prototyped example using `appsync-authorizer`
 - [x] Generate schema from json examples in `docs/events` folder
 - [ ] Create Github issue for SAM CLI
-- [ ] Complete extraction of sample events into `docs/events` folder
+- [x] Create Github issue for AWS CDK: [(aws-lambda): Lambda shareable events](https://github.com/aws/aws-cdk/issues/19471)
+- [ ] Create Github issue for Cloudformation
+- [x] Complete extraction of sample events into `docs/events` folder
 - [ ] Support relative paths
 - [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
 - [ ] Add cli help (`publish-shared-event --help`)
