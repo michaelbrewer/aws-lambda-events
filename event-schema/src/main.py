@@ -2,13 +2,14 @@ import argparse
 import json
 import os
 from fnmatch import fnmatch
+from os.path import exists
 from pathlib import Path
 from typing import List
 
 import boto3
 from pick import pick
 
-template_root = str(Path(__file__).parent.parent.parent) + "/docs/events/"
+template_root = f"{str(Path(__file__).parent.parent.parent)}/docs/events/"
 registry_name = "lambda-testevent-schemas"
 
 
@@ -66,15 +67,18 @@ def create_registry_if_not_exists(client):
 def get_list_of_events() -> List[str]:
     templates = []
     for path, _, files in os.walk(template_root):
-        for name in files:
-            if fnmatch(name, "*.json"):
-                templates.append(os.path.join(path, name).removeprefix(template_root))
+        templates.extend(
+            os.path.join(path, name).removeprefix(template_root) for name in files if fnmatch(name, "*.json")
+        )
     templates.sort()
     return templates
 
 
 def generate_schema(example_file: str) -> str:
-    path = Path(template_root + example_file)
+    if exists(example_file):
+        path = Path(example_file)
+    else:
+        path = Path(template_root + example_file)
     example_name = path.name.replace(".json", "")
     event = json.loads(path.read_text())
     schema = {
