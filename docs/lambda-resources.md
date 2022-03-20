@@ -22,13 +22,7 @@ List of general resources that could be used with all AWS Lambda by language.
 
 ## Lambda shareable test events
 
-Create initial [Amazon EventBridge (CloudWatch Events) schema registry](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema-registry.html) for your Lambda functions.
-
-```script
-aws schemas create-registry --registry-name lambda-testevent-schemas --description "List of tests events for AWS Lambda" --tags comment=lambda-testevent-schemas
-```
-
-Setup the cli tool to create shared test events.
+Clone and setup the cli tool to create shareable test events.
 
 ```script
 git clone https://github.com/michaelbrewer/aws-lambda-events.git
@@ -36,7 +30,7 @@ cd aws-lambda-events/event-schema
 make dev
 ```
 
-Run the cli tool to create shared test events, currently just json files from `docs/events/` is supported eg: cloudformation/cloudformation-delete.json
+Running the cli tool
 
 ```bash
 ./publish-shared-event.sh
@@ -57,6 +51,7 @@ Select Event:
 - [x] Create Github issue for AWS CDK: [(aws-lambda): Lambda shareable events](https://github.com/aws/aws-cdk/issues/19471)
 - [x] Create Github issue for Cloudformation [Lambda shareable events](https://github.com/aws-cloudformation/cloudformation-coverage-roadmap/issues/1113)
 - [x] Complete extraction of sample events into `docs/events` folder (124 test events so far!!!)
+- [x] Create the EventBridge `lambda-testevent-schemas` registry if it doesn't exist
 - [ ] Support relative paths to allow users to bring their own events
 - [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
 - [ ] Add cli help (`publish-shared-event --help`)
