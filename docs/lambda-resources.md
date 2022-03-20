@@ -95,11 +95,14 @@ Publishing a `ses/ses.json` test event as a shareable event for the lambda funct
     - [x] `-e=<event_source_name>` - set the event source (relative)
     - [x] `-f=<function-name>` - set the aws lambd function name
     - [x] `-r=<region>` - override the aws region
+    - [ ] `--template-var-name=<template-var-value>` - override the template variable name
 - [ ] Drop _OR_ Extend the console ui and use [textual](https://github.com/Textualize/textual)
 - [ ] UI: Auto discover the different lambdas and show a list or do code completion.
 - [x] UI: Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
-- [ ] Offer some parameters for the event source. To allow for flexibility.
+- [ ] Add some templated parameters for the event source, to allow for flexibility.
 - [ ] Publish as pip package (if SAM or CDK support does not progress)
+    - [ ] Setup a cli packaged (`setup.py`?)
+    - [ ] Package the events
 
 **Documentation**
 
