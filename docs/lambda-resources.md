@@ -24,23 +24,57 @@ List of general resources that could be used with all AWS Lambda by language.
 
 Clone and setup the cli tool to create shareable test events.
 
+=== "Setup"
+
 ```script
 git clone https://github.com/michaelbrewer/aws-lambda-events.git
 cd aws-lambda-events/event-schema
 make dev
 ```
 
-Running the cli tool
+Examples of running the cli tool.
 
-```bash
-./publish-shared-event.sh
+=== "Interactive example"
+
+Running as an interactive cli tool:
+
+```script
+./publish-shared-event
 Lambda Name: <Full Lambda Name>
 Select Event:
- * alb/alb.json
-   alexa/alex-smart-home-skill-v1.json
-   alexa/alex-smart-home-skill-v3.json
-   amazon-config/amazon-config.json
-   ...
+* alb/alb.json
+    alexa/alex-smart-home-skill-v1.json
+    alexa/alex-smart-home-skill-v3.json
+    amazon-config/amazon-config.json
+    ...
+```
+
+=== "List of cognito user pull events"
+
+Listing all the cognito user pull events:
+
+```script
+./publish-shared-event --filtered-list cognito-user
+Filtered list of supported event sources:
+cognito-user-pool/create-auth-challenge.json
+cognito-user-pool/custom-email-sender.json
+cognito-user-pool/custom-message.json
+cognito-user-pool/define-auth-challenge.json
+cognito-user-pool/post-authentication.json
+cognito-user-pool/post-confirmation.json
+cognito-user-pool/pre-authentication.json
+cognito-user-pool/pre-signup.json
+cognito-user-pool/pre-token-generation.json
+cognito-user-pool/user-migration.json
+cognito-user-pool/verify-auth-challenge-response.json
+```
+
+=== "Using CLI arguments"
+
+Publishing a `ses/ses.json` test event as a shareable event for the lambda function named `full-lambda-name`
+
+```script
+./publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
 ```
 
 **Ideaslog**
@@ -53,8 +87,14 @@ Select Event:
 - [x] Complete extraction of sample events into `docs/events` folder (124 test events so far!!!)
 - [x] Create the EventBridge `lambda-testevent-schemas` registry if it doesn't exist
 - [ ] Support relative paths to allow users to bring their own events
-- [ ] Add cli args (`--e=<relative_path_to_event>`, `-f=<function-name>`, `-r=<region>`, `--template-var-name=<template-var-value>`)
-- [ ] Add cli help (`publish-shared-event --help`)
+- [x] Add cli args
+    - [x] `--help` - prints cli help
+    - [x] `--list` - prints the list of support event sources
+    - [x] `--filtered-list=<begins-with-filter>` - prints a filtered list of support event sources
+    - [x] `-e=<event_source_name>` - set the event source (supported)
+    - [ ] `-e=<event_source_name>` - set the event source (relative)
+    - [x] `-f=<function-name>` - set the aws lambd function name
+    - [x] `-r=<region>` - override the aws region
 - [ ] Drop _OR_ Extend the console ui and use [textual](https://github.com/Textualize/textual)
 - [ ] UI: Auto discover the different lambdas and show a list or do code completion.
 - [x] UI: Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
