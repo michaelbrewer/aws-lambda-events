@@ -86,13 +86,13 @@ Publishing a `ses/ses.json` test event as a shareable event for the lambda funct
 - [x] Create Github issue for Cloudformation [Lambda shareable events](https://github.com/aws-cloudformation/cloudformation-coverage-roadmap/issues/1113)
 - [x] Complete extraction of sample events into `docs/events` folder (124 test events so far!!!)
 - [x] Create the EventBridge `lambda-testevent-schemas` registry if it doesn't exist
-- [ ] Support relative paths to allow users to bring their own events
+- [x] Support relative paths to allow users to bring their own events
 - [x] Add cli args
     - [x] `--help` - prints cli help
     - [x] `--list` - prints the list of support event sources
     - [x] `--filtered-list=<begins-with-filter>` - prints a filtered list of support event sources
     - [x] `-e=<event_source_name>` - set the event source (supported)
-    - [ ] `-e=<event_source_name>` - set the event source (relative)
+    - [x] `-e=<event_source_name>` - set the event source (relative)
     - [x] `-f=<function-name>` - set the aws lambd function name
     - [x] `-r=<region>` - override the aws region
 - [ ] Drop _OR_ Extend the console ui and use [textual](https://github.com/Textualize/textual)
