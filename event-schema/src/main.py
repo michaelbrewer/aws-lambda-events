@@ -22,12 +22,13 @@ def main():
     args_parser.add_argument("--filtered-list", help="Filtered list")
     args = args_parser.parse_args()
 
+    list_of_events = get_list_of_events()
     if args.list:
         print("List of supported event sources:")
-        print(*get_list_of_events(), sep="\n")
+        print(*list_of_events, sep="\n")
         return
     if args.filtered_list:
-        filtered_list = list(filter(lambda x: x.startswith(args.filtered_list), get_list_of_events()))
+        filtered_list = list(filter(lambda x: x.startswith(args.filtered_list), list_of_events))
         print("Filtered list of supported event sources:")
         print(*filtered_list, sep="\n")
         return
@@ -36,18 +37,21 @@ def main():
     if args.event_source:
         event_source = args.event_source
     else:
-        event_source, _ = pick(get_list_of_events(), "Select Event:")
+        event_source, _ = pick(list_of_events, "Select Event:")
 
     client = boto3.client("schemas", region_name=args.region)
     create_registry_if_not_exists(client)
-    client.create_schema(
-        RegistryName="lambda-testevent-schemas",
-        SchemaName=f"_{lambda_name}-schema",
-        Content=generate_schema(event_source),
-        Description="Sample sharable event",
-        Tags={"comment": "Sample sharable event"},
-        Type="JSONSchemaDraft4",
-    )
+    create_or_update_schema(client, lambda_name, event_source)
+
+
+def get_list_of_events() -> List[str]:
+    templates = []
+    for path, _, files in os.walk(template_root):
+        templates.extend(
+            os.path.join(path, name).removeprefix(template_root) for name in files if fnmatch(name, "*.json")
+        )
+    templates.sort()
+    return templates
 
 
 def create_registry_if_not_exists(client):
@@ -64,14 +68,25 @@ def create_registry_if_not_exists(client):
         )
 
 
-def get_list_of_events() -> List[str]:
-    templates = []
-    for path, _, files in os.walk(template_root):
-        templates.extend(
-            os.path.join(path, name).removeprefix(template_root) for name in files if fnmatch(name, "*.json")
+def create_or_update_schema(client, lambda_name: str, event_source: str):
+    content = generate_schema(event_source)
+    try:
+        client.create_schema(
+            RegistryName="lambda-testevent-schemas",
+            SchemaName=f"_{lambda_name}-schema",
+            Content=content,
+            Type="JSONSchemaDraft4",
+            Description="Sample sharable event",
+            Tags={"comment": "Sample sharable event"},
         )
-    templates.sort()
-    return templates
+    except client.exceptions.ConflictException:
+        print("Schema already exists, updating...")
+        client.update_schema(
+            RegistryName="lambda-testevent-schemas",
+            SchemaName=f"_{lambda_name}-schema",
+            Content=content,
+            Type="JSONSchemaDraft4",
+        )
 
 
 def generate_schema(example_file: str) -> str:
