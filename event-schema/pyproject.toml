@@ -6,10 +6,11 @@ authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-boto3 = "^1.21.22"
+boto3 = "^1.21.23"
 pick = "^1.2.0"
 
 [tool.poetry.dev-dependencies]
+setuptools = "^60.10.0"
 isort = "^5.10.1"
 black = "^22.1.0"
 

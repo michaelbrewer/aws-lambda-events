@@ -1,1 +1,4 @@
 .idea/
+build/
+dist/
+aws_lambda_publish_shared_event.egg-info/
