@@ -40,7 +40,9 @@ def get_lambda_name(session: boto3.session.Session) -> str:
     lambda_client = session.client("lambda")
     response = lambda_client.list_functions()
     functions = [f["FunctionName"] for f in response["Functions"]]
-    return pick(functions, "Select Lambda function:")[0]
+    if functions:
+        return pick(functions, "Select Lambda function:")[0]
+    return input("Lambda function name:")
 
 
 def get_test_event(list_of_events: List[str]) -> str:
