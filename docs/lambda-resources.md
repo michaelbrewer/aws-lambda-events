@@ -22,14 +22,12 @@ List of general resources that could be used with all AWS Lambda by language.
 
 ## Lambda shareable test events
 
-Clone and setup the cli tool to create shareable test events.
+Installing the cli tool
 
-=== "Setup"
+=== "Installing"
 
 ```script
-git clone https://github.com/michaelbrewer/aws-lambda-events.git
-cd aws-lambda-events/event-schema
-make dev
+pip install aws-lambda-publish-shared-event
 ```
 
 Examples of running the cli tool.
@@ -39,7 +37,7 @@ Examples of running the cli tool.
 Running as an interactive cli tool:
 
 ```script
-./publish-shared-event
+publish-shared-event
 Lambda Name: <Full Lambda Name>
 Select Event:
 * alb/alb.json
@@ -54,7 +52,7 @@ Select Event:
 Listing all the cognito user pull events:
 
 ```script
-./publish-shared-event --filtered-list cognito-user
+publish-shared-event --filtered-list cognito-user
 Filtered list of supported event sources:
 cognito-user-pool/create-auth-challenge.json
 cognito-user-pool/custom-email-sender.json
@@ -74,7 +72,7 @@ cognito-user-pool/verify-auth-challenge-response.json
 Publishing a `ses/ses.json` test event as a shareable event for the lambda function named `full-lambda-name`
 
 ```script
-./publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
+publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
 ```
 
 **Ideaslog**
@@ -96,14 +94,15 @@ Publishing a `ses/ses.json` test event as a shareable event for the lambda funct
     - [x] `-e=<event_source_name>` - set the event source (relative)
     - [x] `-f=<function-name>` - set the aws lambd function name
     - [x] `-r=<region>` - override the aws region
-    - [ ] `--template-var-name=<template-var-value>` - override the template variable name
-- [ ] UI: Drop _OR_ Extend the console ui and use [textual](https://github.com/Textualize/textual)
+    - [ ] `--template-var-name=<template-var-value>` - override the template variable name (BONUS)
+- [x] UI: Drop _OR_ Extend the console ui and use [textual](https://github.com/Textualize/textual)
     - [x] UI: Auto discover the different lambdas and show a list or do code completion.
     - [x] UI: Show list of supported event sources. [event source examples](https://github.com/michaelbrewer/aws-lambda-events/tree/main/docs/events)
-- [ ] Add some templated parameters for the event source, to allow for flexibility.
-- [ ] Publish as pip package (if SAM or CDK support does not progress)
-    - [ ] Setup a cli packaged (`setup.py`?)
-    - [ ] Package the events
+- [ ] Add some templated parameters for the event source, to allow for flexibility. (BONUS)
+- [x] Publish as pip package (if SAM or CDK support does not progress)
+    - [x] Setup a cli packaged (`setup.py`?)
+    - [x] Package the events
+    - [x] Publish the package to pip [aws-lambda-publish-shared-event](https://pypi.org/project/aws-lambda-publish-shared-event/)
 
 **Documentation**
 

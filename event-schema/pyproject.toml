@@ -2,6 +2,7 @@
 name = "lambda-event-schema-tool"
 version = "0.1.0"
 description = "Creating Shareable test events"
+license = "MIT"
 authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]

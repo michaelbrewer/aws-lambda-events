@@ -9,7 +9,7 @@ from typing import List
 import boto3
 from pick import pick
 
-template_root = f"{str(Path(__file__).parent.parent.parent)}/docs/events/"
+template_root = f"{str(Path(__file__).parent)}/events/"
 registry_name = "lambda-testevent-schemas"
 
 

@@ -1,2 +1,2 @@
 #!/bin/bash
-poetry run python3 src/main.py $@
+poetry run python3 -m src.aws_lambda_publish_shared_event $@

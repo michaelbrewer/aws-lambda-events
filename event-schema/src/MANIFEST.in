@@ -1,0 +1,1 @@
+recursive-include aws_lambda_publish_shared_event/events *

@@ -2,3 +2,5 @@
 build/
 dist/
 aws_lambda_publish_shared_event.egg-info/
+__pycache__/
+src/aws_lambda_publish_shared_event/events/
