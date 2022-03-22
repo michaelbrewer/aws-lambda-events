@@ -3,8 +3,8 @@ dev:
 	poetry install
 
 format:
-	poetry run isort --line-length=120 src
-	poetry run black --line-length=120 src
+	poetry run isort --line-length=120 src tests
+	poetry run black --line-length=120 src tests
 
 clean:
 	rm -Rf src/build src/aws_lambda_publish_shared_event.egg-info src/dist src/aws_lambda_publish_shared_event/events
@@ -18,3 +18,6 @@ install: build
 
 publish: build
 	cd src; poetry run twine upload dist/*
+
+test:
+	poetry run pytest

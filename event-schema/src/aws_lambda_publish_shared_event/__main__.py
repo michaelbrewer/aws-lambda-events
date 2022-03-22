@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sys
 from fnmatch import fnmatch
 from os.path import exists
 from pathlib import Path
@@ -13,8 +14,8 @@ template_root = f"{str(Path(__file__).parent)}/events/"
 registry_name = "lambda-testevent-schemas"
 
 
-def get_main_args_parser() -> argparse.ArgumentParser:
-    """Build the cli argument parser"""
+def parse_args(args: List[str]) -> argparse.Namespace:
+    """Parse arguments from the cli"""
     parser = argparse.ArgumentParser(prog="publish-shared-event", description="List the content of a folder")
     parser.add_argument("-r", dest="region", help="Set AWS Region")
     parser.add_argument("-f", dest="lambda_name", help="Name of the lambda function")
@@ -22,7 +23,7 @@ def get_main_args_parser() -> argparse.ArgumentParser:
     parser.add_argument("--list", help="List of supported event sources", action="store_true")
     parser.add_argument("--filtered-list", help="Filtered list")
     parser.add_argument("-n", dest="example_name", help="Set the example name")
-    return parser
+    return parser.parse_args(args)
 
 
 def list_of_test_events() -> List[str]:
@@ -135,8 +136,7 @@ def generate_new_schema_content(example_name: str, event: Dict) -> str:
 
 
 def main():
-    args_parser = get_main_args_parser()
-    args = args_parser.parse_args()
+    args = parse_args(sys.argv[1:])
     list_of_events = list_of_test_events()
     if args.list:
         print("List of supported event sources:")
@@ -151,8 +151,8 @@ def main():
     session = boto3.session.Session(region_name=args.region)
     lambda_name = args.lambda_name or get_lambda_name(session)
     test_event = args.event_source or get_test_event(list_of_events)
-    schemas_client = session.client("schemas")
 
+    schemas_client = session.client("schemas")
     create_registry_if_not_exists(schemas_client)
     create_or_update_schema(schemas_client, lambda_name, test_event, args.example_name)
 
