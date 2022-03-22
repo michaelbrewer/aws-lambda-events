@@ -39,9 +39,9 @@ def get_lambda_name(session: boto3.session.Session) -> str:
     """Prompt to select which lambda event to add a shareable test event."""
     lambda_client = session.client("lambda")
     response = lambda_client.list_functions()
-    functions = [f["FunctionName"] for f in response["Functions"]]
-    if functions:
-        return pick(functions, "Select Lambda function:")[0]
+    if functions := [f["FunctionName"] for f in response["Functions"]]:
+        return pick(functions, f"Select Lambda function ({session.region_name}):")[0]
+    print(f"No lambdas exist yet in this region: {session.region_name}")
     return input("Lambda function name:")
 
 

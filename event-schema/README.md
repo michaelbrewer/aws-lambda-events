@@ -11,7 +11,7 @@ Once installed run `publish-shared-event --help` for the list of commands.
 Listing supported events for cognito user pool:
 
 ```
-./publish-shared-event --filtered-list cognito-user
+publish-shared-event --filtered-list cognito-user
 Filtered list of supported event sources:
 cognito-user-pool/create-auth-challenge.json
 cognito-user-pool/custom-email-sender.json
@@ -29,13 +29,13 @@ cognito-user-pool/verify-auth-challenge-response.json
 Publishing a `ses/ses.json` test event as a shareable event for the lambda function named `full-lambda-name`
 
 ```
-./publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
+publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
 ```
 
 Using the interactive cli tool:
 
 ```
-./publish-shared-event
+publish-shared-event
 Lambda Name: <Full Lambda Name>
 Select Event:
 * alb/alb.json
@@ -44,3 +44,7 @@ Select Event:
     amazon-config/amazon-config.json
     ...
 ```
+
+## Resources
+
+For more resources on [Lambda Events](https://lambda.101i.de/)

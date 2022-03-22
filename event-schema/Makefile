@@ -17,4 +17,4 @@ install: build
 	cd src;  python3 setup.py install
 
 publish: build
-	cd src; twine upload dist/*
+	cd src; poetry run twine upload dist/*
