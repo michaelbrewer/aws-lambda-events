@@ -4,13 +4,19 @@
 
 With pip installed, run: `pip install aws-lambda-publish-shared-event`
 
+## Features
+
+- Publish standard test events into the lambda console for over 100 different examples
+- Publish your locally defined tests
+- List of supported test events
+
 ## Usage
 
 Once installed run `publish-shared-event --help` for the list of commands.
 
 Listing supported events for cognito user pool:
 
-```
+```script
 publish-shared-event --filtered-list cognito-user
 Filtered list of supported event sources:
 cognito-user-pool/create-auth-challenge.json
@@ -28,8 +34,14 @@ cognito-user-pool/verify-auth-challenge-response.json
 
 Publishing a `ses/ses.json` test event as a shareable event for the lambda function named `full-lambda-name`
 
-```
+```script
 publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
+```
+
+Publishes a locally defined test event `events/yourOwnDefinedEvent.json` to the lambda console
+
+```script
+publish-shared-event -e events/yourOwnDefinedEvent.json -f your-function -r us-west-2
 ```
 
 Using the interactive cli tool:
@@ -47,4 +59,5 @@ Select Event:
 
 ## Resources
 
-For more resources on [Lambda Events](https://lambda.101i.de/)
+See [Lambda Events](https://lambda.101i.de/) for documentation on the different AWS Lambda event structures 
+and see the official docs on the [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events)

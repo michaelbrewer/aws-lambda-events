@@ -1,4 +1,5 @@
 import pathlib
+
 import setuptools
 
 HERE = pathlib.Path(__file__).parent.parent
@@ -6,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setuptools.setup(
     name="aws-lambda-publish-shared-event",
-    version="0.2.0",
+    version="0.3.0",
     entry_points={
         "console_scripts": ["publish-shared-event=aws_lambda_publish_shared_event.__main__:main"],
     },
@@ -25,4 +26,17 @@ setuptools.setup(
     ],
     python_requires=">=3.8",
     include_package_data=True,
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3.8",
+    ],
+    project_urls={
+        "GitHub": "https://github.com/michaelbrewer/aws-lambda-events",
+        "Documentation": "https://lambda.101i.de/",
+    },
 )

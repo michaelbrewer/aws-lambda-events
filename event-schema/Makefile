@@ -4,7 +4,7 @@ dev:
 
 format:
 	poetry run isort --line-length=120 src
-	poetry run black --line-length=120 src/*.py
+	poetry run black --line-length=120 src
 
 clean:
 	rm -Rf src/build src/aws_lambda_publish_shared_event.egg-info src/dist src/aws_lambda_publish_shared_event/events

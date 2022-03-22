@@ -67,32 +67,35 @@ def create_registry_if_not_exists(schemas_client):
 
 def create_or_update_schema(schemas_client, lambda_name: str, test_event: str):
     """Create or update shareable test event for the specified lambda_name"""
-    content = generate_schema(test_event)
+    content = generate_schema_content(get_path(test_event))
     try:
         schemas_client.create_schema(
-            RegistryName="lambda-testevent-schemas",
+            RegistryName=registry_name,
             SchemaName=f"_{lambda_name}-schema",
             Content=content,
             Type="JSONSchemaDraft4",
-            Description="Sample sharable event",
-            Tags={"comment": "Sample sharable event"},
+            Description="Lambda sharable test event",
         )
     except schemas_client.exceptions.ConflictException:
+        # TODO - We should allow for multiple examples within a single schema
         print("Schema already exists, updating...")
         schemas_client.update_schema(
-            RegistryName="lambda-testevent-schemas",
+            RegistryName=registry_name,
             SchemaName=f"_{lambda_name}-schema",
             Content=content,
             Type="JSONSchemaDraft4",
         )
 
 
-def generate_schema(test_event: str) -> str:
+def get_path(test_event: str) -> Path:
+    if exists(test_event):  # Allows for locally defined test events
+        return Path(test_event)
+    else:  # One of the standard test events
+        return Path(template_root + test_event)
+
+
+def generate_schema_content(path: Path) -> str:
     """Generates an event bridge schema from the test event file"""
-    if exists(test_event):
-        path = Path(test_event)
-    else:
-        path = Path(template_root + test_event)
     example_name = path.name.replace(".json", "")
     event = json.loads(path.read_text())
     schema = {
