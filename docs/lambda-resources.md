@@ -37,7 +37,7 @@ Examples of running the cli tool.
     Running as an interactive cli tool:
 
     ```script
-    publish-shared-event
+    $ publish-shared-event
     Lambda Name: <Full Lambda Name>
     Select Event:
     * alb/alb.json
@@ -52,7 +52,7 @@ Examples of running the cli tool.
     Listing all the cognito user pull events:
 
     ```script
-    publish-shared-event --filtered-list cognito-user
+    $ publish-shared-event --filtered-list cognito-user
     Filtered list of supported event sources:
     cognito-user-pool/create-auth-challenge.json
     cognito-user-pool/custom-email-sender.json
