@@ -8,6 +8,7 @@ With pip installed, run: `pip install aws-lambda-publish-shared-event`
 
 - Publish standard test events into the lambda console for over 100 different examples
 - Publish your locally defined tests
+- Set test name or use the test event file name
 - List of supported test events
 
 ## Usage
@@ -42,6 +43,15 @@ Publishes a locally defined test event `events/yourOwnDefinedEvent.json` to the 
 
 ```script
 publish-shared-event -e events/yourOwnDefinedEvent.json -f your-function -r us-west-2
+```
+
+Publish two different tests with custom names.
+
+> **NOTE:** Both tests must share the same schema
+
+```script
+publish-shared-event -n createCustomerPass -e eventOne.json -f full-lambda-name -r us-east-1
+publish-shared-event -n createCustomerFailure -e eventTwo.json -f full-lambda-name -r us-east-1
 ```
 
 Using the interactive cli tool:

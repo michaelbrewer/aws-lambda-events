@@ -4,7 +4,7 @@ import os
 from fnmatch import fnmatch
 from os.path import exists
 from pathlib import Path
-from typing import List
+from typing import Dict, List, Optional, Tuple
 
 import boto3
 from pick import pick
@@ -21,6 +21,7 @@ def get_main_args_parser() -> argparse.ArgumentParser:
     parser.add_argument("-e", dest="event_source", help="Event source")
     parser.add_argument("--list", help="List of supported event sources", action="store_true")
     parser.add_argument("--filtered-list", help="Filtered list")
+    parser.add_argument("-n", dest="example_name", help="Set the example name")
     return parser
 
 
@@ -65,39 +66,57 @@ def create_registry_if_not_exists(schemas_client):
         )
 
 
-def create_or_update_schema(schemas_client, lambda_name: str, test_event: str):
+def create_or_update_schema(schemas_client, lambda_name: str, test_event: str, example_name: Optional[str]):
     """Create or update shareable test event for the specified lambda_name"""
-    content = generate_schema_content(get_path(test_event))
+    schema_name = f"_{lambda_name}-schema"
+    example_name, event = build_test_event(test_event, example_name)
     try:
+        existing_schema = schemas_client.describe_schema(
+            RegistryName=registry_name,
+            SchemaName=schema_name,
+        )
+        content = generate_updated_schema_content(json.loads(existing_schema["Content"]), example_name, event)
+        print(f"Schema '{schema_name}' already exists, updating...")
+        schemas_client.update_schema(
+            RegistryName=registry_name,
+            SchemaName=schema_name,
+            Content=content,
+            Type="JSONSchemaDraft4",
+        )
+
+    except schemas_client.exceptions.NotFoundException:
+        content = generate_new_schema_content(example_name, event)
         schemas_client.create_schema(
             RegistryName=registry_name,
-            SchemaName=f"_{lambda_name}-schema",
+            SchemaName=schema_name,
             Content=content,
             Type="JSONSchemaDraft4",
             Description="Lambda sharable test event",
         )
-    except schemas_client.exceptions.ConflictException:
-        # TODO - We should allow for multiple examples within a single schema
-        print("Schema already exists, updating...")
-        schemas_client.update_schema(
-            RegistryName=registry_name,
-            SchemaName=f"_{lambda_name}-schema",
-            Content=content,
-            Type="JSONSchemaDraft4",
-        )
 
 
-def get_path(test_event: str) -> Path:
+def build_test_event(test_event: str, example_name: Optional[str]) -> Tuple[str, Dict]:
+    path = get_test_event_path(test_event)
+    example_name = example_name or path.name.replace(".json", "")
+    event = json.loads(path.read_text())
+    return example_name, event
+
+
+def get_test_event_path(test_event: str) -> Path:
     if exists(test_event):  # Allows for locally defined test events
         return Path(test_event)
     else:  # One of the standard test events
         return Path(template_root + test_event)
 
 
-def generate_schema_content(path: Path) -> str:
+def generate_updated_schema_content(schema: Dict, example_name: str, event: Dict) -> str:
+    """Appends or updates the existing schema examples"""
+    schema["components"]["examples"][example_name] = {"value": event}
+    return json.dumps(schema)
+
+
+def generate_new_schema_content(example_name: str, event: Dict) -> str:
     """Generates an event bridge schema from the test event file"""
-    example_name = path.name.replace(".json", "")
-    event = json.loads(path.read_text())
     schema = {
         "openapi": "3.0.0",
         "info": {
@@ -119,7 +138,6 @@ def main():
     args_parser = get_main_args_parser()
     args = args_parser.parse_args()
     list_of_events = list_of_test_events()
-
     if args.list:
         print("List of supported event sources:")
         print(*list_of_events, sep="\n")
@@ -136,7 +154,7 @@ def main():
     schemas_client = session.client("schemas")
 
     create_registry_if_not_exists(schemas_client)
-    create_or_update_schema(schemas_client, lambda_name, test_event)
+    create_or_update_schema(schemas_client, lambda_name, test_event, args.example_name)
 
 
 if __name__ == "__main__":
