@@ -19,5 +19,5 @@ install: build
 publish: build
 	cd src; poetry run twine upload dist/*
 
-test:
+test: build
 	poetry run pytest

@@ -37,6 +37,10 @@ def list_of_test_events() -> List[str]:
     return templates
 
 
+def get_session(region: Optional[str]) -> boto3.session.Session:
+    return boto3.session.Session(region_name=region)
+
+
 def get_lambda_name(session: boto3.session.Session) -> str:
     """Prompt to select which lambda event to add a shareable test event."""
     lambda_client = session.client("lambda")
@@ -148,7 +152,7 @@ def main():
         print(*filtered_list, sep="\n")
         return
 
-    session = boto3.session.Session(region_name=args.region)
+    session = get_session(args.region)
     lambda_name = args.lambda_name or get_lambda_name(session)
     test_event = args.event_source or get_test_event(list_of_events)
 
