@@ -6,7 +6,7 @@ license = "MIT"
 authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 boto3 = "^1.21.23"
 pick = "^1.2.0"
 

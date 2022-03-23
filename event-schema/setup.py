@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setuptools.setup(
     name="aws-lambda-publish-shared-event",
-    version="0.4.0",
+    version="0.5.0",
     entry_points={
         "console_scripts": ["publish-shared-event=aws_lambda_publish_shared_event.__main__:main"],
     },
@@ -24,7 +24,7 @@ setuptools.setup(
         "botocore >= 1.24.23",
         "pick >= 1.2.0",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     include_package_data=True,
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -33,7 +33,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     project_urls={
         "GitHub": "https://github.com/michaelbrewer/aws-lambda-events",
