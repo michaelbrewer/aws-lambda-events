@@ -20,8 +20,8 @@ setuptools.setup(
     packages=["aws_lambda_publish_shared_event"],
     install_requires=[
         "setuptools",
-        "boto3 >= 1.21.23",
-        "botocore >= 1.24.23",
+        "boto3 >= 1.21.24",
+        "botocore >= 1.24.24",
         "pick >= 1.2.0",
     ],
     python_requires=">=3.9",
