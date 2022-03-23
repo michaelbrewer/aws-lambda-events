@@ -20,6 +20,10 @@ jobs:
       with:
         python-version: 3.8
 
+    - name: Install wheel
+      working-directory: event-schema
+      run: pip3 install wheel
+
     - name: Install dependencies
       working-directory: event-schema
       run: make dev
