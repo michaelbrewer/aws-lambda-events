@@ -12,6 +12,7 @@ from botocore.stub import Stubber
 from aws_lambda_publish_shared_event import __main__
 
 SCRIPT_NAME = "foo.py"
+AWS_REGION = "us-east-1"
 
 
 def test_parse_args_help(capsys):
@@ -121,7 +122,7 @@ def test_get_test_event_path():
 
 
 def test_create_registry_if_not_exists_already_exist():
-    schemas_client = boto3.client("schemas")
+    schemas_client = boto3.client("schemas", region_name=AWS_REGION)
     stubber = Stubber(schemas_client)
     stubber.add_client_error(
         method="create_registry",
@@ -135,7 +136,7 @@ def test_create_registry_if_not_exists_already_exist():
 
 
 def test_create_or_update_schema_not_found():
-    schemas_client = boto3.client("schemas")
+    schemas_client = boto3.client("schemas", region_name=AWS_REGION)
     stubber = Stubber(schemas_client)
     stubber.add_client_error(
         method="describe_schema",
