@@ -2,12 +2,12 @@ import pathlib
 
 import setuptools
 
-HERE = pathlib.Path(__file__).parent.parent
+HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setuptools.setup(
     name="aws-lambda-publish-shared-event",
-    version="0.5.0",
+    version="0.6.0",
     entry_points={
         "console_scripts": ["publish-shared-event=aws_lambda_publish_shared_event.__main__:main"],
     },
