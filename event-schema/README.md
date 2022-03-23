@@ -8,10 +8,11 @@ With pip installed, run: `pip install aws-lambda-publish-shared-event`
 
 ## Features
 
-- Publish your locally defined tests
-- Publish standard test events into the lambda console for over 100 different examples
-- Set test name or use the test event file name
-- List of supported test events
+- Publish your locally defined test events to the Lambda Console (`publish-shared-event -e testEvent.json ..`)
+- Publish 100 different examples (`publish-shared-event -e ses/ses.json ...`)
+- Publish multiple events with the same schema structure for a single lambda
+- Set test name or use the test event file name (`publish-shared-event -n custom-name ...`)
+- Get the list of built-in test events (`publish-shared-event --list`)
 
 ## Usage
 
@@ -71,5 +72,5 @@ Select Event:
 
 ## Resources
 
-See [Lambda Events](https://lambda.101i.de/) for documentation on the different AWS Lambda event structures 
-and see the official docs on the [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events)
+See [Lambda Events](https://lambda.101i.de/) for more documentation on the different AWS Lambda event structures 
+and see the official docs on [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events).
