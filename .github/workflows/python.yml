@@ -5,7 +5,7 @@ on:
       - master
       - main
     paths:
-      - event-schemas/*
+      - event-schema/*
       - docs/events/*
       - .github/workflows/python.yml
 jobs:
