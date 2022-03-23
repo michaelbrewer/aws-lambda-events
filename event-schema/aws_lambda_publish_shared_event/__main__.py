@@ -59,16 +59,12 @@ def get_test_event(list_of_events: List[str]) -> str:
 def create_registry_if_not_exists(schemas_client):
     """Create the event bridge registry for shareable test events"""
     try:
-        schemas_client.describe_registry(RegistryName=registry_name)
-    except schemas_client.exceptions.NotFoundException:
-        print("Registry not found, creating...")
         schemas_client.create_registry(
             RegistryName=registry_name,
             Description="List of shareable tests events for AWS Lambda",
-            Tags={
-                "comment": "List of shareable tests events for AWS Lambda",
-            },
         )
+    except schemas_client.exceptions.ConflictException:
+        print(f"Registry with name '{registry_name}' already exists.")
 
 
 def create_or_update_schema(schemas_client, lambda_name: str, test_event: str, example_name: Optional[str]):

@@ -5,7 +5,9 @@ from pathlib import Path
 from unittest import mock
 from unittest.mock import MagicMock
 
+import boto3
 import pytest
+from botocore.stub import Stubber
 
 from aws_lambda_publish_shared_event import __main__
 
@@ -48,7 +50,10 @@ def test_generate_updated_schema_content():
         __main__.main()
 
         client.assert_called_with("schemas")
-        client.return_value.describe_registry.assert_called_with(RegistryName="lambda-testevent-schemas")
+        client.return_value.create_registry.assert_called_with(
+            RegistryName="lambda-testevent-schemas",
+            Description="List of shareable tests events for AWS Lambda",
+        )
         client.return_value.describe_schema.assert_called_with(
             RegistryName="lambda-testevent-schemas",
             SchemaName="_name-schema",
@@ -113,3 +118,32 @@ def test_get_lambda_name_list(mock_pick: MagicMock):
 def test_get_test_event_path():
     expected = Path(__file__).parent / "test.json"
     assert __main__.get_test_event_path(str(expected)) == expected
+
+
+def test_create_registry_if_not_exists_already_exist():
+    schemas_client = boto3.client("schemas")
+    stubber = Stubber(schemas_client)
+    stubber.add_client_error(
+        method="create_registry",
+        service_error_code="ConflictException",
+        service_message="Already exists",
+        http_status_code=400,
+    )
+    stubber.activate()
+
+    __main__.create_registry_if_not_exists(schemas_client)
+
+
+def test_create_or_update_schema_not_found():
+    schemas_client = boto3.client("schemas")
+    stubber = Stubber(schemas_client)
+    stubber.add_client_error(
+        method="describe_schema",
+        service_error_code="NotFoundException",
+        service_message="Not found",
+        http_status_code=400,
+    )
+    stubber.add_response("create_schema", {})
+    stubber.activate()
+
+    __main__.create_or_update_schema(schemas_client, "foo", "ses/ses.json", "ses")
