@@ -3,21 +3,21 @@ dev:
 	poetry install
 
 format:
-	poetry run isort --line-length=120 src tests
-	poetry run black --line-length=120 src tests
+	poetry run isort --line-length=120 aws_lambda_publish_shared_event tests
+	poetry run black --line-length=120 aws_lambda_publish_shared_event tests
 
 clean:
-	rm -Rf src/build src/aws_lambda_publish_shared_event.egg-info src/dist src/aws_lambda_publish_shared_event/events
+	rm -Rf build aws_lambda_publish_shared_event.egg-info/ dist/ aws_lambda_publish_shared_event/events/ .pytest_cache/ coverage.xml .coverage
 
 build: clean
-	cp -Rf  ../docs/events src/aws_lambda_publish_shared_event/
-	cd src;  python3 setup.py build sdist bdist_wheel
+	cp -Rf  ../docs/events aws_lambda_publish_shared_event/
+	python3 setup.py build sdist bdist_wheel
 
 install: build
-	cd src;  python3 setup.py install
+	python3 setup.py install
 
 publish: build
-	cd src; poetry run twine upload dist/*
+	poetry run twine upload dist/*
 
 test: build
-	poetry run pytest
+	poetry run pytest --cov=aws_lambda_publish_shared_event --cov-report=xml
