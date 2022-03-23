@@ -8,8 +8,8 @@ With pip installed, run: `pip install aws-lambda-publish-shared-event`
 
 ## Features
 
-- Publish standard test events into the lambda console for over 100 different examples
 - Publish your locally defined tests
+- Publish standard test events into the lambda console for over 100 different examples
 - Set test name or use the test event file name
 - List of supported test events
 
