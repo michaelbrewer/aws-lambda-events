@@ -5,9 +5,10 @@ on:
       - master
       - main
     paths:
+      - .github/workflows/python.yml
       - event-schema/*
       - docs/events/*
-      - .github/workflows/python.yml
+
 jobs:
   build:
     runs-on: ubuntu-latest
