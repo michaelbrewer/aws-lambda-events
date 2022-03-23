@@ -2,15 +2,15 @@ name: aws-lambda-publish-shared-event
 on:
   push:
     branches:
-    - main
-    - develop
+      - main
+      - develop
     paths:
-    - '.github/workflows/python.yml'
-    - 'event-schema/*'
-    - 'docs/events/*'
+      - '.github/workflows/python.yml'
+      - 'event-schema/*'
+      - 'docs/events/*'
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   build:
