@@ -28,7 +28,7 @@ jobs:
       run: pip install -U pip
 
     - name: Install mkdocs dependencies
-      run: pip install -U mkdocs-material mkdocs-git-revision-date-plugin
+      run: make dev
 
     - name: Deploy to github pages
       run: mkdocs gh-deploy --force
