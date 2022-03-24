@@ -35,7 +35,7 @@ Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/lates
 you can generate sample events
 
 ```shell
-# PR open with sam cli repo (https://github.com/aws/aws-sam-cli/pull/3655)
+sam local generate-event apigateway http-api-proxy
 ```
 
 ### Request Stucture format 2.0

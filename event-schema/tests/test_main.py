@@ -132,7 +132,7 @@ def test_create_registry_if_not_exists_already_exist():
     )
     stubber.activate()
 
-    __main__.create_registry_if_not_exists(schemas_client)
+    __main__.create_registry(schemas_client)
 
 
 def test_create_or_update_schema_not_found():
@@ -147,4 +147,4 @@ def test_create_or_update_schema_not_found():
     stubber.add_response("create_schema", {})
     stubber.activate()
 
-    __main__.create_or_update_schema(schemas_client, "foo", "ses/ses.json", "ses")
+    __main__.update_schema(schemas_client, "foo", "ses/ses.json", "ses")

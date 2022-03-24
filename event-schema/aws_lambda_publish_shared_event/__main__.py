@@ -56,7 +56,7 @@ def get_test_event(list_of_events: List[str]) -> str:
     return pick(list_of_events, "Select Event:")[0]
 
 
-def create_registry_if_not_exists(schemas_client):
+def create_registry(schemas_client):
     """Create the event bridge registry for shareable test events"""
     try:
         schemas_client.create_registry(
@@ -67,7 +67,7 @@ def create_registry_if_not_exists(schemas_client):
         print(f"Registry with name '{registry_name}' already exists.")
 
 
-def create_or_update_schema(schemas_client, lambda_name: str, test_event: str, example_name: Optional[str]):
+def update_schema(schemas_client, lambda_name: str, test_event: str, example_name: Optional[str]):
     """Create or update shareable test event for the specified lambda_name"""
     schema_name = f"_{lambda_name}-schema"
     example_name, event = build_test_event(test_event, example_name)
@@ -138,6 +138,7 @@ def generate_new_schema_content(example_name: str, event: Dict) -> str:
 def main():
     args = parse_args(sys.argv[1:])
     list_of_events = list_of_test_events()
+
     if args.list:
         print("List of supported event sources:")
         print(*list_of_events, sep="\n")
@@ -151,10 +152,9 @@ def main():
     session = get_session(args.region)
     lambda_name = args.lambda_name or get_lambda_name(session)
     test_event = args.event_source or get_test_event(list_of_events)
-
     schemas_client = session.client("schemas")
-    create_registry_if_not_exists(schemas_client)
-    create_or_update_schema(schemas_client, lambda_name, test_event, args.example_name)
+    create_registry(schemas_client)
+    update_schema(schemas_client, lambda_name, test_event, args.example_name)
 
 
 if __name__ == "__main__":

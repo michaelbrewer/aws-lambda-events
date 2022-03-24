@@ -282,7 +282,9 @@ Event fields notes:
 ### Generating sample events
 
 ```shell
-# Github PR (https://github.com/aws/aws-sam-cli/pull/3649)
+sam local generate-event lex-v2 banking-bot
+sam local generate-event lex-v2 book-car
+sam local generate-event lex-v2 book-hotel
 ```
 
 ## Response
