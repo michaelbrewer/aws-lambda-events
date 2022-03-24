@@ -62,6 +62,12 @@ Synchronous Run Lambda action limits
 
 JSON path to correlation id: `invocationId`
 
+### Generating sample events
+
+```shell
+sam local generate-event workmail email
+```
+
 ## Response
 
 Response format only applies to synchronous invocations.
@@ -135,12 +141,6 @@ Response format only applies to synchronous invocations.
     }
   ]
 }
-```
-
-### Generating sample events
-
-```shell
-sam local generate-event workmail email
 ```
 
 ## Resources
