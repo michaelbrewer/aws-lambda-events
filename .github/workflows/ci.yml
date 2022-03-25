@@ -31,4 +31,4 @@ jobs:
       run: make dev
 
     - name: Deploy to github pages
-      run: mkdocs gh-deploy --force
+      run: make deploy
