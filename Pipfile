@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 mkdocs-material = "*"
 mkdocs-git-revision-date-plugin = "*"
-jinja2 = "~=3.0.3"
 
 [dev-packages]
 
