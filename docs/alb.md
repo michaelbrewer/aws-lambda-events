@@ -14,7 +14,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
     - Nearly unlimited tps vs 10,000 requests per second (RPS) (Can be increased)
     - No specific function timeout vs 30 seconds for API Gateway
     - DDOS protection via [AWS Shield](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html){target="_blank"} support **vs** no support for API Gateway
-    - Application Load Balancer pricing favor high transactions per second
+    - Application Load Balancer pricing favors high transactions per second
 
 ???+ Tip "Tip: Reasons to use API Gateway over Application Load Balancer"
     - API Gateway has a 10 MB request body limit
@@ -22,6 +22,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
     - API Gateway has built in support for rate limiting support
     - API Gateway has built in support authentication support
     - API Gateway pricing allow for scale to zero
+    - Application Load Balancer would require a VPC
 
 ## Request
 
