@@ -19,7 +19,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(prog="publish-shared-event", description="List the content of a folder")
     parser.add_argument("-r", "-region", dest="region", help="Set AWS Region")
     parser.add_argument("-f", "--lambda-name", dest="lambda_name", help="Name of the lambda function")
-    parser.add_argument("-e", "--event", dest="event_source", help="Event source")
+    parser.add_argument("-e", "--event", dest="event", help="Event source")
     parser.add_argument("-n", "--event-name", dest="event_name", help="Event name")
     parser.add_argument("-l", "--list", dest="list", help="List of supported event sources", action="store_true")
     parser.add_argument("--filtered-list", dest="filtered_list", help="Filtered list")
@@ -67,10 +67,10 @@ def create_registry(schemas_client):
         print(f"Registry with name '{registry_name}' already exists.")
 
 
-def update_schema(schemas_client, lambda_name: str, test_event: str, event_name: Optional[str]):
+def update_schema(schemas_client, lambda_name: str, event_path: str, event_name: Optional[str]):
     """Create or update shareable test event for the specified lambda_name"""
     schema_name = f"_{lambda_name}-schema"
-    name, event = build_test_event(event_name, test_event)
+    name, event = build_test_event(event_name, event_path)
     try:
         existing_schema = schemas_client.describe_schema(
             RegistryName=registry_name,
@@ -96,20 +96,20 @@ def update_schema(schemas_client, lambda_name: str, test_event: str, event_name:
         )
 
 
-def build_test_event(event_name: Optional[str], test_event: str) -> Tuple[str, Dict]:
-    """Load the local test event and return the event name and the parsed event"""
-    path = get_test_event_path(test_event)
+def build_test_event(event_name: Optional[str], event_path: str) -> Tuple[str, Dict]:
+    """Load the event and return the event name and the parsed event"""
+    path = get_test_event_path(event_path)
     event_name = event_name or path.name.replace(".json", "")
     event = json.loads(path.read_text())
     return event_name, event
 
 
-def get_test_event_path(test_event: str) -> Path:
-    """Get the Path for the local event and fall back to one of the standard test events"""
-    if exists(test_event):  # Allows for locally defined test events
-        return Path(test_event)
-    else:  # One of the standard test events
-        return Path(template_root + test_event)
+def get_test_event_path(event_path: str) -> Path:
+    """Get the Path for the relative path events and then fall back to one of the standard test events"""
+    if exists(event_path):
+        return Path(event_path)
+    else:
+        return Path(template_root + event_path)
 
 
 def generate_updated_schema_content(schema: Dict, event_name: str, event: Dict) -> str:
@@ -156,11 +156,11 @@ def main():
 
     session = get_session(args.region)
     lambda_name = args.lambda_name or get_lambda_name(session)
-    test_event = args.event_source or get_test_event(list_of_events)
+    event_path = args.event or get_test_event(list_of_events)
     schemas_client = session.client("schemas")
     create_registry(schemas_client)
-    update_schema(schemas_client, lambda_name, test_event, args.event_name)
+    update_schema(schemas_client, lambda_name, event_path, args.event_name)
 
 
 if __name__ == "__main__":
-    main()
+    main()  # pragma: no cover

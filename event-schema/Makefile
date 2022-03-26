@@ -8,6 +8,7 @@ format:
 
 clean:
 	rm -Rf build aws_lambda_publish_shared_event.egg-info/ dist/ aws_lambda_publish_shared_event/events/ .pytest_cache/ coverage.xml .coverage
+	rm -Rf htmlcov/
 
 build: clean
 	cp -Rf  ../docs/events aws_lambda_publish_shared_event/
@@ -21,3 +22,6 @@ publish: build
 
 test: build
 	poetry run pytest --cov=aws_lambda_publish_shared_event --cov-report=xml
+
+coverage-html:
+	poetry run pytest --cov=aws_lambda_publish_shared_event --cov-report=html

@@ -6,3 +6,4 @@ aws_lambda_publish_shared_event/events/
 __pycache__/
 coverage.xml
 .coverage
+htmlcov/
