@@ -1,10 +1,8 @@
 # AWS Lambda Publish Sharable Events
-[![aws-lambda-publish-shared-event](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml/badge.svg)](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml)
-[![codecov](https://codecov.io/gh/michaelbrewer/aws-lambda-events/branch/main/graph/badge.svg?token=J433NUHYNT)](https://codecov.io/gh/michaelbrewer/aws-lambda-events)
-
-## Installation
-
-With pip installed, run: `pip install aws-lambda-publish-shared-event`
+[![Build status](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml/badge.svg)](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml)
+[![Code Coverage](https://codecov.io/gh/michaelbrewer/aws-lambda-events/branch/main/graph/badge.svg?token=J433NUHYNT)](https://codecov.io/gh/michaelbrewer/aws-lambda-events)
+[![Package version](https://img.shields.io/pypi/v/aws-lambda-publish-shared-event?color=%2334D058&label=pypi%20package)](https://pypi.org/project/aws-lambda-publish-shared-event/)
+![Python version](https://img.shields.io/pypi/pyversions/aws-lambda-publish-shared-event.svg?color=%2334D058)
 
 ## Features
 
@@ -13,6 +11,10 @@ With pip installed, run: `pip install aws-lambda-publish-shared-event`
 - Publish multiple events with the same schema structure for a single lambda
 - Set test name or use the test event file name (`publish-shared-event -n custom-name ...`)
 - Get the list of built-in test events (`publish-shared-event --list`)
+
+## Installation
+
+With pip installed, run: `pip install aws-lambda-publish-shared-event`
 
 ## Usage
 
