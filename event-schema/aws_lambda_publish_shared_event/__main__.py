@@ -17,12 +17,12 @@ registry_name = "lambda-testevent-schemas"
 def parse_args(args: List[str]) -> argparse.Namespace:
     """Parse arguments from the cli"""
     parser = argparse.ArgumentParser(prog="publish-shared-event", description="List the content of a folder")
-    parser.add_argument("-r", dest="region", help="Set AWS Region")
-    parser.add_argument("-f", dest="lambda_name", help="Name of the lambda function")
-    parser.add_argument("-e", dest="event_source", help="Event source")
-    parser.add_argument("--list", help="List of supported event sources", action="store_true")
-    parser.add_argument("--filtered-list", help="Filtered list")
-    parser.add_argument("-n", dest="example_name", help="Set the example name")
+    parser.add_argument("-r", "-region", dest="region", help="Set AWS Region")
+    parser.add_argument("-f", "--lambda-name", dest="lambda_name", help="Name of the lambda function")
+    parser.add_argument("-e", "--event", dest="event_source", help="Event source")
+    parser.add_argument("-n", "--event-name", dest="event_name", help="Event name")
+    parser.add_argument("-l", "--list", dest="list", help="List of supported event sources", action="store_true")
+    parser.add_argument("--filtered-list", dest="filtered_list", help="Filtered list")
     return parser.parse_args(args)
 
 
@@ -67,16 +67,16 @@ def create_registry(schemas_client):
         print(f"Registry with name '{registry_name}' already exists.")
 
 
-def update_schema(schemas_client, lambda_name: str, test_event: str, example_name: Optional[str]):
+def update_schema(schemas_client, lambda_name: str, test_event: str, event_name: Optional[str]):
     """Create or update shareable test event for the specified lambda_name"""
     schema_name = f"_{lambda_name}-schema"
-    example_name, event = build_test_event(test_event, example_name)
+    name, event = build_test_event(event_name, test_event)
     try:
         existing_schema = schemas_client.describe_schema(
             RegistryName=registry_name,
             SchemaName=schema_name,
         )
-        content = generate_updated_schema_content(json.loads(existing_schema["Content"]), example_name, event)
+        content = generate_updated_schema_content(json.loads(existing_schema["Content"]), name, event)
         print(f"Schema '{schema_name}' already exists, updating...")
         schemas_client.update_schema(
             RegistryName=registry_name,
@@ -86,7 +86,7 @@ def update_schema(schemas_client, lambda_name: str, test_event: str, example_nam
         )
 
     except schemas_client.exceptions.NotFoundException:
-        content = generate_new_schema_content(example_name, event)
+        content = generate_new_schema_content(event_name, event)
         schemas_client.create_schema(
             RegistryName=registry_name,
             SchemaName=schema_name,
@@ -96,27 +96,29 @@ def update_schema(schemas_client, lambda_name: str, test_event: str, example_nam
         )
 
 
-def build_test_event(test_event: str, example_name: Optional[str]) -> Tuple[str, Dict]:
+def build_test_event(event_name: Optional[str], test_event: str) -> Tuple[str, Dict]:
+    """Load the local test event and return the event name and the parsed event"""
     path = get_test_event_path(test_event)
-    example_name = example_name or path.name.replace(".json", "")
+    event_name = event_name or path.name.replace(".json", "")
     event = json.loads(path.read_text())
-    return example_name, event
+    return event_name, event
 
 
 def get_test_event_path(test_event: str) -> Path:
+    """Get the Path for the local event and fall back to one of the standard test events"""
     if exists(test_event):  # Allows for locally defined test events
         return Path(test_event)
     else:  # One of the standard test events
         return Path(template_root + test_event)
 
 
-def generate_updated_schema_content(schema: Dict, example_name: str, event: Dict) -> str:
-    """Appends or updates the existing schema examples"""
-    schema["components"]["examples"][example_name] = {"value": event}
+def generate_updated_schema_content(schema: Dict, event_name: str, event: Dict) -> str:
+    """Updates or appends to the existing schema examples"""
+    schema["components"]["examples"][event_name] = {"value": event}
     return json.dumps(schema)
 
 
-def generate_new_schema_content(example_name: str, event: Dict) -> str:
+def generate_new_schema_content(event_name: str, event: Dict) -> str:
     """Generates an event bridge schema from the test event file"""
     schema = {
         "openapi": "3.0.0",
@@ -124,9 +126,12 @@ def generate_new_schema_content(example_name: str, event: Dict) -> str:
             "version": "1.0.0",
             "title": "Event",
         },
+        "paths": {},
         "components": {
+            # Could also include a collection of JSONSchemaDraft4
+            # "schemas" : { "Event": build_json_schema(event) },
             "examples": {
-                example_name: {
+                event_name: {
                     "value": event,
                 }
             },
@@ -154,7 +159,7 @@ def main():
     test_event = args.event_source or get_test_event(list_of_events)
     schemas_client = session.client("schemas")
     create_registry(schemas_client)
-    update_schema(schemas_client, lambda_name, test_event, args.example_name)
+    update_schema(schemas_client, lambda_name, test_event, args.event_name)
 
 
 if __name__ == "__main__":

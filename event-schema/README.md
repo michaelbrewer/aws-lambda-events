@@ -1,6 +1,6 @@
 # AWS Lambda Publish Sharable Events
-[![codecov](https://codecov.io/gh/michaelbrewer/aws-lambda-events/branch/main/graph/badge.svg?token=J433NUHYNT)](https://codecov.io/gh/michaelbrewer/aws-lambda-events)
 [![aws-lambda-publish-shared-event](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml/badge.svg)](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml)
+[![codecov](https://codecov.io/gh/michaelbrewer/aws-lambda-events/branch/main/graph/badge.svg?token=J433NUHYNT)](https://codecov.io/gh/michaelbrewer/aws-lambda-events)
 
 ## Installation
 

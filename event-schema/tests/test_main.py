@@ -68,6 +68,7 @@ def test_generate_new_schema_content():
     expected = {
         "openapi": "3.0.0",
         "info": {"version": "1.0.0", "title": "Event"},
+        "paths": {},
         "components": {
             "examples": {
                 example_name: {"value": event},
