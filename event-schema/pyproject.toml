@@ -18,7 +18,52 @@ isort = "^5.10.1"
 black = "^22.1.0"
 pytest = "^7.1.1"
 pytest-cov = "^3.0.0"
+flake8 = "^4.0.1"
+flake8-black = "^0.3.2"
+flake8-builtins = "^1.5.3"
+flake8-comprehensions = "^3.8.0"
+flake8-debugger = "^4.0.0"
+flake8-isort = "^4.1.1"
+flake8-variables-names = "^0.0.5"
+flake8-eradicate = "^1.2.0"
+flake8-bugbear = "^22.3.23"
+bandit = "^1.7.4"
+radon = "^5.1.0"
+xenon = "^0.9.0"
+mypy = "^0.942"
 
 [build-system]
 requires = ["setuptools", "wheel", "poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.report]
+fail_under = 95
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+
+	# Ignore type function overload
+	"@overload",
+]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 120
+
+[tool.black]
+line-length = 120

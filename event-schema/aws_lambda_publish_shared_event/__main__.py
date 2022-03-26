@@ -28,7 +28,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
 
 def list_of_test_events() -> List[str]:
     """Get the list of supported test events"""
-    templates = []
+    templates: List[str] = []
     for path, _, files in os.walk(template_root):
         templates.extend(
             os.path.join(path, name).removeprefix(template_root) for name in files if fnmatch(name, "*.json")
@@ -86,7 +86,7 @@ def update_schema(schemas_client, lambda_name: str, event_path: str, event_name:
         )
 
     except schemas_client.exceptions.NotFoundException:
-        content = generate_new_schema_content(event_name, event)
+        content = generate_new_schema_content(name, event)
         schemas_client.create_schema(
             RegistryName=registry_name,
             SchemaName=schema_name,
@@ -129,7 +129,7 @@ def generate_new_schema_content(event_name: str, event: Dict) -> str:
         "paths": {},
         "components": {
             # Could also include a collection of JSONSchemaDraft4
-            # "schemas" : { "Event": build_json_schema(event) },
+            # something like: "schemas" : { "Event": build_json_schema(event) },
             "examples": {
                 event_name: {
                     "value": event,
@@ -163,4 +163,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()  # pragma: no cover
+    main()

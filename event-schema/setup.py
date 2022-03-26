@@ -30,9 +30,10 @@ setuptools.setup(
         "Environment :: Console",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
         "Operating System :: OS Independent",
-        "Programming Language :: Python",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
     project_urls={
         "GitHub": "https://github.com/michaelbrewer/aws-lambda-events",
