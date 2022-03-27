@@ -31,10 +31,15 @@ def list_of_test_events() -> List[str]:
     templates: List[str] = []
     for path, _, files in os.walk(template_root):
         templates.extend(
-            os.path.join(path, name).removeprefix(template_root) for name in files if fnmatch(name, "*.json")
+            removeprefix(template_root, os.path.join(path, name)) for name in files if fnmatch(name, "*.json")
         )
     templates.sort()
     return templates
+
+
+def removeprefix(prefix: str, string: str) -> str:
+    """Remove the prefix from the string"""
+    return string[len(prefix) :] if string.startswith(prefix) else string
 
 
 def get_session(region: Optional[str]) -> boto3.session.Session:
