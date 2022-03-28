@@ -84,3 +84,28 @@ generate-test-event ses/ses.json > event.json
 
 See [Lambda Events](https://lambda.101i.de/) for more documentation on the different AWS Lambda event structures 
 and see the official docs on [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events).
+
+## Recent changes
+
+### 0.12.0
+
+- Add `generate-test-event` support
+- Add python 3.7 support
+
+### 0.11.0
+
+- Add support for python 3.8
+
+### 0.10.0
+
+- Add python 3.10 and dependabot
+- Add security and linting
+- Add coverage report
+
+### 0.9.0
+
+- Add long form cli arguments (`--region`, `--lambda-name`, `--event-name`)
+
+### 0.8.0
+
+- Update dependencies and clean up code
