@@ -23,7 +23,7 @@ Once installed run `publish-shared-event --help` for the list of commands.
 Listing supported events for cognito user pool:
 
 ```script
-publish-shared-event --filtered-list cognito-user
+$ publish-shared-event --filtered-list cognito-user
 Filtered list of supported event sources:
 cognito-user-pool/create-auth-challenge.json
 cognito-user-pool/custom-email-sender.json
@@ -61,8 +61,8 @@ publish-shared-event -n createCustomerFailure -e eventTwo.json -f full-lambda-na
 
 Using the interactive cli tool:
 
-```
-publish-shared-event
+```script
+$ publish-shared-event
 Lambda Name: <Full Lambda Name>
 Select Event:
 * alb/alb.json
