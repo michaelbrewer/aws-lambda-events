@@ -16,7 +16,9 @@
 
 ## Installation
 
-With pip installed, run: `pip install aws-lambda-publish-shared-event`
+Recommended to install via pipx: `pipx install aws-lambda-publish-shared-event`, see the [pipx installation guide](https://pypa.github.io/pipx/installation/) for more.
+
+Alternatively pip installed, run: `pip install aws-lambda-publish-shared-event`
 
 ## Usage
 
