@@ -26,7 +26,7 @@ setuptools.setup(
         "botocore >= 1.24.24",
         "pick >= 1.2.0",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.7",
     include_package_data=True,
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -35,6 +35,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",

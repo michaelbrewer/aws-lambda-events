@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "aws-lambda-publish-shared-event"
-version = "0.11.0"
+version = "0.12.0"
 description = "Creating Shareable test events"
 license = "MIT"
 authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 boto3 = "^1.21.24"
 pick = "^1.2.0"
 
@@ -15,7 +15,7 @@ setuptools = "^60.10.0"
 wheel = "^0.37.1"
 twine = "^3.8.0"
 isort = "^5.10.1"
-black = "^22.1.0"
+black = "^22.3.0"
 pytest = "^7.1.1"
 pytest-cov = "^3.0.0"
 flake8 = "^4.0.1"
