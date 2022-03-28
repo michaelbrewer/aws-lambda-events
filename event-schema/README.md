@@ -87,6 +87,10 @@ and see the official docs on [AWS Lambda Shareable test events](https://docs.aws
 
 ## Recent changes
 
+### 0.13.0
+
+- Fix packaging to include `generate_test_event`
+
 ### 0.12.0
 
 - Add `generate-test-event` support
