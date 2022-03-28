@@ -1,4 +1,5 @@
 # AWS Lambda Publish Sharable Events
+
 [![Build status](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml/badge.svg)](https://github.com/michaelbrewer/aws-lambda-events/actions/workflows/python.yml)
 [![Code Coverage](https://codecov.io/gh/michaelbrewer/aws-lambda-events/branch/main/graph/badge.svg?token=J433NUHYNT)](https://codecov.io/gh/michaelbrewer/aws-lambda-events)
 [![Package version](https://img.shields.io/pypi/v/aws-lambda-publish-shared-event?color=%2334D058&label=pypi%20package)](https://pypi.org/project/aws-lambda-publish-shared-event/)

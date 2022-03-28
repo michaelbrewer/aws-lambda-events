@@ -1,8 +1,8 @@
 # AWS Lambda Events
 
-Collection of resources on the different input and outputs that AWS Lambda expect
+Collection of resources and tools on the different input and outputs that AWS Lambda expects.
 
-## Build and testing locally
+## Build and testing the docs locally
 
 To run a local server for the docs.
 
@@ -53,12 +53,15 @@ Some of the documented event sources
 - [Amazon SQS](https://michaelbrewer.github.io/aws-lambda-events/sqs)
 - [Amazon WorkMail](https://michaelbrewer.github.io/aws-lambda-events/work-mail)
 
+## AWS Lambda Publish Sharable Events
+
+[AWS Lambda Publish Sharable Events](./event-schema/README.md) is a tool that allows you to publish events to the AWS Lambda console.
+
 ## Objectives
 
 - General docs, invoke types, limits
 - Request docs, samples, libraries
 - Response docs, samples and libraries
 - Handlers and full solutions
+- Provide tools to make working with AWS Lambda easier
 - Articles, documentations and example repos
-
-
