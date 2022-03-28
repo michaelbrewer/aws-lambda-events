@@ -12,6 +12,7 @@
 - Publish multiple events with the same schema structure for a single lambda
 - Set test name or use the test event file name (`publish-shared-event -n custom-name ...`)
 - Get the list of built-in test events (`publish-shared-event --list`)
+- Geneate a new test event (`generate-test-event ses/ses.json > event.json`)
 
 ## Installation
 
@@ -71,6 +72,12 @@ Select Event:
     alexa/alex-smart-home-skill-v3.json
     amazon-config/amazon-config.json
     ...
+```
+
+Generate new local test event:
+
+```script
+generate-test-event ses/ses.json > event.json
 ```
 
 ## Resources

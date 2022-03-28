@@ -1,0 +1,3 @@
+#!/bin/bash
+poetry run python3 -m aws_lambda_publish_shared_event.generate_test_event $@
+

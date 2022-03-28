@@ -1,16 +1,13 @@
 import argparse
 import json
-import os
 import sys
-from fnmatch import fnmatch
-from os.path import exists
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 
 import boto3
 from pick import pick
 
-template_root = f"{str(Path(__file__).parent)}/events/"
+from aws_lambda_publish_shared_event.util import build_test_event, list_of_test_events
+
 registry_name = "lambda-testevent-schemas"
 
 
@@ -24,22 +21,6 @@ def parse_args(args: List[str]) -> argparse.Namespace:
     parser.add_argument("-l", "--list", dest="list", help="List of supported event sources", action="store_true")
     parser.add_argument("--filtered-list", dest="filtered_list", help="Filtered list")
     return parser.parse_args(args)
-
-
-def list_of_test_events() -> List[str]:
-    """Get the list of supported test events"""
-    templates: List[str] = []
-    for path, _, files in os.walk(template_root):
-        templates.extend(
-            removeprefix(template_root, os.path.join(path, name)) for name in files if fnmatch(name, "*.json")
-        )
-    templates.sort()
-    return templates
-
-
-def removeprefix(prefix: str, string: str) -> str:
-    """Remove the prefix from the string"""
-    return string[len(prefix) :] if string.startswith(prefix) else string
 
 
 def get_session(region: Optional[str]) -> boto3.session.Session:
@@ -99,22 +80,6 @@ def update_schema(schemas_client, lambda_name: str, event_path: str, event_name:
             Type="JSONSchemaDraft4",
             Description="Lambda sharable test event",
         )
-
-
-def build_test_event(event_name: Optional[str], event_path: str) -> Tuple[str, Dict]:
-    """Load the event and return the event name and the parsed event"""
-    path = get_test_event_path(event_path)
-    event_name = event_name or path.name.replace(".json", "")
-    event = json.loads(path.read_text())
-    return event_name, event
-
-
-def get_test_event_path(event_path: str) -> Path:
-    """Get the Path for the relative path events and then fall back to one of the standard test events"""
-    if exists(event_path):
-        return Path(event_path)
-    else:
-        return Path(template_root + event_path)
 
 
 def generate_updated_schema_content(schema: Dict, event_name: str, event: Dict) -> str:

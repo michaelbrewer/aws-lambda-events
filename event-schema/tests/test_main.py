@@ -9,7 +9,7 @@ import boto3
 import pytest
 from botocore.stub import Stubber
 
-from aws_lambda_publish_shared_event import __main__
+from aws_lambda_publish_shared_event import __main__, util
 
 SCRIPT_NAME = "foo.py"
 AWS_REGION = "us-east-1"
@@ -119,7 +119,7 @@ def test_get_lambda_name_list(mock_pick: MagicMock):
 
 def test_get_test_event_path():
     expected = Path(__file__).parent / "test.json"
-    assert __main__.get_test_event_path(str(expected)) == expected
+    assert util.get_test_event_path(str(expected)) == expected
 
 
 def test_create_registry_if_not_exists_already_exist():

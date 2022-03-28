@@ -9,7 +9,10 @@ setuptools.setup(
     name="aws-lambda-publish-shared-event",
     version="0.11.0",
     entry_points={
-        "console_scripts": ["publish-shared-event=aws_lambda_publish_shared_event.__main__:main"],
+        "console_scripts": [
+            "publish-shared-event=aws_lambda_publish_shared_event.__main__:main",
+            "generate-test-event=aws_lambda_publish_shared_event.generate_test_event.__main__:main",
+        ],
     },
     author="Michael Brewer",
     license="MIT",
