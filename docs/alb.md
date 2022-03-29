@@ -59,7 +59,7 @@ JSON path to correlation id: `headers."x-amzn-trace-id"`
 ### Generating sample events
 
 ```shell
-# Gibhub PR (https://github.com/aws/aws-sam-cli/pull/3670)
+sam local generate-event alb request --body {"test":"body"} --path foo --method POST
 ```
 
 ### Request Example

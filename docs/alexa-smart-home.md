@@ -95,11 +95,9 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 
 Lambda handlers by Language
 
-- [Python SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-python)
 - [Python - alexa smart home example](https://github.com/alexa/alexa-smarthome/tree/master/sample_lambda/python)
-- [NodeJS](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs)
-- [Java SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-java)
 - [Serverless - Alexa Smart Home](https://www.serverless.com/framework/docs/providers/aws/events/alexa-smart-home)
+- [Skill Sample : Smarthome Switch (Node.js)](https://github.com/alexa-samples/skill-sample-nodejs-smarthome-switch)
 
 ## Documentation
 

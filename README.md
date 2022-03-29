@@ -22,6 +22,7 @@ Some of the documented event sources
 - [API Gateway Http API Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/http-api-custom-authorizer/)
 - [AppSync Resolvers](https://michaelbrewer.github.io/aws-lambda-events/appsync-resolver/)
 - [AppSync Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/appsync-authorizer/)
+- [Alexa Skills](https://michaelbrewer.github.io/aws-lambda-events/alexa-skills-kit/)
 - [Alexa Smart Home](https://michaelbrewer.github.io/aws-lambda-events/alexa-smart-home)
 - [Amazon EventBridge (CloudWatch Events)](https://michaelbrewer.github.io/aws-lambda-events/event-bridge)
 - [CloudWatch Logs](https://michaelbrewer.github.io/aws-lambda-events/cloudwatch-logs)

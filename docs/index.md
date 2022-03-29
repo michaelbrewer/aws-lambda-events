@@ -25,11 +25,11 @@ Directory of lambda events and resources
     - [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
 - [x] [API Gateway - Rest API](./rest-api.md) - synchronously invokes
     - [X] [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md) - synchronously invokes
+- [X] [Alexa Skills](./alexa-skills-kit.md) - synchronously invokes
 - [X] [Alexa Smart Home](./alexa-smart-home.md) - synchronously invokes
 - [X] [AppSync - Resolver](./appsync-resolver.md) - synchronously invokes
     - [X] [AppSync - Custom Authorizer](./appsync-authorizer.md) - synchronously invokes
 - [X] [Amazon EventBridge - CloudWatch Event](./event-bridge.md) - asynchronously invokes
-    - [X] [CloudWatch Event - Amazon EC2](./event-bridge.md#ec2-instance-state-change-event) - asynchronously invokes
 - [X] [CloudWatch Logs](./cloudwatch-logs.md) - asynchronously invokes
 - [X] [CloudFormation - Custom Resource](./cloudformation.md) - asynchronously invokes
 - [X] [CloudFront - Lambda@Edge](./cloudfront-lambda-edge.md) - synchronously invokes
