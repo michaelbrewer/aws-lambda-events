@@ -17,6 +17,7 @@ AWS_REGION = "us-east-1"
 
 def test_parse_args_help(capsys):
     sys.argv = [SCRIPT_NAME, "--help"]
+
     with pytest.raises(SystemExit):
         __main__.main()
 
@@ -43,7 +44,8 @@ def test_parse_args_filtered(capsys):
 
 
 def test_generate_updated_schema_content():
-    sys.argv = [SCRIPT_NAME, "-e", "ses/ses.json", "-f", "name", "-r", "us-east-1"]
+    function_name = "hello-world"
+    sys.argv = [SCRIPT_NAME, "-e", "ses/ses.json", "-f", function_name, "-r", "us-east-1"]
     with mock.patch("aws_lambda_publish_shared_event.__main__.get_session") as mock_boto3:
         client = mock_boto3.return_value.client
         client.return_value.describe_schema.return_value = {"Content": '{"components": {"examples": {}}}'}
@@ -57,7 +59,7 @@ def test_generate_updated_schema_content():
         )
         client.return_value.describe_schema.assert_called_with(
             RegistryName="lambda-testevent-schemas",
-            SchemaName="_name-schema",
+            SchemaName=f"_{function_name}-schema",
         )
         client.return_value.update_schema.assert_called()
 
