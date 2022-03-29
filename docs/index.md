@@ -22,13 +22,13 @@ This site tries to collect as many resources on AWS Lambda events from schema, e
 Directory of lambda events and resources
 
 - [X] [API Gateway - Http API](./http-api.md) - synchronously invokes
-    - [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
+- [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
 - [x] [API Gateway - Rest API](./rest-api.md) - synchronously invokes
-    - [X] [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md) - synchronously invokes
-- [X] [Alexa Skills](./alexa-skills-kit.md) - synchronously invokes
-- [X] [Alexa Smart Home](./alexa-smart-home.md) - synchronously invokes
+- [X] [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md) - synchronously invokes
+- [ ] [Alexa Skills](./alexa-skills-kit.md) - synchronously invokes
+- [ ] [Alexa Smart Home](./alexa-smart-home.md) - synchronously invokes
 - [X] [AppSync - Resolver](./appsync-resolver.md) - synchronously invokes
-    - [X] [AppSync - Custom Authorizer](./appsync-authorizer.md) - synchronously invokes
+- [X] [AppSync - Custom Authorizer](./appsync-authorizer.md) - synchronously invokes
 - [X] [Amazon EventBridge - CloudWatch Event](./event-bridge.md) - asynchronously invokes
 - [X] [CloudWatch Logs](./cloudwatch-logs.md) - asynchronously invokes
 - [X] [CloudFormation - Custom Resource](./cloudformation.md) - asynchronously invokes
@@ -37,7 +37,7 @@ Directory of lambda events and resources
 - [X] [CodeCommit](./code-commit.md) - asynchronously invokes
 - [X] [CodePipeline - Job](./code-pipeline-job.md) - asynchronously invokes
 - [X] [Amazon Cognito - User Pool](./cognito-user-pool.md) - synchronously invokes
-    - [X] [AWS Cognito - Sync](./cognito-events.md) - synchronously invokes
+- [X] [AWS Cognito - Sync](./cognito-events.md) - synchronously invokes
 - [X] [AWS Config](./config.md) - asynchronously invokes
 - [X] [Amazon Connect](./connect.md) - synchronously invokes
 - [X] [Amazon DynamoDB](./dynamodb.md) - poll-based invokes (synchronously)
@@ -51,9 +51,9 @@ Directory of lambda events and resources
 - [X] [Amazon Lex V2](./lex-v2.md) - synchronously invokes
 - [X] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ - poll-based invokes (synchronously)
 - [X] [Amazon MSK](./amazon-msk.md) - poll-based invokes (synchronously)
-- [X] [S3](./s3.md) - asynchronously invokes
-    - [X] [S3 - Batch Operations](./s3-batch.md) - synchronously invokes
-    - [X] [S3 - Object Lambda](./s3-object-lambda.md) - synchronously invokes
+- [X] [S3 - Notifications](./s3.md) - asynchronously invokes
+- [X] [S3 - Batch Operations](./s3-batch.md) - synchronously invokes
+- [X] [S3 - Object Lambda](./s3-object-lambda.md) - synchronously invokes
 - [X] [Secrets Manager](./secrets-manager.md) - synchronously invokes
 - [X] [Amazon SES](./ses.md) - configurable as asynchronously invokes or synchronously invokes
 - [X] [Amazon SNS](./sns.md) - asynchronously invokes
