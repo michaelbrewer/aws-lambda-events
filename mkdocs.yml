@@ -73,6 +73,7 @@ nav:
     - http-api-custom-authorizer.md
     - rest-api.md
     - rest-api-custom-authorizer.md
+    - alexa-skills-kit.md
     - alexa-smart-home.md
     - alb.md
     - appsync-resolver.md
