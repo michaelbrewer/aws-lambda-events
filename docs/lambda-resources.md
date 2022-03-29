@@ -24,13 +24,23 @@ List of general resources that could be used with all AWS Lambda by language.
 
 With [AWS Lambda Shareable test events](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html#creating-shareable-events) you can now share test events with other AWS Lambda developers.
 
-Installing the cli `publish-shared-event` tool.
+**Installing the cli `publish-shared-event` tool.**
 
-```script title="Installing"
-pip install aws-lambda-publish-shared-event
+Recommended to install via pipx, see the [pipx installation](https://pypa.github.io/pipx/installation/) guide for more.:
+
+```script
+pipx install aws-lambda-publish-shared-event
 ```
 
-Examples of running the cli tool.
+**Examples of running the cli tool.**
+
+=== "Generate test event"
+
+    Generates a new local test event:
+
+    ```script
+    generate-test-event ses/ses.json > event.json
+    ```
 
 === "Interactive example"
 
