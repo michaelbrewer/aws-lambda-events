@@ -93,11 +93,14 @@ sam local generate-event alexa-smart-home smart-home-control-turn-on-request
 
 ## Resources
 
-Lambda handlers by Language
+Lambda examples by Language
 
+- [Skill Sample : Smarthome Switch (Node.js)](https://github.com/alexa-samples/skill-sample-nodejs-smarthome-switch)
+- [Skill Sample : Smarthome Switch (Python)](https://github.com/alexa-samples/skill-sample-python-smarthome-switch)
+- [Skill Sample : Smarthome Switch (Java)](https://github.com/alexa-samples/skill-sample-java-smarthome-switch)
+- [Skill Sample : Smarthome Switch (C#)](https://github.com/alexa-samples/skill-sample-csharp-smarthome-switch)
 - [Python - alexa smart home example](https://github.com/alexa/alexa-smarthome/tree/master/sample_lambda/python)
 - [Serverless - Alexa Smart Home](https://www.serverless.com/framework/docs/providers/aws/events/alexa-smart-home)
-- [Skill Sample : Smarthome Switch (Node.js)](https://github.com/alexa-samples/skill-sample-nodejs-smarthome-switch)
 
 ## Documentation
 
