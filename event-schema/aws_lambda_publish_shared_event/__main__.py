@@ -6,7 +6,7 @@ from typing import Dict, List, Optional
 import boto3
 from pick import pick
 
-from aws_lambda_publish_shared_event.util import build_test_event, list_of_test_events
+from aws_lambda_publish_shared_event.util import build_test_event, handle_list_arguments, list_of_test_events
 
 registry_name = "lambda-testevent-schemas"
 
@@ -31,6 +31,8 @@ def get_lambda_name(session: boto3.session.Session) -> str:
     """Prompt to select which lambda event to add a shareable test event."""
     lambda_client = session.client("lambda")
     response = lambda_client.list_functions()
+    # sourcery skip: use-named-expression
+    # as we support python 3.7
     functions = [f["FunctionName"] for f in response["Functions"]]
     if functions:
         return pick(functions, f"Select Lambda function ({session.region_name}):")[0]
@@ -113,21 +115,12 @@ def generate_new_schema_content(event_name: str, event: Dict) -> str:
 
 def main():
     args = parse_args(sys.argv[1:])
-    list_of_events = list_of_test_events()
-
-    if args.list:
-        print("List of supported event sources:")
-        print(*list_of_events, sep="\n")
-        return
-    if args.filtered_list:
-        filtered_list = list(filter(lambda x: x.startswith(args.filtered_list), list_of_events))
-        print("Filtered list of supported event sources:")
-        print(*filtered_list, sep="\n")
+    if handle_list_arguments(args):
         return
 
     session = get_session(args.region)
     lambda_name = args.lambda_name or get_lambda_name(session)
-    event_path = args.event or get_test_event(list_of_events)
+    event_path = args.event or get_test_event(list_of_test_events())
     schemas_client = session.client("schemas")
     create_registry(schemas_client)
     update_schema(schemas_client, lambda_name, event_path, args.event_name)

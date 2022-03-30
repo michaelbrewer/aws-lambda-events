@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 from fnmatch import fnmatch
@@ -37,3 +38,17 @@ def build_test_event(event_name: Optional[str], event_path: str) -> Tuple[str, D
     event_name = event_name or path.name.replace(".json", "")
     event = json.loads(path.read_text())
     return event_name, event
+
+
+def handle_list_arguments(args: argparse.Namespace) -> bool:
+    """Handle any of the list arguments (-l, --filter-list) and return True if processed"""
+    if args.list:
+        print("List of supported event sources:")
+        print(*list_of_test_events(), sep="\n")
+        return True
+    if args.filtered_list:
+        filtered_list = list(filter(lambda x: x.startswith(args.filtered_list), list_of_test_events()))
+        print("Filtered list of supported event sources:")
+        print(*filtered_list, sep="\n")
+        return True
+    return False

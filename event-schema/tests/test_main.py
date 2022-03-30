@@ -25,11 +25,29 @@ def test_parse_args_help(capsys):
     assert captured.out.startswith("usage:")
 
 
-def test_parse_args_list(capsys):
-    sys.argv = [SCRIPT_NAME, "--list"]
+@pytest.mark.parametrize("argument", ["-h", "--help"])
+def test_parse_args_help(capsys, argument: str):
+    # GIVEN
+    sys.argv = [SCRIPT_NAME, argument]
 
+    # WHEN
+    with pytest.raises(SystemExit):
+        __main__.main()
+
+    # THEN
+    captured = capsys.readouterr()
+    assert captured.out.startswith("usage:")
+
+
+@pytest.mark.parametrize("argument", ["-l", "--list"])
+def test_parse_args_list(capsys, argument: str):
+    # GIVEN
+    sys.argv = [SCRIPT_NAME, argument]
+
+    # WHEN
     __main__.main()
 
+    # THEN
     captured = capsys.readouterr()
     assert captured.out.startswith("List of supported event sources:")
 

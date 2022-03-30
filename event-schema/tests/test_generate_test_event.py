@@ -19,20 +19,6 @@ def test_parse_args_no_args():
     assert str(e.value) == "No event source specified"
 
 
-@pytest.mark.parametrize("argument", ["-h", "--help"])
-def test_parse_args_help(capsys, argument: str):
-    # GIVEN
-    sys.argv = [SCRIPT_NAME, argument]
-
-    # WHEN
-    with pytest.raises(SystemExit):
-        __main__.main()
-
-    # THEN
-    captured = capsys.readouterr()
-    assert captured.out.startswith("usage:")
-
-
 @pytest.mark.parametrize("argument", ["-l", "--list"])
 def test_parse_args_list(capsys, argument: str):
     # GIVEN
