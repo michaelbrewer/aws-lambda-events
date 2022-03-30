@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setuptools.setup(
     name="aws-lambda-publish-shared-event",
-    version="0.14.0",
+    version="0.15.0",
     entry_points={
         "console_scripts": [
             "publish-shared-event=aws_lambda_publish_shared_event.__main__:main",

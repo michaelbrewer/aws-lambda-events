@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "aws-lambda-publish-shared-event"
-version = "0.14.0"
-description = "Creating Shareable test events"
+version = "0.15.0"
+description = "Creating Shareable Lambda Test Events"
 license = "MIT"
 authors = ["Michael Brewer"]
 

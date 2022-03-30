@@ -89,10 +89,13 @@ and see the official docs on [AWS Lambda Shareable test events](https://docs.aws
 
 ## Recent changes
 
+### 0.15.0
+
+- Add `--filtered-list` argument to `generate-test-event`
+
 ### 0.14.0
 
 - Add `alexa-skills-kit` sample events
-
 
 ### 0.13.0
 

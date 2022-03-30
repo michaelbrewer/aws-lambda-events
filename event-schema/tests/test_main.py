@@ -15,16 +15,6 @@ SCRIPT_NAME = "foo.py"
 AWS_REGION = "us-east-1"
 
 
-def test_parse_args_help(capsys):
-    sys.argv = [SCRIPT_NAME, "--help"]
-
-    with pytest.raises(SystemExit):
-        __main__.main()
-
-    captured = capsys.readouterr()
-    assert captured.out.startswith("usage:")
-
-
 @pytest.mark.parametrize("argument", ["-h", "--help"])
 def test_parse_args_help(capsys, argument: str):
     # GIVEN
