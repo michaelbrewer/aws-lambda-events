@@ -6,7 +6,11 @@ Collection of resources and tools on the different input and outputs that AWS La
 
 [AWS Lambda Publish Sharable Events](./event-schema/README.md) is a tool that allows you to publish events to the AWS Lambda console.
 
-## Event Sources
+## AWS Lambda Quick Start Tool
+
+- [Build Project](https://lambda.101i.de/build-project/) - A web based tool to quickly build a new AWS Lambda project. Either via [AWS SAM CLI Application Templates](https://github.com/aws/aws-sam-cli-app-templates) or a [Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) generator using [Quick start for AWS Lambda](https://github.com/michaelbrewer/aws-lambda-quickstart)
+
+## Event Sources Docs
 
 Some of the documented event sources
 
