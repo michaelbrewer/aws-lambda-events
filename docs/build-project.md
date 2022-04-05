@@ -88,6 +88,8 @@ const templates = [
   "python3.9/cookiecutter-aws-sam-step-functions-etl-python",
   "python3.9/cookiecutter-aws-sam-eventBridge-python",
   "python3.9/cookiecutter-aws-sam-efs-python",
+  "go1.x/cookiecutter-aws-sam-eventbridge-hello-golang",
+  "go1.x/cookiecutter-aws-sam-eventbridge-schema-app-golang",
   "go1.x/cookiecutter-aws-sam-hello-golang",
   "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
   "dotnet6/cookiecutter-aws-sam-hello-dotnet",
