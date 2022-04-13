@@ -22,8 +22,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     packages=["aws_lambda_publish_shared_event",  "aws_lambda_publish_shared_event.generate_test_event"],
     install_requires=[
-        "boto3 >= 1.21.24",
-        "botocore >= 1.24.24",
+        "boto3 >= 1.21.40",
+        "botocore >= 1.24.40",
         "pick >= 1.2.0",
     ],
     python_requires=">=3.7",
