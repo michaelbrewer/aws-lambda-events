@@ -12,6 +12,7 @@ lint: format
 clean:
 	rm -Rf build aws_lambda_publish_shared_event.egg-info/ dist/ aws_lambda_publish_shared_event/events/ .pytest_cache/ coverage.xml .coverage
 	rm -Rf htmlcov/
+	poetry env remove python3
 
 build: clean
 	cp -Rf  ../docs/events aws_lambda_publish_shared_event/
