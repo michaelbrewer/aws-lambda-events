@@ -1,6 +1,7 @@
 # Lambda Lifecycle
 
-![Invoke With Error](./media/overview-lnvoke-with-error-light.png)
+![Invoke Lifecyle](./media/overview-lnvoke-light.png#only-light)
+![Invoke Lifecyle](./media/overview-lnvoke-dark.png#only-dark)
 
 ## Init phase
 
