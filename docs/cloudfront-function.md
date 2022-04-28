@@ -6,7 +6,7 @@ per second, and is highly secure. CloudFront Functions is a native feature of Cl
 deploy your code entirely within CloudFront.
 
 !!!NOTE
-    CloudFront Functions are at all like AWS Lambda Functions, as they are JavaScript only and have no lambda context.
+    CloudFront Functions are at all like AWS Lambda functions, as they are JavaScript only and have no Lambda context.
 
 ![CloudFront Function Diagram](./media/cloudfront-function-light.png#only-light)
 ![CloudFront Function Diagram](./media/cloudfront-function-dark.png#only-dark)

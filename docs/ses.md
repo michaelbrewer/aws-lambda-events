@@ -285,7 +285,7 @@ allow_subjects = os.environ["MAIL_SUBJECTS"].split(";")
 @tracer.capture_lambda_handler
 @logger.inject_lambda_context
 def lambda_handler(event: dict, _) -> dict:
-    """Simple lambda that filters out emails that does not match `MAIL_SOURCE` and `MAIL_SUBJECTS`"""
+    """Simple Lambda that filters out emails that does not match `MAIL_SOURCE` and `MAIL_SUBJECTS`"""
 
     records = event.get("Records")
     if records is None or len(records) == 0:

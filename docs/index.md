@@ -4,7 +4,7 @@ This site tries to collect as many resources on AWS Lambda events from schema, e
 
 ??? tip - "Objectives of this site"
 
-    Objective is to collect resources on lambda inputs (requests) and outputs (responses) as well as the following:
+    Objective is to collect resources on Lambda inputs (requests) and outputs (responses) as well as the following:
 
     - Invocation type (synchronous, asynchronous or polling)
     - Limitations of each type of lambda
@@ -19,7 +19,7 @@ This site tries to collect as many resources on AWS Lambda events from schema, e
 
 ## Lambda Event Sources
 
-Directory of lambda events and resources
+Directory of AWS Lambda events sources and resources
 
 - [X] [API Gateway - Http API](./http-api.md) - synchronously invokes
 - [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
@@ -72,7 +72,7 @@ Synchronous invocations are the most straight forward way to invoke your Lambda 
 Asynchronous invokes place your invoke request in Lambda service queue and we process the requests as they arrive. For testing, when invoking directly use invoke type of `Event`.
 
 ???+ NOTE
-    During asynchronous invokes, the lambda context field `clientContext` will not be populated.
+    During asynchronous invokes, the Lambda context field `clientContext` will not be populated.
 
 ### Poll-Based Invokes
 

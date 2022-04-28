@@ -222,7 +222,7 @@ class SecurityJob < ApplicationJob
   end
 end
 ```
-[Chalice](https://aws.github.io/chalice/topics/events.html#cloudwatch-events) can also to the infrastructure provisioning along set the lambda handler
+[Chalice](https://aws.github.io/chalice/topics/events.html#cloudwatch-events) can also to the infrastructure provisioning along set the Lambda handler
 
 ```python title="Example using Chalice to subscribe to code commit events"
 app = chalice.Chalice(app_name='foo')

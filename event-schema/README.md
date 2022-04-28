@@ -42,13 +42,13 @@ cognito-user-pool/user-migration.json
 cognito-user-pool/verify-auth-challenge-response.json
 ```
 
-Publishing a `ses/ses.json` test event as a shareable event for the lambda function named `full-lambda-name`
+Publishing a `ses/ses.json` test event as a shareable event for the Lambda function named `full-lambda-name`
 
 ```script
 publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1
 ```
 
-Publishes a locally defined test event `events/yourOwnDefinedEvent.json` to the lambda console
+Publishes a locally defined test event `events/yourOwnDefinedEvent.json` to the Lambda console
 
 ```script
 publish-shared-event -e events/yourOwnDefinedEvent.json -f your-function -r us-west-2

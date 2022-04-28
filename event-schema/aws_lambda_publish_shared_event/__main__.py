@@ -15,7 +15,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
     """Parse arguments from the cli"""
     parser = argparse.ArgumentParser(prog="publish-shared-event", description="List the content of a folder")
     parser.add_argument("-r", "-region", dest="region", help="Set AWS Region")
-    parser.add_argument("-f", "--lambda-name", dest="lambda_name", help="Name of the lambda function")
+    parser.add_argument("-f", "--lambda-name", dest="lambda_name", help="Name of the Lambda function")
     parser.add_argument("-e", "--event", dest="event", help="Event source")
     parser.add_argument("-n", "--event-name", dest="event_name", help="Event name")
     parser.add_argument("-l", "--list", dest="list", help="List of supported event sources", action="store_true")
@@ -28,7 +28,7 @@ def get_session(region: Optional[str]) -> boto3.session.Session:
 
 
 def get_lambda_name(session: boto3.session.Session) -> str:
-    """Prompt to select which lambda event to add a shareable test event."""
+    """Prompt to select which Lambda event to add a shareable test event."""
     lambda_client = session.client("lambda")
     response = lambda_client.list_functions()
     # sourcery skip: use-named-expression

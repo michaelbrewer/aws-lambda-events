@@ -184,7 +184,7 @@ def handler(event: APIGatewayAuthorizerRequestEvent, context):
 
     if user is None:
         # No user was found
-        # to return 401 - `{"message":"Unauthorized"}`, but pollutes lambda error count metrics
+        # to return 401 - `{"message":"Unauthorized"}`, but pollutes Lambda error count metrics
         # raise Exception("Unauthorized")
         # to return 403 - `{"message":"Forbidden"}`
         return DENY_ALL_RESPONSE

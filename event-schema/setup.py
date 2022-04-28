@@ -17,7 +17,7 @@ setuptools.setup(
     author="Michael Brewer",
     license="MIT",
     url="https://lambda.101i.de/",
-    description="Cli to publish shareable lambda test events.",
+    description="Cli to publish shareable Lambda test events.",
     long_description=README,
     long_description_content_type="text/markdown",
     packages=["aws_lambda_publish_shared_event",  "aws_lambda_publish_shared_event.generate_test_event"],

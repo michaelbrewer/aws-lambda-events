@@ -50,7 +50,7 @@ Synchronous Run Lambda action limits
 : Message id for retrieval using workmail flow API
 
 `invocationId` (String)
-: Id of this lambda invocation. Useful for detecting retries and avoiding duplication
+: Id of this Lambda invocation. Useful for detecting retries and avoiding duplication
 
 `flowDirection` (String)
 : Indicating direction of email flow. Value is either "INBOUND" or "OUTBOUND"

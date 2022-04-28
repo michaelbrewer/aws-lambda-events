@@ -17,7 +17,7 @@ List of general resources that could be used with all AWS Lambda by language.
 - [Typescript - AWS Lambda Powertools](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/){target="_blank"}
 - [Typescript - @types/aws-lambda](https://www.npmjs.com/package/@types/aws-lambda){target="_blank"} - NPM `@types/aws-lambda`
 - [Rust - aws-lambda-rust-runtime](https://github.com/awslabs/aws-lambda-rust-runtime){target="_blank"} - runtime and framework and will soon include `aws_lambda_events`
-- [Rust - aws_lambda_events](https://github.com/LegNeato/aws-lambda-events){target="_blank"} - structs for most lambda events
+- [Rust - aws_lambda_events](https://github.com/LegNeato/aws-lambda-events){target="_blank"} - structs for most Lambda events
 - [Ruby - Jets](https://rubyonjets.com){target="_blank"} - Ruby Serverless Framework 
 
 ## Lambda shareable test events
@@ -79,7 +79,7 @@ pipx install aws-lambda-publish-shared-event
 
 === "Using CLI arguments"
 
-    Publishing a `ses/ses.json` test event as a shareable event for the lambda function named `full-lambda-name`
+    Publishing a `ses/ses.json` test event as a shareable event for the Lambda function named `full-lambda-name`
 
     ```script
     publish-shared-event -e ses/ses.json -f full-lambda-name -r us-east-1

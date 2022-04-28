@@ -1,6 +1,6 @@
 # CloudFront Lambda@Edge
 
-CloudFront invokes lambda synchrously. Can be Node.js or Python.
+CloudFront invokes Lambda synchrously. Can be Node.js or Python.
 
 You can use Lambda functions to change CloudFront requests and responses at the following points:
 

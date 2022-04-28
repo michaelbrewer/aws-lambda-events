@@ -4,11 +4,11 @@ description: When Lambda runs your function, it passes a context object to the h
 
 # Lambda Context
 
-When Lambda runs your function, it passes a context object to the handler. This object provides methods and properties that provide information 
-about the invocation, function, and execution environment.
+When Lambda runs your function, it passes a context object to the handler. This object provides methods and properties that provide
+information about the invocation, function, and execution environment.
 
 ???+ NOTE
-    During asynchronous invokes, the lambda context field `clientContext` will not be populated.
+    During asynchronous invokes, the Lambda context field `clientContext` will not be populated.
 
 ## Docs
 
