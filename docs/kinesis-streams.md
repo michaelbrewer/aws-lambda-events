@@ -32,7 +32,7 @@ Amazon Kinesis Data Streams is a fully managed streaming data service. You can c
 : The eventVersion key value contains a major and minor version in the form <major>.<minor>.
 
 `invokeIdentityArn` (String)
-: The ARN for the identity used to invoke the Lambda Function
+: The ARN for the identity used to invoke the Lambda function
 
 `kinesis` (Object)
 : Kinesis payload

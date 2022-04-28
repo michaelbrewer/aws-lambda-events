@@ -105,5 +105,5 @@ Lambda examples by Language
 ## Documentation
 
 - [Using AWS Lambda with Alexa](https://docs.aws.amazon.com/lambda/latest/dg/services-alexa.html){target="_blank"}
-- [Host a Custom Skill as an AWS Lambda Function](https://developer.amazon.com/en-US/docs/alexa/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html){target="_blank"}
+- [Host a Custom Skill as an AWS Lambda function](https://developer.amazon.com/en-US/docs/alexa/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html){target="_blank"}
 - [Alexa Smart Home - Workshop](https://alexaworkshop.com/en/smart-home.html)

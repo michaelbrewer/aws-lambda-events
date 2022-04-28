@@ -9,7 +9,7 @@
 
 - Publish your locally defined test events to the Lambda Console (`publish-shared-event -e testEvent.json ..`)
 - Publish 100 different examples (`publish-shared-event -e ses/ses.json ...`)
-- Publish multiple events with the same schema structure for a single lambda
+- Publish multiple events with the same schema structure for a single Lambda
 - Set test name or use the test event file name (`publish-shared-event -n custom-name ...`)
 - Get the list of built-in test events (`publish-shared-event --list`)
 - Geneate a new test event (`generate-test-event ses/ses.json > event.json`)

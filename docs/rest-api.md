@@ -6,7 +6,7 @@ Events are sent synchronously to the Lambda function with a timeout of 30 second
 
 Lambda specific hard limitations, see [API Gateway quotas for configuring and running a REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/limits.html) for other limits.
 
-- Payload limit of 6mb for the lambda
+- Payload limit of 6mb for the Lambda
 - Maximum timeout of 30 seconds
 
 ## Request

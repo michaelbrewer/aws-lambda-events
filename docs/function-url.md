@@ -6,7 +6,7 @@ Uses the same Request and Response structures as the [API Gateway Http API](./ht
 
 Lambda specific hard limitations
 
-- Payload limit of 6mb for the lambda
+- Payload limit of 6mb for the Lambda
 - Maximum timeouts up to 900 seconds (15 minutes)
 
 ## Documention

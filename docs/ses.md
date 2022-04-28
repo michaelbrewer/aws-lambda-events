@@ -270,7 +270,7 @@ ReceiptRuleSet(
 )
 ```
 
-Example subject filtering lambda
+Example subject filtering Lambda
 
 ```python title="subjectFilterLambda.py"
 import os

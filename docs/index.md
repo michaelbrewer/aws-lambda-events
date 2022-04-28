@@ -7,7 +7,7 @@ This site tries to collect as many resources on AWS Lambda events from schema, e
     Objective is to collect resources on Lambda inputs (requests) and outputs (responses) as well as the following:
 
     - Invocation type (synchronous, asynchronous or polling)
-    - Limitations of each type of lambda
+    - Limitations of each type of Lambda
     - Input schema
     - Response schema
     - Example events

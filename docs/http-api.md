@@ -13,7 +13,7 @@ Event driven, synchronously invokes
 
 Lambda specific hard limitations
 
-- Payload limit of 6mb for the lambda
+- Payload limit of 6mb for the Lambda
 - Maximum timeout of 30 seconds
 
 ???+ note "NOTE: General limits and differents from Rest API"
