@@ -17,7 +17,7 @@ Requirements
 ## Limits
 
 - There is a 30-second timeout on `RequestResponse` invocations.
-- Not available in all regions support [receiving emails](https://docs.aws.amazon.com/ses/latest/dg/regions.html#region-receive-email)
+- Not available in all regions support [receiving emails](https://docs.aws.amazon.com/ses/latest/dg/regions.html#region-receive-email){target=_blank}
 
 | Region Name            | Email Receiving Endpoint              |
 |------------------------|---------------------------------------|
@@ -35,7 +35,7 @@ Requirements
 
 ### Generating sample event
 
-Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) you can generate sample
+Via [AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html){target=_blank} you can generate sample
 events
 
 ```shell
@@ -209,7 +209,7 @@ Full solutions
 
 Code examples
 
-- [Serverless Framework - node - email receiving](https://github.com/serverless/examples/tree/master/aws-node-ses-receive-email-header)
+- [Serverless Framework - node - email receiving](https://github.com/serverless/examples/tree/master/aws-node-ses-receive-email-header){target=_blank}
 
 ### Example
 
@@ -310,8 +310,8 @@ def lambda_handler(event: dict, _) -> dict:
 
 ## Documentation
 
-- [Using AWS Lambda with Amazon SES](https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html)
-- [SES - Invoke Lambda function action](https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-lambda.html)
-- [Blog - Replace traditional email mailbox polling with real-time reads using Amazon SES and Lambda](https://aws.amazon.com/blogs/messaging-and-targeting/replace-traditional-email-mailbox-polling-with-real-time-reads-using-amazon-ses-and-lambda/)
-- [Blog - Forward Incoming Email to an External Destination](https://aws.amazon.com/blogs/messaging-and-targeting/forward-incoming-email-to-an-external-destination/)
-- [Blog - Receive and Process Incoming Email with Amazon SES](https://aws.amazon.com/blogs/aws/new-receive-and-process-incoming-email-with-amazon-ses/)
+- [Using AWS Lambda with Amazon SES](https://docs.aws.amazon.com/lambda/latest/dg/services-ses.html){target=_blank}
+- [SES - Invoke Lambda function action](https://docs.aws.amazon.com/ses/latest/dg/receiving-email-action-lambda.html){target=_blank}
+- [Blog - Replace traditional email mailbox polling with real-time reads using Amazon SES and Lambda](https://aws.amazon.com/blogs/messaging-and-targeting/replace-traditional-email-mailbox-polling-with-real-time-reads-using-amazon-ses-and-lambda/){target=_blank}
+- [Blog - Forward Incoming Email to an External Destination](https://aws.amazon.com/blogs/messaging-and-targeting/forward-incoming-email-to-an-external-destination/){target=_blank}
+- [Blog - Receive and Process Incoming Email with Amazon SES](https://aws.amazon.com/blogs/aws/new-receive-and-process-incoming-email-with-amazon-ses/){target=_blank}
