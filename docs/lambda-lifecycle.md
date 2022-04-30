@@ -1,7 +1,7 @@
 # Lambda Lifecycle
 
-![Invoke Lifecyle](./media/overview-lnvoke-light.png#only-light)
-![Invoke Lifecyle](./media/overview-lnvoke-dark.png#only-dark)
+![Invoke Lifecyle](./media/overview-lnvoke-light.png#gh-light-mode-only)
+![Invoke Lifecyle](./media/overview-lnvoke-dark.png#gh-dark-mode-only)
 
 ## Init phase
 

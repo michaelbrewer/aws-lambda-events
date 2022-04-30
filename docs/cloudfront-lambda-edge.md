@@ -9,8 +9,8 @@ You can use Lambda functions to change CloudFront requests and responses at the 
 - After CloudFront receives the response from the origin (`Origin Response`)
 - Before CloudFront forwards the response to the viewer (`Viewer Response`)
 
-![CloudFront Lambda@Edge Diagram](./media/cloudfront-lambda-edge-light.png#only-light)
-![CloudFront Lambda@Edge Diagram](./media/cloudfront-lambda-edge-dark.png#only-dark)
+![CloudFront Lambda@Edge Diagram](./media/cloudfront-lambda-edge-light.png#gh-light-mode-only)
+![CloudFront Lambda@Edge Diagram](./media/cloudfront-lambda-edge-dark.png#gh-dark-mode-only)
 
 ## Limits
 
