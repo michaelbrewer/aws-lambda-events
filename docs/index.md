@@ -25,7 +25,7 @@ Directory of AWS Lambda events sources and resources
 - [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
 - [x] [API Gateway - Rest API](./rest-api.md) - synchronously invokes
 - [X] [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md) - synchronously invokes
-- [ ] [AWS Lambda Function URLs](./function-url.md) - synchronously invokes
+- [X] [AWS Lambda Function URLs](./function-url.md) - synchronously invokes
 - [ ] [Alexa Skills](./alexa-skills-kit.md) - synchronously invokes
 - [ ] [Alexa Smart Home](./alexa-smart-home.md) - synchronously invokes
 - [X] [AppSync - Resolver](./appsync-resolver.md) - synchronously invokes
