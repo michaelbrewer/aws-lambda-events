@@ -12,7 +12,7 @@ Lambda specific hard limitations
 
 ## Request
 
-```json5
+```json
 {
   "version": "2.0",
   "rawPath": "/my/path",
@@ -61,7 +61,7 @@ Lambda specific hard limitations
 
 ## Response
 
-```json5
+```json
 {
    "statusCode": 201,
     "headers": {
