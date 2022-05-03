@@ -129,7 +129,7 @@ Typed Lambda handlers by Language
 
 - [Python - data class and parser](https://awslabs.github.io/aws-lambda-powertools-python/latest/utilities/data_classes/#api-gateway-proxy-v2) - Pip `aws-lambda-powertools`
 - [Typescript - api-gateway-proxy.d.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/aws-lambda/trigger/api-gateway-proxy.d.ts) - NPM `@types/aws-lambda`
-- [Go - ApiGatewayEvent typing](https://github.com/aws/aws-lambda-go/blob/main/events/README_ApiGatewayEvent.md) - Crate `github.com/aws/aws-lambda-go/events`
+- [Go - ApiGatewayEvent typing](https://github.com/aws/aws-lambda-go/blob/main/events/README_ApiGatewayEvent.md) - Go `github.com/aws/aws-lambda-go/events`
 - [DoNet - APIGatewayEvents data classes](https://github.com/aws/aws-lambda-dotnet/tree/master/Libraries/src/Amazon.Lambda.APIGatewayEvents) - NuGet `Amazon.Lambda.APIGatewayEvents`
 - [Rust - apigw/mod.rs traits](https://github.com/LegNeato/aws-lambda-events/blob/master/aws_lambda_events/src/apigw/mod.rs) - Cargo `aws_lambda_events`
 - [Java - APIGatewayV2HTTPEvent data classes](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-events/src/main/java/com/amazonaws/services/lambda/runtime/events/APIGatewayV2HTTPEvent.java) - Maven `aws-lambda-java-events`
