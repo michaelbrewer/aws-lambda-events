@@ -18,6 +18,7 @@ Some of the documented event sources
 - [API Gateway Rest API Custom Authorizer](https://lambda.101i.de/rest-api-custom-authorizer/)
 - [API Gateway Http API](https://lambda.101i.de/http-api)
 - [API Gateway Http API Custom Authorizer](https://lambda.101i.de/http-api-custom-authorizer/)
+- [AWS Lambda Function URLs](https://lambda.101i.de/function-url/)
 - [AppSync Resolvers](https://lambda.101i.de/appsync-resolver/)
 - [AppSync Custom Authorizer](https://lambda.101i.de/appsync-authorizer/)
 - [Alexa Skills Kit](https://lambda.101i.de/alexa-skills-kit/)
