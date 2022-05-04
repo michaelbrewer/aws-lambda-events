@@ -95,6 +95,7 @@ const templates = [
   "dotnet6/cookiecutter-aws-sam-hello-dotnet",
   "dotnet6/cookiecutter-aws-sam-hello-powershell",
   "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app",
+  "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-s3-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
