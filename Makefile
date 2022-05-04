@@ -9,7 +9,7 @@ build:
 	pipenv run mkdocs build
 
 update-requirements:
-	pipenv lock -r  > requirements.txt
+	pipenv requirements  > requirements.txt
 
 deploy:
 	pipenv run mkdocs gh-deploy --force
