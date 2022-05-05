@@ -7,7 +7,7 @@ description: The Lambda action calls your code through a Lambda function and, op
 
 The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS.
 
-**Invocation type**, the invocation type of the Lambda function. An invocation type of RequestResponse means that the execution of the function results in an immediate response. An invocation type of Event means that the function is invoked asynchronously. We recommend that you use Event invocation type unless synchronous execution is required for your use case..
+**Invocation type**, the invocation type of the Lambda function. An invocation type of `RequestResponse` means that the execution of the function results in an immediate response. An invocation type of Event means that the function is invoked asynchronously. We recommend that you use Event invocation type unless synchronous execution is required for your use case..
 
 Requirements
 
