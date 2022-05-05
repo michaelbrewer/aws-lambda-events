@@ -59,7 +59,7 @@ Directory of AWS Lambda events sources and resources
 - [X] [Amazon SES](./ses.md) - configurable as asynchronously invokes or synchronously invokes
 - [X] [Amazon SNS](./sns.md) - asynchronously invokes
 - [X] [Amazon SQS](./sqs.md) - asynchronously invokes
-- [X] [Amazon WorkMail](./work-mail.md) - asynchronously or synchronously invokes
+- [X] [Amazon WorkMail](./work-mail.md) - configurable as asynchronously invokes or synchronously invokes
 
 ## Invocation Types
 
