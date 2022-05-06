@@ -2,6 +2,9 @@
 
 Uses the same Request and Response structures as the [API Gateway Http API](./http-api.md), but has some different limits.
 
+See [AWS Lambda Function URLs vs. Amazon API Gateway](https://www.serverlessguru.com/blog/aws-lambda-function-urls-vs-amazon-api-gateway) 
+for a comparison to API Gateway.
+
 ## Limits
 
 Lambda specific hard limitations
@@ -85,4 +88,5 @@ Typed Lambda handlers by Language
 
 ## Documention
 
-- [Blog: AWS Lambda Function URLs: Built-in HTTPS Endpoints for Single-Function Microservices](https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/)
+- [Blog: AWS Lambda Function URLs: Built-in HTTPS Endpoints for Single-Function Microservices](https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/){target="_blank"}
+- [Blog: AWS Lambda: function URL is live! - By Yan Cui](https://lumigo.io/blog/aws-lambda-function-url-is-live/){target="_blank"}
