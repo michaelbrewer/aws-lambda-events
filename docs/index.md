@@ -63,6 +63,9 @@ Directory of AWS Lambda events sources and resources
 
 ## Invocation Types
 
+![Lambda invokes types](./media/invoke-type-light.png#gh-light-mode-only)
+![Lambda invokes types](./media/invoke-type-dark.png#gh-dark-mode-only)
+
 ### Synchronous Invokes
 
 Synchronous invocations are the most straight forward way to invoke your Lambda functions. In this model, your functions execute immediately when you perform the Lambda Invoke API call. For testing, when invoking directly use invoke type of `RequestResponse`.
