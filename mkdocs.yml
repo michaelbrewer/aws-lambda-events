@@ -61,7 +61,7 @@ plugins:
 extra:
   analytics:
     provider: google
-    property: UA-191564964-1
+    property: G-PM4TKP5NNF
 
 nav:
   - Overview:
