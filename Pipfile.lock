@@ -142,11 +142,11 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:2666f1d7d6a8dc28dda1e777f77add12799e66bd00250de99914a33525763816",
-                "sha256:505408fe001d668543236f5db5a88771460ad83ef7b58826630cc1f8b7e63099"
+                "sha256:93b57e53733051431cc83216446e774bdf08bf516a6251ff2f24974f45f98149",
+                "sha256:9d6c4ca1ceecc00b2e38c214665ed7605d275321dcaa22f38b9d1175edc58955"
             ],
             "index": "pypi",
-            "version": "==8.2.13"
+            "version": "==8.2.15"
         },
         "mkdocs-material-extensions": {
             "hashes": [
@@ -182,11 +182,11 @@
         },
         "pyparsing": {
             "hashes": [
-                "sha256:7bf433498c016c4314268d95df76c81b842a4cb2b276fa3312cfb1e1d85f6954",
-                "sha256:ef7b523f6356f763771559412c0d7134753f037822dad1b16945b7b846f7ad06"
+                "sha256:2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb",
+                "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"
             ],
             "markers": "python_full_version >= '3.6.8'",
-            "version": "==3.0.8"
+            "version": "==3.0.9"
         },
         "python-dateutil": {
             "hashes": [
