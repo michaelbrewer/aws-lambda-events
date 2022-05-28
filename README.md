@@ -1,6 +1,6 @@
 # AWS Lambda Events
 
-Collection of resources and tools on the different input and outputs that AWS Lambda expects.
+Collection of resources and tools on the different request inputs and resoinse outputs that the event sources for AWS Lambda expect.
 
 ## AWS Lambda Publish Sharable Events
 
