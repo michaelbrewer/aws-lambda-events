@@ -93,4 +93,5 @@ Full handler and infrastructure code solutions
 ## Documentation
 
 - [Using AWS Lambda with Amazon SNS](https://docs.aws.amazon.com/lambda/latest/dg/with-sns.html){target="_blank"}
+- [Blog - Invoking AWS Lambda functions via Amazon SNS](https://aws.amazon.com/blogs/mobile/invoking-aws-lambda-functions-via-amazon-sns/){target="_blank"}
 - [Youtube - AWS SNS to Lambda Tutorial in Python | Step by Step](https://www.youtube.com/watch?v=PsJsP-7cydk){target="_blank"}
