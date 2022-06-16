@@ -30,8 +30,3 @@ When Lambda is about to shut down the runtime, it sends a `Shutdown` event to th
 - [AWS Lambda execution environment](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html){target="_blank"}
 - [Lambda Cold Starts and Bootstrap Code](https://bitesizedserverless.com/bite/lambda-cold-start-bootstrap/){target="_blank"}
 - [When is the Lambda Init Phase Free, and when is it Billed?](https://bitesizedserverless.com/bite/when-is-the-lambda-init-phase-free-and-when-is-it-billed/){target="_blank"}
-
-## TODO
-
-- [ ] Add more info about the undocumented things like free inits
-- [ ] How to leverage the shutdown signal (`SIGKILL`) to do cleanup tasks and allow for a faster async response. See [Post Invoke](https://github.com/aidansteele/postinvoke){target="_blank"}
