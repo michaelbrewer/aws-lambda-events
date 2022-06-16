@@ -3,7 +3,7 @@
 ![Invoke Lifecyle](./media/overview-lnvoke-light.png#gh-light-mode-only)
 ![Invoke Lifecyle](./media/overview-lnvoke-dark.png#gh-dark-mode-only)
 
-## Init phase
+## Init
 
 In the `Init` phase, Lambda performs three tasks:
 
