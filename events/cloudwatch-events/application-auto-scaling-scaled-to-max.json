@@ -1,0 +1,24 @@
+{
+    "version": "0",
+    "id": "7bf73129-1428-4cd3-a780-95db273d1602",
+    "detail-type": "Application Auto Scaling Scaling Activity State Change",
+    "source": "aws.application-autoscaling",
+    "account": "123456789012",
+    "time": "2019-06-12T10:23:40Z",
+    "region": "us-west-2",
+    "resources": [],
+    "detail": {
+      "startTime": "2019-06-12T10:20:43Z",
+      "endTime": "2019-06-12T10:23:40Z",
+      "newDesiredCapacity": 8,
+      "oldDesiredCapacity": 5,
+      "minCapacity": 2,
+      "maxCapacity": 8,
+      "resourceId": "table/my-table",
+      "scalableDimension": "dynamodb:table:WriteCapacityUnits",
+      "serviceNamespace": "dynamodb",
+      "statusCode": "Successful",
+      "scaledToMax": true,
+      "direction": "scale-out"
+  }
+}

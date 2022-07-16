@@ -1,0 +1,21 @@
+{
+    "version": "0",
+    "id": "f7702227-EXAMPLE",
+    "detail-type": "CodeCommit Approval Rule Template Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-11-06T19:02:27Z",
+    "region": "us-east-2",
+    "resources": [],
+    "detail": {
+        "approvalRuleTemplateContentSha256": "f742eebbEXAMPLE",
+        "approvalRuleTemplateId": "d7385967-EXAMPLE",
+        "approvalRuleTemplateName": "2-approvers-required-for-main",
+        "callerUserArn": "arn:aws:iam::123456789012:user/Mary_Major",
+        "creationDate": "Wed Nov 06 19:02:14 UTC 2019",
+        "event": "approvalRuleTemplateCreated",
+        "lastModifiedDate": "Wed Nov 06 19:02:14 UTC 2019",
+        "notificationBody": "A approval rule template event occurred in the following AWS CodeCommit account: 123456789012. User: arn:aws:iam::123456789012:user/Mary_Major.  Additional information: An approval rule template with the following name has been created: 2-approvers-required-for-main. The ID of the created template is: d7385967-EXAMPLE. For more information, go to the AWS CodeCommit console.",
+        "repositories": {}
+    }
+}

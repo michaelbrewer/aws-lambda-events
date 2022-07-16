@@ -1,0 +1,25 @@
+{
+    "version": "0",
+    "id": "ea1c6d73-EXAMPLE",
+    "detail-type": "CodeCommit Approval Rule Template Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-11-06T19:02:27Z",
+    "region": "us-east-2",
+    "resources": [
+        "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+        "approvalRuleTemplateContentSha256": "f742eebbEXAMPLE",
+        "approvalRuleTemplateId": "d7385967-EXAMPLE",
+        "approvalRuleTemplateName": "2-approvers-required-for-main",
+        "callerUserArn": "arn:aws:iam::123456789012:user/Mary_Major",
+        "creationDate": "Wed Nov 06 19:02:14 UTC 2019",
+        "event": "approvalRuleTemplateAssociatedWithRepository",
+        "lastModifiedDate": "Wed Nov 06 19:02:14 UTC 2019",
+        "notificationBody": "A approval rule template event occurred in the following AWS CodeCommit account: 123456789012. User: arn:aws:iam::123456789012:user/Mary_Major. Additional information: An approval rule template has been associated with the following repository: [MyDemoRepo]. For more information, go to the AWS CodeCommit console.",
+        "repositories": {
+            "MyDemoRepo": "92ca7bf2-d878-49ed-a994-336a6cc7c574"
+        }
+    }
+}

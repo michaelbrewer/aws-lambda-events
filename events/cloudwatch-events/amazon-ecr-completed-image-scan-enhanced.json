@@ -1,0 +1,34 @@
+{
+	"version": "0",
+	"id": "0c18352a-a4d4-6853-ef53-0ab8638973bf",
+	"detail-type": "ECR Scan Resource Change",
+	"source": "aws.ecr",
+	"account": "123456789012",
+	"time": "2021-10-14T20:53:46Z",
+	"region": "us-east-1",
+	"resources": [],
+	"detail": {
+		"action-type": "SCAN_FREQUENCY_CHANGE",
+		"repositories": [{
+				"repository-name": "repository-1",
+				"repository-arn": "arn:aws:ecr:us-east-1:123456789012:repository/repository-1",
+				"scan-frequency": "SCAN_ON_PUSH",
+				"previous-scan-frequency": "MANUAL"
+			},
+			{
+				"repository-name": "repository-2",
+				"repository-arn": "arn:aws:ecr:us-east-1:123456789012:repository/repository-2",
+				"scan-frequency": "CONTINUOUS_SCAN",
+				"previous-scan-frequency": "SCAN_ON_PUSH"
+			},
+			{
+				"repository-name": "repository-3",
+				"repository-arn": "arn:aws:ecr:us-east-1:123456789012:repository/repository-3",
+				"scan-frequency": "CONTINUOUS_SCAN",
+				"previous-scan-frequency": "SCAN_ON_PUSH"
+			}
+		],
+		"resource-type": "REPOSITORY",
+		"scan-type": "ENHANCED"
+	}
+}

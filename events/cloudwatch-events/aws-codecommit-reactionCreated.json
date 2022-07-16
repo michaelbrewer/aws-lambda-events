@@ -1,0 +1,23 @@
+{
+    "version":"0",
+    "id":"59fcccd8-217a-32ce-2b05-561ed68a1c42",
+    "detail-type":"CodeCommit Comment Reaction Change",
+    "source":"aws.codecommit",
+    "account":"123456789012",
+    "time":"2020-04-14T00:49:03Z",
+    "region":"us-east-2",
+    "resources":[
+       "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail":{
+       "callerUserArn":"arn:aws:iam::123456789012:user/Mary_Major",
+       "commentId":"28930161-EXAMPLE",
+       "event":"commentReactionCreated",
+       "notificationBody":"A comment reaction event occurred in the following AWS CodeCommit Repository: MyDemoRepo. The user: arn:aws:iam::123456789012:user/Mary_Major made a comment reaction 👎 to the comment with comment ID: 28930161-EXAMPLE",
+       "reactionEmojis":["👎"],
+       "reactionShortcodes":[":thumbsdown:"],
+       "reactionUnicodes":["U+1F44E"],
+       "repositoryId":"12345678-1234-5678-abcd-12345678abcd",
+       "repositoryName":"MyDemoRepo"
+    }
+ }

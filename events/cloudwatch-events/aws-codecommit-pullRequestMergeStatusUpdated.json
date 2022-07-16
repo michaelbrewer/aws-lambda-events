@@ -1,0 +1,32 @@
+{
+    "version": "0",
+    "id": "01234567-0123-0123-0123-012345678901",
+    "detail-type": "CodeCommit Pull Request State Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-06-12T10:23:43Z",
+    "region": "us-east-2",
+    "resources": [
+      "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+      "author": "arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major",
+      "callerUserArn": "arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major",
+      "creationDate": "Mon Mar 11 14:42:31 PDT 2019",
+      "description": "An example description.",
+      "destinationCommit": "4376719EXAMPLE",
+      "destinationReference": "refs/heads/main",
+      "event": "pullRequestMergeStatusUpdated",
+      "isMerged": "True",
+      "lastModifiedDate": "Mon Mar 11 14:42:31 PDT 2019",
+      "mergeOption": "FAST_FORWARD_MERGE",
+      "notificationBody": "A pull request event occurred in the following AWS CodeCommit repository: MyDemoRepo. arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major updated the following PullRequest 1. The pull request merge status has been updated. The status is merged. For more information, go to the AWS CodeCommit console https://us-east-2.console.aws.amazon.com/codesuite/codecommit/repositories/MyDemoRepo/pull-requests/1?region\u003dus-east-2",
+      "pullRequestId": "1",
+      "pullRequestStatus": "Closed",
+      "repositoryNames": ["MyDemoRepo"],
+      "revisionId": "bdc0cb9beEXAMPLE",
+      "sourceCommit": "0701696EXAMPLE",
+      "sourceReference": "refs/heads/test-branch",
+      "title": "My Example Pull Request"
+    }
+  }

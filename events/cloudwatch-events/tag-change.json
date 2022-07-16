@@ -1,0 +1,26 @@
+{
+    "version": "0",
+    "id": "ffd8a6fe-32f8-ef66-c85c-111111111111",
+    "detail-type": "Tag Change on Resource",
+    "source": "aws.tag",
+    "account": "123456789012",
+    "time": "2018-09-18T20:41:06Z",
+    "region": "us-east-1",
+    "resources": [
+        "arn:aws:ec2:us-east-1:123456789012:instance/i-0000000aaaaaaaaaa"
+    ],
+    "detail": {
+        "changed-tag-keys": [
+            "key2",
+            "key3"
+        ],
+        "service": "ec2",
+        "resource-type": "instance",
+        "version": 5,
+        "tags": {
+            "key4": "value4",
+            "key1": "value1",
+            "key2": "value2"
+        }
+    }
+}

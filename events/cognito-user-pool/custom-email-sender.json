@@ -1,0 +1,27 @@
+{
+  "version": "1",
+  "triggerSource": "CustomEmailSender_ForgotPassword",
+  "region": "us-east-1",
+  "userPoolId": "us-east-1_LnS...",
+  "userName": "54cf7eb7-0b96-4304-...",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-nodejs-2.856.0",
+    "clientId": "6u7c9vr3pkstoog..."
+  },
+  "request": {
+    "type": "customEmailSenderRequestV1",
+    "code": "AYADeILxywKhhaq8Ys4mh0aHutYAgQACABVhd3MtY3J5c...",
+    "clientMetadata": null,
+    "userAttributes": {
+      "sub": "54cf7eb7-0b96-4304-8d6b-...",
+      "email_verified": "true",
+      "cognito:user_status": "CONFIRMED",
+      "cognito:email_alias": "hello@maxivanov.io",
+      "phone_number_verified": "false",
+      "phone_number": "...",
+      "given_name": "Max",
+      "family_name": "Ivanov",
+      "email": "hello@maxivanov.io"
+    }
+  }
+}

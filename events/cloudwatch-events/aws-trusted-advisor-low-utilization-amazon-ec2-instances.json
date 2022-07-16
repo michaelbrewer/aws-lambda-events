@@ -1,0 +1,40 @@
+{
+    "version": "0",
+    "id": "1234abcd-ab12-123a-123a-1234567890ab",
+    "detail-type": "Trusted Advisor Check Item Refresh Notification",
+    "source": "aws.trustedadvisor",
+    "account": "123456789012",
+    "time": "2018-01-12T20:07:49Z",
+    "region": "us-east-2",
+    "resources": [],
+    "detail": {
+      "check-name": "Low Utilization Amazon EC2 Instances",
+      "check-item-detail": {
+        "Day 1": "0.1%  0.00MB",
+        "Day 2": "0.1%  0.00MB",
+        "Day 3": "0.1%  0.00MB",
+        "Region/AZ": "ca-central-1a",
+        "Estimated Monthly Savings": "$9.22",
+        "14-Day Average CPU Utilization": "0.1%",
+        "Day 14": "0.1%  0.00MB",
+        "Day 13": "0.1%  0.00MB",
+        "Day 12": "0.1%  0.00MB",
+        "Day 11": "0.1%  0.00MB",
+        "Day 10": "0.1%  0.00MB",
+        "14-Day Average Network I/O": "0.00MB",
+        "Number of Days Low Utilization": "14 days",
+        "Instance Type": "t2.micro",
+        "Instance ID": "i-01234567890abcdef",
+        "Day 8": "0.1%  0.00MB",
+        "Instance Name": null,
+        "Day 9": "0.1%  0.00MB",
+        "Day 4": "0.1%  0.00MB",
+        "Day 5": "0.1%  0.00MB",
+        "Day 6": "0.1%  0.00MB",
+        "Day 7": "0.1%  0.00MB"
+      },
+      "status": "WARN",
+      "resource_id": "arn:aws:ec2:ca-central-1:123456789012:instance/i-01234567890abcdef",
+      "uuid": "aa12345f-55c7-498e-b7ac-123456789012"
+    }
+  }

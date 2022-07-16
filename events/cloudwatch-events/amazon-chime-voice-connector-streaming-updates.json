@@ -1,0 +1,27 @@
+{
+    "version": "0",
+    "id": "12345678-1234-1234-1234-111122223333",
+    "detail-type": "Chime VoiceConnector Streaming Status",
+    "source": "aws.chime",
+    "account": "111122223333",
+    "time": "yyyy-mm-ddThh:mm:ssZ",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+        "callId": "1112-2222-4333",
+        "updateHeaders": {
+            "from": "\"John\" <sip:+12065550100@10.24.34.0>;;tag=abcdefg",
+            "to": "<sip:+13605550199@abcdef1ghij2klmno3pqr4.voiceconnector.chime.aws:5060>",
+            "call-id": "1112-2222-4333",
+            "cseq": "101 INVITE",
+            "contact": "<sip:user@10.24.34.0:6090>",
+            "content-type": "application/sdp",
+            "content-length": "246"
+        },
+        "siprecMetadata": "<&xml version=\"1.0\" encoding=\"UTF-8\"&>\r\n<recording xmlns='urn:ietf:params:xml:ns:recording:1'>",
+        "streamingStatus": "UPDATED",
+        "transactionId": "12345678-1234-1234",
+        "version": "0",
+        "voiceConnectorId": "abcdef1ghij2klmno3pqr4"
+    }
+}

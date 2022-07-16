@@ -1,0 +1,47 @@
+{
+    "version": "0",
+    "id": "...",
+    "detail-type": "Config Rules Compliance Change",
+    "source": "aws.config",
+    "account": "...",
+    "time": "2019-08-13T13:17:14Z",
+    "region": "eu-central-1",
+    "resources": [],
+    "detail": {
+      "resourceId": "terraform-20190813125905278500000001",
+      "awsRegion": "eu-central-1",
+      "awsAccountId": "...",
+      "configRuleName": "config-rule-f6815e21a2b9a86e",
+      "recordVersion": "1.0",
+      "configRuleARN": "...",
+      "messageType": "ComplianceChangeNotification",
+      "newEvaluationResult": {
+        "evaluationResultIdentifier": {
+          "evaluationResultQualifier": {
+            "configRuleName": "config-rule-f6815e21a2b9a86e",
+            "resourceType": "AWS::S3::Bucket",
+            "resourceId": "terraform-20190813125905278500000001"
+          },
+          "orderingTimestamp": "2019-08-13T13:16:58.303Z"
+        },
+        "complianceType": "COMPLIANT",
+        "resultRecordedTime": "2019-08-13T13:17:13.829Z",
+        "configRuleInvokedTime": "2019-08-13T13:17:13.653Z"
+      },
+      "oldEvaluationResult": {
+        "evaluationResultIdentifier": {
+          "evaluationResultQualifier": {
+            "configRuleName": "config-rule-f6815e21a2b9a86e",
+            "resourceType": "AWS::S3::Bucket",
+            "resourceId": "terraform-20190813125905278500000001"
+          },
+          "orderingTimestamp": "2019-08-13T13:04:23.345Z"
+        },
+        "complianceType": "NON_COMPLIANT",
+        "resultRecordedTime": "2019-08-13T13:04:38.860Z",
+        "configRuleInvokedTime": "2019-08-13T13:04:38.689Z"
+      },
+      "notificationCreationTime": "2019-08-13T13:17:14.527Z",
+      "resourceType": "AWS::S3::Bucket"
+    }
+  }
