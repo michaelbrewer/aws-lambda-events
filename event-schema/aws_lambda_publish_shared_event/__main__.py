@@ -35,14 +35,14 @@ def get_lambda_name(session: boto3.session.Session) -> str:
     # as we support python 3.7
     functions = [f["FunctionName"] for f in response["Functions"]]
     if functions:
-        return pick(functions, f"Select Lambda function ({session.region_name}):")[0]
+        return pick(functions, f"Select Lambda function ({session.region_name}): ")[0][0]
     print(f"No lambdas exist yet in this region: {session.region_name}")
-    return input("Lambda function name:")
+    return input("Lambda function name: ")
 
 
 def get_test_event(list_of_events: List[str]) -> str:
     """Prompt to select which test event to use"""
-    return pick(list_of_events, "Select Event:")[0]
+    return pick(list_of_events, "Select Event: ")[0][0]
 
 
 def create_registry(schemas_client):
