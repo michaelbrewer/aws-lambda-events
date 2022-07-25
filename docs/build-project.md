@@ -47,6 +47,7 @@ const templates = [
   "nodejs12.x/cookiecutter-quick-start-sqs",
   "nodejs12.x/cookiecutter-quick-start-web",
   "nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
+  "nodejs14.x/cookiecutter-aws-sam-hello-powertools-typescript-nodejs",
   "nodejs14.x/cookiecutter-quick-start-cloudwatch-events",
   "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
   "nodejs14.x/cookiecutter-quick-start-from-scratch",
@@ -55,6 +56,16 @@ const templates = [
   "nodejs14.x/cookiecutter-quick-start-sqs",
   "nodejs14.x/cookiecutter-aws-sam-hello-typescript-nodejs",
   "nodejs14.x/cookiecutter-quick-start-web",
+  "nodejs16.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+  "nodejs16.x/cookiecutter-aws-sam-hello-nodejs",
+  "nodejs16.x/cookiecutter-aws-sam-hello-typescript-nodejs",
+  "nodejs16.x/cookiecutter-aws-sam-step-functions-sample-app",
+  "nodejs16.x/cookiecutter-quick-start-cloudwatch-events",
+  "nodejs16.x/cookiecutter-quick-start-from-scratch",
+  "nodejs16.x/cookiecutter-quick-start-s3",
+  "nodejs16.x/cookiecutter-quick-start-sns",
+  "nodejs16.x/cookiecutter-quick-start-sqs",
+  "nodejs16.x/cookiecutter-quick-start-web",
   "java8.al2/cookiecutter-aws-sam-hello-java-maven",
   "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
   "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-maven",
@@ -95,7 +106,11 @@ const templates = [
   "dotnet6/cookiecutter-aws-sam-hello-dotnet",
   "dotnet6/cookiecutter-aws-sam-hello-powershell",
   "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app",
+  "dotnet6/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
+  "dotnet6/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
   "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+  "dotnet6/cookiecutter-aws-sam-quick-start-web-dotnet",
+  "dotnet6/cookiecutter-aws-sam-quickstart-sns-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-s3-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
@@ -104,7 +119,11 @@ const templates = [
   "dotnetcore3.1/cookiecutter-aws-sam-hello-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
-  "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet"
+  "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+  "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-gradle",
+  "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-maven",
+  "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-gradle",
+  "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-maven"
 ];
 function runtimeChange() {
   const form = document.getElementById('buildSamProjectForm');
@@ -198,10 +217,12 @@ AWS SAM templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
     <option value="java11">Java 11</option>
     <option value="nodejs12.x">Node 12</option>
     <option value="nodejs14.x">Node 14</option>
+    <option value="nodejs16.x">Node 16</option>
     <option value="python3.7">Python 3.7</option>
     <option value="python3.8">Python 3.8</option>
     <option value="python3.9" selected>Python 3.9</option>
     <option value="ruby2.7">Ruby 2.7</option>
+    <option value="provided.al2">Provided</option>
   </select>
   <br/>
   <label for="projectTemplate">Template :</label>
