@@ -89,6 +89,14 @@ and see the official docs on [AWS Lambda Shareable test events](https://docs.aws
 
 ## Recent changes
 
+### 0.17.0
+
+- Bump deps for pick to 1.4.0
+
+### 0.16.0
+
+- Bump deps for pick to 1.3.0
+
 ### 0.15.0
 
 - Add `--filtered-list` argument to `generate-test-event`
