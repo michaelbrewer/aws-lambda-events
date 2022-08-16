@@ -8,7 +8,7 @@ Elastic Load Balancing invokes your Lambda function synchronously with an event 
 - The maximum size of the request body that you can send to a Lambda function is 1 MB. For related size limits, see HTTP header limits.
 - The maximum size of the response JSON that the Lambda function can send is 1 MB.
 - WebSockets are not supported. Upgrade requests are rejected with an HTTP 400 code.
-- Local Zones are not supported
+- Local Zones are not supported.
 
 ???+ Tip "Tip: Reasons to use Application Load Balancers over API Gateway"
     - Nearly unlimited tps vs 10,000 requests per second (RPS) (Can be increased)
