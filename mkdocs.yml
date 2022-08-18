@@ -2,7 +2,7 @@ site_name: AWS Lambda Events
 site_description: AWS Lambda Events
 site_author: Michael Brewer
 repo_name: aws-lambda-events
-repo_url: https://github.com/aphextwinz/aws-lambda-events
+repo_url: https://github.com/michaelbrewer/aws-lambda-events
 edit_uri: edit/main/docs/
 
 theme:
