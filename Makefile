@@ -16,3 +16,6 @@ clean:
 	pipenv --rm
 
 pr: build
+
+update:
+	pipenv update
