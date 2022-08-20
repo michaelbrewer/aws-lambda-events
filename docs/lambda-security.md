@@ -1,13 +1,49 @@
 # Lambda layers of defense
 
-1. "Data protection in AWS Lambda" - (Encryption in transit / Encryption at rest)
-2. "Identity and access management for Lambda" - least priviledge
-3. "Compliance validation for AWS Lambda" (SOC, PCI, FedRAMP, HIPAA etc ...)
-4. "Resilience in AWS Lambda"
-5. "Managed runtimes"
-6. "Limiting concurrency" / "Throttling"
-7. "Authentication"
-8. "Input / Output validation"
-9. "VPC"
-10. "Observability" (Logging, Metrics, Tracing)
-11. "Event sourcing"
+> DRAFT: Work in progress
+
+You are responsible for maintaining control over your content that is hosted on this infrastructure.
+
+## Ideas to be documented
+
+- [Data protection in AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/security-dataprotection.html){target="_blank"}
+    - `Encryption in transit` - Lambda API endpoints only support secure connections over HTTPS.
+    - `Encryption at rest` - On a per-function basis, you can configure Lambda to use a [customer managed key to encrypt your environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption){target="_blank"}. Conterary to the AWS docs, i would not recommended using environments variables for secrets, but rather secret manager (or parameter store).
+    Lambda always encrypts files that you upload to Lambda, including deployment packages and layer archives. Amazon CloudWatch Logs and AWS X-Ray also encrypt data by default.
+- "Identity and access management for Lambda" - least priviledge
+- "Compliance validation for AWS Lambda"
+    - SOC1, SOC2, SOC3, PCI, FedRAMP, HIPAA, ISMAP etc..
+    - [AWS Services in Scope by Compliance Program](https://aws.amazon.com/compliance/services-in-scope/)
+    - [AWS Artifact](https://aws.amazon.com/artifact/)
+- "Resilience in AWS Lambda"
+- "Managed runtimes"
+- "Limiting concurrency" / "Throttling"
+- "Authentication"
+- "Input / Output validation"
+    - [Enable request validation in API Gateway
+](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
+- "VPC"
+    - [Configuring a Lambda function to access resources in a VPC](https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html)
+- "Observability" (Logging, Metrics, Tracing)
+- "Event sourcing" - Locking down the event source
+- Patching library dependencies
+    - [Snyk – Commercial Vulnerability DB and Dependency Check](https://snyk.io/)
+- Static code analysis (code complexity, code style, code quality, security, etc ...)
+- Lambda versioning
+- Idempotency
+- Code Signing
+    - [Code Signing, a Trust and Integrity Control for AWS Lambda](https://aws.amazon.com/blogs/aws/new-code-signing-a-trust-and-integrity-control-for-aws-lambda/)
+- Secrets management
+    - No hard coding of secrets and use SST where possible
+    - [Monitor AWS Secrets Manager secrets](https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html)
+    - [Deploy Serverless Applications with AWS Lambda and API Gateway](https://learn.hashicorp.com/tutorials/terraform/lambda-api-gateway)
+- Limit function to single use case, keep code simple and small
+- Validate input / output via Jmepath / Pydantic
+
+## Resources
+
+- [Security Overview of AWS Lambda](https://docs.aws.amazon.com/whitepapers/latest/security-overview-aws-lambda/security-overview-aws-lambda.pdf){target="_blank"}
+[Security pillar](https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/security-pillar.html)
+- [aws-serverless-security-workshop](https://github.com/aws-samples/aws-serverless-security-workshop)
+- [Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
+- [lumigo - AWS Lambda Security](https://lumigo.io/aws-lambda-deployment/aws-lambda-security/)
