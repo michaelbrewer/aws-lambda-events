@@ -76,7 +76,7 @@ flowchart LR
 ## Resources
 
 - [Security Overview of AWS Lambda](https://docs.aws.amazon.com/whitepapers/latest/security-overview-aws-lambda/security-overview-aws-lambda.pdf){target="_blank"}
-[Security pillar](https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/security-pillar.html)
+- [Security pillar](https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/security-pillar.html)
 - [aws-serverless-security-workshop](https://github.com/aws-samples/aws-serverless-security-workshop)
 - [Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
 - [lumigo - AWS Lambda Security](https://lumigo.io/aws-lambda-deployment/aws-lambda-security/)
