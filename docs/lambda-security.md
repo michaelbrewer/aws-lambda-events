@@ -30,6 +30,9 @@ flowchart LR
 
 ### Asynch flow (Dynamodb)
 
+- Updates can be filtered
+- Updates can be sent to EventBridge to further filtering
+
 ```mermaid
 flowchart LR
     Client --> id1(Event Source) --> id5(Changes) <--> id2(Lambda Service) <--> id3(Lambda Function) <--> id4(Down Stream)
