@@ -8,15 +8,15 @@ You are responsible for maintaining control over your content that is hosted on 
 
 ### Synch flow (API GW, AppSync)
 
-```mermaid
-flowchart LR
-    Client <--> id1(Event Source) <--> id2(Lambda Service) <--> id3(Lambda Function) <--> id4(Down Stream)
-```
-
 - Event source authorize requests
 - Event source can be linked to AWS Shield, AWS WAF or CloudFront
 - Event source can add usage limits and throttling
 - Event source can include request validation
+
+```mermaid
+flowchart LR
+    Client <--> id1(Event Source) <--> id2(Lambda Service) <--> id3(Lambda Function) <--> id4(Down Stream)
+```
 
 ### Asynch flow (S3, EventBridge)
 
