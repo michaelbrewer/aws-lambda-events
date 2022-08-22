@@ -50,9 +50,11 @@ flowchart LR
 - "Managed runtimes"
 - "Limiting concurrency" / "Throttling"
 - "Authentication"
+    - JWT, Cognito etc..
 - "Input / Output validation"
-    - [Enable request validation in API Gateway
-](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
+    - Docs [Enable request validation in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
+    - Example [API Gateway data validation](https://serverlessland.com/patterns/apigw-data-validation)
+    - Using framework code like Pydantic or JMESchema
 - "VPC"
     - [Configuring a Lambda function to access resources in a VPC](https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html)
 - "Observability" (Logging, Metrics, Tracing)
@@ -61,7 +63,7 @@ flowchart LR
     - [Snyk – Commercial Vulnerability DB and Dependency Check](https://snyk.io/)
 - Static code analysis (code complexity, code style, code quality, security, etc ...)
 - Lambda versioning
-- Idempotency
+- Idempotency (best practices)
 - Code Signing
     - [Code Signing, a Trust and Integrity Control for AWS Lambda](https://aws.amazon.com/blogs/aws/new-code-signing-a-trust-and-integrity-control-for-aws-lambda/)
 - Secrets management
