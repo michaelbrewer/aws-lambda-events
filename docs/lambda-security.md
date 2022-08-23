@@ -15,6 +15,31 @@ You are responsible for maintaining control over your content that is hosted on 
 - Event source can be within a [VPC](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html)
 - Event source can limit sourceIp or VPC [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html)
 
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "execute-api:Invoke",
+            "Resource": "arn:aws:execute-api:region:account-id:*"
+        },
+        {
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "execute-api:Invoke",
+            "Resource": "arn:aws:execute-api:region:account-id:*",
+            "Condition": {
+                "NotIpAddress": {
+                    "aws:SourceIp": "123.4.5.6/24"
+                }
+            }
+        }
+    ]
+}
+```
+
 ```mermaid
 flowchart LR
     Client <--> id1(Event Source) <--> id2(Lambda Service) <--> id3(Lambda Function) <--> id4(Down Stream)
@@ -49,6 +74,7 @@ flowchart LR
 
 - "Identity and access management for Lambda" - least priviledge
     - [Identity and access management for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/security-iam.html)
+    - [IAM condition key, lambda:SourceFunctionArn](https://aws.amazon.com/about-aws/whats-new/2022/07/aws-lambda-iam-condition-key-lambda-source-function-arn/) - "This capability allows you to implement advanced security controls for the AWS API calls taken by your Lambda function code. For example, you can write conditional policies using the new lambda:SourceFunctionArn together with existing condition keys such as aws:SourceIP or aws:SourceVPC to grant permissions to AWS API calls only if those originate from inside the customer’s VPC."
 
 - "Compliance validation for AWS Lambda"
     - SOC1, SOC2, SOC3, PCI, FedRAMP, HIPAA, ISMAP etc..
