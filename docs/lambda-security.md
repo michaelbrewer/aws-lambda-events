@@ -75,6 +75,26 @@ flowchart LR
 - "Identity and access management for Lambda" - least priviledge
     - [Identity and access management for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/security-iam.html)
     - [IAM condition key, lambda:SourceFunctionArn](https://aws.amazon.com/about-aws/whats-new/2022/07/aws-lambda-iam-condition-key-lambda-source-function-arn/) - "This capability allows you to implement advanced security controls for the AWS API calls taken by your Lambda function code. For example, you can write conditional policies using the new lambda:SourceFunctionArn together with existing condition keys such as aws:SourceIP or aws:SourceVPC to grant permissions to AWS API calls only if those originate from inside the customer’s VPC."
+    - [Working with Lambda execution environment credentials](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html?icmpid=docs_lambda_rss#permissions-executionrole-source-function-arn)
+
+```json5
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ExampleSourceFunctionArn",
+            "Effect": "Allow",
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::lambda_bucket/*",
+            "Condition": {
+                "ArnEquals": {
+                    "lambda:SourceFunctionArn": "arn:aws:lambda:us-east-1:123456789012:function:source_lambda"
+                }
+            }
+        }
+    ]
+}
+```
 
 - "Compliance validation for AWS Lambda"
     - SOC1, SOC2, SOC3, PCI, FedRAMP, HIPAA, ISMAP etc..
