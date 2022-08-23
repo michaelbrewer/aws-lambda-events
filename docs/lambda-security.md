@@ -71,7 +71,6 @@ flowchart LR
 - "Input / Output validation"
     - Docs [Enable request validation in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
     - Example [API Gateway data validation](https://serverlessland.com/patterns/apigw-data-validation)
-    - Using framework code like Pydantic or JMESchema
 
 - "VPC"
     - [Configuring a Lambda function to access resources in a VPC](https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html)
@@ -115,8 +114,10 @@ flowchart LR
 
 - Static code analysis (code complexity, code style, code quality, security, etc ...)
 
-- Lambda versioning
+- Lambda versioning and aliases
     - Can help enable blue/green deployments
+    - [Perform a canary-based deployment using the blue/green strategy and AWS Lambda](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/perform-a-canary-based-deployment-using-the-blue-green-strategy-and-aws-lambda.html)
+    - [Implementing Canary Deployments of AWS Lambda Functions with Alias Traffic Shifting](https://aws.amazon.com/blogs/compute/implementing-canary-deployments-of-aws-lambda-functions-with-alias-traffic-shifting/)
 
 - Idempotency (best practices)
 
@@ -131,6 +132,7 @@ flowchart LR
 - Limit function to single use case, keep code simple and small
 
 - Validate input / output via Jmepath / Pydantic
+    - Using framework code like Pydantic or JMESchema
 
 ## Resources
 
