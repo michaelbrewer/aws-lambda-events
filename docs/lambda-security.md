@@ -8,10 +8,12 @@ You are responsible for maintaining control over your content that is hosted on 
 
 ### Synch flow (API GW, AppSync)
 
-- Event source authorize requests
-- Event source can be linked to AWS Shield, AWS WAF or CloudFront
-- Event source can add usage limits and throttling
+- Event source can authorize requests (cognito or oidc or jwt or custom or ssl client auth)
+- Event source can be linked to a waf (AWS Shield, AWS WAF) or cdn (CloudFront)
+- Event source can add usage limits and throttling per api client per endpoint
 - Event source can include request validation
+- Event source can be within a [VPC](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html)
+- Event source can limit sourceIp or VPC [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html)
 
 ```mermaid
 flowchart LR
@@ -45,6 +47,7 @@ flowchart LR
     - `Encryption at rest` - On a per-function basis, you can configure Lambda to use a [customer managed key to encrypt your environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption){target="_blank"}. Conterary to the AWS docs, i would not recommended using environments variables for secrets, but rather secret manager (or parameter store).
     Lambda always encrypts files that you upload to Lambda, including deployment packages and layer archives. Amazon CloudWatch Logs and AWS X-Ray also encrypt data by default.
 - "Identity and access management for Lambda" - least priviledge
+    - [Identity and access management for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/security-iam.html)
 - "Compliance validation for AWS Lambda"
     - SOC1, SOC2, SOC3, PCI, FedRAMP, HIPAA, ISMAP etc..
     - [AWS Services in Scope by Compliance Program](https://aws.amazon.com/compliance/services-in-scope/)
@@ -52,6 +55,8 @@ flowchart LR
 - "Resilience in AWS Lambda"
 - "Managed runtimes"
 - "Limiting concurrency" / "Throttling"
+    - [Creating and using usage plans with API keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html)
+    - [Lambda function scaling](https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html)
 - "Authentication"
     - JWT, Cognito etc..
 - "Input / Output validation"
