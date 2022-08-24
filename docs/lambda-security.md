@@ -8,23 +8,21 @@ You are responsible for maintaining control over your content that is hosted on 
 
 ### Synch flow (API GW, AppSync)
 
-- Event source can authorize requests 
+- Event source can authorize requests
     - [rest/http - Standard AWS IAM roles and policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-access-control-iam.html){target="_blank"}
-    - [cognito](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html)
+    - [rest - cognito](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html)
     - [http - jwt](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html){target="_blank"}
-    - [rest/http - custom](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html){target="_blank"}
-    - [IAM tags to control access](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging-iam-policy.html))
+    - [graphql - oidc](https://docs.aws.amazon.com/appsync/latest/devguide/security-authz.html#openid-connect-authorization)
+    - [rest/http/graphql - custom](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html){target="_blank"}
+    - [rest - IAM tags to control access](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-tagging-iam-policy.html))
+    - [rest/http - mutual TLS authentication](https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-mutual-tls.html)
+    - [rest/graphql - x-api-key](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-restapi.html)
+
+- Event source can only be available within a [VPC](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html)
 
 - Event source can limit by sourceIp or VPC 
     - [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html)
 
-- Event source can be linked to a waf (AWS Shield, AWS WAF) or cdn (CloudFront)
-
-- Event source can add usage limits and throttling per api client per endpoint
-
-- Event source can include request validation
-
-- Event source can only be available within a [VPC](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html)
 
 ```json
 {
@@ -50,6 +48,12 @@ You are responsible for maintaining control over your content that is hosted on 
     ]
 }
 ```
+
+- Event source can be linked to a waf (AWS Shield, [AWS WAF](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-aws-waf.html)) or cdn (CloudFront)
+
+- Event source can add usage limits and [throttling](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html) per api client per endpoint
+
+- Event source can include request validation
 
 ```mermaid
 flowchart LR
