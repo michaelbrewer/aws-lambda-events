@@ -117,7 +117,9 @@ flowchart LR
     - [AWS Artifact](https://aws.amazon.com/artifact/)
 
 - [Resilience in AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/security-resilience.html){target="_blank"}
-    - AWS Lambda is always multi-az within a region
+    - High availability - AWS Lambda is always multi-az within a region
+    - Retries - Async execution have built in retries (Ensure lambdas has idempotency support)
+    - Dead-letter queue or distinations allow for failed async executions to be recovered
 
 - "Managed runtimes"
     - AWS will patch a managed runtime like python3.9 or nodejs16.x
@@ -127,7 +129,7 @@ flowchart LR
     - [Lambda function scaling](https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html)
 
 - "Authentication"
-    - JWT, Cognito etc..
+    - JWT, Cognito, OIDC, IAM should be in place where possible.
 
 - "Input / Output validation"
     - Docs [Enable request validation in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
