@@ -129,7 +129,8 @@ flowchart LR
     - [Lambda function scaling](https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html)
 
 - "Authentication"
-    - JWT, Cognito, OIDC, IAM should be in place where possible.
+    - JWT, Cognito, OIDC, IAM should be in place where applicable.
+    - All calls should be authorized (using x-api-key can allow for public apis to have throttling and other controls)
 
 - "Input / Output validation"
     - Docs [Enable request validation in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
