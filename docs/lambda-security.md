@@ -116,7 +116,7 @@ flowchart LR
     - [AWS Services in Scope by Compliance Program](https://aws.amazon.com/compliance/services-in-scope/)
     - [AWS Artifact](https://aws.amazon.com/artifact/)
 
-- "Resilience in AWS Lambda"
+- [Resilience in AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/security-resilience.html){target="_blank"}
     - AWS Lambda is always multi-az within a region
 
 - "Managed runtimes"
