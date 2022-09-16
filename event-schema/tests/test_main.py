@@ -159,3 +159,11 @@ def test_create_or_update_schema_not_found():
     stubber.activate()
 
     __main__.update_schema(schemas_client, "foo", "ses/ses.json", "ses")
+
+def test_show_version_number(capsys):
+    sys.argv = [SCRIPT_NAME, "--version"]
+
+    __main__.main()
+
+    captured = capsys.readouterr()
+    assert captured.out.startswith("v1.0")

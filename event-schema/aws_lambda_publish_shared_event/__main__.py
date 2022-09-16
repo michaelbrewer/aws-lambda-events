@@ -20,6 +20,7 @@ def parse_args(args: List[str]) -> argparse.Namespace:
     parser.add_argument("-n", "--event-name", dest="event_name", help="Event name")
     parser.add_argument("-l", "--list", dest="list", help="List of supported event sources", action="store_true")
     parser.add_argument("--filtered-list", dest="filtered_list", help="Filtered list")
+    parser.add_argument("--version", dest="show_version", help="Show version number", action="store_true")
     return parser.parse_args(args)
 
 
@@ -115,6 +116,9 @@ def generate_new_schema_content(event_name: str, event: Dict) -> str:
 
 def main():
     args = parse_args(sys.argv[1:])
+    if args.show_version:
+        print("v1.0")
+        return True
     if handle_list_arguments(args):
         return
 
