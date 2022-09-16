@@ -117,7 +117,7 @@ def generate_new_schema_content(event_name: str, event: Dict) -> str:
 def main():
     args = parse_args(sys.argv[1:])
     if args.show_version:
-        print("v1.0")
+        print("0.18.0")
         return True
     if handle_list_arguments(args):
         return

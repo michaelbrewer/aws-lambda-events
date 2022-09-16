@@ -89,6 +89,11 @@ and see the official docs on [AWS Lambda Shareable test events](https://docs.aws
 
 ## Recent changes
 
+### 0.18.0
+
+- Bump deps
+- Version command
+
 ### 0.17.0
 
 - Bump deps for pick to 1.4.0
