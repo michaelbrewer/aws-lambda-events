@@ -67,9 +67,10 @@ nav:
   - Overview:
     - index.md
     - lambda-resources.md
+    - lambda-invoke-types.md
     - lambda-context.md
-    - lambda-security.md
     - lambda-lifecycle.md
+    - lambda-security.md
   - AWS Lambda Events:
     - http-api.md
     - http-api-custom-authorizer.md

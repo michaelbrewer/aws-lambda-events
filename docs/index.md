@@ -21,64 +21,42 @@ This site tries to collect as many resources on AWS Lambda events from schema, e
 
 Directory of AWS Lambda events sources and resources
 
-- [X] [API Gateway - Http API](./http-api.md) - synchronously invokes
-- [X] [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
-- [x] [API Gateway - Rest API](./rest-api.md) - synchronously invokes
-- [X] [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md) - synchronously invokes
-- [X] [AWS Lambda Function URLs](./function-url.md) - synchronously invokes
-- [ ] [Alexa Skills](./alexa-skills-kit.md) - synchronously invokes
-- [ ] [Alexa Smart Home](./alexa-smart-home.md) - synchronously invokes
-- [X] [AppSync - Resolver](./appsync-resolver.md) - synchronously invokes
-- [X] [AppSync - Custom Authorizer](./appsync-authorizer.md) - synchronously invokes
-- [X] [Amazon EventBridge - CloudWatch Event](./event-bridge.md) - asynchronously invokes
-- [X] [CloudWatch Logs](./cloudwatch-logs.md) - asynchronously invokes
-- [X] [CloudFormation - Custom Resource](./cloudformation.md) - asynchronously invokes
-- [X] [CloudFront - Lambda@Edge](./cloudfront-lambda-edge.md) - synchronously invokes
-- [X] [CloudFront - CloudFront Functions](./cloudfront-function.md) - synchronously invokes
-- [X] [CodeCommit](./code-commit.md) - asynchronously invokes
-- [X] [CodePipeline - Job](./code-pipeline-job.md) - asynchronously invokes
-- [X] [Amazon Cognito - User Pool](./cognito-user-pool.md) - synchronously invokes
-- [X] [AWS Cognito - Sync](./cognito-events.md) - synchronously invokes
-- [X] [AWS Config](./config.md) - asynchronously invokes
-- [X] [Amazon Connect](./connect.md) - synchronously invokes
-- [X] [Amazon DynamoDB](./dynamodb.md) - poll-based invokes (synchronously)
-- [X] [Application Load Balancer](./alb.md) - synchronously invokes
-- [ ] [AWS IoT](./iot.md) - asynchronously invokes
-- [ ] [AWS IoT - Events](./iot-events.md) - asynchronously invokes
-- [X] [Apache Kafka](./apache-kafka.md) - poll-based invokes (synchronously)
-- [X] [Amazon Kinesis - Data Firehose](./kinesis-firehose.md) - poll-based invokes (synchronously)
-- [X] [Amazon Kinesis - Data Streams](./kinesis-streams.md) - poll-based invokes (synchronously)
-- [X] [Amazon Lex](./lex.md) - synchronously invokes
-- [X] [Amazon Lex V2](./lex-v2.md) - synchronously invokes
-- [X] [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ - poll-based invokes (synchronously)
-- [X] [Amazon MSK](./amazon-msk.md) - poll-based invokes (synchronously)
-- [X] [S3 - Notifications](./s3.md) - asynchronously invokes
-- [X] [S3 - Batch Operations](./s3-batch.md) - synchronously invokes
-- [X] [S3 - Object Lambda](./s3-object-lambda.md) - synchronously invokes
-- [X] [Secrets Manager](./secrets-manager.md) - synchronously invokes
-- [X] [Amazon SES](./ses.md) - configurable as asynchronously invokes or synchronously invokes
-- [X] [Amazon SNS](./sns.md) - asynchronously invokes
-- [X] [Amazon SQS](./sqs.md) - asynchronously invokes
-- [X] [Amazon WorkMail](./work-mail.md) - configurable as asynchronously invokes or synchronously invokes
-
-## Invocation Types
-
-![Lambda invokes types](./media/invoke-type-light.png#gh-light-mode-only)
-![Lambda invokes types](./media/invoke-type-dark.png#gh-dark-mode-only)
-
-### Synchronous Invokes
-
-Synchronous invocations are the most straight forward way to invoke your Lambda functions. In this model, your functions execute immediately when you perform the Lambda Invoke API call. For testing, when invoking directly use invoke type of `RequestResponse`.
-
-### Asynchronous Invokes
-
-Asynchronous invokes place your invoke request in Lambda service queue and we process the requests as they arrive. For testing, when invoking directly use invoke type of `Event`.
-
-???+ NOTE
-    During asynchronous invokes, the Lambda context field `clientContext` will not be populated.
-
-### Poll-Based Invokes
-
-AWS will manage the poller on your behalf and perform Synchronous invokes of your function with this type of integration. The retry behavior for this model is based on data expiration in the data source.
-
-- [Understanding the Different Ways to Invoke Lambda Functions](https://aws.amazon.com/blogs/architecture/understanding-the-different-ways-to-invoke-lambda-functions/){target="_blank"}
+- [API Gateway - Http API](./http-api.md) - synchronously invokes
+- [API Gateway - HTTP API - Custom Authorizer](./http-api-custom-authorizer.md) - synchronously invokes
+- [API Gateway - Rest API](./rest-api.md) - synchronously invokes
+- [API Gateway - Rest API - Custom Authorizer](./rest-api-custom-authorizer.md) - synchronously invokes
+- [AWS Lambda Function URLs](./function-url.md) - synchronously invokes
+- [Alexa Skills](./alexa-skills-kit.md) - synchronously invokes
+- [Alexa Smart Home](./alexa-smart-home.md) - synchronously invokes
+- [AppSync - Resolver](./appsync-resolver.md) - synchronously invokes
+- [AppSync - Custom Authorizer](./appsync-authorizer.md) - synchronously invokes
+- [Amazon EventBridge - CloudWatch Event](./event-bridge.md) - asynchronously invokes
+- [CloudWatch Logs](./cloudwatch-logs.md) - asynchronously invokes
+- [CloudFormation - Custom Resource](./cloudformation.md) - asynchronously invokes
+- [CloudFront - Lambda@Edge](./cloudfront-lambda-edge.md) - synchronously invokes
+- [CloudFront - CloudFront Functions](./cloudfront-function.md) - synchronously invokes
+- [CodeCommit](./code-commit.md) - asynchronously invokes
+- [CodePipeline - Job](./code-pipeline-job.md) - asynchronously invokes
+- [Amazon Cognito - User Pool](./cognito-user-pool.md) - synchronously invokes
+- [AWS Cognito - Sync](./cognito-events.md) - synchronously invokes
+- [AWS Config](./config.md) - asynchronously invokes
+- [Amazon Connect](./connect.md) - synchronously invokes
+- [Amazon DynamoDB](./dynamodb.md) - poll-based invokes (synchronously)
+- [Application Load Balancer](./alb.md) - synchronously invokes
+- [AWS IoT](./iot.md) - asynchronously invokes
+- [AWS IoT - Events](./iot-events.md) - asynchronously invokes
+- [Apache Kafka](./apache-kafka.md) - poll-based invokes (synchronously)
+- [Amazon Kinesis - Data Firehose](./kinesis-firehose.md) - poll-based invokes (synchronously)
+- [Amazon Kinesis - Data Streams](./kinesis-streams.md) - poll-based invokes (synchronously)
+- [Amazon Lex](./lex.md) - synchronously invokes
+- [Amazon Lex V2](./lex-v2.md) - synchronously invokes
+- [Amazon MQ](./mq.md) - Active MQ and Rabbit MQ - poll-based invokes (synchronously)
+- [Amazon MSK](./amazon-msk.md) - poll-based invokes (synchronously)
+- [S3 - Notifications](./s3.md) - asynchronously invokes
+- [S3 - Batch Operations](./s3-batch.md) - synchronously invokes
+- [S3 - Object Lambda](./s3-object-lambda.md) - synchronously invokes
+- [Secrets Manager](./secrets-manager.md) - synchronously invokes
+- [Amazon SES](./ses.md) - configurable as asynchronously invokes or synchronously invokes
+- [Amazon SNS](./sns.md) - asynchronously invokes
+- [Amazon SQS](./sqs.md) - asynchronously invokes
+- [Amazon WorkMail](./work-mail.md) - configurable as asynchronously invokes or synchronously invokes

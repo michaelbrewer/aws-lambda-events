@@ -1,10 +1,12 @@
-# Lambda layers of defense
+# Lambda Layers of Defense
 
-> DRAFT: Methods, Ideas, Practices to improve your Lambda's security / reliability
+> **DRAFT**: Methods, Ideas, Practices to improve your Lambda's security / reliability
 
 You are responsible for maintaining control over your content that is hosted on this infrastructure.
 
 ## Event Sources
+
+You can protect your lambda handles at the event source level, and avoid lambda invokation where possible.
 
 ### Synch flow (API GW, AppSync)
 
@@ -22,7 +24,6 @@ You are responsible for maintaining control over your content that is hosted on 
 
 - Event source can limit by sourceIp or VPC 
     - [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html)
-
 
 ```json
 {
