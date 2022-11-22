@@ -24,7 +24,7 @@ install: build
 	python3 setup.py install
 
 publish: build
-	poetry run twine upload dist/*
+	poetry run twine upload --repository lambda-events dist/*
 
 test: build
 	poetry run pytest --cov=aws_lambda_publish_shared_event --cov-report=xml
