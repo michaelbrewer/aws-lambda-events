@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setuptools.setup(
     name="aws-lambda-publish-shared-event",
-    version="0.19.0",
+    version="0.20.0",
     entry_points={
         "console_scripts": [
             "publish-shared-event=aws_lambda_publish_shared_event.__main__:main",
@@ -22,9 +22,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     packages=["aws_lambda_publish_shared_event",  "aws_lambda_publish_shared_event.generate_test_event"],
     install_requires=[
-        "boto3 >= 1.26.1",
-        "botocore >= 1.29.1",
-        "pick >= 2.0.2",
+        "boto3 >= 1.26.15",
+        "botocore >= 1.29.15",
+        "pick >= 2.2.0",
     ],
     python_requires=">=3.7",
     include_package_data=True,

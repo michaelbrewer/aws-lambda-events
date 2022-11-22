@@ -7,13 +7,13 @@ authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-boto3 = "^1.26.1"
-pick = "^2.0.2"
+boto3 = "^1.26.15"
+pick = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 # Build and publish
 setuptools = "^65.5.0"
-wheel = "^0.37.1"
+wheel = "^0.38.4"
 twine = "^4.0.1"
 # Unit testing
 pytest = "^7.2.0"
@@ -23,20 +23,20 @@ isort = "^5.10.1"
 black = "^22.10.0"
 # Linting
 flake8 = "^5.0.4"
-flake8-black = "^0.3.3"
-flake8-builtins = "^2.0.0"
-flake8-comprehensions = "^3.10.0"
+flake8-black = "^0.3.5"
+flake8-builtins = "^2.0.1"
+flake8-comprehensions = "^3.10.1"
 flake8-debugger = "^4.1.2"
-flake8-isort = "^5.0.0"
+flake8-isort = "^5.0.3"
 flake8-variables-names = "^0.0.5"
 flake8-eradicate = "^1.4.0"
-flake8-bugbear = "^22.9.23"
+flake8-bugbear = "^22.10.27"
 # Static analysis
 bandit = "^1.7.4"
 radon = "^5.1.0"
 xenon = "^0.9.0"
 # Typing
-mypy = "^0.982"
+mypy = "^0.991"
 
 [build-system]
 requires = ["setuptools", "wheel", "poetry-core>=1.0.0"]
