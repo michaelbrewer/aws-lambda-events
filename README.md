@@ -12,7 +12,7 @@ Collection of resources and tools on the different request inputs and response o
 
 ## Event Sources Docs
 
-Some of the documented event sources
+Some documented event sources are as follows:
 
 - [API Gateway Rest API](https://lambda.101i.de/rest-api)
 - [API Gateway Rest API Custom Authorizer](https://lambda.101i.de/rest-api-custom-authorizer/)
