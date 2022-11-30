@@ -1,0 +1,9 @@
+
+tasks:
+  - init: make
+
+
+
+vscode:
+  extensions:
+    - ms-vscode.makefile-tools
