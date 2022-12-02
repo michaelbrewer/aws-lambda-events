@@ -1,8 +1,5 @@
-
 tasks:
   - init: make
-
-
 
 vscode:
   extensions:
