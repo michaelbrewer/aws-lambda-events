@@ -7,20 +7,20 @@ authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-boto3 = "^1.26.15"
+boto3 = "^1.26.37"
 pick = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 # Build and publish
-setuptools = "^65.5.0"
+setuptools = "^65.6.3"
 wheel = "^0.38.4"
-twine = "^4.0.1"
+twine = "^4.0.2"
 # Unit testing
 pytest = "^7.2.0"
 pytest-cov = "^4.0.0"
 # Autoformatting
-isort = "^5.10.1"
-black = "^22.10.0"
+isort = "^5.11.4"
+black = "^22.12.0"
 # Linting
 flake8 = "^5.0.4"
 flake8-black = "^0.3.5"
