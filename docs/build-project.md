@@ -73,6 +73,15 @@ const templates = [
   "nodejs16.x/cookiecutter-quick-start-sns",
   "nodejs16.x/cookiecutter-quick-start-sqs",
   "nodejs16.x/cookiecutter-quick-start-web",
+  "nodejs18.x/cookiecutter-aws-sam-hello-nodejs",
+  "nodejs18.x/cookiecutter-aws-sam-hello-typescript-nodejs",
+  "nodejs18.x/cookiecutter-aws-sam-step-functions-sample-app",
+  "nodejs18.x/cookiecutter-quick-start-cloudwatch-events",
+  "nodejs18.x/cookiecutter-quick-start-from-scratch",
+  "nodejs18.x/cookiecutter-quick-start-s3",
+  "nodejs18.x/cookiecutter-quick-start-sns",
+  "nodejs18.x/cookiecutter-quick-start-sqs",
+  "nodejs18.x/cookiecutter-quick-start-web",
   "java8.al2/cookiecutter-aws-sam-hello-java-maven",
   "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
   "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-maven",
@@ -132,10 +141,16 @@ const templates = [
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
   "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+  "provided.al2/go/cookiecutter-aws-sam-eventbridge-hello-golang",
+  "provided.al2/go/cookiecutter-aws-sam-eventbridge-schema-app-golang",
+  "provided.al2/go/cookiecutter-aws-sam-hello-golang-lambda-image",
+  "provided.al2/go/cookiecutter-aws-sam-hello-golang",
+  "provided.al2/go/cookiecutter-aws-sam-hello-step-functions-sample-app",
   "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-gradle",
   "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-maven",
   "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-gradle",
-  "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-maven"
+  "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-maven",
+  "provided.al2/nativeaot/dotnet7/cookiecutter-aws-sam-hello-dotnet"
 ];
 function runtimeChange() {
   const form = document.getElementById('buildSamProjectForm');
@@ -230,6 +245,7 @@ AWS SAM templates used at [aws-sam-cli-app-templates](https://github.com/aws/aws
     <option value="nodejs12.x">Node 12</option>
     <option value="nodejs14.x">Node 14</option>
     <option value="nodejs16.x">Node 16</option>
+    <option value="nodejs18.x">Node 18</option>
     <option value="python3.7">Python 3.7</option>
     <option value="python3.8">Python 3.8</option>
     <option value="python3.9" selected>Python 3.9</option>
