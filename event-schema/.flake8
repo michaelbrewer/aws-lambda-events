@@ -1,5 +1,5 @@
 [flake8]
-exclude = docs, .eggs, setup.py, .aws-sam, .git, dist, *.md, *.yaml, *.txt, *.ini
+exclude = docs, .eggs, setup.py, .aws-sam, .git, dist, *.md, *.yaml, *.txt, *.ini, *.json
 ignore = E203, E266, W503, BLK100, W291, I004
 max-line-length = 120
 max-complexity = 15

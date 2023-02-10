@@ -12,15 +12,15 @@ pick = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 # Build and publish
-setuptools = "^65.6.3"
+setuptools = "^67.2.0"
 wheel = "^0.38.4"
 twine = "^4.0.2"
 # Unit testing
-pytest = "^7.2.0"
+pytest = "^7.2.1"
 pytest-cov = "^4.0.0"
 # Autoformatting
-isort = "^5.11.4"
-black = "^22.12.0"
+isort = "^5.11.5"
+black = "^23.1.0"
 # Linting
 flake8 = "^5.0.4"
 flake8-black = "^0.3.6"
@@ -30,13 +30,13 @@ flake8-debugger = "^4.1.2"
 flake8-isort = "^6.0.0"
 flake8-variables-names = "^0.0.5"
 flake8-eradicate = "^1.4.0"
-flake8-bugbear = "^22.12.6"
+flake8-bugbear = "^23.1.20"
 # Static analysis
 bandit = "^1.7.4"
 radon = "^5.1.0"
 xenon = "^0.9.0"
 # Typing
-mypy = "^0.991"
+mypy = "^1.0.0"
 
 [build-system]
 requires = ["setuptools", "wheel", "poetry-core>=1.0.0"]
