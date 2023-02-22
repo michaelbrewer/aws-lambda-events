@@ -151,11 +151,11 @@
         },
         "gitpython": {
             "hashes": [
-                "sha256:769c2d83e13f5d938b7688479da374c4e3d49f71549aaf462b646db9602ea6f8",
-                "sha256:cd455b0000615c60e286208ba540271af9fe531fa6a87cc590a7298785ab2882"
+                "sha256:8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573",
+                "sha256:f04893614f6aa713a60cbbe1e6a97403ef633103cdd0ef5eb6efe0deb98dbe8d"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==3.1.30"
+            "version": "==3.1.31"
         },
         "idna": {
             "hashes": [
@@ -262,11 +262,11 @@
         },
         "mkdocs-material": {
             "hashes": [
-                "sha256:4da07b1390c6b78844f1566d723dd045572e645f31b108a1b5062fa7d11aa241",
-                "sha256:ff4233e4f4da0c879db0dbcb532a690a3f86f5a66a0cfcce99a124e82a462afb"
+                "sha256:06e51eba6a090de070a3489890cf1e491d52c04c6ff2b06dd4586c6cdd974a3f",
+                "sha256:a62696610899d01df091b4d5ad23f9811f878a1f34307d7cea677baf4854c84f"
             ],
             "index": "pypi",
-            "version": "==9.0.12"
+            "version": "==9.0.13"
         },
         "mkdocs-material-extensions": {
             "hashes": [
