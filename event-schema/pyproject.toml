@@ -6,21 +6,21 @@ license = "MIT"
 authors = ["Michael Brewer"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-boto3 = "^1.26.37"
+python = "^3.8"
+boto3 = "^1.28.69"
 pick = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 # Build and publish
-setuptools = "^67.2.0"
+setuptools = "^67.8.0"
 wheel = "^0.38.4"
 twine = "^4.0.2"
 # Unit testing
 pytest = "^7.2.1"
 pytest-cov = "^4.0.0"
 # Autoformatting
-isort = "^5.11.5"
-black = "^23.1.0"
+isort = "^5.12.0"
+black = "^23.10.1"
 # Linting
 flake8 = "^5.0.4"
 flake8-black = "^0.3.6"
@@ -32,11 +32,11 @@ flake8-variables-names = "^0.0.5"
 flake8-eradicate = "^1.4.0"
 flake8-bugbear = "^23.1.20"
 # Static analysis
-bandit = "^1.7.4"
+bandit = "^1.7.5"
 radon = "^5.1.0"
-xenon = "^0.9.0"
+xenon = "^0.9.1"
 # Typing
-mypy = "^1.0.0"
+mypy = "^1.6.1"
 
 [build-system]
 requires = ["setuptools", "wheel", "poetry-core>=1.0.0"]
