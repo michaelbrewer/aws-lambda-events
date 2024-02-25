@@ -1,0 +1,23 @@
+{
+    "version": "0",
+    "id": "66403118-EXAMPLE",
+    "detail-type": "CodeCommit Approval Rule Template Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-11-12T23:03:30Z",
+    "region": "us-east-2",
+    "resources": [
+      
+    ],
+    "detail": {
+      "approvalRuleTemplateContentSha256": "f742eebbEXAMPLE",
+      "approvalRuleTemplateId": "c9d2b844-EXAMPLE",
+      "approvalRuleTemplateName": "2-approvers-required-for-main",
+      "callerUserArn": "arn:aws:iam::123456789012:userMary_Major",
+      "creationDate": "Tue Nov 12 23:03:06 UTC 2019",
+      "event": "approvalRuleTemplateDeleted",
+      "lastModifiedDate": "Tue Nov 12 23:03:20 UTC 2019",
+      "notificationBody": "A approval rule template event occurred in the following AWS CodeCommit account: 123456789012. User: arn:aws:iam::123456789012:userMary_Major. Additional information: An approval rule template with the following name has been deleted: 2-approvers-required-for-main. The ID of the updated template is: c9d2b844-EXAMPLE. For more information, go to the AWS CodeCommit console.",
+      "repositories": {}
+    }
+  }

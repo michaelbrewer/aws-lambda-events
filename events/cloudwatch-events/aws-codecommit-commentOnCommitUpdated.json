@@ -1,0 +1,25 @@
+{
+  "version": "0",
+  "id": "98377d67-EXAMPLE",
+  "detail-type": "CodeCommit Comment on Commit",
+  "source": "aws.codecommit",
+  "account": "123456789012",
+  "time": "2019-02-09T07:15:16Z",
+  "region": "us-east-2",
+  "resources": [
+    "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+  ],
+  "detail": {
+    "afterCommitId": "53812581",
+    "beforeCommitId": "03314446",
+    "callerUserArn": "arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major",
+    "commentId": "a7e5471e-EXAMPLE",
+    "event": "commentOnCommitUpdated",
+    "inReplyTo": "bdb07d47-EXAMPLE",
+    "notificationBody": "A comment event occurred in the following AWS CodeCommit repository: MyDemoRepo. The display name for the user is Mary Major. The email address for the user is mary_major@example.com. The user arn:aws:sts::123456789012:federated-user/Mary_Major updated a comment or replied to a comment. The comment was made on the following comment ID: bdb07d47-6fe9-47b0-a839-b93cc743b2ac:468cd1cb-2dfb-4f68-9636-8de52431d1d6. For more information, go to the AWS CodeCommit console https://us-east-2.console.aws.amazon.com/codesuite/codecommit/repositories/MyDemoRepo/compare/0331444646178429589969823096709582251768/.../5381258150293783361471680277136017291382?region\u003dus-east-2",
+    "repositoryId": "12345678-1234-1234-1234-123456789012",
+    "repositoryName": "MyDemoRepo",
+    "displayName": "Mary Major",
+    "emailAddress": "mary_major@example.com"
+  }
+}

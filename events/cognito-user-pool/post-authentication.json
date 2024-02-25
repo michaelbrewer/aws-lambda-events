@@ -1,0 +1,18 @@
+{
+  "version": "1",
+  "triggerSource": "PostAuthentication_Authentication",
+  "region": "us-east-1",
+  "userPoolId": "us-east-1_example",
+  "userName": "UserName",
+  "callerContext": {
+    "awsSdkVersion": "awsSdkVersion",
+    "clientId": "clientId"
+  },
+  "request": {
+    "newDeviceUsed": true,
+    "userAttributes": {
+      "email": "post-auth@mail.com"
+    }
+  },
+  "response": {}
+}

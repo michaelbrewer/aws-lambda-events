@@ -1,0 +1,18 @@
+{
+  "RequestType": "Delete",
+  "RequestId": "unique id for this delete request",
+  "ResponseURL": "pre-signed-url-for-delete-response",
+  "ResourceType": "Custom::MyCustomResourceType",
+  "LogicalResourceId": "name of resource in template",
+  "StackId": "arn:aws:cloudformation:us-east-2:namespace:stack/stack-name/guid",
+  "PhysicalResourceId": "custom resource provider-defined physical id",
+  "ResourceProperties": {
+    "key1": "string",
+    "key2": [
+      "list"
+    ],
+    "key3": {
+      "key4": "map"
+    }
+  }
+}

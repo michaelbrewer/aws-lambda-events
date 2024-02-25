@@ -1,0 +1,31 @@
+{
+    "version": "0",
+    "id": "98377d67-EXAMPLE",
+    "detail-type": "CodeCommit Pull Request State Change",
+    "source": "aws.codecommit",
+    "account": "123456789012",
+    "time": "2019-02-09T07:15:16Z",
+    "region": "us-east-2",
+    "resources": [
+      "arn:aws:codecommit:us-east-2:123456789012:MyDemoRepo"
+    ],
+    "detail": {
+      "author": "arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major",
+      "callerUserArn": "arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major",
+      "creationDate": "Tue Feb 9 2019 10:18:42 PDT ",
+      "description": "An example description.",
+      "destinationCommit": "12241970EXAMPLE",
+      "destinationReference": "refs/heads/main",
+      "event": "pullRequestCreated",
+      "isMerged": "False",
+      "lastModifiedDate": "Tue Feb 9 2019 10:18:42 PDT",
+      "notificationBody": "A pull request event occurred in the following AWS CodeCommit repository: MyDemoRepo. User: arn:aws:sts::123456789012:assumed-role/Admin/Mary_Major. Event: Created. The pull request was created with the following information: Pull Request ID as 1 and title as My Example Pull Request. For more information, go to the AWS CodeCommit console https://us-east-2.console.aws.amazon.com/codesuite/codecommit/repositories/MyDemoRepo/pull-requests/1",
+      "pullRequestId": "1",
+      "pullRequestStatus": "Open",
+      "repositoryNames": ["MyDemoRepo"],
+      "revisionId": "bdc0cb9bEXAMPLE",
+      "sourceCommit": "2774290EXAMPLE",
+      "sourceReference": "refs/heads/test-branch",
+      "title": "My Example Pull Request"
+    }
+  }
