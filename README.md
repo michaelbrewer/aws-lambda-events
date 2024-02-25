@@ -1,5 +1,7 @@
 # AWS Lambda Events
 
+[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
+
 Collection of resources and tools on the different request inputs and response outputs that the event sources for AWS Lambda expect.
 
 ## AWS Lambda Publish Sharable Events
@@ -8,50 +10,50 @@ Collection of resources and tools on the different request inputs and response o
 
 ## AWS Lambda Quick Start Tool
 
-- [Build Project](https://lambda.101i.de/build-project/) - A web based tool to quickly build a new AWS Lambda project. Either via [AWS SAM CLI Application Templates](https://github.com/aws/aws-sam-cli-app-templates) or a [Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) generator using [Quick start for AWS Lambda](https://github.com/michaelbrewer/aws-lambda-quickstart)
+- [Build Project](https://michaelbrewer.github.io/aws-lambda-events/build-project/) - A web based tool to quickly build a new AWS Lambda project. Either via [AWS SAM CLI Application Templates](https://github.com/aws/aws-sam-cli-app-templates) or a [Powertools](https://awslabs.github.io/aws-lambda-powertools-python/latest/) generator using [Quick start for AWS Lambda](https://github.com/michaelbrewer/aws-lambda-quickstart)
 
 ## Event Sources Docs
 
 Some documented event sources are as follows:
 
-- [API Gateway Rest API](https://lambda.101i.de/rest-api)
-- [API Gateway Rest API Custom Authorizer](https://lambda.101i.de/rest-api-custom-authorizer/)
-- [API Gateway Http API](https://lambda.101i.de/http-api)
-- [API Gateway Http API Custom Authorizer](https://lambda.101i.de/http-api-custom-authorizer/)
-- [AWS Lambda Function URLs](https://lambda.101i.de/function-url/)
-- [AppSync Resolvers](https://lambda.101i.de/appsync-resolver/)
-- [AppSync Custom Authorizer](https://lambda.101i.de/appsync-authorizer/)
-- [Alexa Skills Kit](https://lambda.101i.de/alexa-skills-kit/)
-- [Alexa Smart Home](https://lambda.101i.de/alexa-smart-home)
-- [Amazon EventBridge (CloudWatch Events)](https://lambda.101i.de/event-bridge)
-- [CloudWatch Logs](https://lambda.101i.de/cloudwatch-logs)
-- [CloudFormation](https://lambda.101i.de/cloudformation)
-- [CloudFront Lambda@Edge](https://lambda.101i.de/cloudfront-lambda-edge)
-- [CodeCommit](https://lambda.101i.de/code-commit)
-- [CodePipeline](https://lambda.101i.de/code-pipeline-job)
-- [Amazon Cognito User Pool](https://lambda.101i.de/cognito-user-pool)
-- [AWS Config](https://lambda.101i.de/config)
-- [Amazon Connect](https://lambda.101i.de/connect)
-- [Amazon DynamoDB](https://lambda.101i.de/dynamodb)
-- [CloudWatch Event - Amazon EC2](https://lambda.101i.de/event-bridge#ec2-instance-state-change-event)
-- [Application Load Balancer](https://lambda.101i.de/alb)
-- [AWS IoT](https://lambda.101i.de/iot)
-- [AWS IoT Events](https://lambda.101i.de/iot-events)
-- [Apache Kafka](https://lambda.101i.de/apache-kafka)
-- [Amazon Kinesis Data Firehose](https://lambda.101i.de/kinesis-firehose)
-- [Amazon Kinesis](https://lambda.101i.de/kinesis-streams)
-- [Amazon Lex](https://lambda.101i.de/lex)
-- [Amazon Lex V2](https://lambda.101i.de/lex-v2)
-- [Amazon MQ](https://lambda.101i.de/mq)
-- [Amazon MSK](https://lambda.101i.de/amazon-msk)
-- [Amazon S3](https://lambda.101i.de/s3)
-- [Amazon S3 batch operations](https://lambda.101i.de/s3-batch)
-- [S3 Object Lambda](https://lambda.101i.de/s3-object-lambda)
-- [Secrets Manager](https://lambda.101i.de/secrets-manager)
-- [Amazon SES](https://lambda.101i.de/ses)
-- [Amazon SNS](https://lambda.101i.de/sns)
-- [Amazon SQS](https://lambda.101i.de/sqs)
-- [Amazon WorkMail](https://lambda.101i.de/work-mail)
+- [API Gateway Rest API](https://michaelbrewer.github.io/aws-lambda-events/rest-api)
+- [API Gateway Rest API Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/rest-api-custom-authorizer/)
+- [API Gateway Http API](https://michaelbrewer.github.io/aws-lambda-events/http-api)
+- [API Gateway Http API Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/http-api-custom-authorizer/)
+- [AWS Lambda Function URLs](https://michaelbrewer.github.io/aws-lambda-events/function-url/)
+- [AppSync Resolvers](https://michaelbrewer.github.io/aws-lambda-events/appsync-resolver/)
+- [AppSync Custom Authorizer](https://michaelbrewer.github.io/aws-lambda-events/appsync-authorizer/)
+- [Alexa Skills Kit](https://michaelbrewer.github.io/aws-lambda-events/alexa-skills-kit/)
+- [Alexa Smart Home](https://michaelbrewer.github.io/aws-lambda-events/alexa-smart-home)
+- [Amazon EventBridge (CloudWatch Events)](https://michaelbrewer.github.io/aws-lambda-events/event-bridge)
+- [CloudWatch Logs](https://michaelbrewer.github.io/aws-lambda-events/cloudwatch-logs)
+- [CloudFormation](https://michaelbrewer.github.io/aws-lambda-events/cloudformation)
+- [CloudFront Lambda@Edge](https://michaelbrewer.github.io/aws-lambda-events/cloudfront-lambda-edge)
+- [CodeCommit](https://michaelbrewer.github.io/aws-lambda-events/code-commit)
+- [CodePipeline](https://michaelbrewer.github.io/aws-lambda-events/code-pipeline-job)
+- [Amazon Cognito User Pool](https://michaelbrewer.github.io/aws-lambda-events/cognito-user-pool)
+- [AWS Config](https://michaelbrewer.github.io/aws-lambda-events/config)
+- [Amazon Connect](https://michaelbrewer.github.io/aws-lambda-events/connect)
+- [Amazon DynamoDB](https://michaelbrewer.github.io/aws-lambda-events/dynamodb)
+- [CloudWatch Event - Amazon EC2](https://michaelbrewer.github.io/aws-lambda-events/event-bridge#ec2-instance-state-change-event)
+- [Application Load Balancer](https://michaelbrewer.github.io/aws-lambda-events/alb)
+- [AWS IoT](https://michaelbrewer.github.io/aws-lambda-events/iot)
+- [AWS IoT Events](https://michaelbrewer.github.io/aws-lambda-events/iot-events)
+- [Apache Kafka](https://michaelbrewer.github.io/aws-lambda-events/apache-kafka)
+- [Amazon Kinesis Data Firehose](https://michaelbrewer.github.io/aws-lambda-events/kinesis-firehose)
+- [Amazon Kinesis](https://michaelbrewer.github.io/aws-lambda-events/kinesis-streams)
+- [Amazon Lex](https://michaelbrewer.github.io/aws-lambda-events/lex)
+- [Amazon Lex V2](https://michaelbrewer.github.io/aws-lambda-events/lex-v2)
+- [Amazon MQ](https://michaelbrewer.github.io/aws-lambda-events/mq)
+- [Amazon MSK](https://michaelbrewer.github.io/aws-lambda-events/amazon-msk)
+- [Amazon S3](https://michaelbrewer.github.io/aws-lambda-events/s3)
+- [Amazon S3 batch operations](https://michaelbrewer.github.io/aws-lambda-events/s3-batch)
+- [S3 Object Lambda](https://michaelbrewer.github.io/aws-lambda-events/s3-object-lambda)
+- [Secrets Manager](https://michaelbrewer.github.io/aws-lambda-events/secrets-manager)
+- [Amazon SES](https://michaelbrewer.github.io/aws-lambda-events/ses)
+- [Amazon SNS](https://michaelbrewer.github.io/aws-lambda-events/sns)
+- [Amazon SQS](https://michaelbrewer.github.io/aws-lambda-events/sqs)
+- [Amazon WorkMail](https://michaelbrewer.github.io/aws-lambda-events/work-mail)
 
 ## Build and testing the documentation site
 
